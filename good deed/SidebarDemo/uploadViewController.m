@@ -37,7 +37,7 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-    
+    largeText.hidden = YES;
     //Navigation Logo
     UIView *backView =[[UIView alloc] initWithFrame:CGRectMake(0, 0, 129, 41)];// Here you can set View width and height as per your requirement for displaying titleImageView position in navigationba
     UIImageView *titleImageView = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"navlogo.png"]];
@@ -90,7 +90,7 @@
 - (IBAction)upload {
 
     if ([checkMedia isEqual:@"image"]) {
-        NSData *imageData = UIImageJPEGRepresentation(image, 0.8);
+        NSData *imageData = UIImageJPEGRepresentation(image, 0.1);
         
         if(imageData){
             NSLog(@"heyoooo");
@@ -99,7 +99,7 @@
 
 
         
-        NSString *urlString = [NSString stringWithFormat:@"http://gooddeedmarathon.com/gdm_ios/upload.php?msg=%@&prof_id=%@",msg,fbid];
+        NSString *urlString = [NSString stringWithFormat:@"http://www.gooddeedmarathon.com/upload.php?msg=%@&prof_id=%@",msg,fbid];
 //        NSString *urlString = @"http://flyingcursor.com/GoodDeedMarathon/upload.php";
         
         NSMutableURLRequest *request = [[NSMutableURLRequest alloc] init];
@@ -127,6 +127,7 @@
             NSLog(@"success yooo");
             [_activityInd stopAnimating];
             
+            
         }        else if ([returnString isEqualToString:@"0"]){
             // error handling
             
@@ -141,7 +142,7 @@
         NSLog(@"URL FOR VIDEO %@",data);
         
         NSMutableURLRequest *request = [[NSMutableURLRequest alloc] init];
-        NSString *urlString = [NSString stringWithFormat:@"http://gooddeedmarathon.com/gdm_ios/upload.php?msg=%@&prof_id=%@",msg,fbid];
+        NSString *urlString = [NSString stringWithFormat:@"http://www.gooddeedmarathon.com/upload.php?msg=%@&prof_id=%@",msg,fbid];
         [request setURL:[NSURL URLWithString:urlString]];
         [request setHTTPMethod:@"POST"];
         NSLog(@"test");
@@ -177,15 +178,50 @@
         
         }
     
+    } else if ([checkMedia isEqualToString:@"text"]){
+
+        NSString * post = [[NSString alloc] initWithFormat:@"msg=%@&fbid=%@",largeText.text,fbid];
+        NSData * postData = [post dataUsingEncoding:NSASCIIStringEncoding allowLossyConversion:NO];
+        NSString * postLength = [NSString stringWithFormat:@"%d",[postData length]];
+        NSMutableURLRequest * request = [[NSMutableURLRequest alloc] init];
+        [request setURL:[NSURL URLWithString:[NSString stringWithFormat:@"http://www.gooddeedmarathon.com/upload.php?msg=12&prof_id=12"]]];
+        [request setHTTPMethod:@"POST"];
+        [request setValue:postLength forHTTPHeaderField:@"Content-Length"];
+        [request setValue:@"application/x-www-form-urlencoded" forHTTPHeaderField:@"Content-Type"];
+        [request setHTTPBody:postData];
+        NSData *returnData = [NSURLConnection sendSynchronousRequest:request returningResponse:nil error:nil];
+        
+        
+        NSString *returnString = [[NSString alloc] initWithData:returnData encoding:NSUTF8StringEncoding];
+
+        NSLog(@"%@",returnString);
+//        if (conn){
+//            
+//        
+//            NSLog(@"Connection Successful with text");
+//        }
+//        else{
+//            NSLog(@"Error");
+//            mediaDesc.text = Nil;
+//        }
     }
+
 
 }
 
 - (IBAction)textVD {
-
+    imageView.hidden = YES;
+    mediaDesc.hidden = YES;
+    largeText.hidden = NO;
+    checkMedia = @"text";
+    
 }
 
 - (IBAction)imageVD {
+    imageView.hidden = NO;
+    mediaDesc.hidden = NO;
+    mediaDesc.text = nil;
+    largeText.hidden = YES;
     picker = [[UIImagePickerController alloc] init];
     picker.delegate = self;
     [picker setSourceType:UIImagePickerControllerSourceTypeCamera];
@@ -235,6 +271,11 @@ checkMedia = @"image";
 }
 
 - (IBAction)videoVD {
+    imageView.hidden = NO;
+    mediaDesc.hidden = NO;
+    mediaDesc.text = nil;
+    largeText.hidden = YES;
+    
     [self startCameraControllerFromViewController: self
                                     usingDelegate: self];
 }
@@ -268,6 +309,10 @@ checkMedia = @"image";
 }
 
 - (IBAction)galleryVD {
+    mediaDesc.hidden = NO;
+    largeText.hidden = YES;
+    imageView.hidden = NO;
+    mediaDesc.text = Nil;
     picker2 = [[UIImagePickerController alloc] init];
     picker2.delegate = self;
     [picker2 setSourceType:UIImagePickerControllerSourceTypeSavedPhotosAlbum];

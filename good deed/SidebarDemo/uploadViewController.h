@@ -19,6 +19,7 @@
     IBOutlet UITextField *mediaDesc;
     NSString *fbid;
     NSString *msg;
+    IBOutlet UITextView *largeText;
 }
 @property (strong, nonatomic) IBOutlet UIActivityIndicatorView *activityInd;
 - (IBAction)upload;

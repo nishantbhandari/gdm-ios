@@ -7,15 +7,18 @@
 //
 
 #import <UIKit/UIKit.h>
-
+#import "ALScrollViewPaging.h"
 @interface MainViewController : UIViewController{
     NSString *fbid;
     NSString *fbname;
     NSString *fbemail;
     NSString *fbgender;
     NSString *fbdob;
+    NSString *videoURL;
+    NSString *videoHTML;
 }
-
+@property (strong, nonatomic) IBOutlet UIView *uTubeView;
+@property (nonatomic, retain) UIWebView *myWebView;
 @property (weak, nonatomic) IBOutlet UIBarButtonItem *sidebarButton;
 @property (nonatomic, strong) IBOutlet UIActivityIndicatorView *activityIndicator;
 
