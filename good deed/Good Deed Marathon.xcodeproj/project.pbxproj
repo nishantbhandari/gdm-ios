@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		09A613FC1830FB2000D0CEFA /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 09A613FB1830FB2000D0CEFA /* Default-568h@2x.png */; };
+		09AF273C1832A991003EDD7C /* ty2ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 09AF273B1832A991003EDD7C /* ty2ViewController.m */; };
 		09EAF691183218EF003F4F50 /* goodiesViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 09EAF690183218EF003F4F50 /* goodiesViewController.m */; };
 		19103CF0182250F800F3C84F /* webViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 19103CEF182250F800F3C84F /* webViewController.m */; };
 		1941E2671830EA6600B89F01 /* IQKeyBoardManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 1941E2661830EA6600B89F01 /* IQKeyBoardManager.m */; };
@@ -48,6 +49,8 @@
 
 /* Begin PBXFileReference section */
 		09A613FB1830FB2000D0CEFA /* Default-568h@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default-568h@2x.png"; sourceTree = "<group>"; };
+		09AF273A1832A991003EDD7C /* ty2ViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ty2ViewController.h; sourceTree = "<group>"; };
+		09AF273B1832A991003EDD7C /* ty2ViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ty2ViewController.m; sourceTree = "<group>"; };
 		09EAF68F183218EF003F4F50 /* goodiesViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = goodiesViewController.h; sourceTree = "<group>"; };
 		09EAF690183218EF003F4F50 /* goodiesViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = goodiesViewController.m; sourceTree = "<group>"; };
 		19103CEE182250F800F3C84F /* webViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = webViewController.h; sourceTree = "<group>"; };
@@ -216,6 +219,8 @@
 				199E8D8A182B5F910010D1EF /* ftViewController.m */,
 				09EAF68F183218EF003F4F50 /* goodiesViewController.h */,
 				09EAF690183218EF003F4F50 /* goodiesViewController.m */,
+				09AF273A1832A991003EDD7C /* ty2ViewController.h */,
+				09AF273B1832A991003EDD7C /* ty2ViewController.m */,
 			);
 			path = SidebarDemo;
 			sourceTree = "<group>";
@@ -342,6 +347,7 @@
 				19AE5806181A3CB300499F29 /* regViewController.m in Sources */,
 				F4EECF4A177DF87700778578 /* SidebarViewController.m in Sources */,
 				19D3ABAD182A908300522DB4 /* tyViewController.m in Sources */,
+				09AF273C1832A991003EDD7C /* ty2ViewController.m in Sources */,
 				19103CF0182250F800F3C84F /* webViewController.m in Sources */,
 				1941E2671830EA6600B89F01 /* IQKeyBoardManager.m in Sources */,
 				F4FE88051781138100CB3DA8 /* SWRevealViewController.m in Sources */,

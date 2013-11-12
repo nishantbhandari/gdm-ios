@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>IDESourceControlProjectFavoriteDictionaryKey</key>
+	<false/>
+	<key>IDESourceControlProjectIdentifier</key>
+	<string>E9C4C551-7ED8-40DB-B4D8-A58C69188737</string>
+	<key>IDESourceControlProjectName</key>
+	<string>Good Deed Marathon</string>
+	<key>IDESourceControlProjectOriginsDictionary</key>
+	<dict>
+		<key>3B020239-7BD4-416C-8876-35B3F3BFB768</key>
+		<string>https://github.com/nishantbhandari/gdm-ios.git</string>
+	</dict>
+	<key>IDESourceControlProjectPath</key>
+	<string>good deed/Good Deed Marathon.xcodeproj/project.xcworkspace</string>
+	<key>IDESourceControlProjectRelativeInstallPathDictionary</key>
+	<dict>
+		<key>3B020239-7BD4-416C-8876-35B3F3BFB768</key>
+		<string>../../..</string>
+	</dict>
+	<key>IDESourceControlProjectURL</key>
+	<string>https://github.com/nishantbhandari/gdm-ios.git</string>
+	<key>IDESourceControlProjectVersion</key>
+	<integer>110</integer>
+	<key>IDESourceControlProjectWCCIdentifier</key>
+	<string>3B020239-7BD4-416C-8876-35B3F3BFB768</string>
+	<key>IDESourceControlProjectWCConfigurations</key>
+	<array>
+		<dict>
+			<key>IDESourceControlRepositoryExtensionIdentifierKey</key>
+			<string>public.vcs.git</string>
+			<key>IDESourceControlWCCIdentifierKey</key>
+			<string>3B020239-7BD4-416C-8876-35B3F3BFB768</string>
+			<key>IDESourceControlWCCName</key>
+			<string>gdm-ios</string>
+		</dict>
+	</array>
+</dict>
+</plist>
