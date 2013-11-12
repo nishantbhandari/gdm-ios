@@ -154,14 +154,12 @@
         NSLog(@"asas");
         
         NSData *data = [NSData dataWithContentsOfFile:moviePath];
-        NSLog(@"URL FOR VIDEO %@",data);
+        
         
         NSMutableURLRequest *request = [[NSMutableURLRequest alloc] init];
         NSString *urlString = [NSString stringWithFormat:@"http://www.gooddeedmarathon.com/upload.php?msg=%@&prof_id=%@",smallText.text,fbid];
         [request setURL:[NSURL URLWithString:urlString]];
         [request setHTTPMethod:@"POST"];
-        NSLog(@"test");
-        
         NSString *boundary = @"---------------------------14737809831466499882746641449";
         NSString *contentType = [NSString stringWithFormat:@"multipart/form-data; boundary=%@",boundary];
         [request addValue:contentType forHTTPHeaderField: @"Content-Type"];
@@ -170,7 +168,7 @@
         
         //video
         [body appendData:[[NSString stringWithFormat:@"\r\n--%@\r\n",boundary] dataUsingEncoding:NSUTF8StringEncoding]];
-        [body appendData:[@"Content-Disposition: form-data; name=\"file\"; filename=\"yo.mov\"\r\n" dataUsingEncoding:NSUTF8StringEncoding]];
+        [body appendData:[@"Content-Disposition: form-data; name=\"file\"; filename=\"yo.mp4\"\r\n" dataUsingEncoding:NSUTF8StringEncoding]];
         [body appendData:[@"Content-Type: video/quicktime\r\n\r\n" dataUsingEncoding:NSUTF8StringEncoding]];
         [body appendData:[NSData dataWithData:data]];
         [body appendData:[[NSString stringWithFormat:@"\r\n--%@--\r\n",boundary] dataUsingEncoding:NSUTF8StringEncoding]];
@@ -239,6 +237,8 @@
     picker = [[UIImagePickerController alloc] init];
     picker.delegate = self;
     [picker setSourceType:UIImagePickerControllerSourceTypeCamera];
+    [picker setShowsCameraControls:YES];
+    [picker setAllowsEditing:YES];
     [self presentViewController:picker animated:YES completion:NULL];
     picker = nil;
 }
@@ -276,6 +276,7 @@
     }
     else{
 checkMedia = @"image";
+
                 image = [info objectForKey:UIImagePickerControllerOriginalImage];
         [self dismissViewControllerAnimated:YES completion:NULL];
                 [imageView setImage:image];
@@ -306,6 +307,7 @@ checkMedia = @"image";
     
     
     UIImagePickerController *cameraUI = [[UIImagePickerController alloc] init];
+    [cameraUI setVideoQuality:UIImagePickerControllerQualityTypeMedium];
     cameraUI.sourceType = UIImagePickerControllerSourceTypeCamera;
     
     // Displays a control that allows the user to choose movie capture
