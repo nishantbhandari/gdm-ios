@@ -16,10 +16,11 @@
     UIImage *image;
     IBOutlet UIImageView *imageView;
     NSString *checkMedia;
-    IBOutlet UITextField *mediaDesc;
+
     NSString *fbid;
     NSString *msg;
     IBOutlet UITextView *largeText;
+    IBOutlet UITextView *smallText;
 }
 @property (strong, nonatomic) IBOutlet UIActivityIndicatorView *activityInd;
 - (IBAction)upload;

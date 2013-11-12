@@ -25,6 +25,9 @@
     [self.scrollView layoutIfNeeded];
     self.scrollView.contentSize = self.contentView.bounds.size;
 }
+- (void) threadStartAnimating:(id)data {
+    [_activityInd startAnimating];
+}
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
     self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
@@ -37,7 +40,19 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-    largeText.hidden = YES;
+    UIColor *borderColor = [UIColor colorWithRed:105.0/255.0 green:190.0/255.0 blue:40.0/255.0 alpha:1.0];
+    [imageView.layer setBorderColor:borderColor.CGColor];
+    [imageView.layer setBorderWidth:3.0];
+    smallText.hidden = YES;
+    imageView.hidden = YES;
+//    NSString *ImageURL = @"http://graph.facebook.com/nishantbhandari/picture";
+//    NSData *imageData = [NSData dataWithContentsOfURL:[NSURL URLWithString:ImageURL]];
+//    imageView.image = [UIImage imageWithData:imageData];
+    
+
+    
+
+    
     //Navigation Logo
     UIView *backView =[[UIView alloc] initWithFrame:CGRectMake(0, 0, 129, 41)];// Here you can set View width and height as per your requirement for displaying titleImageView position in navigationba
     UIImageView *titleImageView = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"navlogo.png"]];
@@ -48,7 +63,7 @@
     
     [textVD2 setBackgroundImage:[UIImage imageNamed:@"sub-text_green.png"] forState:UIControlStateSelected];
     
-    msg = mediaDesc.text;
+    msg = smallText.text;
     FBRequest *request = [FBRequest requestForMe];
     
     [request startWithCompletionHandler:^(FBRequestConnection *connection, id result, NSError *error) {
@@ -88,18 +103,18 @@
 }
 
 - (IBAction)upload {
-
+    
     if ([checkMedia isEqual:@"image"]) {
-        NSData *imageData = UIImageJPEGRepresentation(image, 0.1);
+        NSData *imageData = UIImageJPEGRepresentation(image, 0.5);
         
         if(imageData){
-            NSLog(@"heyoooo");
-                   [_activityInd startAnimating];
+            NSLog(@"Image Uploading...");
+            
         }
 
 
-        
-        NSString *urlString = [NSString stringWithFormat:@"http://www.gooddeedmarathon.com/upload.php?msg=%@&prof_id=%@",msg,fbid];
+        [NSThread detachNewThreadSelector:@selector(threadStartAnimating:) toTarget:self withObject:nil];
+        NSString *urlString = [NSString stringWithFormat:@"http://www.gooddeedmarathon.com/upload.php?msg=%@&prof_id=%@",smallText.text,fbid];
 //        NSString *urlString = @"http://flyingcursor.com/GoodDeedMarathon/upload.php";
         
         NSMutableURLRequest *request = [[NSMutableURLRequest alloc] init];
@@ -114,7 +129,7 @@
         NSMutableData *body = [NSMutableData data];
         [body appendData:[[NSString stringWithFormat:@"\r\n--%@\r\n",boundary] dataUsingEncoding:NSUTF8StringEncoding]];
         [body appendData:[@"Content-Disposition: form-data; name=\"file\"; filename=\"ipodfile.jpg\"\r\n" dataUsingEncoding:NSUTF8StringEncoding]];
-        [body appendData:[@"Content-Type: application/octet-stream\r\n\r\n" dataUsingEncoding:NSUTF8StringEncoding]];
+        [body appendData:[@"Content-Type: image/jpeg\r\n\r\n" dataUsingEncoding:NSUTF8StringEncoding]];
         [body appendData:[NSData dataWithData:imageData]];
         [body appendData:[[NSString stringWithFormat:@"\r\n--%@--\r\n",boundary] dataUsingEncoding:NSUTF8StringEncoding]];
         [request setHTTPBody:body];
@@ -130,7 +145,7 @@
             
         }        else if ([returnString isEqualToString:@"0"]){
             // error handling
-            
+            [_activityInd stopAnimating];
         }
 
         
@@ -142,7 +157,7 @@
         NSLog(@"URL FOR VIDEO %@",data);
         
         NSMutableURLRequest *request = [[NSMutableURLRequest alloc] init];
-        NSString *urlString = [NSString stringWithFormat:@"http://www.gooddeedmarathon.com/upload.php?msg=%@&prof_id=%@",msg,fbid];
+        NSString *urlString = [NSString stringWithFormat:@"http://www.gooddeedmarathon.com/upload.php?msg=%@&prof_id=%@",smallText.text,fbid];
         [request setURL:[NSURL URLWithString:urlString]];
         [request setHTTPMethod:@"POST"];
         NSLog(@"test");
@@ -156,7 +171,7 @@
         //video
         [body appendData:[[NSString stringWithFormat:@"\r\n--%@\r\n",boundary] dataUsingEncoding:NSUTF8StringEncoding]];
         [body appendData:[@"Content-Disposition: form-data; name=\"file\"; filename=\"yo.mov\"\r\n" dataUsingEncoding:NSUTF8StringEncoding]];
-        [body appendData:[@"Content-Type: application/octet-stream\r\n\r\n" dataUsingEncoding:NSUTF8StringEncoding]];
+        [body appendData:[@"Content-Type: video/quicktime\r\n\r\n" dataUsingEncoding:NSUTF8StringEncoding]];
         [body appendData:[NSData dataWithData:data]];
         [body appendData:[[NSString stringWithFormat:@"\r\n--%@--\r\n",boundary] dataUsingEncoding:NSUTF8StringEncoding]];
         
@@ -168,7 +183,7 @@
         
 
         NSString *returnString = [[NSString alloc] initWithData:returnData encoding:NSUTF8StringEncoding];
-        
+        NSLog(@"%@",returnString);
         if ([returnString isEqualToString:@"1"]){
             // - code after image is uploaded
             NSLog(@"sucess uploading!!");
@@ -180,11 +195,12 @@
     
     } else if ([checkMedia isEqualToString:@"text"]){
 
-        NSString * post = [[NSString alloc] initWithFormat:@"msg=%@&fbid=%@",largeText.text,fbid];
+        NSString * post = [[NSString alloc] initWithFormat:@"msg=%@&prof_id=%@",largeText.text,fbid];
+        NSLog(@" msg - %@ fb - %@",largeText.text,fbid);
         NSData * postData = [post dataUsingEncoding:NSASCIIStringEncoding allowLossyConversion:NO];
         NSString * postLength = [NSString stringWithFormat:@"%d",[postData length]];
         NSMutableURLRequest * request = [[NSMutableURLRequest alloc] init];
-        [request setURL:[NSURL URLWithString:[NSString stringWithFormat:@"http://www.gooddeedmarathon.com/upload.php?msg=12&prof_id=12"]]];
+        [request setURL:[NSURL URLWithString:[NSString stringWithFormat:@"http://www.gooddeedmarathon.com/upload.php"]]];
         [request setHTTPMethod:@"POST"];
         [request setValue:postLength forHTTPHeaderField:@"Content-Length"];
         [request setValue:@"application/x-www-form-urlencoded" forHTTPHeaderField:@"Content-Type"];
@@ -193,17 +209,15 @@
         
         
         NSString *returnString = [[NSString alloc] initWithData:returnData encoding:NSUTF8StringEncoding];
-
         NSLog(@"%@",returnString);
-//        if (conn){
-//            
-//        
-//            NSLog(@"Connection Successful with text");
-//        }
-//        else{
-//            NSLog(@"Error");
-//            mediaDesc.text = Nil;
-//        }
+        if ([returnString isEqualToString:@"1"]){
+
+            NSLog(@"Connection Successful with text");
+        }
+        else if([returnString isEqualToString:@"0"]){
+            NSLog(@"Error");
+            smallText.text = Nil;
+        }
     }
 
 
@@ -211,7 +225,7 @@
 
 - (IBAction)textVD {
     imageView.hidden = YES;
-    mediaDesc.hidden = YES;
+    smallText.hidden = YES;
     largeText.hidden = NO;
     checkMedia = @"text";
     
@@ -219,8 +233,8 @@
 
 - (IBAction)imageVD {
     imageView.hidden = NO;
-    mediaDesc.hidden = NO;
-    mediaDesc.text = nil;
+    smallText.hidden = NO;
+    smallText.text = nil;
     largeText.hidden = YES;
     picker = [[UIImagePickerController alloc] init];
     picker.delegate = self;
@@ -262,7 +276,7 @@
     }
     else{
 checkMedia = @"image";
-        image = [info objectForKey:UIImagePickerControllerOriginalImage];
+                image = [info objectForKey:UIImagePickerControllerOriginalImage];
         [self dismissViewControllerAnimated:YES completion:NULL];
                 [imageView setImage:image];
 }
@@ -272,8 +286,8 @@ checkMedia = @"image";
 
 - (IBAction)videoVD {
     imageView.hidden = NO;
-    mediaDesc.hidden = NO;
-    mediaDesc.text = nil;
+    smallText.hidden = NO;
+    smallText.text = nil;
     largeText.hidden = YES;
     
     [self startCameraControllerFromViewController: self
@@ -309,10 +323,10 @@ checkMedia = @"image";
 }
 
 - (IBAction)galleryVD {
-    mediaDesc.hidden = NO;
+    smallText.hidden = NO;
     largeText.hidden = YES;
     imageView.hidden = NO;
-    mediaDesc.text = Nil;
+    smallText.text = Nil;
     picker2 = [[UIImagePickerController alloc] init];
     picker2.delegate = self;
     [picker2 setSourceType:UIImagePickerControllerSourceTypeSavedPhotosAlbum];
