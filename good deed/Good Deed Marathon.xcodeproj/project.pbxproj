@@ -17,8 +17,6 @@
 		1941E2741830EE7500B89F01 /* menu@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 1941E2711830EE7500B89F01 /* menu@2x.png */; };
 		1941E2751830EE7500B89F01 /* nav_bg.png in Resources */ = {isa = PBXBuildFile; fileRef = 1941E2721830EE7500B89F01 /* nav_bg.png */; };
 		1970493A1832642700084F06 /* ALScrollViewPaging.m in Sources */ = {isa = PBXBuildFile; fileRef = 197049391832642700084F06 /* ALScrollViewPaging.m */; };
-		197F05A71833B1B0003FF1E4 /* galViewC.m in Sources */ = {isa = PBXBuildFile; fileRef = 197F05A61833B1B0003FF1E4 /* galViewC.m */; };
-		197F05B01833B5FD003FF1E4 /* parViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 197F05AF1833B5FD003FF1E4 /* parViewController.m */; };
 		199E8D8B182B5F910010D1EF /* ftViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 199E8D8A182B5F910010D1EF /* ftViewController.m */; };
 		19A7E9F0182CB57000EBE47B /* AssetsLibrary.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 19A7E9EF182CB57000EBE47B /* AssetsLibrary.framework */; };
 		19AE5806181A3CB300499F29 /* regViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 19AE5804181A3CB300499F29 /* regViewController.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
@@ -41,6 +39,7 @@
 		F4EECF1C177C99F400778578 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = F4EECF1A177C99F400778578 /* InfoPlist.strings */; };
 		F4EECF1E177C99F400778578 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = F4EECF1D177C99F400778578 /* main.m */; };
 		F4EECF22177C99F400778578 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = F4EECF21177C99F400778578 /* AppDelegate.m */; };
+		F4EECF2B177C99F400778578 /* MainStoryboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F4EECF29177C99F400778578 /* MainStoryboard.storyboard */; };
 		F4EECF2E177C99F400778578 /* MainViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F4EECF2D177C99F400778578 /* MainViewController.m */; };
 		F4EECF4A177DF87700778578 /* SidebarViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F4EECF49177DF87700778578 /* SidebarViewController.m */; };
 		F4EECF70177FE9B400778578 /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F4EECF6F177FE9B400778578 /* CoreLocation.framework */; };
@@ -64,10 +63,6 @@
 		1941E2721830EE7500B89F01 /* nav_bg.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = nav_bg.png; path = SidebarDemo/nav_bg.png; sourceTree = "<group>"; };
 		197049381832642700084F06 /* ALScrollViewPaging.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ALScrollViewPaging.h; sourceTree = "<group>"; };
 		197049391832642700084F06 /* ALScrollViewPaging.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ALScrollViewPaging.m; sourceTree = "<group>"; };
-		197F05A51833B1B0003FF1E4 /* galViewC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = galViewC.h; sourceTree = "<group>"; };
-		197F05A61833B1B0003FF1E4 /* galViewC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = galViewC.m; sourceTree = "<group>"; };
-		197F05AE1833B5FD003FF1E4 /* parViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = parViewController.h; sourceTree = "<group>"; };
-		197F05AF1833B5FD003FF1E4 /* parViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = parViewController.m; sourceTree = "<group>"; };
 		199E8D89182B5F910010D1EF /* ftViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ftViewController.h; sourceTree = "<group>"; };
 		199E8D8A182B5F910010D1EF /* ftViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ftViewController.m; sourceTree = "<group>"; };
 		19A7E9EF182CB57000EBE47B /* AssetsLibrary.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AssetsLibrary.framework; path = System/Library/Frameworks/AssetsLibrary.framework; sourceTree = SDKROOT; };
@@ -99,6 +94,7 @@
 		F4EECF1F177C99F400778578 /* Good Deed Marathon-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Good Deed Marathon-Prefix.pch"; sourceTree = "<group>"; };
 		F4EECF20177C99F400778578 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		F4EECF21177C99F400778578 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
+		F4EECF2A177C99F400778578 /* en */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = en; path = en.lproj/MainStoryboard.storyboard; sourceTree = "<group>"; };
 		F4EECF2C177C99F400778578 /* MainViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MainViewController.h; sourceTree = "<group>"; };
 		F4EECF2D177C99F400778578 /* MainViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MainViewController.m; sourceTree = "<group>"; };
 		F4EECF48177DF87700778578 /* SidebarViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SidebarViewController.h; sourceTree = "<group>"; };
@@ -204,6 +200,7 @@
 				1941E2661830EA6600B89F01 /* IQKeyBoardManager.m */,
 				F4EECF20177C99F400778578 /* AppDelegate.h */,
 				F4EECF21177C99F400778578 /* AppDelegate.m */,
+				F4EECF29177C99F400778578 /* MainStoryboard.storyboard */,
 				19AF6300181A588C005928FB /* uploadViewController.h */,
 				19AF6301181A588C005928FB /* uploadViewController.m */,
 				F4EECF2C177C99F400778578 /* MainViewController.h */,
@@ -224,10 +221,6 @@
 				09EAF690183218EF003F4F50 /* goodiesViewController.m */,
 				09AF273A1832A991003EDD7C /* ty2ViewController.h */,
 				09AF273B1832A991003EDD7C /* ty2ViewController.m */,
-				197F05A51833B1B0003FF1E4 /* galViewC.h */,
-				197F05A61833B1B0003FF1E4 /* galViewC.m */,
-				197F05AE1833B5FD003FF1E4 /* parViewController.h */,
-				197F05AF1833B5FD003FF1E4 /* parViewController.m */,
 			);
 			path = SidebarDemo;
 			sourceTree = "<group>";
@@ -331,6 +324,7 @@
 				1941E2741830EE7500B89F01 /* menu@2x.png in Resources */,
 				1941E2751830EE7500B89F01 /* nav_bg.png in Resources */,
 				F4EECF1C177C99F400778578 /* InfoPlist.strings in Resources */,
+				F4EECF2B177C99F400778578 /* MainStoryboard.storyboard in Resources */,
 				09A613FC1830FB2000D0CEFA /* Default-568h@2x.png in Resources */,
 				19F9BD34182A6D7A006968D4 /* Images.xcassets in Resources */,
 			);
@@ -343,11 +337,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				197F05B01833B5FD003FF1E4 /* parViewController.m in Sources */,
 				199E8D8B182B5F910010D1EF /* ftViewController.m in Sources */,
 				F4EECF1E177C99F400778578 /* main.m in Sources */,
 				19AF6302181A588C005928FB /* uploadViewController.m in Sources */,
-				197F05A71833B1B0003FF1E4 /* galViewC.m in Sources */,
 				F4EECF22177C99F400778578 /* AppDelegate.m in Sources */,
 				09EAF691183218EF003F4F50 /* goodiesViewController.m in Sources */,
 				1970493A1832642700084F06 /* ALScrollViewPaging.m in Sources */,
@@ -371,6 +363,14 @@
 				F4EECF1B177C99F400778578 /* en */,
 			);
 			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
+		F4EECF29177C99F400778578 /* MainStoryboard.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				F4EECF2A177C99F400778578 /* en */,
+			);
+			name = MainStoryboard.storyboard;
 			sourceTree = "<group>";
 		};
 /* End PBXVariantGroup section */

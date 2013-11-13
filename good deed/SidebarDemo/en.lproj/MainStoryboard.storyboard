@@ -52,7 +52,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="06U-Nz-tAb" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1197" y="-1074"/>
+            <point key="canvasLocation" x="1215" y="-1044"/>
         </scene>
         <!--Upload View Controller-->
         <scene sceneID="XBx-Nd-rbc">
@@ -186,7 +186,7 @@ Tell us about them in any way you want.</string>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="bJK-ph-hBe" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1197" y="-394"/>
+            <point key="canvasLocation" x="1197" y="-374"/>
         </scene>
         <!--Goodies View Controller-->
         <scene sceneID="o5Y-CT-kLt">
@@ -288,7 +288,7 @@ you could get these colourful amazing</string>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ya6-w2-5VZ" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1718" y="-387"/>
+            <point key="canvasLocation" x="1654" y="-411"/>
         </scene>
         <!--Ty View Controller-->
         <scene sceneID="C0i-kr-Mvq">
@@ -530,7 +530,7 @@ First 2000 people receive the GOOD DEED BAND</string>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="4" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1197" y="303"/>
+            <point key="canvasLocation" x="1197" y="295"/>
         </scene>
         <!--Reg View Controller-->
         <scene sceneID="75D-bj-jxi">
@@ -669,42 +669,6 @@ Fill them in?</string>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="a5U-hh-wK4" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="2030" y="335"/>
-        </scene>
-        <!--View Controller-->
-        <scene sceneID="fJs-zN-BvR">
-            <objects>
-                <viewController id="IhX-CV-EYy" sceneMemberID="viewController">
-                    <layoutGuides>
-                        <viewControllerLayoutGuide type="top" id="WaG-J1-l5k"/>
-                        <viewControllerLayoutGuide type="bottom" id="RaX-LQ-qqU"/>
-                    </layoutGuides>
-                    <view key="view" contentMode="scaleToFill" id="UQR-KE-vH8">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
-                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
-                    </view>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="GRn-fq-FFf" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="42" y="946"/>
-        </scene>
-        <!--View Controller-->
-        <scene sceneID="JAz-TH-mWv">
-            <objects>
-                <viewController id="Ecx-uF-alB" sceneMemberID="viewController">
-                    <layoutGuides>
-                        <viewControllerLayoutGuide type="top" id="eLI-Z0-yoI"/>
-                        <viewControllerLayoutGuide type="bottom" id="Wot-NA-qLP"/>
-                    </layoutGuides>
-                    <view key="view" contentMode="scaleToFill" id="nwv-ha-Urq">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
-                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
-                    </view>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="Ak6-kG-QmZ" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="450" y="982"/>
         </scene>
         <!--Ft View Controller-->
         <scene sceneID="lrB-DH-OFD">
@@ -875,34 +839,6 @@ the most heartwarming deeds everyday!</string>
             </objects>
             <point key="canvasLocation" x="1290" y="1077"/>
         </scene>
-        <!--Gal ViewC-->
-        <scene sceneID="fsb-XI-EhV">
-            <objects>
-                <viewController id="uLt-T5-m5n" customClass="galViewC" sceneMemberID="viewController">
-                    <layoutGuides>
-                        <viewControllerLayoutGuide type="top" id="ogc-zE-9ew"/>
-                        <viewControllerLayoutGuide type="bottom" id="aE3-ge-xT3"/>
-                    </layoutGuides>
-                    <view key="view" contentMode="scaleToFill" id="Lvx-cQ-mCJ">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
-                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                        <subviews>
-                            <webView contentMode="scaleAspectFit" fixedFrame="YES" scalesPageToFit="YES" keyboardDisplayRequiresUserAction="NO" translatesAutoresizingMaskIntoConstraints="NO" id="wd1-Fu-nm7">
-                                <rect key="frame" x="0.0" y="45" width="320" height="523"/>
-                                <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                                <color key="backgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
-                            </webView>
-                        </subviews>
-                        <color key="backgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
-                    </view>
-                    <connections>
-                        <outlet property="gallView" destination="wd1-Fu-nm7" id="Pcn-70-fGH"/>
-                    </connections>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="O0r-4j-3iu" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="817" y="-1387"/>
-        </scene>
         <!--Sidebar View Controller - Sidebar-->
         <scene sceneID="8EI-Ei-zax">
             <objects>
@@ -943,7 +879,7 @@ the most heartwarming deeds everyday!</string>
                                     </subviews>
                                 </tableViewCellContentView>
                                 <connections>
-                                    <segue destination="2" kind="custom" identifier="home" customClass="SWRevealViewControllerSegue" id="w4v-fJ-nlM"/>
+                                    <segue destination="2" kind="custom" identifier="home" customClass="SWRevealViewControllerSegue" id="zQl-ZR-KSR"/>
                                 </connections>
                             </tableViewCell>
                             <tableViewCell contentMode="scaleToFill" selectionStyle="none" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="comments" id="u5Z-q5-uMq">
@@ -964,9 +900,6 @@ the most heartwarming deeds everyday!</string>
                                         </imageView>
                                     </subviews>
                                 </tableViewCellContentView>
-                                <connections>
-                                    <segue destination="BTz-gU-3Vq" kind="custom" identifier="submit" customClass="SWRevealViewControllerSegue" id="CdO-Q6-ets"/>
-                                </connections>
                             </tableViewCell>
                             <tableViewCell contentMode="scaleToFill" selectionStyle="none" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="map" id="PcL-Uo-if4">
                                 <rect key="frame" x="0.0" y="127" width="320" height="44"/>
@@ -987,7 +920,7 @@ the most heartwarming deeds everyday!</string>
                                     </subviews>
                                 </tableViewCellContentView>
                                 <connections>
-                                    <segue destination="uLt-T5-m5n" kind="custom" customClass="SWRevealViewControllerSegue" id="eim-7N-VR8"/>
+                                    <segue destination="BTz-gU-3Vq" kind="custom" identifier="submit" customClass="SWRevealViewControllerSegue" id="9Og-a4-lyq"/>
                                 </connections>
                             </tableViewCell>
                             <tableViewCell contentMode="scaleToFill" selectionStyle="none" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="calendar" id="TaG-aw-dE2">
@@ -1028,7 +961,7 @@ the most heartwarming deeds everyday!</string>
                                     </subviews>
                                 </tableViewCellContentView>
                                 <connections>
-                                    <segue destination="NfK-uV-oZR" kind="custom" customClass="SWRevealViewControllerSegue" id="bWv-0C-1gi"/>
+                                    <segue destination="6R0-vz-l6u" kind="custom" identifier="map" customClass="SWRevealViewControllerSegue" id="JcF-SD-6f2"/>
                                 </connections>
                             </tableViewCell>
                             <tableViewCell contentMode="scaleToFill" selectionStyle="none" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="bookmark" id="dyh-KG-Vlf">
@@ -1049,6 +982,9 @@ the most heartwarming deeds everyday!</string>
                                         </imageView>
                                     </subviews>
                                 </tableViewCellContentView>
+                                <connections>
+                                    <segue destination="NfK-uV-oZR" kind="custom" customClass="SWRevealViewControllerSegue" id="Fsr-Ne-LQ2"/>
+                                </connections>
                             </tableViewCell>
                             <tableViewCell contentMode="scaleToFill" selectionStyle="none" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="tag" id="2ya-XD-SMQ">
                                 <rect key="frame" x="0.0" y="303" width="320" height="44"/>
@@ -1162,7 +1098,7 @@ the most heartwarming deeds everyday!</string>
         <simulatedScreenMetrics key="destination" type="retina4"/>
     </simulatedMetricsContainer>
     <inferredMetricsTieBreakers>
-        <segue reference="w4v-fJ-nlM"/>
-        <segue reference="34d-yG-ctN"/>
+        <segue reference="zQl-ZR-KSR"/>
+        <segue reference="9Og-a4-lyq"/>
     </inferredMetricsTieBreakers>
 </document>
