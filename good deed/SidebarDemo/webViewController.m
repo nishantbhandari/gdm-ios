@@ -31,7 +31,12 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
+    NSLog(@"%f",self.view.frame.size.height);
+    NSLog(@"%f",_webpage.frame.size.height);
+    
 
+    
+    
     _sidebarButton.tintColor = [UIColor blackColor];
 
     //Navigation Logo

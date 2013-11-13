@@ -123,7 +123,7 @@
                                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                             </imageView>
                                             <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="5" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" preferredMaxLayoutWidth="300" translatesAutoresizingMaskIntoConstraints="NO" id="9BZ-fO-2wg">
-                                                <rect key="frame" x="10" y="-10" width="300" height="123"/>
+                                                <rect key="frame" x="3" y="0.0" width="300" height="123"/>
                                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                 <string key="text">Share your good deeds with everyone, so they know how awesome you are!
 Tell us about them in any way you want.</string>
@@ -602,6 +602,24 @@ and see Mumbai dazzle!</string>
             </objects>
             <point key="canvasLocation" x="1632" y="335"/>
         </scene>
+        <!--View Controller-->
+        <scene sceneID="4vI-Qj-gyB">
+            <objects>
+                <viewController id="K4I-52-OSb" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="YFW-tP-P4B"/>
+                        <viewControllerLayoutGuide type="bottom" id="IMD-os-5FH"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="iMg-lm-AuP">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="a5U-hh-wK4" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2030" y="335"/>
+        </scene>
         <!--Ft View Controller-->
         <scene sceneID="lrB-DH-OFD">
             <objects>
@@ -705,11 +723,11 @@ you know.</string>
                                         <rect key="frame" x="0.0" y="0.0" width="320" height="700"/>
                                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                         <subviews>
-                                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="0u1-MU-wvz">
+                                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="0u1-MU-wvz">
                                                 <rect key="frame" x="135" y="32" width="50" height="50"/>
                                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                             </imageView>
-                                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Tejas Hingu" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="zoC-xu-Tw3">
+                                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="zoC-xu-Tw3">
                                                 <rect key="frame" x="24" y="96" width="272" height="21"/>
                                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                 <fontDescription key="fontDescription" name="Arial-BoldMT" family="Arial" pointSize="16"/>
@@ -778,7 +796,9 @@ We’re also going to pick the most heartwarming deeds everyday.
                     </view>
                     <connections>
                         <outlet property="imgView" destination="YKZ-tl-K9z" id="2Jd-C8-4yY"/>
+                        <outlet property="lblName" destination="zoC-xu-Tw3" id="mkW-Xr-bI4"/>
                         <outlet property="msgTextView" destination="sf8-RW-MEj" id="d0O-Cw-nBn"/>
+                        <outlet property="profImg" destination="0u1-MU-wvz" id="zdg-Zw-9k5"/>
                         <outlet property="ty2ScrollView" destination="g0w-Fy-PRZ" id="WN3-Pm-NvG"/>
                         <outlet property="ty2View" destination="CUV-jX-7Pa" id="k50-eV-mDd"/>
                     </connections>
@@ -1067,6 +1087,6 @@ We’re also going to pick the most heartwarming deeds everyday.
     </simulatedMetricsContainer>
     <inferredMetricsTieBreakers>
         <segue reference="zQl-ZR-KSR"/>
-        <segue reference="9Og-a4-lyq"/>
+        <segue reference="34d-yG-ctN"/>
     </inferredMetricsTieBreakers>
 </document>

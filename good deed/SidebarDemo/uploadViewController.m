@@ -41,6 +41,7 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
+    
     UIColor *borderColor = [UIColor colorWithRed:105.0/255.0 green:190.0/255.0 blue:40.0/255.0 alpha:1.0];
     [imageView.layer setBorderColor:borderColor.CGColor];
     [imageView.layer setBorderWidth:3.0];
@@ -74,7 +75,7 @@
         NSLog(@"%@",userData[@"id"]);
         
         
-        
+        fbname = userData[@"name"];
         
         NSMutableDictionary *userProfile = [NSMutableDictionary dictionaryWithCapacity:6];
         
@@ -138,23 +139,26 @@
         NSData *returnData = [NSURLConnection sendSynchronousRequest:request returningResponse:nil error:nil];
         NSString *returnString = [[NSString alloc] initWithData:returnData encoding:NSUTF8StringEncoding];
         NSLog(@"%@",returnString);
-        if ([returnString isEqualToString:@"1"]){
+//        if ([returnString isEqualToString:@"1"]){
             // - code after image is uploaded
             ty2ViewController *ty2ViewController = [self.storyboard instantiateViewControllerWithIdentifier:@"ty2ViewController"];
             
-
-            ty2ViewController.imgView.image = image;
-            //                        regViewController.fb_name = user_Data
+            ty2ViewController.UplImg = image;
+        ty2ViewController.msgTxt = smallText.text;
+        ty2ViewController.fb_id = fbid;
+        ty2ViewController.fb_name = fbname;
+        
+        //                        regViewController.fb_name = user_Data
             // If you are using navigation controller, you can call
             [self.navigationController pushViewController:ty2ViewController animated:YES];
 
             
-        }        else if ([returnString isEqualToString:@"0"]){
+//        }        else if ([returnString isEqualToString:@"0"]){
             
             
             // error handling
-            [_activityInd stopAnimating];
-        }
+//            [_activityInd stopAnimating];
+//        }
 
         
     }

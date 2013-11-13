@@ -18,6 +18,7 @@
     NSString *checkMedia;
 
     NSString *fbid;
+    NSString *fbname;
     NSString *msg;
     IBOutlet UITextView *largeText;
     IBOutlet UITextView *smallText;

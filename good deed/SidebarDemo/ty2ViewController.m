@@ -32,6 +32,22 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
+    NSString *mainurl = [NSString stringWithFormat:@"http://graph.facebook.com/%@/picture",_fb_id];
+    NSURL *url = [NSURL URLWithString:mainurl];
+    
+    NSData *data = [[NSData alloc] initWithContentsOfURL:url];
+    
+
+
+    _profImg.image = [[UIImage alloc] initWithData:data];
+    _msgTextView.text = _msgTxt;
+    _imgView.image = _UplImg;
+    _lblName.text = _fb_name;
+    _profImg.frame = CGRectMake(_profImg.frame.origin.x, _profImg.frame.origin.y,
+                                 50, 50);
+
+    NSLog(@"%@ %@ %@",_fb_name,_fb_id, mainurl);
+    NSLog(@"%f wid - %f", _profImg.frame.size.height , _profImg.frame.size.width);
 	// Do any additional setup after loading the view.
 }
 
