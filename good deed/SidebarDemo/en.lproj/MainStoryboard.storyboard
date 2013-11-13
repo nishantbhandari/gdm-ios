@@ -889,13 +889,13 @@ the most heartwarming deeds everyday!</string>
                                     <rect key="frame" x="0.0" y="0.0" width="320" height="43"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
-                                        <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" fixedFrame="YES" text="Join the GDM" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="mBJ-0V-eQ6">
-                                            <rect key="frame" x="75" y="11" width="139" height="22"/>
+                                        <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" fixedFrame="YES" text="Submit a Deed" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="mBJ-0V-eQ6">
+                                            <rect key="frame" x="75" y="11" width="132" height="22"/>
                                             <fontDescription key="fontDescription" name="Arial-BoldMT" family="Arial" pointSize="19"/>
                                             <color key="textColor" red="0.0078431372550000003" green="0.52156862749999999" blue="0.71372549019999998" alpha="1" colorSpace="calibratedRGB"/>
                                             <color key="highlightedColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                         </label>
-                                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" fixedFrame="YES" image="good deed-01" translatesAutoresizingMaskIntoConstraints="NO" id="tlE-sc-T9Z">
+                                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" fixedFrame="YES" image="submit ur GD-01" translatesAutoresizingMaskIntoConstraints="NO" id="tlE-sc-T9Z">
                                             <rect key="frame" x="20" y="14" width="20" height="20"/>
                                         </imageView>
                                     </subviews>
@@ -908,13 +908,13 @@ the most heartwarming deeds everyday!</string>
                                     <rect key="frame" x="0.0" y="0.0" width="320" height="43"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
-                                        <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" fixedFrame="YES" text="Submit a Deed" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Aw0-RU-vTq">
+                                        <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" fixedFrame="YES" text="Gallery" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Aw0-RU-vTq">
                                             <rect key="frame" x="75" y="11" width="206" height="22"/>
                                             <fontDescription key="fontDescription" name="Arial-BoldMT" family="Arial" pointSize="19"/>
                                             <color key="textColor" red="0.0078431372550000003" green="0.52156862749999999" blue="0.71372549019999998" alpha="1" colorSpace="calibratedRGB"/>
                                             <color key="highlightedColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                         </label>
-                                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" fixedFrame="YES" image="submit ur GD-01" translatesAutoresizingMaskIntoConstraints="NO" id="zUO-Vh-dId">
+                                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" fixedFrame="YES" image="GD gallery-01" translatesAutoresizingMaskIntoConstraints="NO" id="zUO-Vh-dId">
                                             <rect key="frame" x="20" y="11" width="20" height="20"/>
                                         </imageView>
                                     </subviews>
@@ -930,13 +930,13 @@ the most heartwarming deeds everyday!</string>
                                     <rect key="frame" x="0.0" y="0.0" width="320" height="43"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
-                                        <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" fixedFrame="YES" text="Gallery" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="HXd-oN-x9o">
+                                        <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" fixedFrame="YES" text="Map" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="HXd-oN-x9o">
                                             <rect key="frame" x="75" y="10" width="166" height="22"/>
                                             <fontDescription key="fontDescription" name="Arial-BoldMT" family="Arial" pointSize="19"/>
                                             <color key="textColor" red="0.0078431372550000003" green="0.52156862749999999" blue="0.71372549019999998" alpha="1" colorSpace="calibratedRGB"/>
                                             <color key="highlightedColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                         </label>
-                                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" fixedFrame="YES" image="GD gallery-01" translatesAutoresizingMaskIntoConstraints="NO" id="sCl-pi-ZeY">
+                                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" fixedFrame="YES" image="map-01" translatesAutoresizingMaskIntoConstraints="NO" id="sCl-pi-ZeY">
                                             <rect key="frame" x="20" y="11" width="20" height="20"/>
                                         </imageView>
                                     </subviews>
@@ -949,13 +949,13 @@ the most heartwarming deeds everyday!</string>
                                     <rect key="frame" x="0.0" y="0.0" width="320" height="43"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
-                                        <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" fixedFrame="YES" text="Map" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="REj-4r-F55">
+                                        <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" fixedFrame="YES" text="Goodies" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="REj-4r-F55">
                                             <rect key="frame" x="75" y="11" width="164" height="22"/>
                                             <fontDescription key="fontDescription" name="Arial-BoldMT" family="Arial" pointSize="19"/>
                                             <color key="textColor" red="0.0078431372550000003" green="0.52156862749999999" blue="0.71372549019999998" alpha="1" colorSpace="calibratedRGB"/>
                                             <color key="highlightedColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                         </label>
-                                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" fixedFrame="YES" image="map-01" translatesAutoresizingMaskIntoConstraints="NO" id="gKM-B8-byC">
+                                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" fixedFrame="YES" image="rewards-01" translatesAutoresizingMaskIntoConstraints="NO" id="gKM-B8-byC">
                                             <rect key="frame" x="20" y="11" width="20" height="20"/>
                                         </imageView>
                                     </subviews>
@@ -971,13 +971,13 @@ the most heartwarming deeds everyday!</string>
                                     <rect key="frame" x="0.0" y="0.0" width="320" height="43"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
-                                        <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" fixedFrame="YES" text="Goodies" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="zON-Uh-NUd">
+                                        <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" fixedFrame="YES" text="Partners" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="zON-Uh-NUd">
                                             <rect key="frame" x="75" y="11" width="139" height="22"/>
                                             <fontDescription key="fontDescription" name="Arial-BoldMT" family="Arial" pointSize="19"/>
                                             <color key="textColor" red="0.0078431372550000003" green="0.52156862749999999" blue="0.71372549019999998" alpha="1" colorSpace="calibratedRGB"/>
                                             <color key="highlightedColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                         </label>
-                                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" fixedFrame="YES" image="rewards-01" translatesAutoresizingMaskIntoConstraints="NO" id="hJa-dP-2pk">
+                                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" fixedFrame="YES" image="partner-01" translatesAutoresizingMaskIntoConstraints="NO" id="hJa-dP-2pk">
                                             <rect key="frame" x="20" y="11" width="20" height="20"/>
                                         </imageView>
                                     </subviews>
@@ -993,33 +993,14 @@ the most heartwarming deeds everyday!</string>
                                     <rect key="frame" x="0.0" y="0.0" width="320" height="43"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
-                                        <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" fixedFrame="YES" text="Partners" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="tIG-Gq-3Og">
+                                        <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" fixedFrame="YES" text="Just in!" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="tIG-Gq-3Og">
                                             <rect key="frame" x="75" y="11" width="139" height="22"/>
                                             <fontDescription key="fontDescription" name="Arial-BoldMT" family="Arial" pointSize="19"/>
                                             <color key="textColor" red="0.0078431372550000003" green="0.52156862749999999" blue="0.71372549019999998" alpha="1" colorSpace="calibratedRGB"/>
                                             <color key="highlightedColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                         </label>
-                                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" fixedFrame="YES" image="partner-01" translatesAutoresizingMaskIntoConstraints="NO" id="4H8-YX-MBS">
+                                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" fixedFrame="YES" image="just in" translatesAutoresizingMaskIntoConstraints="NO" id="4H8-YX-MBS">
                                             <rect key="frame" x="20" y="11" width="20" height="18"/>
-                                        </imageView>
-                                    </subviews>
-                                </tableViewCellContentView>
-                            </tableViewCell>
-                            <tableViewCell contentMode="scaleToFill" selectionStyle="none" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="tag" id="i6V-vb-QlA">
-                                <rect key="frame" x="0.0" y="347" width="320" height="44"/>
-                                <autoresizingMask key="autoresizingMask"/>
-                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="i6V-vb-QlA" id="feP-qb-DRB">
-                                    <rect key="frame" x="0.0" y="0.0" width="320" height="43"/>
-                                    <autoresizingMask key="autoresizingMask"/>
-                                    <subviews>
-                                        <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" fixedFrame="YES" text="Just in!" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="QgQ-C2-qvL">
-                                            <rect key="frame" x="75" y="11" width="139" height="22"/>
-                                            <fontDescription key="fontDescription" name="Arial-BoldMT" family="Arial" pointSize="19"/>
-                                            <color key="textColor" red="0.0078431372550000003" green="0.52156862749999999" blue="0.71372549019999998" alpha="1" colorSpace="calibratedRGB"/>
-                                            <color key="highlightedColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                        </label>
-                                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" fixedFrame="YES" image="just in" translatesAutoresizingMaskIntoConstraints="NO" id="qTJ-Gl-SSa">
-                                            <rect key="frame" x="20" y="11" width="20" height="20"/>
                                         </imageView>
                                     </subviews>
                                 </tableViewCellContentView>
@@ -1095,7 +1076,6 @@ the most heartwarming deeds everyday!</string>
         <image name="cup3" width="400" height="403"/>
         <image name="cup4" width="400" height="403"/>
         <image name="fblogin" width="400" height="100"/>
-        <image name="good deed-01" width="83" height="83"/>
         <image name="home" width="83" height="83"/>
         <image name="just in" width="75" height="83"/>
         <image name="map-01" width="83" height="83"/>
@@ -1119,6 +1099,6 @@ the most heartwarming deeds everyday!</string>
     </simulatedMetricsContainer>
     <inferredMetricsTieBreakers>
         <segue reference="zQl-ZR-KSR"/>
-        <segue reference="34d-yG-ctN"/>
+        <segue reference="9Og-a4-lyq"/>
     </inferredMetricsTieBreakers>
 </document>
