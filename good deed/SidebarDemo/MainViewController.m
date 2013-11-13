@@ -32,7 +32,6 @@
 {
     [super viewDidLoad];
     //-youtube
-    
     [self.view setBackgroundColor:[UIColor blackColor]];
     
     //create the scrollview with specific frame

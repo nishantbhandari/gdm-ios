@@ -143,7 +143,7 @@
             ty2ViewController *ty2ViewController = [self.storyboard instantiateViewControllerWithIdentifier:@"ty2ViewController"];
             
 
-            
+            ty2ViewController.imgView.image = image;
             //                        regViewController.fb_name = user_Data
             // If you are using navigation controller, you can call
             [self.navigationController pushViewController:ty2ViewController animated:YES];
