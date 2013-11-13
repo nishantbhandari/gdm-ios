@@ -7,7 +7,7 @@
 //
 
 #import "tyViewController.h"
-
+#import "SWRevealViewController.h"
 @interface tyViewController ()
 
 @end
@@ -39,7 +39,13 @@
         self.navigationItem.titleView = backView;
         self.navigationItem.hidesBackButton = YES;
 	// Do any additional setup after loading the view.
+    _sidebarButton.tintColor = [UIColor whiteColor];
+    //
+    //    // Set the side bar button action. When it's tapped, it'll show up the sidebar.
+    _sidebarButton.target = self.revealViewController;
+    _sidebarButton.action = @selector(revealToggle:);
 }
+
 
 - (void)didReceiveMemoryWarning
 {

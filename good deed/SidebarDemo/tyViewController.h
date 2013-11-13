@@ -15,5 +15,6 @@
 @property (strong, nonatomic) IBOutlet UIScrollView *tyscroll;
 @property (strong, nonatomic) IBOutlet UIView *tyview;
 - (IBAction)share:(id)sender;
+@property (weak, nonatomic) IBOutlet UIBarButtonItem *sidebarButton;
 
 @end

@@ -19,6 +19,7 @@
 		196733701833BE28001ADBAC /* afRegViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1967336F1833BE28001ADBAC /* afRegViewController.m */; };
 		196733761833E94F001ADBAC /* loggedViewContorller.m in Sources */ = {isa = PBXBuildFile; fileRef = 196733751833E94F001ADBAC /* loggedViewContorller.m */; };
 		196733791833E99C001ADBAC /* MainStoryboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 196733771833E99C001ADBAC /* MainStoryboard.storyboard */; };
+		1967337C1833EB4E001ADBAC /* loggedViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1967337B1833EB4D001ADBAC /* loggedViewController.m */; };
 		1970493A1832642700084F06 /* ALScrollViewPaging.m in Sources */ = {isa = PBXBuildFile; fileRef = 197049391832642700084F06 /* ALScrollViewPaging.m */; };
 		197F05A71833B1B0003FF1E4 /* galViewC.m in Sources */ = {isa = PBXBuildFile; fileRef = 197F05A61833B1B0003FF1E4 /* galViewC.m */; };
 		197F05B01833B5FD003FF1E4 /* parViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 197F05AF1833B5FD003FF1E4 /* parViewController.m */; };
@@ -70,6 +71,8 @@
 		196733741833E94F001ADBAC /* loggedViewContorller.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = loggedViewContorller.h; sourceTree = "<group>"; };
 		196733751833E94F001ADBAC /* loggedViewContorller.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = loggedViewContorller.m; sourceTree = "<group>"; };
 		196733781833E99C001ADBAC /* en */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = en; path = en.lproj/MainStoryboard.storyboard; sourceTree = "<group>"; };
+		1967337A1833EB4D001ADBAC /* loggedViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = loggedViewController.h; sourceTree = "<group>"; };
+		1967337B1833EB4D001ADBAC /* loggedViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = loggedViewController.m; sourceTree = "<group>"; };
 		197049381832642700084F06 /* ALScrollViewPaging.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ALScrollViewPaging.h; sourceTree = "<group>"; };
 		197049391832642700084F06 /* ALScrollViewPaging.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ALScrollViewPaging.m; sourceTree = "<group>"; };
 		197F05A51833B1B0003FF1E4 /* galViewC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = galViewC.h; sourceTree = "<group>"; };
@@ -241,6 +244,8 @@
 				197F05AF1833B5FD003FF1E4 /* parViewController.m */,
 				1967336E1833BE28001ADBAC /* afRegViewController.h */,
 				1967336F1833BE28001ADBAC /* afRegViewController.m */,
+				1967337A1833EB4D001ADBAC /* loggedViewController.h */,
+				1967337B1833EB4D001ADBAC /* loggedViewController.m */,
 			);
 			path = SidebarDemo;
 			sourceTree = "<group>";
@@ -361,6 +366,7 @@
 				197F05B01833B5FD003FF1E4 /* parViewController.m in Sources */,
 				199E8D8B182B5F910010D1EF /* ftViewController.m in Sources */,
 				F4EECF1E177C99F400778578 /* main.m in Sources */,
+				1967337C1833EB4E001ADBAC /* loggedViewController.m in Sources */,
 				19AF6302181A588C005928FB /* uploadViewController.m in Sources */,
 				197F05A71833B1B0003FF1E4 /* galViewC.m in Sources */,
 				F4EECF22177C99F400778578 /* AppDelegate.m in Sources */,
