@@ -12,6 +12,7 @@
 #import <MobileCoreServices/MobileCoreServices.h>
 #import <MediaPlayer/MediaPlayer.h>
 #import <Parse/Parse.h>
+#import "ty2ViewController.h"
 @interface uploadViewController ()
 
 @end
@@ -139,11 +140,18 @@
         NSLog(@"%@",returnString);
         if ([returnString isEqualToString:@"1"]){
             // - code after image is uploaded
-            NSLog(@"success yooo");
-            [_activityInd stopAnimating];
+            ty2ViewController *ty2ViewController = [self.storyboard instantiateViewControllerWithIdentifier:@"ty2ViewController"];
             
+
+            
+            //                        regViewController.fb_name = user_Data
+            // If you are using navigation controller, you can call
+            [self.navigationController pushViewController:ty2ViewController animated:YES];
+
             
         }        else if ([returnString isEqualToString:@"0"]){
+            
+            
             // error handling
             [_activityInd stopAnimating];
         }
@@ -277,7 +285,7 @@
     else{
 checkMedia = @"image";
 
-                image = [info objectForKey:UIImagePickerControllerOriginalImage];
+                image = [info objectForKey:UIImagePickerControllerEditedImage];
         [self dismissViewControllerAnimated:YES completion:NULL];
                 [imageView setImage:image];
 }

@@ -143,8 +143,9 @@ Tell us about them in any way you want.</string>
                                                 </connections>
                                             </button>
                                             <activityIndicatorView hidden="YES" opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" fixedFrame="YES" hidesWhenStopped="YES" style="whiteLarge" translatesAutoresizingMaskIntoConstraints="NO" id="1t0-We-its">
-                                                <rect key="frame" x="135" y="210" width="37" height="37"/>
+                                                <rect key="frame" x="135" y="181" width="37" height="37"/>
                                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                <color key="color" red="0.41176470590000003" green="0.74509803919999995" blue="0.15686274510000001" alpha="1" colorSpace="calibratedRGB"/>
                                             </activityIndicatorView>
                                             <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="MUA-2Z-6LJ">
                                                 <rect key="frame" x="48" y="225" width="210" height="52"/>
@@ -687,7 +688,7 @@ you know.</string>
         <!--Ty2 View Controller-->
         <scene sceneID="1bC-zM-bxe">
             <objects>
-                <viewController id="DJt-l9-Ksf" customClass="ty2ViewController" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="ty2ViewController" id="DJt-l9-Ksf" customClass="ty2ViewController" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="krX-GM-edV"/>
                         <viewControllerLayoutGuide type="bottom" id="dEU-pm-wKx"/>

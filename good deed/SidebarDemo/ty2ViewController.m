@@ -7,7 +7,7 @@
 //
 
 #import "ty2ViewController.h"
-
+#import "MainViewController.h"
 @interface ty2ViewController ()
 
 @end
