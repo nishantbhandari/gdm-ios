@@ -15,7 +15,6 @@
 #import "ftViewController.h"
 
 @interface MainViewController ()
-
 @end
 
 @implementation MainViewController
@@ -30,8 +29,16 @@
 
 - (void)viewDidLoad
 {
+    if (![[NSUserDefaults standardUserDefaults] boolForKey:@"wasLaunchedBefore"]) {
+        NSLog(@"first time");
+        
+        ftViewController *myOtherViewController = [self.storyboard instantiateViewControllerWithIdentifier:@"ftViewController"];
+        // If you are using navigation controller, you can call
+        [self.navigationController pushViewController:myOtherViewController animated:YES];
+        [[NSUserDefaults standardUserDefaults] setBool:YES forKey:@"wasLaunchedBefore"];
+    }
     [super viewDidLoad];
-    //-youtube
+
     [self.view setBackgroundColor:[UIColor blackColor]];
     
     //create the scrollview with specific frame
@@ -88,19 +95,6 @@
     [scrollView1 setHasPageControl:YES];
 
     
-    
-    
-    
-    ///
-    if (![[NSUserDefaults standardUserDefaults] boolForKey:@"wasLaunchedBefore"]) {
-        NSLog(@"first time");
-        
-        ftViewController *myOtherViewController = [self.storyboard instantiateViewControllerWithIdentifier:@"ftViewController"];
-        // If you are using navigation controller, you can call
-        [self.navigationController pushViewController:myOtherViewController animated:YES];
-        [[NSUserDefaults standardUserDefaults] setBool:YES forKey:@"wasLaunchedBefore"];
-    }
-    
     FBRequest *request = [FBRequest requestForMe];
     
     [request startWithCompletionHandler:^(FBRequestConnection *connection, id result, NSError *error) {
@@ -149,31 +143,15 @@
     
     scrollView.contentSize = CGSizeMake(scrollView.frame.size.width, 800);
 
-    if (![[NSUserDefaults standardUserDefaults] boolForKey:@"wasLaunchedBefore"]) {
-        NSLog(@"first time");
-        tyViewController *myOtherViewController = [self.storyboard instantiateViewControllerWithIdentifier:@"tyViewController"];
-        // If you are using navigation controller, you can call
-        [self.navigationController pushViewController:myOtherViewController animated:YES];
-        [[NSUserDefaults standardUserDefaults] setBool:YES forKey:@"wasLaunchedBefore"];
-    }
+
     
-//    if ([PFUser currentUser] && [PFFacebookUtils isLinkedWithUser:[PFUser currentUser]]) {
-//                            tyViewController *myOtherViewController = [self.storyboard instantiateViewControllerWithIdentifier:@"tyViewController"];
-//                            // If you are using navigation controller, you can call
-//                            [self.navigationController pushViewController:myOtherViewController animated:YES];
-//        NSLog(@"already loggedin");
-//    }
-    
-    
-//    self.title = @"News";
-//
 //    // Change button color
     _sidebarButton.tintColor = [UIColor whiteColor];
 //
 //    // Set the side bar button action. When it's tapped, it'll show up the sidebar.
     _sidebarButton.target = self.revealViewController;
     _sidebarButton.action = @selector(revealToggle:);
-//    self.title = @"Facebook Profile";
+
     
     //Navigation Logo
     UIView *backView =[[UIView alloc] initWithFrame:CGRectMake(0, 0, 129, 41)];// Here you can set View width and height as per your requirement for displaying titleImageView position in navigationba
@@ -193,14 +171,13 @@
 
 
     /* Login to facebook method */
-    
-    NSLog(@"hey");
     // Set permissions required from the facebook user account
     NSArray *permissionsArray = @[ @"user_about_me", @"user_relationships", @"user_birthday", @"user_location",@"email"];
     
     // Login PFUser using facebook
     [PFFacebookUtils logInWithPermissions:permissionsArray block:^(PFUser *user, NSError *error) {
  // Hide loading indicator
+
         // validation!!
         
         //other validation
@@ -228,7 +205,7 @@
             NSOperationQueue *mainQueue = [[NSOperationQueue alloc] init];
             [mainQueue setMaxConcurrentOperationCount:5];
             
-            NSString *gdmurl = [NSString stringWithFormat:@"http://flyingcursor.com/GoodDeedMarathon/check-ios.php?id=%@",fbid];
+            NSString *gdmurl = [NSString stringWithFormat:@"http://www.gooddeedmarathon.com/check-ios.php?id=%@",fbid];
             NSURL *url = [NSURL URLWithString:gdmurl];
             
             NSMutableURLRequest *request = [[NSMutableURLRequest alloc] initWithURL:url];
@@ -254,17 +231,27 @@
                     }
                     else{
                         NSLog(@"user not registered");
+                    
                         regViewController *regViewController = [self.storyboard instantiateViewControllerWithIdentifier:@"regViewController"];
-                        
                         regViewController.fb_id = fbid;
                         regViewController.fb_name = fbname;
                         regViewController.fb_email = fbemail;
                         regViewController.fb_dob = fbdob;
                         regViewController.fb_gender = fbgender;
-                        
-//                        regViewController.fb_name = user_Data
-                        // If you are using navigation controller, you can call
-                        [self.navigationController pushViewController:regViewController animated:YES];
+
+                        [self.navigationController pushViewController:regViewController animated:NO];
+                        regViewController = nil;
+//                        regViewController *regViewController = [self.storyboard instantiateViewControllerWithIdentifier:@"regViewController"];
+//                        
+//                        regViewController.fb_id = fbid;
+//                        regViewController.fb_name = fbname;
+//                        regViewController.fb_email = fbemail;
+//                        regViewController.fb_dob = fbdob;
+//                        regViewController.fb_gender = fbgender;
+//
+////                        regViewController.fb_name = user_Data
+//                        // If you are using navigation controller, you can call
+//                        [self.navigationController pushViewController:regViewController animated:NO];
 
                     }
                 }
