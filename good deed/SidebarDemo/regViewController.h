@@ -15,6 +15,7 @@
     IBOutlet UITextField *address;
     IBOutlet UITextField *city;
     IBOutlet UITextField *pincode;
+    NSString *check;
 }
 
 @property (nonatomic, retain) NSString *fb_name;

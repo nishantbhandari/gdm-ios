@@ -52,7 +52,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="06U-Nz-tAb" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1197" y="-1074"/>
+            <point key="canvasLocation" x="1197" y="-1112"/>
         </scene>
         <!--Upload View Controller-->
         <scene sceneID="XBx-Nd-rbc">
@@ -394,7 +394,7 @@ the rest of Mumbai has done</string>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <subviews>
                                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="kjS-Ue-1VG">
-                                                <rect key="frame" x="55" y="416" width="200" height="50"/>
+                                                <rect key="frame" x="60" y="447" width="200" height="50"/>
                                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                 <state key="normal" image="fblogin">
                                                     <color key="titleColor" name="alternateSelectedControlTextColor" catalog="System" colorSpace="catalog"/>
@@ -404,10 +404,6 @@ the rest of Mumbai has done</string>
                                                     <action selector="loginButton:" destination="2" eventType="touchUpInside" id="HCk-2r-UE2"/>
                                                 </connections>
                                             </button>
-                                            <activityIndicatorView hidden="YES" opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" fixedFrame="YES" hidesWhenStopped="YES" style="whiteLarge" translatesAutoresizingMaskIntoConstraints="NO" id="AK8-5h-Tx7">
-                                                <rect key="frame" x="137" y="251" width="37" height="37"/>
-                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                            </activityIndicatorView>
                                             <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Watch our film to catch a glimpse of Mumbai's big heart." textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="4" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" preferredMaxLayoutWidth="270" translatesAutoresizingMaskIntoConstraints="NO" id="CcB-Ux-18I">
                                                 <rect key="frame" x="17" y="353" width="270" height="60"/>
                                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
@@ -460,16 +456,13 @@ First 2000 people receive the GOOD DEED BAND</string>
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Z0a-uF-A2q">
-                                                <rect key="frame" x="5" y="256" width="310" height="192"/>
+                                                <rect key="frame" x="5" y="272" width="310" height="192"/>
                                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                 <subviews>
-                                                    <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Watch our films to catch a glimpse of Mumbai's big heart." lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fM6-EZ-SwS">
-                                                        <rect key="frame" x="30" y="33" width="443" height="21"/>
+                                                    <activityIndicatorView hidden="YES" opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" fixedFrame="YES" hidesWhenStopped="YES" style="whiteLarge" translatesAutoresizingMaskIntoConstraints="NO" id="AK8-5h-Tx7">
+                                                        <rect key="frame" x="137" y="33" width="37" height="37"/>
                                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                                        <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="calibratedRGB"/>
-                                                        <nil key="highlightedColor"/>
-                                                    </label>
+                                                    </activityIndicatorView>
                                                 </subviews>
                                                 <color key="backgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
                                             </view>
@@ -508,6 +501,13 @@ First 2000 people receive the GOOD DEED BAND</string>
                                                 <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="calibratedRGB"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
+                                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Watch our films to catch a glimpse of Mumbai's big heart." lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fM6-EZ-SwS">
+                                                <rect key="frame" x="5" y="234" width="443" height="21"/>
+                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="calibratedRGB"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
                                         </subviews>
                                         <color key="backgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
                                     </view>
@@ -522,6 +522,7 @@ First 2000 people receive the GOOD DEED BAND</string>
                     <nil key="simulatedBottomBarMetrics"/>
                     <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
                     <connections>
+                        <outlet property="activityIndicator" destination="AK8-5h-Tx7" id="BiB-ef-3ux"/>
                         <outlet property="contentView" destination="nLu-qw-2Bg" id="RX1-eJ-58G"/>
                         <outlet property="scrollView" destination="TSt-ZA-aw3" id="11f-z5-9SQ"/>
                         <outlet property="sidebarButton" destination="4DU-rm-gHC" id="gCT-AB-0W6"/>
@@ -652,10 +653,10 @@ Fill them in?</string>
             </objects>
             <point key="canvasLocation" x="1632" y="335"/>
         </scene>
-        <!--View Controller-->
+        <!--Af Reg View Controller-->
         <scene sceneID="4vI-Qj-gyB">
             <objects>
-                <viewController id="K4I-52-OSb" sceneMemberID="viewController">
+                <viewController id="K4I-52-OSb" customClass="afRegViewController" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="YFW-tP-P4B"/>
                         <viewControllerLayoutGuide type="bottom" id="IMD-os-5FH"/>
@@ -663,12 +664,36 @@ Fill them in?</string>
                     <view key="view" contentMode="scaleToFill" id="iMg-lm-AuP">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="band" translatesAutoresizingMaskIntoConstraints="NO" id="u3K-zS-gQn">
+                                <rect key="frame" x="-56" y="-23" width="400" height="233"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                            </imageView>
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="14" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" preferredMaxLayoutWidth="280" translatesAutoresizingMaskIntoConstraints="NO" id="qFP-js-H53">
+                                <rect key="frame" x="20" y="143" width="280" height="293"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <string key="text">This is your Good Deed Marathon Band!The first 2000 people to register will be getting it soon.Do a good deed! Then pass your band on to someone elseso that you spread the love and cheer.Click here for a list of places in whichGood Deed Marathon Bands are available!</string>
+                                <fontDescription key="fontDescription" name="ArialMT" family="Arial" pointSize="15"/>
+                                <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="h1L-E9-QKS">
+                                <rect key="frame" x="121" y="420" width="61" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" red="0.41176470590000003" green="0.74509803919999995" blue="0.15686274510000001" alpha="1" colorSpace="calibratedRGB"/>
+                                <state key="normal" title="Next">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
+                    <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="a5U-hh-wK4" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2030" y="335"/>
+            <point key="canvasLocation" x="1998" y="349"/>
         </scene>
         <!--View Controller-->
         <scene sceneID="fJs-zN-BvR">
@@ -1008,6 +1033,9 @@ the most heartwarming deeds everyday!</string>
                                         </imageView>
                                     </subviews>
                                 </tableViewCellContentView>
+                                <connections>
+                                    <segue destination="6R0-vz-l6u" kind="custom" customClass="SWRevealViewControllerSegue" id="GC9-qJ-UUc"/>
+                                </connections>
                             </tableViewCell>
                             <tableViewCell contentMode="scaleToFill" selectionStyle="none" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="wishlist" id="Z8G-Uy-alC">
                                 <rect key="frame" x="0.0" y="215" width="320" height="44"/>
@@ -1135,6 +1163,7 @@ the most heartwarming deeds everyday!</string>
     <resources>
         <image name="GD gallery-01" width="83" height="83"/>
         <image name="GDM_logo" width="563" height="499"/>
+        <image name="band" width="497" height="289"/>
         <image name="cup1" width="400" height="403"/>
         <image name="cup2" width="400" height="403"/>
         <image name="cup3" width="400" height="403"/>

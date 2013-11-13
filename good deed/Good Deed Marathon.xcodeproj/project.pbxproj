@@ -17,6 +17,7 @@
 		1941E2741830EE7500B89F01 /* menu@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 1941E2711830EE7500B89F01 /* menu@2x.png */; };
 		1941E2751830EE7500B89F01 /* nav_bg.png in Resources */ = {isa = PBXBuildFile; fileRef = 1941E2721830EE7500B89F01 /* nav_bg.png */; };
 		1967336D1833BBB3001ADBAC /* MainStoryboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1967336B1833BBB3001ADBAC /* MainStoryboard.storyboard */; };
+		196733701833BE28001ADBAC /* afRegViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1967336F1833BE28001ADBAC /* afRegViewController.m */; };
 		1970493A1832642700084F06 /* ALScrollViewPaging.m in Sources */ = {isa = PBXBuildFile; fileRef = 197049391832642700084F06 /* ALScrollViewPaging.m */; };
 		197F05A71833B1B0003FF1E4 /* galViewC.m in Sources */ = {isa = PBXBuildFile; fileRef = 197F05A61833B1B0003FF1E4 /* galViewC.m */; };
 		197F05B01833B5FD003FF1E4 /* parViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 197F05AF1833B5FD003FF1E4 /* parViewController.m */; };
@@ -64,6 +65,8 @@
 		1941E2711830EE7500B89F01 /* menu@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "menu@2x.png"; path = "SidebarDemo/menu@2x.png"; sourceTree = "<group>"; };
 		1941E2721830EE7500B89F01 /* nav_bg.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = nav_bg.png; path = SidebarDemo/nav_bg.png; sourceTree = "<group>"; };
 		1967336C1833BBB3001ADBAC /* en */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = en; path = en.lproj/MainStoryboard.storyboard; sourceTree = "<group>"; };
+		1967336E1833BE28001ADBAC /* afRegViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = afRegViewController.h; sourceTree = "<group>"; };
+		1967336F1833BE28001ADBAC /* afRegViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = afRegViewController.m; sourceTree = "<group>"; };
 		197049381832642700084F06 /* ALScrollViewPaging.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ALScrollViewPaging.h; sourceTree = "<group>"; };
 		197049391832642700084F06 /* ALScrollViewPaging.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ALScrollViewPaging.m; sourceTree = "<group>"; };
 		197F05A51833B1B0003FF1E4 /* galViewC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = galViewC.h; sourceTree = "<group>"; };
@@ -231,6 +234,8 @@
 				197F05A61833B1B0003FF1E4 /* galViewC.m */,
 				197F05AE1833B5FD003FF1E4 /* parViewController.h */,
 				197F05AF1833B5FD003FF1E4 /* parViewController.m */,
+				1967336E1833BE28001ADBAC /* afRegViewController.h */,
+				1967336F1833BE28001ADBAC /* afRegViewController.m */,
 			);
 			path = SidebarDemo;
 			sourceTree = "<group>";
@@ -358,6 +363,7 @@
 				F4EECF2E177C99F400778578 /* MainViewController.m in Sources */,
 				19AE5806181A3CB300499F29 /* regViewController.m in Sources */,
 				F4EECF4A177DF87700778578 /* SidebarViewController.m in Sources */,
+				196733701833BE28001ADBAC /* afRegViewController.m in Sources */,
 				19D3ABAD182A908300522DB4 /* tyViewController.m in Sources */,
 				09AF273C1832A991003EDD7C /* ty2ViewController.m in Sources */,
 				19103CF0182250F800F3C84F /* webViewController.m in Sources */,

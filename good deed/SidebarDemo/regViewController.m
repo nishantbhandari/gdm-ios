@@ -43,7 +43,7 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-    
+
     //Navigation Logo
     UIView *backView =[[UIView alloc] initWithFrame:CGRectMake(0, 0, 129, 41)];// Here you can set View width and height as per your requirement for displaying titleImageView position in navigationba
     UIImageView *titleImageView = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"navlogo.png"]];
@@ -72,22 +72,92 @@
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
 }
+
+
 - (IBAction)register:(id)sender {
-    NSLog(@"%@", phone.text);
+   
+    
+    if([name.text length] == 0)
+    {
+        check = @"0";
+        NSLog(@"%@",name.text);
+    }
+    else if([email.text length] == 0)
+    {
+        check = @"0";
+        NSLog(@"%@",email.text);
+    }
+    else if([phone.text length] == 0)
+    {
+        check = @"0";
+                NSLog(@"%@",phone.text);
+    }
+    else if([address.text length] == 0)
+    {
+        check = @"0";
+    }
+    else if([city.text length] == 0)
+    {
+        check = @"0";
+    }
+    else if([pincode.text length] == 0)
+    {
+        check = @"0";
+    }
+    else {
+        check = @"1";
+        }
+
+
+    
+    
+    if([check isEqualToString:@"1"])
+    {
+
     
     NSString * post = [[NSString alloc] initWithFormat:@"prof_id=%@&name=%@&email=%@&gender=%@&phn=%@&address=%@&dob=%@&city=Mumbai&state=Maharashtra&pin=%@",_fb_id, _fb_name, _fb_email, _fb_gender, phone.text, address.text, _fb_dob, pincode.text];
     NSData * postData = [post dataUsingEncoding:NSASCIIStringEncoding allowLossyConversion:NO];
     NSString * postLength = [NSString stringWithFormat:@"%d",[postData length]];
     NSMutableURLRequest * request = [[[NSMutableURLRequest alloc] init]autorelease];
-    [request setURL:[NSURL URLWithString:[NSString stringWithFormat:@"http://flyingcursor.com/GoodDeedMarathon/submit.php"]]];
+    [request setURL:[NSURL URLWithString:[NSString stringWithFormat:@"http://www.gooddeedmarathon/submit.php"]]];
     [request setHTTPMethod:@"POST"];
     [request setValue:postLength forHTTPHeaderField:@"Content-Length"];
     [request setValue:@"application/x-www-form-urlencoded" forHTTPHeaderField:@"Content-Type"];
     [request setHTTPBody:postData];
     NSURLConnection * conn = [[NSURLConnection alloc] initWithRequest:request delegate:self];
     
-    if (conn) NSLog(@"Connection Successful");
+    NSData *returnData = [NSURLConnection sendSynchronousRequest:request returningResponse:nil error:nil];
     
+    
+    NSString *returnString = [[NSString alloc] initWithData:returnData encoding:NSUTF8StringEncoding];
+    if([returnString isEqualToString:@"1"]){
+        NSLog(@"s8ccsa");
+    
+    }
+    else if([returnString isEqualToString:@"0"]){
+        UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Uh oh! Error occurred try again"
+                                                        message:@""
+                                                       delegate:self
+                                              cancelButtonTitle:@"Ok"
+                                              otherButtonTitles:nil, nil];
+        [alert show];
+        [alert release];
+    
+    }
+    }
+    else if([check isEqualToString:@"0"])
+    {
+        UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Uh oh! Please fill  all the details."
+                                                        message:@""
+                                                       delegate:self
+                                              cancelButtonTitle:@"Ok"
+                                              otherButtonTitles:nil, nil];
+        [alert show];
+        [alert release];
+    
+    }
+    
+//    [check release];
     
     
 }
