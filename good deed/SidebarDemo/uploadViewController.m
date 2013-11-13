@@ -139,7 +139,7 @@
         NSData *returnData = [NSURLConnection sendSynchronousRequest:request returningResponse:nil error:nil];
         NSString *returnString = [[NSString alloc] initWithData:returnData encoding:NSUTF8StringEncoding];
         NSLog(@"%@",returnString);
-//        if ([returnString isEqualToString:@"1"]){
+        if ([returnString isEqualToString:@"1"]){
             // - code after image is uploaded
             ty2ViewController *ty2ViewController = [self.storyboard instantiateViewControllerWithIdentifier:@"ty2ViewController"];
             
@@ -148,17 +148,14 @@
         ty2ViewController.fb_id = fbid;
         ty2ViewController.fb_name = fbname;
         
-        //                        regViewController.fb_name = user_Data
-            // If you are using navigation controller, you can call
-            [self.navigationController pushViewController:ty2ViewController animated:YES];
+        [self.navigationController pushViewController:ty2ViewController animated:YES];
 
             
-//        }        else if ([returnString isEqualToString:@"0"]){
+       }        else if ([returnString isEqualToString:@"0"]){
             
             
-            // error handling
-//            [_activityInd stopAnimating];
-//        }
+           [NSThread detachNewThreadSelector:@selector(threadStartAnimating:) toTarget:self withObject:nil];
+       }
 
         
     }
