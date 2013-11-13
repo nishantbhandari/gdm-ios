@@ -24,7 +24,14 @@
     [self.scrollView layoutIfNeeded];
     self.scrollView.contentSize = self.contentView.bounds.size;
 }
+- (void)didReceiveMemoryWarning
+{
+    _activityIndicator = nil;
 
+    
+    
+    [super didReceiveMemoryWarning];
+}
 
 
 - (void)viewDidLoad
@@ -184,16 +191,18 @@
         
         if (!user) {
             if (!error) {
+                [_activityIndicator stopAnimating];
                 NSLog(@"Uh oh. The user cancelled the Facebook login.");
                 UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Log In Error" message:@"Uh oh. The user cancelled the Facebook login." delegate:nil cancelButtonTitle:nil otherButtonTitles:@"Dismiss", nil];
                 [alert show];
             } else {
+                [_activityIndicator stopAnimating];
                 NSLog(@"Uh oh. An error occurred: %@", error);
                 UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Log In Error" message:[error description] delegate:nil cancelButtonTitle:nil otherButtonTitles:@"Dismiss", nil];
                 [alert show];
             }
         } else if (user.isNew) {
-            
+            [_activityIndicator stopAnimating];
             NSLog(@"User with facebook signed up and logged in!");
             regViewController *myOtherViewController = [self.storyboard instantiateViewControllerWithIdentifier:@"regViewController"];
             // If you are using navigation controller, you can call
@@ -222,6 +231,7 @@
                     if ([strrrng isEqual:@"1"])
                     {
                         NSLog(@"success loggin with validation");
+                        [_activityIndicator stopAnimating];
                         //if user is registered!!
                         MainViewController *camViewController = [self.storyboard instantiateViewControllerWithIdentifier:@"MainViewController"];
                         // If you are using navigation controller, you can call
@@ -231,7 +241,7 @@
                     }
                     else{
                         NSLog(@"user not registered");
-                    
+                    [_activityIndicator stopAnimating];
                         regViewController *regViewController = [self.storyboard instantiateViewControllerWithIdentifier:@"regViewController"];
                         regViewController.fb_id = fbid;
                         regViewController.fb_name = fbname;
@@ -240,22 +250,12 @@
                         regViewController.fb_gender = fbgender;
 
                         [self.navigationController pushViewController:regViewController animated:NO];
-                        regViewController = nil;
-//                        regViewController *regViewController = [self.storyboard instantiateViewControllerWithIdentifier:@"regViewController"];
-//                        
-//                        regViewController.fb_id = fbid;
-//                        regViewController.fb_name = fbname;
-//                        regViewController.fb_email = fbemail;
-//                        regViewController.fb_dob = fbdob;
-//                        regViewController.fb_gender = fbgender;
-//
-////                        regViewController.fb_name = user_Data
-//                        // If you are using navigation controller, you can call
-//                        [self.navigationController pushViewController:regViewController animated:NO];
+                    
 
                     }
                 }
                 else {
+                    [_activityIndicator stopAnimating];
                     NSLog(@"An error occured, Status Code: %i", urlResponse.statusCode);
                     NSLog(@"Description: %@", [error localizedDescription]);
                     NSLog(@"Response Body: %@", [[NSString alloc] initWithData:responseData encoding:NSUTF8StringEncoding]);
@@ -267,7 +267,8 @@
         }
     }];
     
-    [_activityIndicator startAnimating]; // Show loading indicator until login is finished
-    
+    [_activityIndicator startAnimating];// Show loading indicator until login is finished
+ 
+ 
 }
 @end

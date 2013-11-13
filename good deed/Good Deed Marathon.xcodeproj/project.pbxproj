@@ -16,8 +16,9 @@
 		1941E2731830EE7500B89F01 /* menu.png in Resources */ = {isa = PBXBuildFile; fileRef = 1941E2701830EE7500B89F01 /* menu.png */; };
 		1941E2741830EE7500B89F01 /* menu@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 1941E2711830EE7500B89F01 /* menu@2x.png */; };
 		1941E2751830EE7500B89F01 /* nav_bg.png in Resources */ = {isa = PBXBuildFile; fileRef = 1941E2721830EE7500B89F01 /* nav_bg.png */; };
-		1967336D1833BBB3001ADBAC /* MainStoryboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1967336B1833BBB3001ADBAC /* MainStoryboard.storyboard */; };
 		196733701833BE28001ADBAC /* afRegViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1967336F1833BE28001ADBAC /* afRegViewController.m */; };
+		196733761833E94F001ADBAC /* loggedViewContorller.m in Sources */ = {isa = PBXBuildFile; fileRef = 196733751833E94F001ADBAC /* loggedViewContorller.m */; };
+		196733791833E99C001ADBAC /* MainStoryboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 196733771833E99C001ADBAC /* MainStoryboard.storyboard */; };
 		1970493A1832642700084F06 /* ALScrollViewPaging.m in Sources */ = {isa = PBXBuildFile; fileRef = 197049391832642700084F06 /* ALScrollViewPaging.m */; };
 		197F05A71833B1B0003FF1E4 /* galViewC.m in Sources */ = {isa = PBXBuildFile; fileRef = 197F05A61833B1B0003FF1E4 /* galViewC.m */; };
 		197F05B01833B5FD003FF1E4 /* parViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 197F05AF1833B5FD003FF1E4 /* parViewController.m */; };
@@ -64,9 +65,11 @@
 		1941E2701830EE7500B89F01 /* menu.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = menu.png; path = SidebarDemo/menu.png; sourceTree = "<group>"; };
 		1941E2711830EE7500B89F01 /* menu@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "menu@2x.png"; path = "SidebarDemo/menu@2x.png"; sourceTree = "<group>"; };
 		1941E2721830EE7500B89F01 /* nav_bg.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = nav_bg.png; path = SidebarDemo/nav_bg.png; sourceTree = "<group>"; };
-		1967336C1833BBB3001ADBAC /* en */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = en; path = en.lproj/MainStoryboard.storyboard; sourceTree = "<group>"; };
 		1967336E1833BE28001ADBAC /* afRegViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = afRegViewController.h; sourceTree = "<group>"; };
 		1967336F1833BE28001ADBAC /* afRegViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = afRegViewController.m; sourceTree = "<group>"; };
+		196733741833E94F001ADBAC /* loggedViewContorller.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = loggedViewContorller.h; sourceTree = "<group>"; };
+		196733751833E94F001ADBAC /* loggedViewContorller.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = loggedViewContorller.m; sourceTree = "<group>"; };
+		196733781833E99C001ADBAC /* en */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = en; path = en.lproj/MainStoryboard.storyboard; sourceTree = "<group>"; };
 		197049381832642700084F06 /* ALScrollViewPaging.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ALScrollViewPaging.h; sourceTree = "<group>"; };
 		197049391832642700084F06 /* ALScrollViewPaging.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ALScrollViewPaging.m; sourceTree = "<group>"; };
 		197F05A51833B1B0003FF1E4 /* galViewC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = galViewC.h; sourceTree = "<group>"; };
@@ -150,6 +153,8 @@
 			children = (
 				197049381832642700084F06 /* ALScrollViewPaging.h */,
 				197049391832642700084F06 /* ALScrollViewPaging.m */,
+				196733741833E94F001ADBAC /* loggedViewContorller.h */,
+				196733751833E94F001ADBAC /* loggedViewContorller.m */,
 			);
 			path = ALScrollViewPaging;
 			sourceTree = "<group>";
@@ -204,12 +209,12 @@
 		F4EECF17177C99F400778578 /* SidebarDemo */ = {
 			isa = PBXGroup;
 			children = (
+				196733771833E99C001ADBAC /* MainStoryboard.storyboard */,
 				197049371832642700084F06 /* ALScrollViewPaging */,
 				1941E2651830EA6600B89F01 /* IQKeyBoardManager.h */,
 				1941E2661830EA6600B89F01 /* IQKeyBoardManager.m */,
 				F4EECF20177C99F400778578 /* AppDelegate.h */,
 				F4EECF21177C99F400778578 /* AppDelegate.m */,
-				1967336B1833BBB3001ADBAC /* MainStoryboard.storyboard */,
 				19AF6300181A588C005928FB /* uploadViewController.h */,
 				19AF6301181A588C005928FB /* uploadViewController.m */,
 				F4EECF2C177C99F400778578 /* MainViewController.h */,
@@ -338,7 +343,7 @@
 				1941E2731830EE7500B89F01 /* menu.png in Resources */,
 				1941E2741830EE7500B89F01 /* menu@2x.png in Resources */,
 				1941E2751830EE7500B89F01 /* nav_bg.png in Resources */,
-				1967336D1833BBB3001ADBAC /* MainStoryboard.storyboard in Resources */,
+				196733791833E99C001ADBAC /* MainStoryboard.storyboard in Resources */,
 				F4EECF1C177C99F400778578 /* InfoPlist.strings in Resources */,
 				09A613FC1830FB2000D0CEFA /* Default-568h@2x.png in Resources */,
 				19F9BD34182A6D7A006968D4 /* Images.xcassets in Resources */,
@@ -352,6 +357,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				196733761833E94F001ADBAC /* loggedViewContorller.m in Sources */,
 				197F05B01833B5FD003FF1E4 /* parViewController.m in Sources */,
 				199E8D8B182B5F910010D1EF /* ftViewController.m in Sources */,
 				F4EECF1E177C99F400778578 /* main.m in Sources */,
@@ -375,10 +381,10 @@
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXVariantGroup section */
-		1967336B1833BBB3001ADBAC /* MainStoryboard.storyboard */ = {
+		196733771833E99C001ADBAC /* MainStoryboard.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
-				1967336C1833BBB3001ADBAC /* en */,
+				196733781833E99C001ADBAC /* en */,
 			);
 			name = MainStoryboard.storyboard;
 			sourceTree = "<group>";
