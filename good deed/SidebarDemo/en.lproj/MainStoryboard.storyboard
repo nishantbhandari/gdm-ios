@@ -2,7 +2,7 @@
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="4514" systemVersion="13A603" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" initialViewController="FUu-XX-1jG">
     <dependencies>
         <deployment defaultVersion="1552" identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="3746"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="3747"/>
     </dependencies>
     <scenes>
         <!--Web View Controller-->
@@ -10,8 +10,8 @@
             <objects>
                 <viewController storyboardIdentifier="webViewController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="6R0-vz-l6u" customClass="webViewController" sceneMemberID="viewController">
                     <layoutGuides>
-                        <viewControllerLayoutGuide type="top" id="F52-Ve-dtA"/>
-                        <viewControllerLayoutGuide type="bottom" id="sSe-06-msv"/>
+                        <viewControllerLayoutGuide type="top" id="U0a-KA-7EO"/>
+                        <viewControllerLayoutGuide type="bottom" id="mAZ-vO-yCz"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="mPn-OL-Qvg">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
@@ -59,8 +59,8 @@
             <objects>
                 <viewController storyboardIdentifier="uploadViewController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="BTz-gU-3Vq" customClass="uploadViewController" sceneMemberID="viewController">
                     <layoutGuides>
-                        <viewControllerLayoutGuide type="top" id="FmA-zw-MUo"/>
-                        <viewControllerLayoutGuide type="bottom" id="Fqa-XJ-VqS"/>
+                        <viewControllerLayoutGuide type="top" id="bAw-nb-kYV"/>
+                        <viewControllerLayoutGuide type="bottom" id="fS3-wB-5BK"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="SjG-l2-6zR">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
@@ -193,8 +193,8 @@ Tell us about them in any way you want.</string>
             <objects>
                 <viewController id="NfK-uV-oZR" customClass="goodiesViewController" sceneMemberID="viewController">
                     <layoutGuides>
-                        <viewControllerLayoutGuide type="top" id="tcn-5c-8MV"/>
-                        <viewControllerLayoutGuide type="bottom" id="0Gj-8Q-PpG"/>
+                        <viewControllerLayoutGuide type="top" id="mzJ-ox-gOF"/>
+                        <viewControllerLayoutGuide type="bottom" id="FET-nc-WcU"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="VmJ-A3-kzU">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
@@ -295,8 +295,8 @@ you could get these colourful amazing</string>
             <objects>
                 <viewController storyboardIdentifier="tyViewController" id="GtT-LL-Sdr" customClass="tyViewController" sceneMemberID="viewController">
                     <layoutGuides>
-                        <viewControllerLayoutGuide type="top" id="6Df-Pp-Je2"/>
-                        <viewControllerLayoutGuide type="bottom" id="44H-gV-nB4"/>
+                        <viewControllerLayoutGuide type="top" id="2SQ-vc-WJV"/>
+                        <viewControllerLayoutGuide type="bottom" id="z5s-PX-s7R"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="tQ0-ip-5vZ">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
@@ -382,15 +382,15 @@ the rest of Mumbai has done</string>
             <objects>
                 <viewController storyboardIdentifier="MainViewController" title="Main View Controller" id="2" customClass="MainViewController" sceneMemberID="viewController">
                     <layoutGuides>
-                        <viewControllerLayoutGuide type="top" id="A0g-gX-Kw5"/>
-                        <viewControllerLayoutGuide type="bottom" id="SUI-zf-HA5"/>
+                        <viewControllerLayoutGuide type="top" id="eol-Zg-Jk1"/>
+                        <viewControllerLayoutGuide type="bottom" id="anx-wh-IVb"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="31z-Gj-qKY">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="600"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
                             <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" delaysContentTouches="NO" translatesAutoresizingMaskIntoConstraints="NO" id="TSt-ZA-aw3">
-                                <rect key="frame" x="1" y="-49" width="320" height="643"/>
+                                <rect key="frame" x="1" y="-49" width="320" height="650"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Dyi-tb-Qi5">
@@ -398,7 +398,7 @@ the rest of Mumbai has done</string>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <subviews>
                                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="kjS-Ue-1VG">
-                                                <rect key="frame" x="60" y="375" width="200" height="50"/>
+                                                <rect key="frame" x="65" y="80" width="200" height="50"/>
                                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                 <state key="normal" image="fblogin">
                                                     <color key="titleColor" name="alternateSelectedControlTextColor" catalog="System" colorSpace="catalog"/>
@@ -408,15 +408,15 @@ the rest of Mumbai has done</string>
                                                     <action selector="loginButton:" destination="2" eventType="touchUpInside" id="HCk-2r-UE2"/>
                                                 </connections>
                                             </button>
-                                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Watch our film to catch a glimpse of Mumbai's big heart." textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="4" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" preferredMaxLayoutWidth="270" translatesAutoresizingMaskIntoConstraints="NO" id="CcB-Ux-18I">
-                                                <rect key="frame" x="30" y="314" width="270" height="60"/>
+                                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Here's what you can do" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="4" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" preferredMaxLayoutWidth="270" translatesAutoresizingMaskIntoConstraints="NO" id="x4P-If-WMm">
+                                                <rect key="frame" x="30" y="58" width="270" height="60"/>
                                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                 <fontDescription key="fontDescription" name="ArialMT" family="Arial" pointSize="15"/>
                                                 <color key="textColor" red="0.0" green="0.62352941179999999" blue="0.85490196080000003" alpha="1" colorSpace="calibratedRGB"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
-                                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" usesAttributedText="YES" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" preferredMaxLayoutWidth="270" translatesAutoresizingMaskIntoConstraints="NO" id="xIh-oW-qTQ">
-                                                <rect key="frame" x="25" y="0.0" width="270" height="58"/>
+                                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" usesAttributedText="YES" lineBreakMode="tailTruncation" numberOfLines="3" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" preferredMaxLayoutWidth="270" translatesAutoresizingMaskIntoConstraints="NO" id="xIh-oW-qTQ">
+                                                <rect key="frame" x="25" y="0.0" width="270" height="72"/>
                                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                 <attributedString key="attributedText">
                                                     <fragment content="Be a part of the best movement ever. Register Here!">
@@ -429,16 +429,49 @@ the rest of Mumbai has done</string>
                                                 </attributedString>
                                                 <nil key="highlightedColor"/>
                                             </label>
-                                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Z0a-uF-A2q">
-                                                <rect key="frame" x="10" y="427" width="300" height="192"/>
+                                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" usesAttributedText="YES" lineBreakMode="tailTruncation" numberOfLines="4" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" preferredMaxLayoutWidth="270" translatesAutoresizingMaskIntoConstraints="NO" id="73a-Vb-Xz9">
+                                                <rect key="frame" x="30" y="-6" width="270" height="93"/>
                                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                                <color key="backgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
-                                            </view>
+                                                <attributedString key="attributedText">
+                                                    <fragment content="You're a part of the movement that will make Mumbai smile, one good deed at a time!">
+                                                        <attributes>
+                                                            <color key="NSColor" red="0.41176470590000003" green="0.74509803919999995" blue="0.15686274510000001" alpha="1" colorSpace="calibratedRGB"/>
+                                                            <font key="NSFont" size="15" name="ArialMT"/>
+                                                            <paragraphStyle key="NSParagraphStyle" alignment="center" lineBreakMode="wordWrapping" baseWritingDirection="natural" lineHeightMultiple="1.2"/>
+                                                        </attributes>
+                                                    </fragment>
+                                                </attributedString>
+                                                <nil key="highlightedColor"/>
+                                            </label>
                                             <activityIndicatorView hidden="YES" opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" fixedFrame="YES" hidesWhenStopped="YES" style="whiteLarge" translatesAutoresizingMaskIntoConstraints="NO" id="AK8-5h-Tx7">
-                                                <rect key="frame" x="141" y="382" width="37" height="37"/>
+                                                <rect key="frame" x="142" y="297" width="37" height="37"/>
                                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                 <color key="color" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                             </activityIndicatorView>
+                                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Watch our film to catch a glimpse of Mumbai's big heart." textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="4" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" preferredMaxLayoutWidth="270" translatesAutoresizingMaskIntoConstraints="NO" id="CcB-Ux-18I">
+                                                <rect key="frame" x="21" y="342" width="270" height="60"/>
+                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                <fontDescription key="fontDescription" name="ArialMT" family="Arial" pointSize="15"/>
+                                                <color key="textColor" red="0.0" green="0.62352941179999999" blue="0.85490196080000003" alpha="1" colorSpace="calibratedRGB"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <view autoresizesSubviews="NO" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Pcb-JV-akx">
+                                                <rect key="frame" x="15" y="179" width="300" height="192"/>
+                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                <color key="backgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
+                                            </view>
+                                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="JOz-bT-gJO">
+                                                <rect key="frame" x="15" y="405" width="300" height="192"/>
+                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                <color key="backgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
+                                            </view>
+                                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Watch our film to catch a glimpse of Mumbai's big heart." textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="4" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" preferredMaxLayoutWidth="270" translatesAutoresizingMaskIntoConstraints="NO" id="qvA-9T-WdV">
+                                                <rect key="frame" x="30" y="130" width="270" height="60"/>
+                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                <fontDescription key="fontDescription" name="ArialMT" family="Arial" pointSize="15"/>
+                                                <color key="textColor" red="0.0" green="0.62352941179999999" blue="0.85490196080000003" alpha="1" colorSpace="calibratedRGB"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
                                         </subviews>
                                         <color key="backgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
                                     </view>
@@ -457,9 +490,16 @@ the rest of Mumbai has done</string>
                     <connections>
                         <outlet property="activityIndicator" destination="AK8-5h-Tx7" id="BiB-ef-3ux"/>
                         <outlet property="contentView" destination="Dyi-tb-Qi5" id="l4Q-FK-AXK"/>
+                        <outlet property="fblogin" destination="kjS-Ue-1VG" id="jJd-da-tA8"/>
+                        <outlet property="firstLabel1" destination="xIh-oW-qTQ" id="5eH-O8-DyK"/>
+                        <outlet property="firstLabel2" destination="CcB-Ux-18I" id="xBj-1E-PfQ"/>
+                        <outlet property="firstLabel3" destination="qvA-9T-WdV" id="2Ao-ua-JWh"/>
                         <outlet property="scrollView" destination="TSt-ZA-aw3" id="11f-z5-9SQ"/>
+                        <outlet property="secondLabel1" destination="73a-Vb-Xz9" id="QPc-l2-RTk"/>
+                        <outlet property="secondLabel2" destination="x4P-If-WMm" id="YO6-nf-Oqr"/>
                         <outlet property="sidebarButton" destination="4DU-rm-gHC" id="gCT-AB-0W6"/>
-                        <outlet property="uTubeView" destination="Z0a-uF-A2q" id="Yag-Dw-qUG"/>
+                        <outlet property="uTubeView" destination="Pcb-JV-akx" id="RgC-Bb-kh5"/>
+                        <outlet property="uTubeView2" destination="JOz-bT-gJO" id="KmF-9Q-CzJ"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="4" sceneMemberID="firstResponder"/>
@@ -471,8 +511,8 @@ the rest of Mumbai has done</string>
             <objects>
                 <viewController storyboardIdentifier="regViewController" id="7vy-P0-oh4" customClass="regViewController" sceneMemberID="viewController">
                     <layoutGuides>
-                        <viewControllerLayoutGuide type="top" id="Rtg-fj-xUO"/>
-                        <viewControllerLayoutGuide type="bottom" id="6pM-MX-0s7"/>
+                        <viewControllerLayoutGuide type="top" id="5R6-ns-YsU"/>
+                        <viewControllerLayoutGuide type="bottom" id="Eai-ER-6fe"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="foN-EX-hRS">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
@@ -591,8 +631,8 @@ Fill them in?</string>
             <objects>
                 <viewController storyboardIdentifier="afRegViewController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="K4I-52-OSb" customClass="afRegViewController" sceneMemberID="viewController">
                     <layoutGuides>
-                        <viewControllerLayoutGuide type="top" id="YFW-tP-P4B"/>
-                        <viewControllerLayoutGuide type="bottom" id="IMD-os-5FH"/>
+                        <viewControllerLayoutGuide type="top" id="46U-NJ-e3R"/>
+                        <viewControllerLayoutGuide type="bottom" id="GlB-C0-7Zs"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="iMg-lm-AuP">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
@@ -690,8 +730,8 @@ And even if you don’t have a band yet, why wait? Start doing good deeds and sh
             <objects>
                 <viewController id="IhX-CV-EYy" sceneMemberID="viewController">
                     <layoutGuides>
-                        <viewControllerLayoutGuide type="top" id="WaG-J1-l5k"/>
-                        <viewControllerLayoutGuide type="bottom" id="RaX-LQ-qqU"/>
+                        <viewControllerLayoutGuide type="top" id="EOH-dj-F90"/>
+                        <viewControllerLayoutGuide type="bottom" id="SrM-tx-Yzx"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="UQR-KE-vH8">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
@@ -708,8 +748,8 @@ And even if you don’t have a band yet, why wait? Start doing good deeds and sh
             <objects>
                 <viewController id="Ecx-uF-alB" sceneMemberID="viewController">
                     <layoutGuides>
-                        <viewControllerLayoutGuide type="top" id="eLI-Z0-yoI"/>
-                        <viewControllerLayoutGuide type="bottom" id="Wot-NA-qLP"/>
+                        <viewControllerLayoutGuide type="top" id="Ahu-wP-BhL"/>
+                        <viewControllerLayoutGuide type="bottom" id="2yZ-HZ-Qgr"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="nwv-ha-Urq">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
@@ -726,8 +766,8 @@ And even if you don’t have a band yet, why wait? Start doing good deeds and sh
             <objects>
                 <viewController storyboardIdentifier="ftViewController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="qui-aE-GZW" customClass="ftViewController" sceneMemberID="viewController">
                     <layoutGuides>
-                        <viewControllerLayoutGuide type="top" id="MtG-6X-mDz"/>
-                        <viewControllerLayoutGuide type="bottom" id="c8G-7Q-zMC"/>
+                        <viewControllerLayoutGuide type="top" id="Ovv-vd-0rt"/>
+                        <viewControllerLayoutGuide type="bottom" id="Eky-fA-sKh"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="xZv-ek-f3N">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
@@ -797,8 +837,8 @@ Be a part of the celebration.</string>
             <objects>
                 <viewController storyboardIdentifier="ty2ViewController" id="DJt-l9-Ksf" customClass="ty2ViewController" sceneMemberID="viewController">
                     <layoutGuides>
-                        <viewControllerLayoutGuide type="top" id="krX-GM-edV"/>
-                        <viewControllerLayoutGuide type="bottom" id="dEU-pm-wKx"/>
+                        <viewControllerLayoutGuide type="top" id="dS0-51-4JP"/>
+                        <viewControllerLayoutGuide type="bottom" id="5gk-SH-5XL"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="bEh-2y-hNk">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
@@ -895,8 +935,8 @@ the most heartwarming deeds everyday!</string>
             <objects>
                 <viewController id="uLt-T5-m5n" customClass="galViewC" sceneMemberID="viewController">
                     <layoutGuides>
-                        <viewControllerLayoutGuide type="top" id="ogc-zE-9ew"/>
-                        <viewControllerLayoutGuide type="bottom" id="aE3-ge-xT3"/>
+                        <viewControllerLayoutGuide type="top" id="2N3-J4-n0V"/>
+                        <viewControllerLayoutGuide type="bottom" id="vmo-x1-g7h"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="Lvx-cQ-mCJ">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
@@ -1130,8 +1170,8 @@ the most heartwarming deeds everyday!</string>
             <objects>
                 <viewController id="FUu-XX-1jG" customClass="SWRevealViewController" sceneMemberID="viewController">
                     <layoutGuides>
-                        <viewControllerLayoutGuide type="top" id="VeJ-27-qzD"/>
-                        <viewControllerLayoutGuide type="bottom" id="uOf-BQ-flI"/>
+                        <viewControllerLayoutGuide type="top" id="00F-xm-m54"/>
+                        <viewControllerLayoutGuide type="bottom" id="YyQ-hl-5pS"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="Ynq-FO-pVk">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>

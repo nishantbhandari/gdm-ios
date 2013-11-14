@@ -16,7 +16,14 @@
     NSString *fbdob;
     NSString *videoURL;
     NSString *videoHTML;
+    IBOutlet UILabel *firstLabel1;
+    IBOutlet UILabel *secondLabel1;
+    IBOutlet UILabel *secondLabel2;
+    IBOutlet UILabel *firstLabel2;
+    IBOutlet UIButton *fblogin;
+    IBOutlet UILabel *firstLabel3;
 }
+@property (strong, nonatomic) IBOutlet UIView *uTubeView2;
 @property (strong, nonatomic) IBOutlet UIView *uTubeView;
 @property (nonatomic, retain) UIWebView *myWebView;
 @property (weak, nonatomic) IBOutlet UIBarButtonItem *sidebarButton;

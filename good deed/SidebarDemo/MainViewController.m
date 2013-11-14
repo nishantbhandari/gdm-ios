@@ -45,74 +45,137 @@
         [self.navigationController pushViewController:myOtherViewController animated:YES];
         [[NSUserDefaults standardUserDefaults] setBool:YES forKey:@"wasLaunchedBefore"];
     }
-//       if ([PFUser currentUser] && [PFFacebookUtils isLinkedWithUser:[PFUser currentUser]]) {
-//                                loggedViewController *myOtherViewController = [self.storyboard instantiateViewControllerWithIdentifier:@"loggedViewController"];
-//                                // If you are using navigation controller, you can call
-//                                [self.navigationController pushViewController:myOtherViewController animated:YES];
-//            NSLog(@"already loggedin");
-//        }
-    CGRect newFrame = self.contentView.frame;
-    
-    newFrame.size.width = 320;
-    newFrame.size.height = 800;
-    [self.contentView setFrame:newFrame];
+
     [super viewDidLoad];
-
-    [self.view setBackgroundColor:[UIColor blackColor]];
-    
-    //create the scrollview with specific frame
-    ALScrollViewPaging *scrollView1 = [[ALScrollViewPaging alloc] initWithFrame:CGRectMake(0, 30, self.view.frame.size.width, 180)];
-    //array for views to add to the scrollview
-    NSMutableArray *views = [[NSMutableArray alloc] init];
-    //array for colors of views
-    
-    //cycle which creates views for the scrollview
-    NSString *str=@"http://gooddeedmarathon.com/getYoutubeVideoIds.php";
-    NSURL *url=[NSURL URLWithString:str];
-    NSData *data=[NSData dataWithContentsOfURL:url];
-    NSError *error=nil;
-    NSArray *response = [NSJSONSerialization JSONObjectWithData:data options:kNilOptions error:&error];
-    NSLog(@"value = %@", [response objectAtIndex:1] );
-    
-    
-    for (int i = 0; i < [response count]; i++) {
-        self.myWebView = [[UIWebView alloc] initWithFrame:CGRectMake(0, 0,self.view.frame.size.width,180)];
-//        UIView *view = [[UIView alloc] initWithFrame:CGRectMake(0, 0, self.view.frame.size.width, 200)];
-        NSString *urls = [response objectAtIndex:i];
-        videoURL = [NSString stringWithFormat:@"http://youtube.com/embed/%@",urls] ;
-        NSLog(@"%@",videoURL);
-        videoHTML = [NSString stringWithFormat:@"\
-                     <html>\
-                     <head>\
-                     <style type=\"text/css\">\
-                     iframe {position:absolute; top:50%%; margin-top:-130px;}\
-                     body {background-color:#000; margin:0;}\
-                     </style>\
-                     </head>\
-                     <body>\
-                     <iframe width=\"100%%\" height=\"240px\" src=\"%@\" frameborder=\"0\" allowfullscreen></iframe>\
-                     </body>\
-                     </html>", videoURL];
+    if ([PFUser currentUser] && [PFFacebookUtils isLinkedWithUser:[PFUser currentUser]]) {
         
-        [self.myWebView loadHTMLString:videoHTML baseURL:nil];
+        NSLog(@"already loggedin");
+        
+        firstLabel1.hidden = YES;
+        _uTubeView.hidden = YES;
+        fblogin.hidden = YES;
+        firstLabel3.hidden = YES;
+        ALScrollViewPaging *scrollView1 = [[ALScrollViewPaging alloc] initWithFrame:CGRectMake(0, 30, self.view.frame.size.width, 180)];
+        //array for views to add to the scrollview
+        NSMutableArray *views = [[NSMutableArray alloc] init];
+        //array for colors of views
+        
+        //cycle which creates views for the scrollview
+        NSString *str=@"http://gooddeedmarathon.com/getYoutubeVideoIds.php";
+        NSURL *url=[NSURL URLWithString:str];
+        NSData *data=[NSData dataWithContentsOfURL:url];
+        NSError *error=nil;
+        NSArray *response = [NSJSONSerialization JSONObjectWithData:data options:kNilOptions error:&error];
+        NSLog(@"value = %@", [response objectAtIndex:1] );
         
         
+        for (int i = 0; i < [response count]; i++) {
+            self.myWebView = [[UIWebView alloc] initWithFrame:CGRectMake(0, 0,self.view.frame.size.width,180)];
+            //        UIView *view = [[UIView alloc] initWithFrame:CGRectMake(0, 0, self.view.frame.size.width, 200)];
+            NSString *urls = [response objectAtIndex:i];
+            videoURL = [NSString stringWithFormat:@"http://youtube.com/embed/%@",urls] ;
+            NSLog(@"%@",videoURL);
+            videoHTML = [NSString stringWithFormat:@"\
+                         <html>\
+                         <head>\
+                         <style type=\"text/css\">\
+                         iframe {position:absolute; top:50%%; margin-top:-130px;}\
+                         body {background-color:#000; margin:0;}\
+                         </style>\
+                         </head>\
+                         <body>\
+                         <iframe width=\"100%%\" height=\"240px\" src=\"%@\" frameborder=\"0\" allowfullscreen></iframe>\
+                         </body>\
+                         </html>", videoURL];
+            
+            [self.myWebView loadHTMLString:videoHTML baseURL:nil];
+            
+            
+            
+            //
+            self.myWebView.scrollView.scrollEnabled = NO;
+            self.myWebView.scrollView.bounces = NO;
+            [self.uTubeView2 setBackgroundColor:[UIColor blackColor]];
+            [views addObject:self.myWebView];
+        }
         
-        //
-        self.myWebView.scrollView.scrollEnabled = NO;
-        self.myWebView.scrollView.bounces = NO;
-        [self.uTubeView setBackgroundColor:[UIColor blackColor]];
-        [views addObject:self.myWebView];
+        //add pages to scrollview
+        [scrollView1 addPages:views];
+        
+        //add scrollview to the view
+        [self.uTubeView2 addSubview:scrollView1];
+        
+        [scrollView1 setHasPageControl:YES];
+        
+        
+        
     }
-    
-    //add pages to scrollview
-    [scrollView1 addPages:views];
-    
-    //add scrollview to the view
-    [self.uTubeView addSubview:scrollView1];
+    else{
+        
+        _uTubeView2.hidden = YES;
+        secondLabel1.hidden = YES;
+        secondLabel2.hidden = YES;
+        firstLabel2.hidden = YES;
+        ALScrollViewPaging *scrollView1 = [[ALScrollViewPaging alloc] initWithFrame:CGRectMake(0, 30, self.view.frame.size.width, 180)];
+        //array for views to add to the scrollview
+        NSMutableArray *views = [[NSMutableArray alloc] init];
+        //array for colors of views
+        
+        //cycle which creates views for the scrollview
+        NSString *str=@"http://gooddeedmarathon.com/getYoutubeVideoIds.php";
+        NSURL *url=[NSURL URLWithString:str];
+        NSData *data=[NSData dataWithContentsOfURL:url];
+        NSError *error=nil;
+        NSArray *response = [NSJSONSerialization JSONObjectWithData:data options:kNilOptions error:&error];
+        NSLog(@"value = %@", [response objectAtIndex:1] );
+        
+        
+        for (int i = 0; i < [response count]; i++) {
+            self.myWebView = [[UIWebView alloc] initWithFrame:CGRectMake(0, 0,self.view.frame.size.width,180)];
+            //        UIView *view = [[UIView alloc] initWithFrame:CGRectMake(0, 0, self.view.frame.size.width, 200)];
+            NSString *urls = [response objectAtIndex:i];
+            videoURL = [NSString stringWithFormat:@"http://youtube.com/embed/%@",urls] ;
+            NSLog(@"%@",videoURL);
+            videoHTML = [NSString stringWithFormat:@"\
+                         <html>\
+                         <head>\
+                         <style type=\"text/css\">\
+                         iframe {position:absolute; top:50%%; margin-top:-130px;}\
+                         body {background-color:#000; margin:0;}\
+                         </style>\
+                         </head>\
+                         <body>\
+                         <iframe width=\"100%%\" height=\"240px\" src=\"%@\" frameborder=\"0\" allowfullscreen></iframe>\
+                         </body>\
+                         </html>", videoURL];
+            
+            [self.myWebView loadHTMLString:videoHTML baseURL:nil];
+            
+            
+            
+            //
+            self.myWebView.scrollView.scrollEnabled = NO;
+            self.myWebView.scrollView.bounces = NO;
+            [self.uTubeView setBackgroundColor:[UIColor blackColor]];
+            [views addObject:self.myWebView];
+        }
+        
+        //add pages to scrollview
+        [scrollView1 addPages:views];
+        
+        //add scrollview to the view
+        [self.uTubeView addSubview:scrollView1];
+        
+        [scrollView1 setHasPageControl:YES];
+        
+        
+    }
 
-    [scrollView1 setHasPageControl:YES];
+    
+    [self.view setBackgroundColor:[UIColor blackColor]];
 
+    //create the scrollview with specific frame
+    
     
     FBRequest *request = [FBRequest requestForMe];
     
@@ -260,7 +323,7 @@
                         regViewController.fb_email = fbemail;
                         regViewController.fb_dob = fbdob;
                         regViewController.fb_gender = fbgender;
-
+                        NSLog(@"%@",fbid);
                         [self.navigationController pushViewController:regViewController animated:NO];
                     
 
