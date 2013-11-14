@@ -14,6 +14,7 @@
 #import "tyViewController.h"
 #import "ftViewController.h"
 
+
 @interface MainViewController ()
 @end
 
@@ -44,6 +45,17 @@
         [self.navigationController pushViewController:myOtherViewController animated:YES];
         [[NSUserDefaults standardUserDefaults] setBool:YES forKey:@"wasLaunchedBefore"];
     }
+//       if ([PFUser currentUser] && [PFFacebookUtils isLinkedWithUser:[PFUser currentUser]]) {
+//                                loggedViewController *myOtherViewController = [self.storyboard instantiateViewControllerWithIdentifier:@"loggedViewController"];
+//                                // If you are using navigation controller, you can call
+//                                [self.navigationController pushViewController:myOtherViewController animated:YES];
+//            NSLog(@"already loggedin");
+//        }
+    CGRect newFrame = self.contentView.frame;
+    
+    newFrame.size.width = 320;
+    newFrame.size.height = 800;
+    [self.contentView setFrame:newFrame];
     [super viewDidLoad];
 
     [self.view setBackgroundColor:[UIColor blackColor]];

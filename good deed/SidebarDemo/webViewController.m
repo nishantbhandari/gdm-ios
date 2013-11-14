@@ -37,7 +37,7 @@
 
     
     
-    _sidebarButton.tintColor = [UIColor blackColor];
+//    _sidebarButton.tintColor = [UIColor blackColor];
 
     //Navigation Logo
     UIView *backView =[[UIView alloc] initWithFrame:CGRectMake(0, 0, 129, 41)];// Here you can set View width and height as per your requirement for displaying titleImageView position in navigationba
