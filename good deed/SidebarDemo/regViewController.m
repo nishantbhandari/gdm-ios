@@ -40,10 +40,52 @@
     changeBorderColorField.layer.borderWidth = 2.0f;
     changeBorderColorField.layer.borderColor=[[UIColor colorWithRed:57.0f/255.0f green:57.0f/255.0f blue:57.0f/255.0f alpha:1.0] CGColor];
 }
-
+-(NSString *)validateUser:(NSString*)userid {
+    
+    
+    NSString * post = [[NSString alloc] initWithFormat:@"id=%@",userid];
+    NSData * postData = [post dataUsingEncoding:NSASCIIStringEncoding allowLossyConversion:NO];
+    NSString * postLength = [NSString stringWithFormat:@"%d",[postData length]];
+    NSMutableURLRequest * request = [[NSMutableURLRequest alloc] init];
+    [request setURL:[NSURL URLWithString:[NSString stringWithFormat:@"http://www.gooddeedmarathon.com/check-ios.php?id=%@",userid]]];
+    [request setHTTPMethod:@"POST"];
+    [request setValue:postLength forHTTPHeaderField:@"Content-Length"];
+    [request setValue:@"application/x-www-form-urlencoded" forHTTPHeaderField:@"Content-Type"];
+    [request setHTTPBody:postData];
+    NSData *returnData = [NSURLConnection sendSynchronousRequest:request returningResponse:nil error:nil];
+    NSString *returnString = [[NSString alloc] initWithData:returnData encoding:NSUTF8StringEncoding];
+    
+    return returnString;
+}
 - (void)viewDidLoad
 {
-
+    FBRequest *fbrequest = [FBRequest requestForMe];
+    
+    [fbrequest startWithCompletionHandler:^(FBRequestConnection *connection, id result, NSError *error) {
+        //        if (!error) {
+        // result is a dictionary with the user's Facebook data
+        NSDictionary *userData = (NSDictionary *)result;
+        
+        fb_id = userData[@"id"];
+        name.text = userData[@"name"];
+        email.text = userData[@"email"];
+        fb_gender = userData[@"gender"];
+        fb_dob = userData[@"birthday"];
+        
+        NSLog(@"%@ %@ %@ %@ ",email.text,fb_dob,fb_id,name.text);
+        
+    }];
+    
+    if ([[self validateUser:fb_id] isEqualToString:@"1"]) {
+        MainViewController *MainViewController = [self.storyboard instantiateViewControllerWithIdentifier:@"MainViewController"];
+        // If you are using navigation controller, you can call
+        [self.navigationController pushViewController:MainViewController animated:YES];
+        
+    }
+    else if([[self validateUser:fb_id]isEqualToString:@"0" ])
+    {
+        NSLog(@"stay");
+    }
     [super viewDidLoad];
     
     UIView *backView =[[UIView alloc] initWithFrame:CGRectMake(0, 0, 129, 41)];// Here you can set View width and height as per your requirement for displaying titleImageView position in navigationba
@@ -53,15 +95,19 @@
     //titleImageView.contentMode = UIViewContentModeCenter;
     self.navigationItem.titleView = backView;
     //Navigation Logo
-    NSLog(@"%@",_fb_name);
-    
+    NSLog(@"%@",fb_name);
+    phone.text = @"234234234";
+    address.text = @"asasdad";
+    pincode.text = @"400079";
     // validation
 
 //    [self changeBorderColor:name];
 //    [self changeBorderColor:email];
     
-    name.text= _fb_name;
-    email.text = _fb_email;
+    
+
+ 
+
     
     city.text= @"Mumbai";
     
@@ -118,8 +164,10 @@
     {
 
         NSLog(@"1212");
-    NSString * post = [[NSString alloc] initWithFormat:@"prof_id=%@&name=%@&email=%@&gender=%@&phn=%@&address=%@&dob=%@&city=Mumbai&state=Maharashtra&pin=%@",_fb_id, _fb_name, _fb_email, _fb_gender, phone.text, address.text, _fb_dob, pincode.text];
+    NSString * post = [[NSString alloc] initWithFormat:@"prof_id=%@&name=%@&email=%@&gender=%@&phn=%@&address=%@&dob=%@&city=Mumbai&state=Maharashtra&pin=%@",fb_id, fb_name, fb_email, fb_gender, phone.text, address.text, fb_dob, pincode.text];
+
     NSData * postData = [post dataUsingEncoding:NSASCIIStringEncoding allowLossyConversion:NO];
+        
     NSString * postLength = [NSString stringWithFormat:@"%d",[postData length]];
     NSMutableURLRequest * request = [[[NSMutableURLRequest alloc] init]autorelease];
     [request setURL:[NSURL URLWithString:[NSString stringWithFormat:@"http://www.gooddeedmarathon.com/submit.php"]]];

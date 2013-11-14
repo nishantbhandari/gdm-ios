@@ -214,7 +214,7 @@ Tell us about them in any way you want.</string>
                                                 <attributedString key="attributedText">
                                                     <fragment>
                                                         <string key="content">Apart from the warm feeling of satisfaction you get with having done a good deed,
-you could get these colourful amazing</string>
+you could get these amazing colourful</string>
                                                         <attributes>
                                                             <color key="NSColor" red="0.0" green="0.62352941176470589" blue="0.85490196078431369" alpha="1" colorSpace="calibratedRGB"/>
                                                             <font key="NSFont" size="15" name="ArialMT"/>
@@ -405,10 +405,10 @@ the rest of Mumbai has done</string>
                                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                                 </state>
                                                 <connections>
-                                                    <action selector="loginButton:" destination="2" eventType="touchUpInside" id="HCk-2r-UE2"/>
+                                                    <action selector="loginn:" destination="2" eventType="touchUpInside" id="YqK-C2-lYi"/>
                                                 </connections>
                                             </button>
-                                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Here's what you can do" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="4" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" preferredMaxLayoutWidth="270" translatesAutoresizingMaskIntoConstraints="NO" id="x4P-If-WMm">
+                                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Here's what you can do:" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="4" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" preferredMaxLayoutWidth="270" translatesAutoresizingMaskIntoConstraints="NO" id="x4P-If-WMm">
                                                 <rect key="frame" x="30" y="58" width="270" height="60"/>
                                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                 <fontDescription key="fontDescription" name="ArialMT" family="Arial" pointSize="15"/>
@@ -456,12 +456,12 @@ the rest of Mumbai has done</string>
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <view autoresizesSubviews="NO" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Pcb-JV-akx">
-                                                <rect key="frame" x="15" y="179" width="300" height="192"/>
+                                                <rect key="frame" x="10" y="198" width="300" height="192"/>
                                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                 <color key="backgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
                                             </view>
                                             <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="JOz-bT-gJO">
-                                                <rect key="frame" x="15" y="405" width="300" height="192"/>
+                                                <rect key="frame" x="5" y="398" width="300" height="192"/>
                                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                 <color key="backgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
                                             </view>
@@ -498,8 +498,8 @@ the rest of Mumbai has done</string>
                         <outlet property="secondLabel1" destination="73a-Vb-Xz9" id="QPc-l2-RTk"/>
                         <outlet property="secondLabel2" destination="x4P-If-WMm" id="YO6-nf-Oqr"/>
                         <outlet property="sidebarButton" destination="4DU-rm-gHC" id="gCT-AB-0W6"/>
-                        <outlet property="uTubeView" destination="Pcb-JV-akx" id="RgC-Bb-kh5"/>
-                        <outlet property="uTubeView2" destination="JOz-bT-gJO" id="KmF-9Q-CzJ"/>
+                        <outlet property="uTubeView" destination="Pcb-JV-akx" id="hJA-RA-1xB"/>
+                        <outlet property="uTubeView2" destination="JOz-bT-gJO" id="YBQ-vT-KF4"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="4" sceneMemberID="firstResponder"/>

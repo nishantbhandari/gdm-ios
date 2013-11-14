@@ -5,7 +5,7 @@
 //  Created by Simon on 28/6/13.
 //  Copyright (c) 2013 Appcoda. All rights reserved.
 //
-
+#import <FacebookSDK/FacebookSDK.h>
 #import "AppDelegate.h"
 #import <Parse/Parse.h>
 #import "IQKeyBoardManager.h"
@@ -19,6 +19,9 @@
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
+    [Parse setApplicationId:@"tL2jrWO63TcndMOD0rE1I2wGsZ6SfJ3LH5ITaHyh"
+                  clientKey:@"lEVJDKnb5eHc3S86HyqQuiqu7sd5Jse3DCCnQELE"];
+    [PFFacebookUtils initializeFacebook];
     
     [IQKeyBoardManager installKeyboardManager];
     
@@ -34,9 +37,7 @@ if (SYSTEM_VERSION_GREATER_THAN_OR_EQUAL_TO(@"7.0")) {
 //                                                           [NSValue valueWithUIOffset:UIOffsetMake(0, 0)],
 //                                                           UITextAttributeTextShadowOffset,
 //                                                           [UIFont fontWithName:@"Helvetica-Light" size:20.0], UITextAttributeFont, nil]];
-    [Parse setApplicationId:@"tL2jrWO63TcndMOD0rE1I2wGsZ6SfJ3LH5ITaHyh"
-                  clientKey:@"lEVJDKnb5eHc3S86HyqQuiqu7sd5Jse3DCCnQELE"];
-    [PFFacebookUtils initializeFacebook];
+
     
     
     return YES;

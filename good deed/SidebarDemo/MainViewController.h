@@ -7,6 +7,7 @@
 //
 
 #import <UIKit/UIKit.h>
+#import <Parse/Parse.h>
 #import "ALScrollViewPaging.h"
 @interface MainViewController : UIViewController{
     NSString *fbid;
@@ -22,6 +23,8 @@
     IBOutlet UILabel *firstLabel2;
     IBOutlet UIButton *fblogin;
     IBOutlet UILabel *firstLabel3;
+    FBRequest *fbrequest;
+    NSString *logcheck;
 }
 @property (strong, nonatomic) IBOutlet UIView *uTubeView2;
 @property (strong, nonatomic) IBOutlet UIView *uTubeView;
@@ -31,7 +34,8 @@
 
 @property (nonatomic, retain) IBOutlet UIScrollView *scrollView;
 @property (strong, nonatomic) IBOutlet UIView *contentView;
-- (IBAction)loginButton:(id)sender;
+- (IBAction)loginn:(id)sender;
+
 
 @property (strong, nonatomic) NSString *kDCTStateSelectedServiceLineKey;
 
