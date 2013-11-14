@@ -10,6 +10,8 @@
 		09A613FC1830FB2000D0CEFA /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 09A613FB1830FB2000D0CEFA /* Default-568h@2x.png */; };
 		09AF273C1832A991003EDD7C /* ty2ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 09AF273B1832A991003EDD7C /* ty2ViewController.m */; };
 		09EAF691183218EF003F4F50 /* goodiesViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 09EAF690183218EF003F4F50 /* goodiesViewController.m */; };
+		190C937618357AA9005F3648 /* PartnersViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 190C937518357AA9005F3648 /* PartnersViewController.m */; };
+		190C937918357AB6005F3648 /* justViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 190C937818357AB6005F3648 /* justViewController.m */; };
 		19103CF0182250F800F3C84F /* webViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 19103CEF182250F800F3C84F /* webViewController.m */; };
 		1941E2671830EA6600B89F01 /* IQKeyBoardManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 1941E2661830EA6600B89F01 /* IQKeyBoardManager.m */; };
 		1941E2691830EA7A00B89F01 /* FacebookSDK.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1941E2681830EA7A00B89F01 /* FacebookSDK.framework */; };
@@ -57,6 +59,10 @@
 		09AF273B1832A991003EDD7C /* ty2ViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ty2ViewController.m; sourceTree = "<group>"; };
 		09EAF68F183218EF003F4F50 /* goodiesViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = goodiesViewController.h; sourceTree = "<group>"; };
 		09EAF690183218EF003F4F50 /* goodiesViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = goodiesViewController.m; sourceTree = "<group>"; };
+		190C937418357AA9005F3648 /* PartnersViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PartnersViewController.h; sourceTree = "<group>"; };
+		190C937518357AA9005F3648 /* PartnersViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PartnersViewController.m; sourceTree = "<group>"; };
+		190C937718357AB6005F3648 /* justViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = justViewController.h; sourceTree = "<group>"; };
+		190C937818357AB6005F3648 /* justViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = justViewController.m; sourceTree = "<group>"; };
 		19103CEE182250F800F3C84F /* webViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = webViewController.h; sourceTree = "<group>"; };
 		19103CEF182250F800F3C84F /* webViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = webViewController.m; sourceTree = "<group>"; };
 		1941E2651830EA6600B89F01 /* IQKeyBoardManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = IQKeyBoardManager.h; sourceTree = "<group>"; };
@@ -241,6 +247,10 @@
 				197F05AF1833B5FD003FF1E4 /* parViewController.m */,
 				1967336E1833BE28001ADBAC /* afRegViewController.h */,
 				1967336F1833BE28001ADBAC /* afRegViewController.m */,
+				190C937418357AA9005F3648 /* PartnersViewController.h */,
+				190C937518357AA9005F3648 /* PartnersViewController.m */,
+				190C937718357AB6005F3648 /* justViewController.h */,
+				190C937818357AB6005F3648 /* justViewController.m */,
 			);
 			path = SidebarDemo;
 			sourceTree = "<group>";
@@ -365,10 +375,12 @@
 				197F05A71833B1B0003FF1E4 /* galViewC.m in Sources */,
 				F4EECF22177C99F400778578 /* AppDelegate.m in Sources */,
 				09EAF691183218EF003F4F50 /* goodiesViewController.m in Sources */,
+				190C937918357AB6005F3648 /* justViewController.m in Sources */,
 				1970493A1832642700084F06 /* ALScrollViewPaging.m in Sources */,
 				F4EECF2E177C99F400778578 /* MainViewController.m in Sources */,
 				19AE5806181A3CB300499F29 /* regViewController.m in Sources */,
 				F4EECF4A177DF87700778578 /* SidebarViewController.m in Sources */,
+				190C937618357AA9005F3648 /* PartnersViewController.m in Sources */,
 				196733701833BE28001ADBAC /* afRegViewController.m in Sources */,
 				19D3ABAD182A908300522DB4 /* tyViewController.m in Sources */,
 				09AF273C1832A991003EDD7C /* ty2ViewController.m in Sources */,

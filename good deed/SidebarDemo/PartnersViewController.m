@@ -1,18 +1,18 @@
 //
-//  justViewController.m
+//  PartnersViewController.m
 //  Good Deed Marathon
 //
 //  Created by Nishant on 15/11/13.
 //  Copyright (c) 2013 Appcoda. All rights reserved.
 //
 
-#import "justViewController.h"
+#import "PartnersViewController.h"
 #import "SWRevealViewController.h"
-@interface justViewController ()
+@interface PartnersViewController ()
 
 @end
 
-@implementation justViewController
+@implementation PartnersViewController
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
@@ -37,14 +37,14 @@
     // Set the gesture
     [self.view addGestureRecognizer:self.revealViewController.panGestureRecognizer];
     //
-        _sidebarButton.tintColor = [UIColor whiteColor];
+        _sidebarbutton.tintColor = [UIColor whiteColor];
     //    // Set the side bar button action. When it's tapped, it'll show up the sidebar.
-    _sidebarButton.target = self.revealViewController;
-    _sidebarButton.action = @selector(revealToggle:);
+    _sidebarbutton.target = self.revealViewController;
+    _sidebarbutton.action = @selector(revealToggle:);
     NSString *fullURL = @"http://flyingcursor.com/gdm/maps.html";
     NSURL *url = [NSURL URLWithString:fullURL];
     NSURLRequest *requestObj = [NSURLRequest requestWithURL:url];
-    [_justPage loadRequest:requestObj];
+    [_partnersPage loadRequest:requestObj];
 	// Do any additional setup after loading the view.
 }
 

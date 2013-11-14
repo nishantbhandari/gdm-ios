@@ -164,7 +164,7 @@
     {
 
         NSLog(@"1212");
-    NSString * post = [[NSString alloc] initWithFormat:@"prof_id=%@&name=%@&email=%@&gender=%@&phn=%@&address=%@&dob=%@&city=Mumbai&state=Maharashtra&pin=%@",fb_id, fb_name, fb_email, fb_gender, phone.text, address.text, fb_dob, pincode.text];
+    NSString * post = [[NSString alloc] initWithFormat:@"prof_id=%@&name=%@&email=%@&gender=%@&phn=%@&address=%@&dob=%@&city=Mumbai&state=Maharashtra&pin=%@",fb_id, name.text, email.text, fb_gender, phone.text, address.text, fb_dob, pincode.text];
 
     NSData * postData = [post dataUsingEncoding:NSASCIIStringEncoding allowLossyConversion:NO];
         

@@ -930,6 +930,70 @@ the most heartwarming deeds everyday!</string>
             </objects>
             <point key="canvasLocation" x="1290" y="1077"/>
         </scene>
+        <!--Just View Controller-->
+        <scene sceneID="H9z-su-GG0">
+            <objects>
+                <viewController id="Kif-ha-kes" customClass="justViewController" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="TVm-0i-m1s"/>
+                        <viewControllerLayoutGuide type="bottom" id="IOn-Hr-jkn"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="lQI-1F-dbq">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <subviews>
+                            <webView contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Fen-cL-Nts">
+                                <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                                <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                            </webView>
+                        </subviews>
+                        <color key="backgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                    <connections>
+                        <outlet property="justPage" destination="Fen-cL-Nts" id="lW3-9H-Xub"/>
+                        <outlet property="sidebarButton" destination="L0S-Oc-S4e" id="j8d-7u-5jH"/>
+                    </connections>
+                </viewController>
+                <navigationItem id="46v-di-sdQ">
+                    <barButtonItem key="leftBarButtonItem" image="menu.png" id="L0S-Oc-S4e"/>
+                </navigationItem>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="fYu-8z-ROW" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="450" y="-1166"/>
+        </scene>
+        <!--Partners View Controller-->
+        <scene sceneID="o5V-26-G3n">
+            <objects>
+                <viewController id="F6q-Hj-Vio" customClass="PartnersViewController" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="b6a-CM-iBA"/>
+                        <viewControllerLayoutGuide type="bottom" id="XXU-xq-G8n"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="79A-KG-P9Z">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <subviews>
+                            <webView contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="MVx-0C-uT4">
+                                <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                                <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                            </webView>
+                        </subviews>
+                        <color key="backgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                    <connections>
+                        <outlet property="partnersPage" destination="MVx-0C-uT4" id="dp2-we-94X"/>
+                        <outlet property="sidebarbutton" destination="Y6e-JX-SdV" id="b9y-fk-aGu"/>
+                    </connections>
+                </viewController>
+                <navigationItem id="ovJ-df-xOR">
+                    <barButtonItem key="leftBarButtonItem" image="menu.png" id="Y6e-JX-SdV"/>
+                </navigationItem>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="XbQ-tq-aIv" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="278" y="-464"/>
+        </scene>
         <!--Gal ViewC-->
         <scene sceneID="fsb-XI-EhV">
             <objects>
@@ -1107,6 +1171,9 @@ the most heartwarming deeds everyday!</string>
                                         </imageView>
                                     </subviews>
                                 </tableViewCellContentView>
+                                <connections>
+                                    <segue destination="F6q-Hj-Vio" kind="custom" customClass="SWRevealViewControllerSegue" id="vR0-zX-uTY"/>
+                                </connections>
                             </tableViewCell>
                             <tableViewCell contentMode="scaleToFill" selectionStyle="none" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="tag" id="2ya-XD-SMQ">
                                 <rect key="frame" x="0.0" y="303" width="320" height="44"/>
@@ -1126,6 +1193,9 @@ the most heartwarming deeds everyday!</string>
                                         </imageView>
                                     </subviews>
                                 </tableViewCellContentView>
+                                <connections>
+                                    <segue destination="Kif-ha-kes" kind="custom" customClass="SWRevealViewControllerSegue" id="huv-5T-afu"/>
+                                </connections>
                             </tableViewCell>
                         </prototypes>
                         <sections/>
@@ -1221,7 +1291,7 @@ the most heartwarming deeds everyday!</string>
         <simulatedScreenMetrics key="destination" type="retina4"/>
     </simulatedMetricsContainer>
     <inferredMetricsTieBreakers>
-        <segue reference="zaF-c6-UNR"/>
-        <segue reference="34d-yG-ctN"/>
+        <segue reference="CdO-Q6-ets"/>
+        <segue reference="w4v-fJ-nlM"/>
     </inferredMetricsTieBreakers>
 </document>
