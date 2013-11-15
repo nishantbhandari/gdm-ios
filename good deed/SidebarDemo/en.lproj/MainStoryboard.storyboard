@@ -10,8 +10,8 @@
             <objects>
                 <viewController storyboardIdentifier="webViewController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="6R0-vz-l6u" customClass="webViewController" sceneMemberID="viewController">
                     <layoutGuides>
-                        <viewControllerLayoutGuide type="top" id="U0a-KA-7EO"/>
-                        <viewControllerLayoutGuide type="bottom" id="mAZ-vO-yCz"/>
+                        <viewControllerLayoutGuide type="top" id="6YC-8p-Rc8"/>
+                        <viewControllerLayoutGuide type="bottom" id="8rv-Qw-yIU"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="mPn-OL-Qvg">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
@@ -60,8 +60,8 @@
             <objects>
                 <viewController storyboardIdentifier="uploadViewController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="BTz-gU-3Vq" customClass="uploadViewController" sceneMemberID="viewController">
                     <layoutGuides>
-                        <viewControllerLayoutGuide type="top" id="bAw-nb-kYV"/>
-                        <viewControllerLayoutGuide type="bottom" id="fS3-wB-5BK"/>
+                        <viewControllerLayoutGuide type="top" id="Iuv-MY-rNN"/>
+                        <viewControllerLayoutGuide type="bottom" id="9YJ-8S-VHo"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="SjG-l2-6zR">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
@@ -71,7 +71,7 @@
                                 <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                                 <subviews>
-                                    <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="JwQ-tb-xCk">
+                                    <view contentMode="scaleToFill" ambiguous="YES" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="JwQ-tb-xCk">
                                         <rect key="frame" x="0.0" y="0.0" width="320" height="700"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <subviews>
@@ -132,8 +132,8 @@ Tell us about them in any way you want.</string>
                                                 <color key="textColor" red="0.0078431372550000003" green="0.52156862749999999" blue="0.71372549019999998" alpha="1" colorSpace="calibratedRGB"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
-                                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="8Ak-84-Lmy">
-                                                <rect key="frame" x="119" y="317" width="68" height="30"/>
+                                            <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="8Ak-84-Lmy">
+                                                <rect key="frame" x="119" y="352" width="68" height="30"/>
                                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                 <color key="backgroundColor" red="0.41176470590000003" green="0.74509803919999995" blue="0.15686274510000001" alpha="1" colorSpace="calibratedRGB"/>
                                                 <state key="normal" title="Upload">
@@ -165,6 +165,9 @@ Tell us about them in any way you want.</string>
                                             </textView>
                                         </subviews>
                                         <color key="backgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
+                                        <constraints>
+                                            <constraint firstAttribute="bottom" secondItem="8Ak-84-Lmy" secondAttribute="bottom" constant="353" id="fWe-GG-AVv"/>
+                                        </constraints>
                                     </view>
                                 </subviews>
                             </scrollView>
@@ -174,7 +177,6 @@ Tell us about them in any way you want.</string>
                     <navigationItem key="navigationItem" id="WXU-QU-EOR">
                         <barButtonItem key="leftBarButtonItem" image="menu.png" id="f5B-eN-YWe"/>
                     </navigationItem>
-                    <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
                     <connections>
                         <outlet property="activityInd" destination="1t0-We-its" id="kOr-oC-yMf"/>
                         <outlet property="contentView" destination="JwQ-tb-xCk" id="lXH-2v-iY4"/>
@@ -195,8 +197,8 @@ Tell us about them in any way you want.</string>
             <objects>
                 <viewController id="NfK-uV-oZR" customClass="goodiesViewController" sceneMemberID="viewController">
                     <layoutGuides>
-                        <viewControllerLayoutGuide type="top" id="mzJ-ox-gOF"/>
-                        <viewControllerLayoutGuide type="bottom" id="FET-nc-WcU"/>
+                        <viewControllerLayoutGuide type="top" id="cMk-4w-XZj"/>
+                        <viewControllerLayoutGuide type="bottom" id="ONR-mK-veE"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="VmJ-A3-kzU">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
@@ -297,8 +299,8 @@ you could get these amazing colourful</string>
             <objects>
                 <viewController storyboardIdentifier="tyViewController" id="GtT-LL-Sdr" customClass="tyViewController" sceneMemberID="viewController">
                     <layoutGuides>
-                        <viewControllerLayoutGuide type="top" id="2SQ-vc-WJV"/>
-                        <viewControllerLayoutGuide type="bottom" id="z5s-PX-s7R"/>
+                        <viewControllerLayoutGuide type="top" id="zeZ-7i-DQL"/>
+                        <viewControllerLayoutGuide type="bottom" id="JRr-ac-pjj"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="tQ0-ip-5vZ">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
@@ -397,8 +399,8 @@ the rest of Mumbai has done</string>
             <objects>
                 <viewController storyboardIdentifier="MainViewController" title="Main View Controller" id="2" customClass="MainViewController" sceneMemberID="viewController">
                     <layoutGuides>
-                        <viewControllerLayoutGuide type="top" id="eol-Zg-Jk1"/>
-                        <viewControllerLayoutGuide type="bottom" id="anx-wh-IVb"/>
+                        <viewControllerLayoutGuide type="top" id="dl0-9q-UbC"/>
+                        <viewControllerLayoutGuide type="bottom" id="BMJ-wU-D9M"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="31z-Gj-qKY">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="600"/>
@@ -584,8 +586,8 @@ the rest of Mumbai has done</string>
             <objects>
                 <viewController storyboardIdentifier="regViewController" id="7vy-P0-oh4" customClass="regViewController" sceneMemberID="viewController">
                     <layoutGuides>
-                        <viewControllerLayoutGuide type="top" id="5R6-ns-YsU"/>
-                        <viewControllerLayoutGuide type="bottom" id="Eai-ER-6fe"/>
+                        <viewControllerLayoutGuide type="top" id="Vxl-rg-OXf"/>
+                        <viewControllerLayoutGuide type="bottom" id="6O2-Jv-hvU"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="foN-EX-hRS">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
@@ -703,8 +705,8 @@ Fill them in?</string>
             <objects>
                 <viewController storyboardIdentifier="afRegViewController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="K4I-52-OSb" customClass="afRegViewController" sceneMemberID="viewController">
                     <layoutGuides>
-                        <viewControllerLayoutGuide type="top" id="46U-NJ-e3R"/>
-                        <viewControllerLayoutGuide type="bottom" id="GlB-C0-7Zs"/>
+                        <viewControllerLayoutGuide type="top" id="RuC-Kf-gI1"/>
+                        <viewControllerLayoutGuide type="bottom" id="3od-q7-ozf"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="iMg-lm-AuP">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
@@ -802,8 +804,8 @@ And even if you don’t have a band yet, why wait? Start doing good deeds and sh
             <objects>
                 <viewController id="IhX-CV-EYy" sceneMemberID="viewController">
                     <layoutGuides>
-                        <viewControllerLayoutGuide type="top" id="EOH-dj-F90"/>
-                        <viewControllerLayoutGuide type="bottom" id="SrM-tx-Yzx"/>
+                        <viewControllerLayoutGuide type="top" id="iL2-WX-owe"/>
+                        <viewControllerLayoutGuide type="bottom" id="76l-E6-Z84"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="UQR-KE-vH8">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
@@ -820,8 +822,8 @@ And even if you don’t have a band yet, why wait? Start doing good deeds and sh
             <objects>
                 <viewController id="Ecx-uF-alB" sceneMemberID="viewController">
                     <layoutGuides>
-                        <viewControllerLayoutGuide type="top" id="Ahu-wP-BhL"/>
-                        <viewControllerLayoutGuide type="bottom" id="2yZ-HZ-Qgr"/>
+                        <viewControllerLayoutGuide type="top" id="Hc4-GR-fJG"/>
+                        <viewControllerLayoutGuide type="bottom" id="oD8-JT-UWw"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="nwv-ha-Urq">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
@@ -838,8 +840,8 @@ And even if you don’t have a band yet, why wait? Start doing good deeds and sh
             <objects>
                 <viewController storyboardIdentifier="ftViewController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="qui-aE-GZW" customClass="ftViewController" sceneMemberID="viewController">
                     <layoutGuides>
-                        <viewControllerLayoutGuide type="top" id="Ovv-vd-0rt"/>
-                        <viewControllerLayoutGuide type="bottom" id="Eky-fA-sKh"/>
+                        <viewControllerLayoutGuide type="top" id="l99-cd-zYU"/>
+                        <viewControllerLayoutGuide type="bottom" id="FFo-wI-xpb"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="xZv-ek-f3N">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
@@ -894,8 +896,8 @@ Be a part of the celebration.</string>
             <objects>
                 <viewController storyboardIdentifier="ty2ViewController" id="DJt-l9-Ksf" customClass="ty2ViewController" sceneMemberID="viewController">
                     <layoutGuides>
-                        <viewControllerLayoutGuide type="top" id="dS0-51-4JP"/>
-                        <viewControllerLayoutGuide type="bottom" id="5gk-SH-5XL"/>
+                        <viewControllerLayoutGuide type="top" id="Dxc-hb-zbN"/>
+                        <viewControllerLayoutGuide type="bottom" id="FA7-5d-Mpo"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="bEh-2y-hNk">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
@@ -1000,8 +1002,8 @@ the most heartwarming deeds everyday!</string>
             <objects>
                 <viewController id="Kif-ha-kes" customClass="justViewController" sceneMemberID="viewController">
                     <layoutGuides>
-                        <viewControllerLayoutGuide type="top" id="TVm-0i-m1s"/>
-                        <viewControllerLayoutGuide type="bottom" id="IOn-Hr-jkn"/>
+                        <viewControllerLayoutGuide type="top" id="Oe9-kk-Utf"/>
+                        <viewControllerLayoutGuide type="bottom" id="2N5-E3-kaV"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="lQI-1F-dbq">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
@@ -1032,8 +1034,8 @@ the most heartwarming deeds everyday!</string>
             <objects>
                 <viewController id="F6q-Hj-Vio" customClass="PartnersViewController" sceneMemberID="viewController">
                     <layoutGuides>
-                        <viewControllerLayoutGuide type="top" id="b6a-CM-iBA"/>
-                        <viewControllerLayoutGuide type="bottom" id="XXU-xq-G8n"/>
+                        <viewControllerLayoutGuide type="top" id="deq-aD-GBZ"/>
+                        <viewControllerLayoutGuide type="bottom" id="IB3-Ee-HGt"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="79A-KG-P9Z">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
@@ -1064,8 +1066,8 @@ the most heartwarming deeds everyday!</string>
             <objects>
                 <viewController id="uLt-T5-m5n" customClass="galViewC" sceneMemberID="viewController">
                     <layoutGuides>
-                        <viewControllerLayoutGuide type="top" id="2N3-J4-n0V"/>
-                        <viewControllerLayoutGuide type="bottom" id="vmo-x1-g7h"/>
+                        <viewControllerLayoutGuide type="top" id="Rg4-oQ-i0e"/>
+                        <viewControllerLayoutGuide type="bottom" id="AJQ-5O-AEe"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="Lvx-cQ-mCJ">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="480"/>
@@ -1311,8 +1313,8 @@ the most heartwarming deeds everyday!</string>
             <objects>
                 <viewController id="FUu-XX-1jG" customClass="SWRevealViewController" sceneMemberID="viewController">
                     <layoutGuides>
-                        <viewControllerLayoutGuide type="top" id="00F-xm-m54"/>
-                        <viewControllerLayoutGuide type="bottom" id="YyQ-hl-5pS"/>
+                        <viewControllerLayoutGuide type="top" id="JPd-Ij-rCT"/>
+                        <viewControllerLayoutGuide type="bottom" id="qH4-IG-bHt"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="Ynq-FO-pVk">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
@@ -1364,9 +1366,9 @@ the most heartwarming deeds everyday!</string>
         <simulatedScreenMetrics key="destination" type="retina4"/>
     </simulatedMetricsContainer>
     <inferredMetricsTieBreakers>
-        <segue reference="34d-yG-ctN"/>
-        <segue reference="wBK-pm-ijv"/>
+        <segue reference="zaF-c6-UNR"/>
         <segue reference="X9G-vh-Mef"/>
+        <segue reference="NTs-uD-z9s"/>
         <segue reference="VH3-0t-n5h"/>
     </inferredMetricsTieBreakers>
 </document>
