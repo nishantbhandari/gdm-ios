@@ -46,7 +46,7 @@
     [self.view addGestureRecognizer:self.revealViewController.panGestureRecognizer];
     _sidebarButton.target = self.revealViewController;
     _sidebarButton.action = @selector(revealToggle:);
-    _sidebarButton.tintColor = [UIColor colorWithWhite:0.96f alpha:0.2f];
+        _sidebarButton.tintColor = [UIColor whiteColor];
     
 	// Do any additional setup after loading the view.
 }

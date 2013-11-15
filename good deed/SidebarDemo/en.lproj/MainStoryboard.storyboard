@@ -45,6 +45,7 @@
                     <navigationItem key="navigationItem" id="NwG-OS-F83">
                         <barButtonItem key="leftBarButtonItem" image="menu.png" id="nnB-tD-S2L"/>
                     </navigationItem>
+                    <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
                     <connections>
                         <outlet property="sidebarButton" destination="nnB-tD-S2L" id="84B-4U-3OP"/>
                         <outlet property="webpage" destination="DM9-8y-Cae" id="Cfd-eW-6Ss"/>
@@ -1067,11 +1068,11 @@ the most heartwarming deeds everyday!</string>
                         <viewControllerLayoutGuide type="bottom" id="vmo-x1-g7h"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="Lvx-cQ-mCJ">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="480"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
                             <webView contentMode="scaleAspectFit" fixedFrame="YES" scalesPageToFit="YES" keyboardDisplayRequiresUserAction="NO" translatesAutoresizingMaskIntoConstraints="NO" id="wd1-Fu-nm7">
-                                <rect key="frame" x="0.0" y="45" width="320" height="524"/>
+                                <rect key="frame" x="0.0" y="0.0" width="320" height="400"/>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                 <color key="backgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
                             </webView>
@@ -1082,7 +1083,7 @@ the most heartwarming deeds everyday!</string>
                     <navigationItem key="navigationItem" id="9fH-Sp-l42">
                         <barButtonItem key="leftBarButtonItem" image="menu.png" id="rMq-ys-kwW"/>
                     </navigationItem>
-                    <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+                    <simulatedScreenMetrics key="simulatedDestinationMetrics"/>
                     <connections>
                         <outlet property="gallView" destination="wd1-Fu-nm7" id="Pcn-70-fGH"/>
                         <outlet property="sidebarButton" destination="rMq-ys-kwW" id="byV-sd-gRq"/>
@@ -1363,9 +1364,9 @@ the most heartwarming deeds everyday!</string>
         <simulatedScreenMetrics key="destination" type="retina4"/>
     </simulatedMetricsContainer>
     <inferredMetricsTieBreakers>
-        <segue reference="w4v-fJ-nlM"/>
+        <segue reference="34d-yG-ctN"/>
+        <segue reference="wBK-pm-ijv"/>
         <segue reference="X9G-vh-Mef"/>
         <segue reference="VH3-0t-n5h"/>
-        <segue reference="34d-yG-ctN"/>
     </inferredMetricsTieBreakers>
 </document>
