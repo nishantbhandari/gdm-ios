@@ -139,7 +139,7 @@
         NSData *returnData = [NSURLConnection sendSynchronousRequest:request returningResponse:nil error:nil];
         NSString *returnString = [[NSString alloc] initWithData:returnData encoding:NSUTF8StringEncoding];
         NSLog(@"%@",returnString);
-        if ([returnString isEqualToString:@"1"]){
+        if (returnString){
             // - code after image is uploaded
             ty2ViewController *ty2ViewController = [self.storyboard instantiateViewControllerWithIdentifier:@"ty2ViewController"];
             

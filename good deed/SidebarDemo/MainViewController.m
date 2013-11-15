@@ -97,11 +97,15 @@
         secondLabel1.hidden = NO;
         secondLabel2.hidden = NO;
         firstLabel2.hidden = NO;
-        _submitBut.hidden = NO;
-        _galleryBut.hidden = NO;
-        _justBut.hidden = NO;
+        subBut.hidden = NO;
+        galBut.hidden = NO;
+        justBut.hidden = NO;
+        justLab.hidden = NO;
+        subLabel.hidden = NO;
+        galLabel.hidden = NO;
+        _uTubeView2.hidden = NO;
         [_activityIndicator stopAnimating];
-            [self utubeView:_uTubeView2];
+        
 
     }
     else if ([logcheck1 isEqualToString:@"0"]) {
@@ -113,7 +117,8 @@
         _uTubeView.hidden = NO;
         fblogin.hidden = NO;
         firstLabel3.hidden = NO;
-        [self utubeView:_uTubeView];
+        _uTubeView.hidden = NO;
+      
         _activityIndicator.center = self.MainView.center;
         [_activityIndicator stopAnimating];
         
@@ -139,8 +144,8 @@
             fbid = userData[@"id"];
             NSLog(@"fb? %@",fbid);
             
-            [self homeViewChange:[self validateUser:fbid]];
-//            [self homeViewChange:@"1"];
+//            [self homeViewChange:[self validateUser:fbid]];
+            [self homeViewChange:@"1"];
             
         }];
         
@@ -165,6 +170,8 @@
 {
     [_activityIndicator startAnimating];
     [super viewDidLoad];
+     [self utubeView:_uTubeView];
+     [self utubeView:_uTubeView2];
     if (![[NSUserDefaults standardUserDefaults] boolForKey:@"wasLaunchedBefore"]) {
         NSLog(@"first time");
         

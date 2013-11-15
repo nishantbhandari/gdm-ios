@@ -186,7 +186,7 @@ Tell us about them in any way you want.</string>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="bJK-ph-hBe" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1571" y="304"/>
+            <point key="canvasLocation" x="1257" y="-774"/>
         </scene>
         <!--Goodies View Controller-->
         <scene sceneID="o5Y-CT-kLt">
@@ -394,7 +394,7 @@ the rest of Mumbai has done</string>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Dyi-tb-Qi5">
-                                        <rect key="frame" x="-1" y="47" width="320" height="800"/>
+                                        <rect key="frame" x="-1" y="47" width="320" height="870"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <subviews>
                                             <button hidden="YES" opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="kjS-Ue-1VG">
@@ -413,6 +413,13 @@ the rest of Mumbai has done</string>
                                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                 <fontDescription key="fontDescription" name="ArialMT" family="Arial" pointSize="15"/>
                                                 <color key="textColor" red="0.0" green="0.62352941179999999" blue="0.85490196080000003" alpha="1" colorSpace="calibratedRGB"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <label hidden="YES" opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Submit a Deed" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" preferredMaxLayoutWidth="107" translatesAutoresizingMaskIntoConstraints="NO" id="O2Q-K6-h0B">
+                                                <rect key="frame" x="115" y="134" width="107" height="41"/>
+                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="13"/>
+                                                <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="calibratedRGB"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <label hidden="YES" opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" usesAttributedText="YES" lineBreakMode="tailTruncation" numberOfLines="3" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" preferredMaxLayoutWidth="270" translatesAutoresizingMaskIntoConstraints="NO" id="xIh-oW-qTQ">
@@ -467,45 +474,65 @@ the rest of Mumbai has done</string>
                                                 <color key="textColor" red="0.0" green="0.62352941179999999" blue="0.85490196080000003" alpha="1" colorSpace="calibratedRGB"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
-                                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ZwF-J1-mPx">
-                                                <rect key="frame" x="53" y="109" width="46" height="30"/>
+                                            <button hidden="YES" opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ZwF-J1-mPx">
+                                                <rect key="frame" x="50" y="130" width="50" height="50"/>
                                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                                <state key="normal" title="Button">
+                                                <state key="normal" title="Button" image="ty-submit-gdm">
                                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                                 </state>
                                                 <connections>
                                                     <segue destination="BTz-gU-3Vq" kind="custom" id="NTs-uD-z9s"/>
                                                 </connections>
                                             </button>
-                                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="53m-ZV-rYz">
-                                                <rect key="frame" x="126" y="109" width="46" height="30"/>
+                                            <button hidden="YES" opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="53m-ZV-rYz">
+                                                <rect key="frame" x="50" y="204" width="50" height="50"/>
                                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                                <state key="normal" title="Button">
+                                                <state key="normal" title="Button" image="ty-gallery-icon">
                                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                                 </state>
+                                                <connections>
+                                                    <segue destination="uLt-T5-m5n" kind="custom" id="X9G-vh-Mef"/>
+                                                </connections>
                                             </button>
-                                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="tYx-35-ERV">
-                                                <rect key="frame" x="198" y="109" width="46" height="30"/>
+                                            <button hidden="YES" opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="tYx-35-ERV">
+                                                <rect key="frame" x="50" y="278" width="50" height="50"/>
                                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                                <state key="normal" title="Button">
+                                                <state key="normal" title="Just in" image="Untitled-2">
                                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                                 </state>
+                                                <connections>
+                                                    <segue destination="Kif-ha-kes" kind="custom" id="VH3-0t-n5h"/>
+                                                </connections>
                                             </button>
+                                            <label hidden="YES" opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="See what Mumbai's upto" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="5" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" preferredMaxLayoutWidth="157" translatesAutoresizingMaskIntoConstraints="NO" id="lZF-lb-TSM">
+                                                <rect key="frame" x="115" y="195" width="157" height="63"/>
+                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                <fontDescription key="fontDescription" name="ArialMT" family="Arial" pointSize="14"/>
+                                                <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="calibratedRGB"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <label hidden="YES" opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="See Latest Updates" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="5lJ-D8-WXg">
+                                                <rect key="frame" x="115" y="289" width="152" height="21"/>
+                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                <fontDescription key="fontDescription" name="ArialMT" family="Arial" pointSize="14"/>
+                                                <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="calibratedRGB"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <activityIndicatorView hidden="YES" opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" fixedFrame="YES" hidesWhenStopped="YES" style="whiteLarge" translatesAutoresizingMaskIntoConstraints="NO" id="AK8-5h-Tx7">
+                                                <rect key="frame" x="148" y="251" width="37" height="37"/>
+                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                <color key="color" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                            </activityIndicatorView>
                                         </subviews>
                                         <color key="backgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
                                     </view>
-                                    <activityIndicatorView hidden="YES" opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" fixedFrame="YES" hidesWhenStopped="YES" style="whiteLarge" translatesAutoresizingMaskIntoConstraints="NO" id="AK8-5h-Tx7">
-                                        <rect key="frame" x="141" y="307" width="37" height="37"/>
-                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                        <color key="color" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                    </activityIndicatorView>
                                 </subviews>
                             </scrollView>
                         </subviews>
                         <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                     </view>
                     <navigationItem key="navigationItem" id="iSV-ns-u3y">
-                        <barButtonItem key="leftBarButtonItem" image="menu.png" id="4DU-rm-gHC"/>
+                        <barButtonItem key="leftBarButtonItem" image="menu.png" id="WTx-go-BUU"/>
                     </navigationItem>
                     <nil key="simulatedStatusBarMetrics"/>
                     <nil key="simulatedTopBarMetrics"/>
@@ -519,10 +546,16 @@ the rest of Mumbai has done</string>
                         <outlet property="firstLabel1" destination="xIh-oW-qTQ" id="5eH-O8-DyK"/>
                         <outlet property="firstLabel2" destination="CcB-Ux-18I" id="xBj-1E-PfQ"/>
                         <outlet property="firstLabel3" destination="qvA-9T-WdV" id="2Ao-ua-JWh"/>
+                        <outlet property="galBut" destination="53m-ZV-rYz" id="2As-Zt-qN7"/>
+                        <outlet property="galLabel" destination="lZF-lb-TSM" id="UfR-7D-uml"/>
+                        <outlet property="justBut" destination="tYx-35-ERV" id="ENk-YS-Zb0"/>
+                        <outlet property="justLab" destination="5lJ-D8-WXg" id="B8P-1o-JsS"/>
                         <outlet property="scrollView" destination="TSt-ZA-aw3" id="11f-z5-9SQ"/>
                         <outlet property="secondLabel1" destination="73a-Vb-Xz9" id="QPc-l2-RTk"/>
                         <outlet property="secondLabel2" destination="x4P-If-WMm" id="YO6-nf-Oqr"/>
-                        <outlet property="sidebarButton" destination="4DU-rm-gHC" id="gCT-AB-0W6"/>
+                        <outlet property="sidebarButton" destination="WTx-go-BUU" id="hRF-FW-9Kz"/>
+                        <outlet property="subBut" destination="ZwF-J1-mPx" id="hfi-FN-tXV"/>
+                        <outlet property="subLabel" destination="O2Q-K6-h0B" id="jU2-ag-PC2"/>
                         <outlet property="uTubeView" destination="Pcb-JV-akx" id="hJA-RA-1xB"/>
                         <outlet property="uTubeView2" destination="JOz-bT-gJO" id="YBQ-vT-KF4"/>
                     </connections>
@@ -985,7 +1018,7 @@ the most heartwarming deeds everyday!</string>
                 </navigationItem>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="fYu-8z-ROW" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="450" y="-1166"/>
+            <point key="canvasLocation" x="322" y="-1158"/>
         </scene>
         <!--Partners View Controller-->
         <scene sceneID="o5V-26-G3n">
@@ -1032,7 +1065,7 @@ the most heartwarming deeds everyday!</string>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
                             <webView contentMode="scaleAspectFit" fixedFrame="YES" scalesPageToFit="YES" keyboardDisplayRequiresUserAction="NO" translatesAutoresizingMaskIntoConstraints="NO" id="wd1-Fu-nm7">
-                                <rect key="frame" x="0.0" y="45" width="320" height="523"/>
+                                <rect key="frame" x="0.0" y="45" width="320" height="524"/>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                 <color key="backgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
                             </webView>
@@ -1045,7 +1078,7 @@ the most heartwarming deeds everyday!</string>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="O0r-4j-3iu" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="817" y="-1387"/>
+            <point key="canvasLocation" x="669" y="-1179"/>
         </scene>
         <!--Sidebar View Controller - Sidebar-->
         <scene sceneID="8EI-Ei-zax">
@@ -1288,6 +1321,7 @@ the most heartwarming deeds everyday!</string>
     <resources>
         <image name="GD gallery-01" width="83" height="83"/>
         <image name="GDM_logo" width="563" height="499"/>
+        <image name="Untitled-2" width="411" height="411"/>
         <image name="band" width="497" height="289"/>
         <image name="cup1" width="400" height="403"/>
         <image name="cup2" width="400" height="403"/>
@@ -1307,6 +1341,7 @@ the most heartwarming deeds everyday!</string>
         <image name="sub-text_white" width="104" height="104"/>
         <image name="sub-video-white" width="104" height="104"/>
         <image name="submit ur GD-01" width="83" height="83"/>
+        <image name="ty-gallery-icon" width="104" height="104"/>
         <image name="ty-spread-the-love" width="274" height="80"/>
         <image name="ty-submit-gdm" width="104" height="104"/>
     </resources>
@@ -1316,7 +1351,9 @@ the most heartwarming deeds everyday!</string>
         <simulatedScreenMetrics key="destination" type="retina4"/>
     </simulatedMetricsContainer>
     <inferredMetricsTieBreakers>
-        <segue reference="NTs-uD-z9s"/>
         <segue reference="w4v-fJ-nlM"/>
+        <segue reference="NTs-uD-z9s"/>
+        <segue reference="X9G-vh-Mef"/>
+        <segue reference="VH3-0t-n5h"/>
     </inferredMetricsTieBreakers>
 </document>
