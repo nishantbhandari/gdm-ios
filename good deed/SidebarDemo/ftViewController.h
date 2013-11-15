@@ -9,8 +9,5 @@
 #import <UIKit/UIKit.h>
 
 @interface ftViewController : UIViewController
-- (IBAction)next:(id)sender;
 
-@property (weak, nonatomic) IBOutlet UIView *ftView;
-@property (weak, nonatomic) IBOutlet UIScrollView *ftScrollView;
 @end

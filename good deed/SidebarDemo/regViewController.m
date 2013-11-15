@@ -128,21 +128,13 @@
     self.navigationItem.titleView = backView;
     //Navigation Logo
     NSLog(@"%@",_fb_name);
-    phone.text = @"234234234";
-    address.text = @"asasdad";
-    pincode.text = @"400079";
     // validation
 
 //    [self changeBorderColor:name];
 //    [self changeBorderColor:email];
     
     
-
- 
-
-    
     city.text= @"Mumbai";
-    
     
 }
 
