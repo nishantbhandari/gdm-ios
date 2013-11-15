@@ -28,8 +28,11 @@
 {
     [super didReceiveMemoryWarning];
 }
--(void)viewDidAppear:(BOOL)animated{
-    [super viewDidAppear:animated];
+-(void)viewWillAppear:(BOOL) animated {
+    [super viewWillAppear:animated];
+    
+    
+
     if ([PFUser currentUser] && // Check if a user is cached
         [PFFacebookUtils isLinkedWithUser:[PFUser currentUser]]) // Check if user is linked to Facebook
     {
@@ -43,51 +46,43 @@
             fbid = userData[@"id"];
             NSLog(@"fb? %@",fbid);
             
-            if ([[self validateUser:fbid] isEqualToString:@"1"]) {
-                NSLog(@"congo");
-                logcheck = @"1";
-            }
-            else if ([[self validateUser:fbid] isEqualToString:@"0"]) {
-                NSLog(@"fb %@",fbid);
-                UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Oops" message:@"You need to register before you can submit a good deed." delegate:nil cancelButtonTitle:nil otherButtonTitles:@"Dismiss", nil];
-                [alert show];
-                alert = nil;
-                logcheck = @"0";
-                
-                
-            }
+            [self homeViewChange:[self validateUser:fbid]];
+            
         }];
         
         // Push the next view controller without animation
     }
+
     
-    
-    
-    if ([logcheck isEqualToString:@"0"]) {
-        //logged in
-        NSLog(@"already loggedin");
-        
+}
+-(void)homeViewChange:(NSString *)logcheck1{
+    if ([logcheck1 isEqualToString:@"1"]) {
+        NSLog(@"congo");
         firstLabel1.hidden = YES;
         _uTubeView.hidden = YES;
         fblogin.hidden = YES;
         firstLabel3.hidden = YES;
-     
-        
-        
-        
+        _contentView.hidden = NO;
     }
-    else if([logcheck isEqualToString:@"1"])
-    {
-        //login
+    else if ([logcheck1 isEqualToString:@"0"]) {
+        NSLog(@"fb %@",fbid);
+        UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Oops" message:@"You need to register before you can submit a good deed." delegate:nil cancelButtonTitle:nil otherButtonTitles:@"Dismiss", nil];
+        [alert show];
+        alert = nil;
         _uTubeView2.hidden = YES;
         secondLabel1.hidden = YES;
         secondLabel2.hidden = YES;
         firstLabel2.hidden = YES;
+        _contentView.hidden = NO;
         
         
-    }
-    
+}
 
+
+}
+-(void)viewDidAppear:(BOOL)animated{
+    [super viewDidAppear:animated];
+    _contentView.hidden = YES;
 
 }
 //-(void)setView:(UIView *)whichView{
