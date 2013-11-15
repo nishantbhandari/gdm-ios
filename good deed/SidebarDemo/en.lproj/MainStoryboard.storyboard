@@ -312,9 +312,9 @@ you could get these amazing colourful</string>
                                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                         <subviews>
                                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="X6G-m4-emp">
-                                                <rect key="frame" x="85" y="198" width="150" height="40"/>
+                                                <rect key="frame" x="72" y="191" width="176" height="47"/>
                                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                                <state key="normal" image="ty-spread-the-love">
+                                                <state key="normal" image="spread-the-GD">
                                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                                 </state>
                                                 <connections>
@@ -322,14 +322,14 @@ you could get these amazing colourful</string>
                                                 </connections>
                                             </button>
                                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="h3n-tx-CL7">
-                                                <rect key="frame" x="130" y="527" width="60" height="60"/>
+                                                <rect key="frame" x="129" y="469" width="60" height="60"/>
                                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                 <state key="normal" image="sub-gallery-icon">
                                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                                 </state>
                                             </button>
                                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="NlI-bx-qVA">
-                                                <rect key="frame" x="120" y="335" width="60" height="60"/>
+                                                <rect key="frame" x="130" y="324" width="60" height="60"/>
                                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                 <state key="normal" image="ty-submit-gdm">
                                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
@@ -338,23 +338,36 @@ you could get these amazing colourful</string>
                                                     <segue destination="BTz-gU-3Vq" kind="push" customClass="SWRevealViewControllerSegue" id="34d-yG-ctN"/>
                                                 </connections>
                                             </button>
-                                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="7" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" preferredMaxLayoutWidth="222" translatesAutoresizingMaskIntoConstraints="NO" id="mrB-ap-u88">
-                                                <rect key="frame" x="50" y="230" width="222" height="121"/>
+                                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" usesAttributedText="YES" lineBreakMode="tailTruncation" numberOfLines="7" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" preferredMaxLayoutWidth="222" translatesAutoresizingMaskIntoConstraints="NO" id="mrB-ap-u88">
+                                                <rect key="frame" x="49" y="255" width="222" height="66"/>
                                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                                <string key="text">Ever made a difference?
-Ever made someone smile?
-Tell us here!</string>
-                                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                                <color key="textColor" red="0.0039215686274509803" green="0.51764705882352935" blue="0.70980392156862748" alpha="1" colorSpace="calibratedRGB"/>
+                                                <attributedString key="attributedText">
+                                                    <fragment>
+                                                        <string key="content">Done a good deed?
+Tell us about it!</string>
+                                                        <attributes>
+                                                            <color key="NSColor" red="0.0039215686274509803" green="0.51764705882352935" blue="0.70980392156862748" alpha="1" colorSpace="calibratedRGB"/>
+                                                            <font key="NSFont" size="15" name="ArialMT"/>
+                                                            <paragraphStyle key="NSParagraphStyle" alignment="center" lineBreakMode="wordWrapping" baseWritingDirection="natural" lineHeightMultiple="1.2"/>
+                                                        </attributes>
+                                                    </fragment>
+                                                </attributedString>
                                                 <nil key="highlightedColor"/>
                                             </label>
-                                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="3" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" preferredMaxLayoutWidth="209" translatesAutoresizingMaskIntoConstraints="NO" id="eWz-db-HyJ">
-                                                <rect key="frame" x="57" y="429" width="209" height="108"/>
+                                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" usesAttributedText="YES" lineBreakMode="tailTruncation" numberOfLines="3" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" preferredMaxLayoutWidth="209" translatesAutoresizingMaskIntoConstraints="NO" id="eWz-db-HyJ">
+                                                <rect key="frame" x="56" y="404" width="209" height="55"/>
                                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                                <string key="text">Check out what 
+                                                <attributedString key="attributedText">
+                                                    <fragment>
+                                                        <string key="content">Check out what 
 the rest of Mumbai has done</string>
-                                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                                <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="calibratedRGB"/>
+                                                        <attributes>
+                                                            <color key="NSColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="calibratedRGB"/>
+                                                            <font key="NSFont" size="15" name="ArialMT"/>
+                                                            <paragraphStyle key="NSParagraphStyle" alignment="center" lineBreakMode="wordWrapping" baseWritingDirection="natural" lineHeightMultiple="1.2"/>
+                                                        </attributes>
+                                                    </fragment>
+                                                </attributedString>
                                                 <nil key="highlightedColor"/>
                                             </label>
                                         </subviews>
@@ -441,7 +454,7 @@ the rest of Mumbai has done</string>
                                                 <rect key="frame" x="30" y="-6" width="270" height="93"/>
                                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                 <attributedString key="attributedText">
-                                                    <fragment content="You're a part of the movement that will make Mumbai smile, one good deed at a time!">
+                                                    <fragment content="You're part of the movement that will make Mumbai smile, one good deed at a time!">
                                                         <attributes>
                                                             <color key="NSColor" red="0.41176470590000003" green="0.74509803919999995" blue="0.15686274510000001" alpha="1" colorSpace="calibratedRGB"/>
                                                             <font key="NSFont" size="15" name="ArialMT"/>
@@ -603,7 +616,7 @@ the rest of Mumbai has done</string>
                                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                 <textInputTraits key="textInputTraits" returnKeyType="next"/>
                                             </textField>
-                                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="line" placeholder="Phone No" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="uUt-TY-NkH">
+                                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="line" placeholder="Phone No." textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="uUt-TY-NkH">
                                                 <rect key="frame" x="34" y="205" width="248" height="30"/>
                                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                 <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
@@ -709,7 +722,7 @@ Fill them in?</string>
                                             <color key="NSColor" red="0.0" green="0.62352941176470589" blue="0.85490196078431369" alpha="1" colorSpace="calibratedRGB"/>
                                             <font key="NSFont" size="14" name="ArialMT"/>
                                             <font key="NSOriginalFont" size="14" name="ArialMT"/>
-                                            <paragraphStyle key="NSParagraphStyle" alignment="center" lineBreakMode="wordWrapping" baseWritingDirection="leftToRight" paragraphSpacing="12" defaultTabInterval="36">
+                                            <paragraphStyle key="NSParagraphStyle" alignment="center" lineBreakMode="wordWrapping" baseWritingDirection="leftToRight" paragraphSpacing="12" lineHeightMultiple="1.2" defaultTabInterval="36">
                                                 <tabStops/>
                                             </paragraphStyle>
                                         </attributes>
@@ -719,7 +732,7 @@ Fill them in?</string>
                                             <color key="NSColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                             <font key="NSFont" size="14" name="ArialMT"/>
                                             <font key="NSOriginalFont" size="14" name="ArialMT"/>
-                                            <paragraphStyle key="NSParagraphStyle" alignment="center" lineBreakMode="wordWrapping" baseWritingDirection="leftToRight" paragraphSpacing="12" defaultTabInterval="36">
+                                            <paragraphStyle key="NSParagraphStyle" alignment="center" lineBreakMode="wordWrapping" baseWritingDirection="leftToRight" paragraphSpacing="12" lineHeightMultiple="1.2" defaultTabInterval="36">
                                                 <tabStops/>
                                             </paragraphStyle>
                                         </attributes>
@@ -731,7 +744,7 @@ Fill them in?</string>
                                             <color key="NSColor" red="0.0" green="0.62352941176470589" blue="0.85490196078431369" alpha="1" colorSpace="calibratedRGB"/>
                                             <font key="NSFont" size="14" name="ArialMT"/>
                                             <font key="NSOriginalFont" size="14" name="ArialMT"/>
-                                            <paragraphStyle key="NSParagraphStyle" alignment="center" lineBreakMode="wordWrapping" baseWritingDirection="leftToRight" paragraphSpacing="12" defaultTabInterval="36">
+                                            <paragraphStyle key="NSParagraphStyle" alignment="center" lineBreakMode="wordWrapping" baseWritingDirection="leftToRight" paragraphSpacing="12" lineHeightMultiple="1.2" defaultTabInterval="36">
                                                 <tabStops/>
                                             </paragraphStyle>
                                         </attributes>
@@ -741,20 +754,20 @@ Fill them in?</string>
                                             <color key="NSColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                             <font key="NSFont" size="14" name="ArialMT"/>
                                             <font key="NSOriginalFont" size="14" name="ArialMT"/>
-                                            <paragraphStyle key="NSParagraphStyle" alignment="center" lineBreakMode="wordWrapping" baseWritingDirection="leftToRight" paragraphSpacing="12" defaultTabInterval="36">
+                                            <paragraphStyle key="NSParagraphStyle" alignment="center" lineBreakMode="wordWrapping" baseWritingDirection="leftToRight" paragraphSpacing="12" lineHeightMultiple="1.2" defaultTabInterval="36">
                                                 <tabStops/>
                                             </paragraphStyle>
                                         </attributes>
                                     </fragment>
                                     <fragment>
-                                        <string key="content"> Then pass on the band to someone so they can also do good and spread cheer.
+                                        <string key="content"> Then pass the band on to someone so they can also do good and spread cheer.
 And even if you don’t have a band yet, why wait? Start doing good deeds and sharing them!
 </string>
                                         <attributes>
                                             <color key="NSColor" red="0.0" green="0.62352941176470589" blue="0.85490196078431369" alpha="1" colorSpace="calibratedRGB"/>
                                             <font key="NSFont" size="14" name="ArialMT"/>
                                             <font key="NSOriginalFont" size="14" name="ArialMT"/>
-                                            <paragraphStyle key="NSParagraphStyle" alignment="center" lineBreakMode="wordWrapping" baseWritingDirection="leftToRight" paragraphSpacing="12" defaultTabInterval="36">
+                                            <paragraphStyle key="NSParagraphStyle" alignment="center" lineBreakMode="wordWrapping" baseWritingDirection="leftToRight" paragraphSpacing="12" lineHeightMultiple="1.2" defaultTabInterval="36">
                                                 <tabStops/>
                                             </paragraphStyle>
                                         </attributes>
@@ -911,7 +924,7 @@ Be a part of the celebration.</string>
                                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                 <attributedString key="attributedText">
                                                     <fragment>
-                                                        <string key="content">Thank you for making mumbai a better place.
+                                                        <string key="content">Thank you for making Mumbai a better place.
 Share your good deed with the world!</string>
                                                         <attributes>
                                                             <color key="NSColor" red="0.41176470590000003" green="0.74509803919999995" blue="0.15686274510000001" alpha="1" colorSpace="calibratedRGB"/>
@@ -923,34 +936,42 @@ Share your good deed with the world!</string>
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" usesAttributedText="YES" lineBreakMode="tailTruncation" numberOfLines="6" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" preferredMaxLayoutWidth="293" translatesAutoresizingMaskIntoConstraints="NO" id="8zg-4G-d5S">
-                                                <rect key="frame" x="10" y="174" width="293" height="144"/>
+                                                <rect key="frame" x="10" y="234" width="293" height="114"/>
                                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                 <attributedString key="attributedText">
                                                     <fragment>
                                                         <string key="content">Inspire your friends to do good.
-Keep this chain of love going.
+Keep this chain going.
 And don't forget, we're going to reward
 the most heartwarming deeds everyday!</string>
                                                         <attributes>
                                                             <color key="NSColor" red="0.0" green="0.62352941179999999" blue="0.85490196080000003" alpha="1" colorSpace="calibratedRGB"/>
                                                             <font key="NSFont" size="14" name="ArialMT"/>
-                                                            <paragraphStyle key="NSParagraphStyle" alignment="center" lineBreakMode="wordWrapping" baseWritingDirection="natural"/>
+                                                            <paragraphStyle key="NSParagraphStyle" alignment="center" lineBreakMode="wordWrapping" baseWritingDirection="natural" lineHeightMultiple="1.2"/>
                                                         </attributes>
                                                     </fragment>
                                                 </attributedString>
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="YKZ-tl-K9z">
-                                                <rect key="frame" x="40" y="320" width="240" height="128"/>
+                                                <rect key="frame" x="40" y="355" width="240" height="128"/>
                                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                             </imageView>
                                             <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="sf8-RW-MEj">
-                                                <rect key="frame" x="17" y="466" width="286" height="128"/>
+                                                <rect key="frame" x="17" y="511" width="286" height="128"/>
                                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                 <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                                             </textView>
+                                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="CGi-sY-RdD">
+                                                <rect key="frame" x="53" y="174" width="206" height="55"/>
+                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                                                <state key="normal" title="Button" image="spread-the-GD">
+                                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                                </state>
+                                            </button>
                                         </subviews>
                                         <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                     </view>
@@ -1319,6 +1340,7 @@ the most heartwarming deeds everyday!</string>
         <image name="menu.png" width="28" height="20"/>
         <image name="partner-01" width="83" height="83"/>
         <image name="rewards-01" width="83" height="83"/>
+        <image name="spread-the-GD" width="343" height="80"/>
         <image name="sub-gallery-icon" width="104" height="104"/>
         <image name="sub-photo_green" width="104" height="104"/>
         <image name="sub-photo_white" width="104" height="104"/>
@@ -1327,7 +1349,6 @@ the most heartwarming deeds everyday!</string>
         <image name="sub-video-white" width="104" height="104"/>
         <image name="submit ur GD-01" width="83" height="83"/>
         <image name="ty-gallery-icon" width="104" height="104"/>
-        <image name="ty-spread-the-love" width="274" height="80"/>
         <image name="ty-submit-gdm" width="104" height="104"/>
     </resources>
     <simulatedMetricsContainer key="defaultSimulatedMetrics">
@@ -1336,11 +1357,9 @@ the most heartwarming deeds everyday!</string>
         <simulatedScreenMetrics key="destination" type="retina4"/>
     </simulatedMetricsContainer>
     <inferredMetricsTieBreakers>
-        <segue reference="NTs-uD-z9s"/>
-        <segue reference="wBK-pm-ijv"/>
+        <segue reference="34d-yG-ctN"/>
         <segue reference="w4v-fJ-nlM"/>
-        <segue reference="NTs-uD-z9s"/>
-        <segue reference="X9G-vh-Mef"/>
         <segue reference="VH3-0t-n5h"/>
+        <segue reference="X9G-vh-Mef"/>
     </inferredMetricsTieBreakers>
 </document>
