@@ -54,12 +54,13 @@
 }
 
 - (IBAction)share:(id)sender {
-    NSString* someText = @"heyy";
-    NSArray* dataToShare = @[someText];  // ...or whatever pieces of data you want to share.
+    NSArray * activityItems = @[[NSString stringWithFormat:@"random test....!"], [NSURL URLWithString:@"http://www.facebook.com/facebook"]];
+    NSArray * applicationActivities = nil;
+    NSArray * excludeActivities = @[UIActivityTypeAssignToContact, UIActivityTypeCopyToPasteboard, UIActivityTypePostToWeibo, UIActivityTypePrint, UIActivityTypeMessage];
     
-    UIActivityViewController* activityViewController =
-    [[UIActivityViewController alloc] initWithActivityItems:dataToShare
-                                      applicationActivities:nil];
-    [self presentViewController:activityViewController animated:YES completion:^{}];
+    UIActivityViewController * activityController = [[UIActivityViewController alloc] initWithActivityItems:activityItems applicationActivities:applicationActivities];
+    activityController.excludedActivityTypes = excludeActivities;
+    
+    [self presentViewController:activityController animated:YES completion:nil];
 }
 @end

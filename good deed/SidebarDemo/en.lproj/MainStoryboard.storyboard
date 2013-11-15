@@ -136,6 +136,7 @@ Tell us about them in any way you want.</string>
                                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                 <color key="backgroundColor" red="0.41176470590000003" green="0.74509803919999995" blue="0.15686274510000001" alpha="1" colorSpace="calibratedRGB"/>
                                                 <state key="normal" title="Upload">
+                                                    <color key="titleColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
                                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                                 </state>
                                                 <connections>
@@ -956,11 +957,11 @@ the most heartwarming deeds everyday!</string>
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="YKZ-tl-K9z">
-                                                <rect key="frame" x="40" y="320" width="240" height="128"/>
+                                                <rect key="frame" x="106" y="320" width="108" height="101"/>
                                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                             </imageView>
                                             <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="sf8-RW-MEj">
-                                                <rect key="frame" x="17" y="466" width="286" height="128"/>
+                                                <rect key="frame" x="17" y="470" width="286" height="40"/>
                                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                 <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
@@ -1008,14 +1009,14 @@ the most heartwarming deeds everyday!</string>
                         </subviews>
                         <color key="backgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
+                    <navigationItem key="navigationItem" id="46v-di-sdQ">
+                        <barButtonItem key="leftBarButtonItem" image="menu.png" id="L0S-Oc-S4e"/>
+                    </navigationItem>
                     <connections>
                         <outlet property="justPage" destination="Fen-cL-Nts" id="lW3-9H-Xub"/>
                         <outlet property="sidebarButton" destination="L0S-Oc-S4e" id="j8d-7u-5jH"/>
                     </connections>
                 </viewController>
-                <navigationItem id="46v-di-sdQ">
-                    <barButtonItem key="leftBarButtonItem" image="menu.png" id="L0S-Oc-S4e"/>
-                </navigationItem>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="fYu-8z-ROW" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="322" y="-1158"/>
@@ -1040,17 +1041,17 @@ the most heartwarming deeds everyday!</string>
                         </subviews>
                         <color key="backgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
+                    <navigationItem key="navigationItem" id="ovJ-df-xOR">
+                        <barButtonItem key="leftBarButtonItem" image="menu.png" id="Y6e-JX-SdV"/>
+                    </navigationItem>
                     <connections>
                         <outlet property="partnersPage" destination="MVx-0C-uT4" id="dp2-we-94X"/>
                         <outlet property="sidebarbutton" destination="Y6e-JX-SdV" id="b9y-fk-aGu"/>
                     </connections>
                 </viewController>
-                <navigationItem id="ovJ-df-xOR">
-                    <barButtonItem key="leftBarButtonItem" image="menu.png" id="Y6e-JX-SdV"/>
-                </navigationItem>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="XbQ-tq-aIv" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="278" y="-464"/>
+            <point key="canvasLocation" x="156" y="-694"/>
         </scene>
         <!--Gal ViewC-->
         <scene sceneID="fsb-XI-EhV">
@@ -1072,8 +1073,14 @@ the most heartwarming deeds everyday!</string>
                         </subviews>
                         <color key="backgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
+                    <extendedEdge key="edgesForExtendedLayout"/>
+                    <navigationItem key="navigationItem" id="9fH-Sp-l42">
+                        <barButtonItem key="leftBarButtonItem" image="menu.png" id="rMq-ys-kwW"/>
+                    </navigationItem>
+                    <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
                     <connections>
                         <outlet property="gallView" destination="wd1-Fu-nm7" id="Pcn-70-fGH"/>
+                        <outlet property="sidebarButton" destination="rMq-ys-kwW" id="byV-sd-gRq"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="O0r-4j-3iu" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -1266,7 +1273,7 @@ the most heartwarming deeds everyday!</string>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Pan-AZ-D0k" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="601" y="-387"/>
+            <point key="canvasLocation" x="575" y="-335"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="5Z6-ag-ZQ1">
@@ -1351,9 +1358,9 @@ the most heartwarming deeds everyday!</string>
         <simulatedScreenMetrics key="destination" type="retina4"/>
     </simulatedMetricsContainer>
     <inferredMetricsTieBreakers>
+        <segue reference="eim-7N-VR8"/>
+        <segue reference="CdO-Q6-ets"/>
         <segue reference="w4v-fJ-nlM"/>
-        <segue reference="NTs-uD-z9s"/>
-        <segue reference="X9G-vh-Mef"/>
-        <segue reference="VH3-0t-n5h"/>
+        <segue reference="huv-5T-afu"/>
     </inferredMetricsTieBreakers>
 </document>

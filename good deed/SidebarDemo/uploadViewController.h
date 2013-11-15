@@ -38,4 +38,6 @@
                                    usingDelegate: (id <UIImagePickerControllerDelegate,
                                                    UINavigationControllerDelegate>) delegate;
 @property (retain, nonatomic) IBOutlet UIBarButtonItem *sidebarButton;
+-(IBAction)textFieldReturn:(id)sender;
+- (IBAction)backgroundTouched:(id)sender;
 @end

@@ -7,7 +7,7 @@
 //
 
 #import "galViewC.h"
-
+#import "SWRevealViewController.h"
 @interface galViewC ()
 
 @end
@@ -27,7 +27,21 @@
 {
     [super viewDidLoad];
     
+    UIView *backView =[[UIView alloc] initWithFrame:CGRectMake(0, 0, 129, 41)];// Here you can set View width and height as per your requirement for displaying titleImageView position in navigationba
+    UIImageView *titleImageView = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"navlogo.png"]];
+    titleImageView.frame = CGRectMake(0, 0,129 , 41); // Here I am passing origin as (45,5) but can pass them as your requirement.
+    [backView addSubview:titleImageView];
+    //titleImageView.contentMode = UIViewContentModeCenter;
+    self.navigationItem.titleView = backView;
     
+    
+    // Set the gesture
+    [self.view addGestureRecognizer:self.revealViewController.panGestureRecognizer];
+    //
+    //    // Set the side bar button action. When it's tapped, it'll show up the sidebar.
+    _sidebarButton.target = self.revealViewController;
+    _sidebarButton.action = @selector(revealToggle:);
+
     NSString *fullURL = @"http://gooddeedmarathon.com/getGallery.php";
     NSURL *url = [NSURL URLWithString:fullURL];
     NSURLRequest *requestObj = [NSURLRequest requestWithURL:url];

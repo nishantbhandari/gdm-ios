@@ -32,6 +32,11 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
+    _msgTextView.layer.borderWidth = 2.0f;
+    _msgTextView.layer.borderColor=[[UIColor colorWithRed:105.0/255.0 green:190.0/255.0 blue:40.0/255.0 alpha:1.0] CGColor];
+    
+    _imgView.layer.borderWidth = 2.0f;
+    _imgView.layer.borderColor=[[UIColor colorWithRed:105.0/255.0 green:190.0/255.0 blue:40.0/255.0 alpha:1.0] CGColor];
     NSString *mainurl = [NSString stringWithFormat:@"http://graph.facebook.com/%@/picture",_fb_id];
     NSURL *url = [NSURL URLWithString:mainurl];
     

@@ -144,8 +144,8 @@
             fbid = userData[@"id"];
             NSLog(@"fb? %@",fbid);
             
-//            [self homeViewChange:[self validateUser:fbid]];
-            [self homeViewChange:@"1"];
+            [self homeViewChange:[self validateUser:fbid]];
+//            [self homeViewChange:@"1"];
             
         }];
         
@@ -165,11 +165,22 @@
 //
 //
 //}
-
+- (BOOL)prefersStatusBarHidden
+{
+    return YES;
+}
 - (void)viewDidLoad
 {
     [_activityIndicator startAnimating];
     [super viewDidLoad];
+    if ([self respondsToSelector:@selector(setNeedsStatusBarAppearanceUpdate)]) {
+        // iOS 7
+        [self prefersStatusBarHidden];
+        [self performSelector:@selector(setNeedsStatusBarAppearanceUpdate)];
+    } else {
+        // iOS 6
+        [[UIApplication sharedApplication] setStatusBarHidden:YES withAnimation:UIStatusBarAnimationSlide];
+    }
      [self utubeView:_uTubeView];
      [self utubeView:_uTubeView2];
     if (![[NSUserDefaults standardUserDefaults] boolForKey:@"wasLaunchedBefore"]) {

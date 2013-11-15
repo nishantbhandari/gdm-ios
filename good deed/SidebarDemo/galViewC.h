@@ -10,5 +10,7 @@
 
 @interface galViewC : UIViewController
 @property (strong, nonatomic) IBOutlet UIWebView *gallView;
+@property (strong, nonatomic) IBOutlet UIBarButtonItem *sidebarButton;
+
 
 @end

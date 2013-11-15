@@ -20,7 +20,11 @@
 @implementation uploadViewController
 @synthesize scrollView;
 @synthesize textVD2;
+-(void)viewDidDisappear:(BOOL)animated{
+    [super viewDidDisappear:animated];
+    [_activityInd stopAnimating];
 
+}
 -(void)viewDidLayoutSubviews{
     [super viewDidLayoutSubviews];
     [self.scrollView layoutIfNeeded];
@@ -41,7 +45,7 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-    
+
     UIColor *borderColor = [UIColor colorWithRed:105.0/255.0 green:190.0/255.0 blue:40.0/255.0 alpha:1.0];
     [imageView.layer setBorderColor:borderColor.CGColor];
     [imageView.layer setBorderWidth:3.0];
@@ -94,7 +98,7 @@
     [self.view addGestureRecognizer:self.revealViewController.panGestureRecognizer];
     _sidebarButton.target = self.revealViewController;
     _sidebarButton.action = @selector(revealToggle:);
-    _sidebarButton.tintColor = [UIColor colorWithWhite:0.96f alpha:0.2f];
+    _sidebarButton.tintColor = [UIColor whiteColor];
 	// Do any additional setup after loading the view.
 }
 
@@ -106,6 +110,7 @@
 
 - (IBAction)upload {
     
+//    if ([checkMedia isEqual:@"image"] && (image)) {
     if ([checkMedia isEqual:@"image"]) {
         NSData *imageData = UIImageJPEGRepresentation(image, 0.5);
         
@@ -160,6 +165,7 @@
         
     }
     else if ([checkMedia isEqual:@"video"]){
+//    else if ([checkMedia isEqual:@"video"] && (moviePath)){
         NSLog(@"asas");
         
         NSData *data = [NSData dataWithContentsOfFile:moviePath];
@@ -200,6 +206,7 @@
         
         }
     
+//    } else if ([checkMedia isEqualToString:@"text"] && (largeText.text.length <= 0)){
     } else if ([checkMedia isEqualToString:@"text"]){
 
         NSString * post = [[NSString alloc] initWithFormat:@"msg=%@&prof_id=%@",largeText.text,fbid];
@@ -226,7 +233,16 @@
             smallText.text = Nil;
         }
     }
-
+    else {
+        UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@""
+                                                        message:@"Please select your Good Deed before uploading."
+                                                       delegate:self
+                                              cancelButtonTitle:@"Ok"
+                                              otherButtonTitles:nil, nil];
+        [alert show];
+        alert = nil;
+    
+    }
 
 }
 
@@ -250,6 +266,16 @@
     [picker setAllowsEditing:YES];
     [self presentViewController:picker animated:YES completion:NULL];
     picker = nil;
+}
+
+-(IBAction)textFieldReturn:(id)sender
+{
+    [sender resignFirstResponder];
+}
+
+-(IBAction)backgroundTouched:(id)sender
+{
+    [sender resignFirstResponder];
 }
 -(void) imagePickerController:(UIImagePickerController *)picker didFinishPickingMediaWithInfo:(NSDictionary *)info {
     
@@ -276,7 +302,7 @@
         UIImage *thumbnail = [player thumbnailImageAtTime:1.0 timeOption:MPMovieTimeOptionNearestKeyFrame];
         [imageView setImage:thumbnail];
         NSLog(@"%@",thumbnail);
-       
+        
         //Player autoplays audio on init
         [player stop];
         player = nil;
@@ -284,13 +310,12 @@
         
     }
     else{
-checkMedia = @"image";
-
-                image = [info objectForKey:UIImagePickerControllerEditedImage];
+        checkMedia = @"image";
+        image = [info objectForKey:UIImagePickerControllerOriginalImage];
         [self dismissViewControllerAnimated:YES completion:NULL];
-                [imageView setImage:image];
-}
-
+        [imageView setImage:image];
+    }
+    
     
 }
 
