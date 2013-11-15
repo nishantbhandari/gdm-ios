@@ -13,11 +13,6 @@
 @end
 
 @implementation ftViewController
--(void)viewDidLayoutSubviews{
-    [super viewDidLayoutSubviews];
-    [self.ftScrollView layoutIfNeeded];
-    self.ftScrollView.contentSize = self.ftView.bounds.size;
-}
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
@@ -39,13 +34,5 @@
 {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
-}
-
-- (IBAction)next:(id)sender {
-    MainViewController *myOtherViewController = [self.storyboard instantiateViewControllerWithIdentifier:@"MainViewController"];
-    // If you are using navigation controller, you can call
-    [self.navigationController pushViewController:myOtherViewController animated:YES];
-
-    
 }
 @end
