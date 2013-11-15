@@ -954,18 +954,11 @@ the most heartwarming deeds everyday!</string>
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="YKZ-tl-K9z">
-
-                                                <rect key="frame" x="106" y="320" width="108" height="101"/>
-                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                            </imageView>
-                                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="sf8-RW-MEj">
-                                                <rect key="frame" x="17" y="470" width="286" height="40"/>
-                                                <rect key="frame" x="40" y="355" width="240" height="128"/>
+                                                <rect key="frame" x="106" y="365" width="108" height="101"/>
                                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                             </imageView>
                                             <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="sf8-RW-MEj">
                                                 <rect key="frame" x="17" y="511" width="286" height="128"/>
-
                                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                 <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
@@ -1370,15 +1363,9 @@ the most heartwarming deeds everyday!</string>
         <simulatedScreenMetrics key="destination" type="retina4"/>
     </simulatedMetricsContainer>
     <inferredMetricsTieBreakers>
- 
-        <segue reference="eim-7N-VR8"/>
-        <segue reference="CdO-Q6-ets"/>
         <segue reference="w4v-fJ-nlM"/>
-        <segue reference="huv-5T-afu"/>
-
-        <segue reference="34d-yG-ctN"/>
-        <segue reference="w4v-fJ-nlM"/>
-        <segue reference="VH3-0t-n5h"/>
         <segue reference="X9G-vh-Mef"/>
+        <segue reference="VH3-0t-n5h"/>
+        <segue reference="34d-yG-ctN"/>
     </inferredMetricsTieBreakers>
 </document>
