@@ -25,15 +25,19 @@
     IBOutlet UILabel *firstLabel3;
     FBRequest *fbrequest;
     NSString *logcheck;
+    IBOutlet UIButton *subBut;
+    IBOutlet UIButton *justBut;
+    IBOutlet UIButton *galBut;
+    IBOutlet UILabel *subLabel;
+    IBOutlet UILabel *galLabel;
+    IBOutlet UILabel *justLab;
 }
 @property (strong, nonatomic) IBOutlet UIView *MainView;
 @property (strong, nonatomic) IBOutlet UIView *uTubeView2;
 @property (strong, nonatomic) IBOutlet UIView *uTubeView;
 @property (nonatomic, retain) UIWebView *myWebView;
-@property (strong, nonatomic) IBOutlet UIButton *submitBut;
-@property (strong, nonatomic) IBOutlet UIButton *justBut;
+
 @property (weak, nonatomic) IBOutlet UIBarButtonItem *sidebarButton;
-@property (strong, nonatomic) IBOutlet UIButton *galleryBut;
 @property (nonatomic, strong) IBOutlet UIActivityIndicatorView *activityIndicator;
 
 @property (nonatomic, retain) IBOutlet UIScrollView *scrollView;
