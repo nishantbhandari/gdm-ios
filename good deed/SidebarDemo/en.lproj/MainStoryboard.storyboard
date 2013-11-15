@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="4514" systemVersion="13A603" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" initialViewController="FUu-XX-1jG">
     <dependencies>
-        <deployment defaultVersion="1552" identifier="iOS"/>
+        <deployment defaultVersion="1792" identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="3747"/>
     </dependencies>
     <scenes>
@@ -14,32 +14,55 @@
                         <viewControllerLayoutGuide type="bottom" id="mAZ-vO-yCz"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="mPn-OL-Qvg">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="480"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
-                            <webView contentMode="scaleToFill" fixedFrame="YES" scalesPageToFit="YES" translatesAutoresizingMaskIntoConstraints="NO" id="DM9-8y-Cae">
-                                <rect key="frame" x="7" y="75" width="307" height="481"/>
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="tailTruncation" numberOfLines="3" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" preferredMaxLayoutWidth="304" translatesAutoresizingMaskIntoConstraints="NO" id="VhR-ho-fSD">
+                                <rect key="frame" x="8" y="6" width="304" height="65"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="65" id="X1v-xk-NUn"/>
+                                </constraints>
+                                <attributedString key="attributedText">
+                                    <fragment>
+                                        <string key="content">Mumbai's coming alive with people all over the city joining the 
+</string>
+                                        <attributes>
+                                            <color key="NSColor" red="0.0039215686274509803" green="0.51764705882352935" blue="0.70980392156862748" alpha="1" colorSpace="calibratedRGB"/>
+                                            <font key="NSFont" size="15" name="ArialMT"/>
+                                            <paragraphStyle key="NSParagraphStyle" alignment="center" lineBreakMode="wordWrapping" baseWritingDirection="natural" lineHeightMultiple="1.2"/>
+                                        </attributes>
+                                    </fragment>
+                                    <fragment content="GOOD DEED MARATHON">
+                                        <attributes>
+                                            <color key="NSColor" red="0.41176470588235292" green="0.74509803921568629" blue="0.15686274509803921" alpha="1" colorSpace="calibratedRGB"/>
+                                            <font key="NSFont" size="15" name="ArialMT"/>
+                                            <font key="NSOriginalFont" size="15" name="ArialMT"/>
+                                            <paragraphStyle key="NSParagraphStyle" alignment="center" lineBreakMode="wordWrapping" baseWritingDirection="natural" lineHeightMultiple="1.2"/>
+                                        </attributes>
+                                    </fragment>
+                                </attributedString>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <webView clipsSubviews="YES" contentMode="scaleToFill" scalesPageToFit="YES" translatesAutoresizingMaskIntoConstraints="NO" id="DM9-8y-Cae">
+                                <rect key="frame" x="10" y="83" width="300" height="382"/>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                 <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="382" id="ukC-p9-3uP"/>
+                                </constraints>
                             </webView>
-                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="3" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" preferredMaxLayoutWidth="304" translatesAutoresizingMaskIntoConstraints="NO" id="VhR-ho-fSD">
-                                <rect key="frame" x="8" y="-11" width="304" height="78"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <string key="text">Mumbai's coming alive with people all over the city joining the
-</string>
-                                <fontDescription key="fontDescription" name="ArialMT" family="Arial" pointSize="15"/>
-                                <color key="textColor" red="0.0039215686269999999" green="0.51764705879999995" blue="0.70980392160000005" alpha="1" colorSpace="calibratedRGB"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="GOOD DEED MARATHON" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="OHs-PV-SNT">
-                                <rect key="frame" x="60" y="46" width="201" height="21"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" name="ArialMT" family="Arial" pointSize="14"/>
-                                <color key="textColor" red="0.41176470590000003" green="0.74509803919999995" blue="0.15686274510000001" alpha="1" colorSpace="calibratedRGB"/>
-                                <nil key="highlightedColor"/>
-                            </label>
                         </subviews>
                         <color key="backgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="DM9-8y-Cae" firstAttribute="top" secondItem="VhR-ho-fSD" secondAttribute="bottom" constant="12" id="Dn8-r8-Z1S"/>
+                            <constraint firstAttribute="trailing" secondItem="DM9-8y-Cae" secondAttribute="trailing" constant="10" id="RGd-uc-daY"/>
+                            <constraint firstItem="mAZ-vO-yCz" firstAttribute="top" secondItem="DM9-8y-Cae" secondAttribute="bottom" constant="15" id="SVC-8s-UXa"/>
+                            <constraint firstItem="VhR-ho-fSD" firstAttribute="top" secondItem="mPn-OL-Qvg" secondAttribute="top" constant="6" id="UBi-Qq-SKi"/>
+                            <constraint firstItem="DM9-8y-Cae" firstAttribute="leading" secondItem="mPn-OL-Qvg" secondAttribute="leading" constant="10" id="dOS-7Z-g58"/>
+                            <constraint firstItem="VhR-ho-fSD" firstAttribute="leading" secondItem="mPn-OL-Qvg" secondAttribute="leading" constant="8" id="f6Z-md-JNp"/>
+                            <constraint firstItem="DM9-8y-Cae" firstAttribute="centerX" secondItem="VhR-ho-fSD" secondAttribute="centerX" id="kBn-ld-ci5"/>
+                        </constraints>
                     </view>
                     <toolbarItems/>
                     <navigationItem key="navigationItem" id="NwG-OS-F83">
@@ -52,7 +75,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="06U-Nz-tAb" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1197" y="-1112"/>
+            <point key="canvasLocation" x="1275" y="-1343"/>
         </scene>
         <!--Upload View Controller-->
         <scene sceneID="XBx-Nd-rbc">
@@ -198,15 +221,15 @@ Tell us about them in any way you want.</string>
                         <viewControllerLayoutGuide type="bottom" id="FET-nc-WcU"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="VmJ-A3-kzU">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="480"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
                             <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="1Q3-n0-Hw8">
-                                <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                                <rect key="frame" x="0.0" y="0.0" width="320" height="480"/>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="VnF-6a-Pw6">
-                                        <rect key="frame" x="0.0" y="-1" width="320" height="1000"/>
+                                        <rect key="frame" x="0.0" y="-1" width="320" height="912"/>
                                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                         <subviews>
                                             <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" usesAttributedText="YES" lineBreakMode="tailTruncation" numberOfLines="10" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" preferredMaxLayoutWidth="256" translatesAutoresizingMaskIntoConstraints="NO" id="9uj-v0-Wve">
@@ -805,7 +828,7 @@ And even if you don’t have a band yet, why wait? Start doing good deeds and sh
                         <viewControllerLayoutGuide type="bottom" id="SrM-tx-Yzx"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="UQR-KE-vH8">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="480"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                     </view>
@@ -823,7 +846,7 @@ And even if you don’t have a band yet, why wait? Start doing good deeds and sh
                         <viewControllerLayoutGuide type="bottom" id="2yZ-HZ-Qgr"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="nwv-ha-Urq">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="480"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                     </view>
@@ -897,19 +920,19 @@ Be a part of the celebration.</string>
                         <viewControllerLayoutGuide type="bottom" id="5gk-SH-5XL"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="bEh-2y-hNk">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="480"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
                             <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="g0w-Fy-PRZ">
-                                <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                                <rect key="frame" x="0.0" y="0.0" width="320" height="480"/>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="CUV-jX-7Pa">
-                                        <rect key="frame" x="0.0" y="0.0" width="320" height="700"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="320" height="612"/>
                                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                         <subviews>
                                             <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="0u1-MU-wvz">
-                                                <rect key="frame" x="135" y="32" width="50" height="50"/>
+                                                <rect key="frame" x="135" y="32" width="50" height="0.0"/>
                                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                             </imageView>
                                             <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="zoC-xu-Tw3">
@@ -1003,11 +1026,11 @@ the most heartwarming deeds everyday!</string>
                         <viewControllerLayoutGuide type="bottom" id="IOn-Hr-jkn"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="lQI-1F-dbq">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="480"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
                             <webView contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Fen-cL-Nts">
-                                <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                                <rect key="frame" x="0.0" y="0.0" width="320" height="480"/>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                 <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                             </webView>
@@ -1035,11 +1058,11 @@ the most heartwarming deeds everyday!</string>
                         <viewControllerLayoutGuide type="bottom" id="XXU-xq-G8n"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="79A-KG-P9Z">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="480"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
                             <webView contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="MVx-0C-uT4">
-                                <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                                <rect key="frame" x="0.0" y="0.0" width="320" height="480"/>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                 <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                             </webView>
@@ -1071,7 +1094,7 @@ the most heartwarming deeds everyday!</string>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
                             <webView contentMode="scaleAspectFit" fixedFrame="YES" scalesPageToFit="YES" keyboardDisplayRequiresUserAction="NO" translatesAutoresizingMaskIntoConstraints="NO" id="wd1-Fu-nm7">
-                                <rect key="frame" x="0.0" y="45" width="320" height="524"/>
+                                <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                 <color key="backgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
                             </webView>
@@ -1097,7 +1120,7 @@ the most heartwarming deeds everyday!</string>
             <objects>
                 <tableViewController storyboardIdentifier="SidebarController" title="Sidebar" id="Meq-yH-YF6" customClass="SidebarViewController" sceneMemberID="viewController">
                     <tableView key="view" opaque="NO" clipsSubviews="YES" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" alwaysBounceVertical="YES" indicatorStyle="black" dataMode="prototypes" style="plain" separatorStyle="singleLineEtched" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" id="Nrr-j8-jHz">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="480"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <rect key="contentStretch" x="0.49999999999999994" y="0.0" width="1" height="1"/>
@@ -1314,7 +1337,7 @@ the most heartwarming deeds everyday!</string>
                         <viewControllerLayoutGuide type="bottom" id="YyQ-hl-5pS"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="Ynq-FO-pVk">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="480"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                     </view>
@@ -1360,12 +1383,12 @@ the most heartwarming deeds everyday!</string>
     <simulatedMetricsContainer key="defaultSimulatedMetrics">
         <simulatedStatusBarMetrics key="statusBar"/>
         <simulatedOrientationMetrics key="orientation"/>
-        <simulatedScreenMetrics key="destination" type="retina4"/>
+        <simulatedScreenMetrics key="destination"/>
     </simulatedMetricsContainer>
     <inferredMetricsTieBreakers>
-        <segue reference="w4v-fJ-nlM"/>
         <segue reference="X9G-vh-Mef"/>
+        <segue reference="w4v-fJ-nlM"/>
         <segue reference="VH3-0t-n5h"/>
-        <segue reference="34d-yG-ctN"/>
+        <segue reference="NTs-uD-z9s"/>
     </inferredMetricsTieBreakers>
 </document>

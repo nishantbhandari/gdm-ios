@@ -56,9 +56,9 @@
 	<string>618224338228150</string>
 	<key>LSRequiresIPhoneOS</key>
 	<true/>
-	<key>NSMainNibFile~ipad</key>
-	<string>MainStoryboard-iPad</string>
 	<key>UIMainStoryboardFile</key>
+	<string>MainStoryboard</string>
+	<key>UIMainStoryboardFile~ipad</key>
 	<string>MainStoryboard</string>
 	<key>UIRequiredDeviceCapabilities</key>
 	<array>
