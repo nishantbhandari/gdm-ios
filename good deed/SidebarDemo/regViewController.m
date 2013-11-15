@@ -59,34 +59,66 @@
 }
 - (void)viewDidLoad
 {
-    FBRequest *fbrequest = [FBRequest requestForMe];
+    [super viewDidLoad];
+    FBRequest *request = [FBRequest requestForMe];
     
-    [fbrequest startWithCompletionHandler:^(FBRequestConnection *connection, id result, NSError *error) {
-        //        if (!error) {
-        // result is a dictionary with the user's Facebook data
+    [request startWithCompletionHandler:^(FBRequestConnection *connection, id result, NSError *error) {
+        
         NSDictionary *userData = (NSDictionary *)result;
         
-        fb_id = userData[@"id"];
-        name.text = userData[@"name"];
-        email.text = userData[@"email"];
-        fb_gender = userData[@"gender"];
-        fb_dob = userData[@"birthday"];
+        NSLog(@"%@",userData[@"id"]);
         
-        NSLog(@"%@ %@ %@ %@ ",email.text,fb_dob,fb_id,name.text);
+        name.text = userData[@"name"];
+        
+        email.text = userData[@"email"];
+        city.text = @"Mumbai";
+        
+        
+        NSMutableDictionary *userProfile = [NSMutableDictionary dictionaryWithCapacity:6];
+        
+        if (userData[@"id"]) {
+            userProfile[@"id"] = userData[@"id"];
+        }
+        
+        if (userData[@"name"]) {
+            userProfile[@"name"] = userData[@"name"];
+        }
+        
+        if (userData[@"gender"]) {
+            userProfile[@"gender"] = userData[@"gender"];
+        }
+        
+        if (userData[@"birthday"]) {
+            userProfile[@"birthday"] = userData[@"birthday"];
+        }
+        if (userData[@"email"]) {
+            userProfile[@"email"] = userData[@"email"];
+        }
+        NSLog(@"emailll %@",userProfile[@"email"]);
+        
+        
+        [[PFUser currentUser] setObject:userProfile forKey:@"profile"];
+        [[PFUser currentUser] saveInBackground];
+        _fb_name = [[PFUser currentUser] objectForKey:@"profile"][@"name"];
+        _fb_email = [[PFUser currentUser] objectForKey:@"profile"][@"email"];
+        _fb_id = [[PFUser currentUser] objectForKey:@"profile"][@"id"];
+        _fb_gender = [[PFUser currentUser] objectForKey:@"profile"][@"gender"];
+        _fb_dob = [[PFUser currentUser] objectForKey:@"profile"][@"birthday"];
         
     }];
+
     
-    if ([[self validateUser:fb_id] isEqualToString:@"1"]) {
+    if ([[self validateUser:_fb_id] isEqualToString:@"1"]) {
         MainViewController *MainViewController = [self.storyboard instantiateViewControllerWithIdentifier:@"MainViewController"];
         // If you are using navigation controller, you can call
         [self.navigationController pushViewController:MainViewController animated:YES];
         
     }
-    else if([[self validateUser:fb_id]isEqualToString:@"0" ])
+    else if([[self validateUser:_fb_id]isEqualToString:@"0" ])
     {
         NSLog(@"stay");
     }
-    [super viewDidLoad];
+
     
     UIView *backView =[[UIView alloc] initWithFrame:CGRectMake(0, 0, 129, 41)];// Here you can set View width and height as per your requirement for displaying titleImageView position in navigationba
     UIImageView *titleImageView = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"navlogo.png"]];
@@ -95,7 +127,7 @@
     //titleImageView.contentMode = UIViewContentModeCenter;
     self.navigationItem.titleView = backView;
     //Navigation Logo
-    NSLog(@"%@",fb_name);
+    NSLog(@"%@",_fb_name);
     phone.text = @"234234234";
     address.text = @"asasdad";
     pincode.text = @"400079";
@@ -120,26 +152,26 @@
     // Dispose of any resources that can be recreated.
 }
 
-- (IBAction)register:(id)sender {
-   
 
-    
+
+
+- (IBAction)regBut:(id)sender {
     
     
     if([name.text length] == 0)
     {
         check = @"0";
-//        NSLog(@"%@",name.text);
+        //        NSLog(@"%@",name.text);
     }
     else if([email.text length] == 0)
     {
         check = @"0";
-//        NSLog(@"%@",email.text);
+        //        NSLog(@"%@",email.text);
     }
     else if([phone.text length] == 0)
     {
         check = @"0";
-                NSLog(@"%@",phone.text);
+        NSLog(@"%@",phone.text);
     }
     else if([address.text length] == 0)
     {
@@ -155,51 +187,51 @@
     }
     else {
         check = @"1";
-        }
-
-
+    }
+    
+    
     
     
     if([check isEqualToString:@"1"])
     {
-
-        NSLog(@"1212");
-    NSString * post = [[NSString alloc] initWithFormat:@"prof_id=%@&name=%@&email=%@&gender=%@&phn=%@&address=%@&dob=%@&city=Mumbai&state=Maharashtra&pin=%@",fb_id, name.text, email.text, fb_gender, phone.text, address.text, fb_dob, pincode.text];
-
-    NSData * postData = [post dataUsingEncoding:NSASCIIStringEncoding allowLossyConversion:NO];
         
-    NSString * postLength = [NSString stringWithFormat:@"%d",[postData length]];
-    NSMutableURLRequest * request = [[[NSMutableURLRequest alloc] init]autorelease];
-    [request setURL:[NSURL URLWithString:[NSString stringWithFormat:@"http://www.gooddeedmarathon.com/submit.php"]]];
-    [request setHTTPMethod:@"POST"];
-    [request setValue:postLength forHTTPHeaderField:@"Content-Length"];
-    [request setValue:@"application/x-www-form-urlencoded" forHTTPHeaderField:@"Content-Type"];
-    [request setHTTPBody:postData];
-//    NSURLConnection * conn = [[NSURLConnection alloc] initWithRequest:request delegate:self];
-    
-    NSData *returnData = [NSURLConnection sendSynchronousRequest:request returningResponse:nil error:nil];
-    
-    
-    NSString *returnString = [[NSString alloc] initWithData:returnData encoding:NSUTF8StringEncoding];
+        NSLog(@"fb -- --");
+        NSString * post = [[NSString alloc] initWithFormat:@"prof_id=%@&name=%@&email=%@&gender=%@&phn=%@&address=%@&dob=%@&city=%@&state=Maharashtra&pin=%@",_fb_id, _fb_name, _fb_email ,_fb_gender ,phone.text, address.text,_fb_dob,city.text, pincode.text];
+        
+        NSData * postData = [post dataUsingEncoding:NSASCIIStringEncoding allowLossyConversion:NO];
+        
+        NSString * postLength = [NSString stringWithFormat:@"%d",[postData length]];
+        NSMutableURLRequest * request = [[[NSMutableURLRequest alloc] init]autorelease];
+        [request setURL:[NSURL URLWithString:[NSString stringWithFormat:@"http://www.gooddeedmarathon.com/submit.php"]]];
+        [request setHTTPMethod:@"POST"];
+        [request setValue:postLength forHTTPHeaderField:@"Content-Length"];
+        [request setValue:@"application/x-www-form-urlencoded" forHTTPHeaderField:@"Content-Type"];
+        [request setHTTPBody:postData];
+        //    NSURLConnection * conn = [[NSURLConnection alloc] initWithRequest:request delegate:self];
+        
+        NSData *returnData = [NSURLConnection sendSynchronousRequest:request returningResponse:nil error:nil];
+        
+        
+        NSString *returnString = [[NSString alloc] initWithData:returnData encoding:NSUTF8StringEncoding];
         NSLog(@"%@",returnString);
-    if([returnString isEqualToString:@"1"]){
-       
-        
-        afRegViewController *myOtherViewController = [self.storyboard instantiateViewControllerWithIdentifier:@"afRegViewController"];
-        // If you are using navigation controller, you can call
-        [self.navigationController pushViewController:myOtherViewController animated:YES];
-    
-    }
-    else if([returnString isEqualToString:@"0"]){
-        UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Uh oh! Error occurred try again"
-                                                        message:@""
-                                                       delegate:self
-                                              cancelButtonTitle:@"Ok"
-                                              otherButtonTitles:nil, nil];
-        [alert show];
-        [alert release];
-    
-    }
+        if([returnString isEqualToString:@"1"]){
+            
+            
+            afRegViewController *myOtherViewController = [self.storyboard instantiateViewControllerWithIdentifier:@"afRegViewController"];
+            // If you are using navigation controller, you can call
+            [self.navigationController pushViewController:myOtherViewController animated:YES];
+            
+        }
+        else if([returnString isEqualToString:@"0"]){
+            UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Uh oh! Error occurred try again"
+                                                            message:@""
+                                                           delegate:self
+                                                  cancelButtonTitle:@"Ok"
+                                                  otherButtonTitles:nil, nil];
+            [alert show];
+            [alert release];
+            
+        }
     }
     else if([check isEqualToString:@"0"])
     {
@@ -210,14 +242,9 @@
                                               otherButtonTitles:nil, nil];
         [alert show];
         [alert release];
-    
+        
     }
     
-//    [check release];
-    
-    
+
 }
-
-
-
 @end

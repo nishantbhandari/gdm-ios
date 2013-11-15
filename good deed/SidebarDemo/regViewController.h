@@ -7,6 +7,7 @@
 //
 
 #import <UIKit/UIKit.h>
+#import <Parse/Parse.h>
 
 @interface regViewController : UIViewController{
     IBOutlet UITextField *name;
@@ -16,17 +17,20 @@
     IBOutlet UITextField *city;
     IBOutlet UITextField *pincode;
     NSString *check;
-    NSString *fb_name;
-    NSString *fb_email;
-    NSString *fb_id;
-    NSString *fb_gender;
-    NSString *fb_dob;
+
     
 
 }
 
+- (IBAction)regBut:(id)sender;
+@property (nonatomic,retain) NSString *fb_name;
+@property (nonatomic,retain) NSString *fb_email;
+@property (nonatomic,retain) NSString *fb_id;
+@property (nonatomic,retain) NSString *fb_gender;
+@property (nonatomic,retain) NSString *fb_dob;
 @property (nonatomic, retain) IBOutlet UIScrollView *scrollView;
 @property (strong, nonatomic) IBOutlet UIView *contenview;
-- (IBAction)register:(id)sender;
+
+
 
 @end

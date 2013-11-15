@@ -31,8 +31,101 @@
 -(void)viewWillAppear:(BOOL) animated {
     [super viewWillAppear:animated];
     
-    
+}
 
+
+-(void)utubeView:(UIView *)utubeMainView{
+
+    ALScrollViewPaging *uTubeScroll = [[ALScrollViewPaging alloc] initWithFrame:CGRectMake(0, 30, self.view.frame.size.width, 180)];
+    //array for views to add to the scrollview
+    NSMutableArray *views = [[NSMutableArray alloc] init];
+    //array for colors of views
+    
+    //cycle which creates views for the scrollview
+    NSString *str=@"http://gooddeedmarathon.com/getYoutubeVideoIds.php";
+    NSURL *url=[NSURL URLWithString:str];
+    NSData *data=[NSData dataWithContentsOfURL:url];
+    NSError *error=nil;
+    NSArray *response = [NSJSONSerialization JSONObjectWithData:data options:kNilOptions error:&error];
+    NSLog(@"value = %@", [response objectAtIndex:1] );
+    
+    
+    for (int i = 0; i < [response count]; i++) {
+        self.myWebView = [[UIWebView alloc] initWithFrame:CGRectMake(0, 0,self.view.frame.size.width,180)];
+        //        UIView *view = [[UIView alloc] initWithFrame:CGRectMake(0, 0, self.view.frame.size.width, 200)];
+        NSString *urls = [response objectAtIndex:i];
+        videoURL = [NSString stringWithFormat:@"http://youtube.com/embed/%@",urls] ;
+        NSLog(@"%@",videoURL);
+        videoHTML = [NSString stringWithFormat:@"\
+                     <html>\
+                     <head>\
+                     <style type=\"text/css\">\
+                     iframe {position:absolute; top:50%%; margin-top:-130px;}\
+                     body {background-color:#000; margin:0;}\
+                     </style>\
+                     </head>\
+                     <body>\
+                     <iframe width=\"100%%\" height=\"240px\" src=\"%@\" frameborder=\"0\" allowfullscreen></iframe>\
+                     </body>\
+                     </html>", videoURL];
+        
+        [self.myWebView loadHTMLString:videoHTML baseURL:nil];
+        
+        
+        
+        //
+        self.myWebView.scrollView.scrollEnabled = NO;
+        self.myWebView.scrollView.bounces = NO;
+        [utubeMainView setBackgroundColor:[UIColor blackColor]];
+        [views addObject:self.myWebView];
+    }
+    
+    //add pages to scrollview
+    [uTubeScroll addPages:views];
+    
+    //add scrollview to the view
+    [utubeMainView addSubview:uTubeScroll];
+    
+    [uTubeScroll setHasPageControl:YES];
+}
+
+
+-(void)homeViewChange:(NSString *)logcheck1{
+    if ([logcheck1 isEqualToString:@"1"]) {
+        NSLog(@"congo");
+        _uTubeView2.hidden = NO;
+        secondLabel1.hidden = NO;
+        secondLabel2.hidden = NO;
+        firstLabel2.hidden = NO;
+        _submitBut.hidden = NO;
+        _galleryBut.hidden = NO;
+        _justBut.hidden = NO;
+        [_activityIndicator stopAnimating];
+            [self utubeView:_uTubeView2];
+
+    }
+    else if ([logcheck1 isEqualToString:@"0"]) {
+        NSLog(@"fb %@",fbid);
+        UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Oops" message:@"You need to register before you can submit a good deed." delegate:nil cancelButtonTitle:nil otherButtonTitles:@"Dismiss", nil];
+        [alert show];
+        alert = nil;
+        firstLabel1.hidden = NO;
+        _uTubeView.hidden = NO;
+        fblogin.hidden = NO;
+        firstLabel3.hidden = NO;
+        [self utubeView:_uTubeView];
+        _activityIndicator.center = self.MainView.center;
+        [_activityIndicator stopAnimating];
+        
+
+}
+
+
+}
+-(void)viewDidAppear:(BOOL)animated{
+    [super viewDidAppear:animated];
+    
+//    _contentView.hidden = YES;
     if ([PFUser currentUser] && // Check if a user is cached
         [PFFacebookUtils isLinkedWithUser:[PFUser currentUser]]) // Check if user is linked to Facebook
     {
@@ -47,102 +140,30 @@
             NSLog(@"fb? %@",fbid);
             
             [self homeViewChange:[self validateUser:fbid]];
+//            [self homeViewChange:@"1"];
             
         }];
         
         // Push the next view controller without animation
     }
-
-    
-}
--(void)homeViewChange:(NSString *)logcheck1{
-    if ([logcheck1 isEqualToString:@"1"]) {
-        NSLog(@"congo");
-        firstLabel1.hidden = YES;
-        _uTubeView.hidden = YES;
-        fblogin.hidden = YES;
-        firstLabel3.hidden = YES;
-        _contentView.hidden = NO;
+    else
+    {
+        [self homeViewChange:@"0"];
     }
-    else if ([logcheck1 isEqualToString:@"0"]) {
-        NSLog(@"fb %@",fbid);
-        UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Oops" message:@"You need to register before you can submit a good deed." delegate:nil cancelButtonTitle:nil otherButtonTitles:@"Dismiss", nil];
-        [alert show];
-        alert = nil;
-        _uTubeView2.hidden = YES;
-        secondLabel1.hidden = YES;
-        secondLabel2.hidden = YES;
-        firstLabel2.hidden = YES;
-        _contentView.hidden = NO;
-        
-        
-}
+    
+//    [self homeViewChange:@"1"];
 
 
-}
--(void)viewDidAppear:(BOOL)animated{
-    [super viewDidAppear:animated];
-    _contentView.hidden = YES;
 
 }
 //-(void)setView:(UIView *)whichView{
-//    ALScrollViewPaging *scrollView1 = [[ALScrollViewPaging alloc] initWithFrame:CGRectMake(0, 30, self.view.frame.size.width, 180)];
-//    //array for views to add to the scrollview
-//    NSMutableArray *views = [[NSMutableArray alloc] init];
-//    //array for colors of views
-//    
-//    //cycle which creates views for the scrollview
-//    NSString *str=@"http://gooddeedmarathon.com/getYoutubeVideoIds.php";
-//    NSURL *url=[NSURL URLWithString:str];
-//    NSData *data=[NSData dataWithContentsOfURL:url];
-//    NSError *error=nil;
-//    NSArray *response = [NSJSONSerialization JSONObjectWithData:data options:kNilOptions error:&error];
-//    NSLog(@"value = %@", [response objectAtIndex:1] );
-//    
-//    
-//    for (int i = 0; i < [response count]; i++) {
-//        self.myWebView = [[UIWebView alloc] initWithFrame:CGRectMake(0, 0,self.view.frame.size.width,180)];
-//        //        UIView *view = [[UIView alloc] initWithFrame:CGRectMake(0, 0, self.view.frame.size.width, 200)];
-//        NSString *urls = [response objectAtIndex:i];
-//        videoURL = [NSString stringWithFormat:@"http://youtube.com/embed/%@",urls] ;
-//        NSLog(@"%@",videoURL);
-//        videoHTML = [NSString stringWithFormat:@"\
-//                     <html>\
-//                     <head>\
-//                     <style type=\"text/css\">\
-//                     iframe {position:absolute; top:50%%; margin-top:-130px;}\
-//                     body {background-color:#000; margin:0;}\
-//                     </style>\
-//                     </head>\
-//                     <body>\
-//                     <iframe width=\"100%%\" height=\"240px\" src=\"%@\" frameborder=\"0\" allowfullscreen></iframe>\
-//                     </body>\
-//                     </html>", videoURL];
-//        
-//        [self.myWebView loadHTMLString:videoHTML baseURL:nil];
-//        
-//        
-//        
-//        //
-//        self.myWebView.scrollView.scrollEnabled = NO;
-//        self.myWebView.scrollView.bounces = NO;
-//        [self.uTubeView2 setBackgroundColor:[UIColor blackColor]];
-//        [views addObject:self.myWebView];
-//    }
-//    
-//    //add pages to scrollview
-//    [scrollView1 addPages:views];
-//    
-//    //add scrollview to the view
-//    [self.uTubeView2 addSubview:scrollView1];
-//    
-//    [scrollView1 setHasPageControl:YES];
 //
 //
 //}
 
 - (void)viewDidLoad
 {
+    [_activityIndicator startAnimating];
     [super viewDidLoad];
     if (![[NSUserDefaults standardUserDefaults] boolForKey:@"wasLaunchedBefore"]) {
         NSLog(@"first time");
@@ -154,7 +175,7 @@
     }
     
     
-    
+
     
     
     
