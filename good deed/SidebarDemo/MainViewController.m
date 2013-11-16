@@ -130,7 +130,6 @@
 -(void)viewDidAppear:(BOOL)animated{
     [super viewDidAppear:animated];
     
-//    _contentView.hidden = YES;
     if ([PFUser currentUser] && // Check if a user is cached
         [PFFacebookUtils isLinkedWithUser:[PFUser currentUser]]) // Check if user is linked to Facebook
     {
@@ -148,39 +147,20 @@
 //            [self homeViewChange:@"1"];
             
         }];
-        
-        // Push the next view controller without animation
+
     }
     else
     {
         [self homeViewChange:@"0"];
     }
     
-//    [self homeViewChange:@"1"];
-
-
 
 }
-//-(void)setView:(UIView *)whichView{
-//
-//
-//}
-- (BOOL)prefersStatusBarHidden
-{
-    return YES;
-}
+
 - (void)viewDidLoad
 {
     [_activityIndicator startAnimating];
     [super viewDidLoad];
-    if ([self respondsToSelector:@selector(setNeedsStatusBarAppearanceUpdate)]) {
-        // iOS 7
-        [self prefersStatusBarHidden];
-        [self performSelector:@selector(setNeedsStatusBarAppearanceUpdate)];
-    } else {
-        // iOS 6
-        [[UIApplication sharedApplication] setStatusBarHidden:YES withAnimation:UIStatusBarAnimationSlide];
-    }
      [self utubeView:_uTubeView];
      [self utubeView:_uTubeView2];
     if (![[NSUserDefaults standardUserDefaults] boolForKey:@"wasLaunchedBefore"]) {
@@ -192,130 +172,20 @@
         [[NSUserDefaults standardUserDefaults] setBool:YES forKey:@"wasLaunchedBefore"];
     }
     
-    
 
-    
-    
-    
-    
-    //    // Change button color
+
+    UIView *backView =[[UIView alloc] initWithFrame:CGRectMake(0, 0, 129, 41)];    UIImageView *titleImageView = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"navlogo.png"]];
+    titleImageView.frame = CGRectMake(0, 0,129 , 41);
+    [backView addSubview:titleImageView];
+ 
+    self.navigationItem.titleView = backView;
     _sidebarButton.tintColor = [UIColor whiteColor];
-//
-//    // Set the side bar button action. When it's tapped, it'll show up the sidebar.
     _sidebarButton.target = self.revealViewController;
     _sidebarButton.action = @selector(revealToggle:);
-
-    
-    //Navigation Logo
-    UIView *backView =[[UIView alloc] initWithFrame:CGRectMake(0, 0, 129, 41)];// Here you can set View width and height as per your requirement for displaying titleImageView position in navigationba
-    UIImageView *titleImageView = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"navlogo.png"]];
-    titleImageView.frame = CGRectMake(0, 0,129 , 41); // Here I am passing origin as (45,5) but can pass them as your requirement.
-    [backView addSubview:titleImageView];
-    //titleImageView.contentMode = UIViewContentModeCenter;
-    self.navigationItem.titleView = backView;
-    
-    
-    // Set the gesture
     [self.view addGestureRecognizer:self.revealViewController.panGestureRecognizer];
 
 }
 
-    
-
-    
-    
-    
-//        [PFUser logOut]; // Log out
-//    /* Login to facebook method */
-//    // Set permissions required from the facebook user account
-//    NSArray *permissionsArray = @[ @"user_about_me", @"user_relationships", @"user_birthday", @"user_location",@"email"];
-//    
-//    // Login PFUser using facebook
-//    [PFFacebookUtils logInWithPermissions:permissionsArray block:^(PFUser *user, NSError *error) {
-// // Hide loading indicator
-//
-//        // validation!!
-//        
-//        //other validation
-//        
-//        if (!user) {
-//            if (!error) {
-//                [_activityIndicator stopAnimating];
-//                NSLog(@"Uh oh. The user cancelled the Facebook login.");
-//                UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Log In Error" message:@"Uh oh. The user cancelled the Facebook login." delegate:nil cancelButtonTitle:nil otherButtonTitles:@"Dismiss", nil];
-//                [alert show];
-//            } else {
-//                [_activityIndicator stopAnimating];
-//                NSLog(@"Uh oh. An error occurred: %@", error);
-//                UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Log In Error" message:[error description] delegate:nil cancelButtonTitle:nil otherButtonTitles:@"Dismiss", nil];
-//                [alert show];
-//            }
-//        } else if (user.isNew) {
-//            [_activityIndicator stopAnimating];
-//            NSLog(@"User with facebook signed up and logged in!");
-//            regViewController *myOtherViewController = [self.storyboard instantiateViewControllerWithIdentifier:@"regViewController"];
-//            // If you are using navigation controller, you can call
-//              [self.navigationController pushViewController:myOtherViewController animated:YES];
-//
-//            
-//        } else {
-//
-//            NSOperationQueue *mainQueue = [[NSOperationQueue alloc] init];
-//            [mainQueue setMaxConcurrentOperationCount:5];
-//            
-//            NSString *gdmurl = [NSString stringWithFormat:@"http://www.gooddeedmarathon.com/check-ios.php?id=%@",fbid];
-//            NSURL *url = [NSURL URLWithString:gdmurl];
-//            
-//            NSMutableURLRequest *request = [[NSMutableURLRequest alloc] initWithURL:url];
-//            
-//            [request setHTTPMethod:@"GET"];
-//            [request setAllHTTPHeaderFields:@{@"Accepts-Encoding": @"gzip", @"Accept": @"application/json"}];
-//            
-//            [NSURLConnection sendAsynchronousRequest:request queue:mainQueue completionHandler:^(NSURLResponse *response, NSData *responseData, NSError *error) {
-//                NSHTTPURLResponse *urlResponse = (NSHTTPURLResponse *)response;
-//                if (!error) {
-//                    NSLog(@"Status Code: %li %@", (long)urlResponse.statusCode, [NSHTTPURLResponse localizedStringForStatusCode:urlResponse.statusCode]);
-//                    NSLog(@"Response Body: %@", [[NSString alloc] initWithData:responseData encoding:NSUTF8StringEncoding]);
-//                    NSString *strrrng = [[NSString alloc] initWithData:responseData encoding:NSUTF8StringEncoding];
-//                    if ([strrrng isEqual:@"1"])
-//                    {
-//                        NSLog(@"success loggin with validation");
-//                        [_activityIndicator stopAnimating];
-//                        //if user is registered!!
-//                        MainViewController *camViewController = [self.storyboard instantiateViewControllerWithIdentifier:@"MainViewController"];
-//                        // If you are using navigation controller, you can call
-//                        [self.navigationController pushViewController:camViewController animated:YES];
-//                        
-//                        
-//                    }
-//                    else{
-//                        NSLog(@"user not registered");
-//                    [_activityIndicator stopAnimating];
-//                        regViewController *regViewController = [self.storyboard instantiateViewControllerWithIdentifier:@"regViewController"];
-//                        regViewController.fb_id = fbid;
-//                        regViewController.fb_name = fbname;
-//                        regViewController.fb_email = fbemail;
-//                        regViewController.fb_dob = fbdob;
-//                        regViewController.fb_gender = fbgender;
-//                        NSLog(@"reggg %@",fbid);
-//                        [self.navigationController pushViewController:regViewController animated:NO];
-//
-//
-//                    }
-//                }
-//                else {
-//                    [_activityIndicator stopAnimating];
-//                    NSLog(@"An error occured, Status Code: %i", urlResponse.statusCode);
-//                    NSLog(@"Description: %@", [error localizedDescription]);
-//                    NSLog(@"Response Body: %@", [[NSString alloc] initWithData:responseData encoding:NSUTF8StringEncoding]);
-//                }
-//            }];
-//
-//            NSLog(@"User with facebook logged in!");
-//        
-//        }
-//    }];
-//
 
 -(NSString *)validateUser:(NSString*)userid {
     
@@ -335,8 +205,6 @@
     return returnString;
 }
 -(void)loginbutton{
-
-    [PFUser logOut];
     // The permissions requested from the user
     NSArray *permissionsArray = @[ @"user_about_me", @"user_relationships", @"user_birthday", @"user_location"];
     
@@ -378,12 +246,6 @@
 }
 
 - (IBAction)loginn:(id)sender {
-    
-    NSLog(@"after this");
-    NSLog(@"%@",[self validateUser:fbid]);
-//        NSLog(@" yo ?%@",logcheck);
     [self loginbutton];
-    NSLog(@"before this ");
-
 }
 @end

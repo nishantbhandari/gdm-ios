@@ -60,6 +60,8 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
+
+
     FBRequest *request = [FBRequest requestForMe];
     
     [request startWithCompletionHandler:^(FBRequestConnection *connection, id result, NSError *error) {
