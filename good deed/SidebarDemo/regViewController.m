@@ -12,10 +12,18 @@
 #import "MainViewController.h"
 #import <Parse/Parse.h>
 #import "afRegViewController.h"
+#import "BSKeyboardControls.h"
 @interface regViewController ()
+@property (nonatomic, weak) IBOutlet UITextField *name;
+@property (nonatomic, weak) IBOutlet UITextField *email;
+@property (nonatomic, weak) IBOutlet UITextField *phone;
+@property (nonatomic, weak) IBOutlet UITextField *address;
+@property (nonatomic, weak) IBOutlet UITextField *city;
+@property (nonatomic, weak) IBOutlet UITextField *pincode;
+@property (nonatomic, strong) BSKeyboardControls *keyboardControls;
 
 @end
-
+#define SYSTEM_VERSION_LESS_THAN(v)     ([[[UIDevice currentDevice] systemVersion] compare:v options:NSNumericSearch] == NSOrderedAscending)
 #define numTextFields 6
 
 @implementation regViewController
@@ -57,10 +65,48 @@
     
     return returnString;
 }
+- (void)textFieldDidBeginEditing:(UITextField *)textField
+{
+    [self.keyboardControls setActiveField:textField];
+}
+
+#pragma mark -
+#pragma mark Text View Delegate
+
+- (void)textViewDidBeginEditing:(UITextView *)textView
+{
+    [self.keyboardControls setActiveField:textView];
+}
+
+#pragma mark -
+#pragma mark Keyboard Controls Delegate
+
+- (void)keyboardControls:(BSKeyboardControls *)keyboardControls selectedField:(UIView *)field inDirection:(BSKeyboardControlsDirection)direction
+{
+    UIView *view;
+    
+    if (SYSTEM_VERSION_LESS_THAN(@"7.0")) {
+        view = field.superview.superview;
+    } else {
+        view = field.superview.superview.superview;
+    }
+    
+//    [self.contenview scrollRectToVisible:view.frame animated:YES];
+}
+
+- (void)keyboardControlsDonePressed:(BSKeyboardControls *)keyboardControls
+{
+    [self.view endEditing:YES];
+}
+
+
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-
+    NSArray *fields = @[self.phone,self.address,self.pincode,self.city];
+    
+    [self setKeyboardControls:[[BSKeyboardControls alloc] initWithFields:fields]];
+    [self.keyboardControls setDelegate:self];
 
     FBRequest *request = [FBRequest requestForMe];
     
@@ -70,10 +116,10 @@
         
         NSLog(@"%@",userData[@"id"]);
         
-        name.text = userData[@"name"];
+        _name.text = userData[@"name"];
         
-        email.text = userData[@"email"];
-        city.text = @"Mumbai";
+        _email.text = userData[@"email"];
+        _city.text = @"Mumbai";
         
         
         NSMutableDictionary *userProfile = [NSMutableDictionary dictionaryWithCapacity:6];
@@ -136,7 +182,7 @@
 //    [self changeBorderColor:email];
     
     
-    city.text= @"Mumbai";
+    _city.text= @"Mumbai";
     
 }
 
@@ -152,30 +198,30 @@
 - (IBAction)regBut:(id)sender {
     
     
-    if([name.text length] == 0)
+    if([_name.text length] == 0)
     {
         check = @"0";
         //        NSLog(@"%@",name.text);
     }
-    else if([email.text length] == 0)
+    else if([_email.text length] == 0)
     {
         check = @"0";
         //        NSLog(@"%@",email.text);
     }
-    else if([phone.text length] == 0)
+    else if([_phone.text length] == 0)
     {
         check = @"0";
-        NSLog(@"%@",phone.text);
+        NSLog(@"%@",_phone.text);
     }
-    else if([address.text length] == 0)
-    {
-        check = @"0";
-    }
-    else if([city.text length] == 0)
+    else if([_address.text length] == 0)
     {
         check = @"0";
     }
-    else if([pincode.text length] == 0)
+    else if([_city.text length] == 0)
+    {
+        check = @"0";
+    }
+    else if([_pincode.text length] == 0)
     {
         check = @"0";
     }
@@ -190,12 +236,12 @@
     {
         
         NSLog(@"fb -- --");
-        NSString * post = [[NSString alloc] initWithFormat:@"prof_id=%@&name=%@&email=%@&gender=%@&phn=%@&address=%@&dob=%@&city=%@&state=Maharashtra&pin=%@",_fb_id, _fb_name, _fb_email ,_fb_gender ,phone.text, address.text,_fb_dob,city.text, pincode.text];
+        NSString * post = [[NSString alloc] initWithFormat:@"prof_id=%@&name=%@&email=%@&gender=%@&phn=%@&address=%@&dob=%@&city=%@&state=Maharashtra&pin=%@",_fb_id, _fb_name, _fb_email ,_fb_gender ,_phone.text, _address.text,_fb_dob,_city.text, _pincode.text];
         
         NSData * postData = [post dataUsingEncoding:NSASCIIStringEncoding allowLossyConversion:NO];
         
         NSString * postLength = [NSString stringWithFormat:@"%d",[postData length]];
-        NSMutableURLRequest * request = [[[NSMutableURLRequest alloc] init]autorelease];
+        NSMutableURLRequest * request = [[NSMutableURLRequest alloc] init];
         [request setURL:[NSURL URLWithString:[NSString stringWithFormat:@"http://www.gooddeedmarathon.com/submit.php"]]];
         [request setHTTPMethod:@"POST"];
         [request setValue:postLength forHTTPHeaderField:@"Content-Length"];
@@ -223,7 +269,7 @@
                                                   cancelButtonTitle:@"Ok"
                                                   otherButtonTitles:nil, nil];
             [alert show];
-            [alert release];
+            alert = nil;
             
         }
     }
@@ -235,7 +281,7 @@
                                               cancelButtonTitle:@"Ok"
                                               otherButtonTitles:nil, nil];
         [alert show];
-        [alert release];
+        alert = nil;
         
     }
     

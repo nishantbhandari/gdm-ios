@@ -30,6 +30,32 @@
 }
 -(void)viewWillAppear:(BOOL) animated {
     [super viewWillAppear:animated];
+    if ([PFUser currentUser] && // Check if a user is cached
+        [PFFacebookUtils isLinkedWithUser:[PFUser currentUser]]) // Check if user is linked to Facebook
+    {
+        fbrequest = [FBRequest requestForMe];
+        
+        [fbrequest startWithCompletionHandler:^(FBRequestConnection *connection, id result, NSError *error) {
+            //        if (!error) {
+            // result is a dictionary with the user's Facebook data
+            NSDictionary *userData = (NSDictionary *)result;
+            
+            fbid = userData[@"id"];
+            NSLog(@"fb? %@",fbid);
+             [self homeViewChange:[self validateUser:fbid]];
+            
+//            [self homeViewChange:[self validateUser:fbid]];
+            //            [self homeViewChange:@"1"];
+            
+        }];
+        
+    }
+    else
+    {
+        logcheck = @"0";
+        
+        [self homeViewChange:@"0"];
+    }
     
 }
 
@@ -130,29 +156,7 @@
 -(void)viewDidAppear:(BOOL)animated{
     [super viewDidAppear:animated];
     
-    if ([PFUser currentUser] && // Check if a user is cached
-        [PFFacebookUtils isLinkedWithUser:[PFUser currentUser]]) // Check if user is linked to Facebook
-    {
-        fbrequest = [FBRequest requestForMe];
-        
-        [fbrequest startWithCompletionHandler:^(FBRequestConnection *connection, id result, NSError *error) {
-            //        if (!error) {
-            // result is a dictionary with the user's Facebook data
-            NSDictionary *userData = (NSDictionary *)result;
-            
-            fbid = userData[@"id"];
-            NSLog(@"fb? %@",fbid);
-            
-            [self homeViewChange:[self validateUser:fbid]];
-//            [self homeViewChange:@"1"];
-            
-        }];
 
-    }
-    else
-    {
-        [self homeViewChange:@"0"];
-    }
     
 
 }
@@ -160,7 +164,9 @@
 - (void)viewDidLoad
 {
     [_activityIndicator startAnimating];
-    [super viewDidLoad];
+
+    
+    
      [self utubeView:_uTubeView];
      [self utubeView:_uTubeView2];
     if (![[NSUserDefaults standardUserDefaults] boolForKey:@"wasLaunchedBefore"]) {
@@ -246,6 +252,10 @@
 }
 
 - (IBAction)loginn:(id)sender {
+    
+
     [self loginbutton];
+
+
 }
 @end

@@ -24,9 +24,11 @@
 		1970493A1832642700084F06 /* ALScrollViewPaging.m in Sources */ = {isa = PBXBuildFile; fileRef = 197049391832642700084F06 /* ALScrollViewPaging.m */; };
 		197F05A71833B1B0003FF1E4 /* galViewC.m in Sources */ = {isa = PBXBuildFile; fileRef = 197F05A61833B1B0003FF1E4 /* galViewC.m */; };
 		197F05B01833B5FD003FF1E4 /* parViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 197F05AF1833B5FD003FF1E4 /* parViewController.m */; };
+		1998DBFA18376B3D00C4CF91 /* BSKeyboardControls.m in Sources */ = {isa = PBXBuildFile; fileRef = 1998DBF218376B3D00C4CF91 /* BSKeyboardControls.m */; };
+		1998DBFB18376B3D00C4CF91 /* BSKeyboardControls.strings in Resources */ = {isa = PBXBuildFile; fileRef = 1998DBF318376B3D00C4CF91 /* BSKeyboardControls.strings */; };
 		199E8D8B182B5F910010D1EF /* ftViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 199E8D8A182B5F910010D1EF /* ftViewController.m */; };
 		19A7E9F0182CB57000EBE47B /* AssetsLibrary.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 19A7E9EF182CB57000EBE47B /* AssetsLibrary.framework */; };
-		19AE5806181A3CB300499F29 /* regViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 19AE5804181A3CB300499F29 /* regViewController.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
+		19AE5806181A3CB300499F29 /* regViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 19AE5804181A3CB300499F29 /* regViewController.m */; };
 		19AF6302181A588C005928FB /* uploadViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 19AF6301181A588C005928FB /* uploadViewController.m */; };
 		19BACBEE182BA8EC00EF20B8 /* CoreMedia.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 19BACBED182BA8EC00EF20B8 /* CoreMedia.framework */; };
 		19BACBF2182BA93C00EF20B8 /* MediaPlayer.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 19BACBF1182BA93C00EF20B8 /* MediaPlayer.framework */; settings = {ATTRIBUTES = (Required, ); }; };
@@ -82,6 +84,14 @@
 		197F05A61833B1B0003FF1E4 /* galViewC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = galViewC.m; sourceTree = "<group>"; };
 		197F05AE1833B5FD003FF1E4 /* parViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = parViewController.h; sourceTree = "<group>"; };
 		197F05AF1833B5FD003FF1E4 /* parViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = parViewController.m; sourceTree = "<group>"; };
+		1998DBF118376B3D00C4CF91 /* BSKeyboardControls.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BSKeyboardControls.h; sourceTree = "<group>"; };
+		1998DBF218376B3D00C4CF91 /* BSKeyboardControls.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BSKeyboardControls.m; sourceTree = "<group>"; };
+		1998DBF418376B3D00C4CF91 /* da */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = da; path = da.lproj/BSKeyboardControls.strings; sourceTree = "<group>"; };
+		1998DBF518376B3D00C4CF91 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/BSKeyboardControls.strings; sourceTree = "<group>"; };
+		1998DBF618376B3D00C4CF91 /* pt */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = pt; path = pt.lproj/BSKeyboardControls.strings; sourceTree = "<group>"; };
+		1998DBF718376B3D00C4CF91 /* ru-RU */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "ru-RU"; path = "ru-RU.lproj/BSKeyboardControls.strings"; sourceTree = "<group>"; };
+		1998DBF818376B3D00C4CF91 /* ru */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ru; path = ru.lproj/BSKeyboardControls.strings; sourceTree = "<group>"; };
+		1998DBF918376B3D00C4CF91 /* sv */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = sv; path = sv.lproj/BSKeyboardControls.strings; sourceTree = "<group>"; };
 		199E8D89182B5F910010D1EF /* ftViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ftViewController.h; sourceTree = "<group>"; };
 		199E8D8A182B5F910010D1EF /* ftViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ftViewController.m; sourceTree = "<group>"; };
 		19A7E9EF182CB57000EBE47B /* AssetsLibrary.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AssetsLibrary.framework; path = System/Library/Frameworks/AssetsLibrary.framework; sourceTree = SDKROOT; };
@@ -165,6 +175,16 @@
 			path = ALScrollViewPaging;
 			sourceTree = "<group>";
 		};
+		1998DBF018376B3D00C4CF91 /* BSKeyboardControls */ = {
+			isa = PBXGroup;
+			children = (
+				1998DBF118376B3D00C4CF91 /* BSKeyboardControls.h */,
+				1998DBF218376B3D00C4CF91 /* BSKeyboardControls.m */,
+				1998DBF318376B3D00C4CF91 /* BSKeyboardControls.strings */,
+			);
+			path = BSKeyboardControls;
+			sourceTree = "<group>";
+		};
 		F4EECF05177C99F400778578 = {
 			isa = PBXGroup;
 			children = (
@@ -215,6 +235,7 @@
 		F4EECF17177C99F400778578 /* SidebarDemo */ = {
 			isa = PBXGroup;
 			children = (
+				1998DBF018376B3D00C4CF91 /* BSKeyboardControls */,
 				196733771833E99C001ADBAC /* MainStoryboard.storyboard */,
 				197049371832642700084F06 /* ALScrollViewPaging */,
 				1941E2651830EA6600B89F01 /* IQKeyBoardManager.h */,
@@ -334,6 +355,11 @@
 			hasScannedForEncodings = 0;
 			knownRegions = (
 				en,
+				da,
+				pt,
+				"ru-RU",
+				ru,
+				sv,
 			);
 			mainGroup = F4EECF05177C99F400778578;
 			productRefGroup = F4EECF0F177C99F400778578 /* Products */;
@@ -354,6 +380,7 @@
 				1941E2741830EE7500B89F01 /* menu@2x.png in Resources */,
 				1941E2751830EE7500B89F01 /* nav_bg.png in Resources */,
 				196733791833E99C001ADBAC /* MainStoryboard.storyboard in Resources */,
+				1998DBFB18376B3D00C4CF91 /* BSKeyboardControls.strings in Resources */,
 				F4EECF1C177C99F400778578 /* InfoPlist.strings in Resources */,
 				09A613FC1830FB2000D0CEFA /* Default-568h@2x.png in Resources */,
 				19F9BD34182A6D7A006968D4 /* Images.xcassets in Resources */,
@@ -387,6 +414,7 @@
 				19103CF0182250F800F3C84F /* webViewController.m in Sources */,
 				1941E2671830EA6600B89F01 /* IQKeyBoardManager.m in Sources */,
 				F4FE88051781138100CB3DA8 /* SWRevealViewController.m in Sources */,
+				1998DBFA18376B3D00C4CF91 /* BSKeyboardControls.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -399,6 +427,19 @@
 				196733781833E99C001ADBAC /* en */,
 			);
 			name = MainStoryboard.storyboard;
+			sourceTree = "<group>";
+		};
+		1998DBF318376B3D00C4CF91 /* BSKeyboardControls.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				1998DBF418376B3D00C4CF91 /* da */,
+				1998DBF518376B3D00C4CF91 /* en */,
+				1998DBF618376B3D00C4CF91 /* pt */,
+				1998DBF718376B3D00C4CF91 /* ru-RU */,
+				1998DBF818376B3D00C4CF91 /* ru */,
+				1998DBF918376B3D00C4CF91 /* sv */,
+			);
+			name = BSKeyboardControls.strings;
 			sourceTree = "<group>";
 		};
 		F4EECF1A177C99F400778578 /* InfoPlist.strings */ = {

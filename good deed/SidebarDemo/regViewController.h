@@ -8,14 +8,10 @@
 
 #import <UIKit/UIKit.h>
 #import <Parse/Parse.h>
+#import "BSKeyboardControls.h"
 
-@interface regViewController : UIViewController{
-    IBOutlet UITextField *name;
-    IBOutlet UITextField *email;
-    IBOutlet UITextField *phone;
-    IBOutlet UITextField *address;
-    IBOutlet UITextField *city;
-    IBOutlet UITextField *pincode;
+@interface regViewController : UIViewController <BSKeyboardControlsDelegate>{
+
     NSString *check;
 
     
@@ -23,6 +19,8 @@
 }
 
 - (IBAction)regBut:(id)sender;
+
+
 @property (nonatomic,retain) NSString *fb_name;
 @property (nonatomic,retain) NSString *fb_email;
 @property (nonatomic,retain) NSString *fb_id;
