@@ -35,7 +35,7 @@
     self.tableView.separatorColor = [UIColor whiteColor];
 
     
-    _menuItems = @[@"title", @"news", @"comments", @"map", @"calendar", @"wishlist", @"bookmark", @"tag"];
+    _menuItems = @[@"title", @"Home", @"Submit", @"map", @"calendar", @"wishlist", @"bookmark", @"tag"];
 
 }
 
