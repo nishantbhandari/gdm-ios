@@ -5,11 +5,13 @@
 //  Created by Simon on 28/6/13.
 //  Copyright (c) 2013 Appcoda. All rights reserved.
 //
+#import "Reachability.h"
 #import <FacebookSDK/FacebookSDK.h>
 #import "AppDelegate.h"
 #import <Parse/Parse.h>
 #import "IQKeyBoardManager.h"
 #import "ftViewController.h"
+#import "interViewController.h"
 #define SYSTEM_VERSION_EQUAL_TO(v)                  ([[[UIDevice currentDevice] systemVersion] compare:v options:NSNumericSearch] == NSOrderedSame)
 #define SYSTEM_VERSION_GREATER_THAN(v)              ([[[UIDevice currentDevice] systemVersion] compare:v options:NSNumericSearch] == NSOrderedDescending)
 #define SYSTEM_VERSION_GREATER_THAN_OR_EQUAL_TO(v)  ([[[UIDevice currentDevice] systemVersion] compare:v options:NSNumericSearch] != NSOrderedAscending)
@@ -17,8 +19,36 @@
 #define SYSTEM_VERSION_LESS_THAN_OR_EQUAL_TO(v)     ([[[UIDevice currentDevice] systemVersion] compare:v options:NSNumericSearch] != NSOrderedDescending)
 @implementation AppDelegate
 
+-(void)chcekNetConnection {
+    bool success = false;
+    const char *host_name = [@"stackoverflow.com"
+                             cStringUsingEncoding:NSASCIIStringEncoding];
+    
+    SCNetworkReachabilityRef reachability = SCNetworkReachabilityCreateWithName(NULL,                         host_name);
+    SCNetworkReachabilityFlags flags;
+    success = SCNetworkReachabilityGetFlags(reachability, &flags);
+    bool isAvailable = success && (flags & kSCNetworkFlagsReachable) &&
+    !(flags & kSCNetworkFlagsConnectionRequired);
+    
+    [[NSUserDefaults standardUserDefaults]setBool:isAvailable forKey:@"ISNETAVAILABLE"];
+}
+
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
+    bool isAvailable = [[NSUserDefaults standardUserDefaults]boolForKey:@"ISNETAVAILABLE"];
+    
+    if (isAvailable)
+    {
+        NSLog(@"internet working"); // do what you want to do if internet is avalable.
+    }
+    
+    else
+    {
+        NSLog(@"not working");
+        // imternet is not available.
+    }
+
+
     [Parse setApplicationId:@"tL2jrWO63TcndMOD0rE1I2wGsZ6SfJ3LH5ITaHyh"
                   clientKey:@"lEVJDKnb5eHc3S86HyqQuiqu7sd5Jse3DCCnQELE"];
     [PFFacebookUtils initializeFacebook];

@@ -5,6 +5,7 @@
 //  Created by Simon on 28/6/13.
 //  Copyright (c) 2013 Appcoda. All rights reserved.
 //
+#import "Reachability.h"
 #import <Parse/Parse.h>
 #import "AppDelegate.h"
 #import "MainViewController.h"
@@ -12,13 +13,30 @@
 #import "regViewController.h"
 #import "tyViewController.h"
 #import "ftViewController.h"
-
+#import "interViewController.h"
 
 @interface MainViewController ()
+-(void)reachabilityChanged:(NSNotification*)note;
 @end
 
 @implementation MainViewController
 @synthesize scrollView;
+-(void)reachabilityChanged:(NSNotification*)note
+{
+    Reachability * reach = [note object];
+    
+    if([reach isReachable])
+    {
+        NSLog(@"Notification Says Reachable");
+    }
+    else
+    {
+        interViewController *interViewController = [self.storyboard instantiateViewControllerWithIdentifier:@"interViewController"];
+        // If you are using navigation controller, you can call
+        [self.navigationController pushViewController:interViewController animated:YES];
+    }
+}
+
 -(void)viewDidLayoutSubviews{
     [super viewDidLayoutSubviews];
     [self.scrollView layoutIfNeeded];
@@ -44,15 +62,13 @@
             NSLog(@"fb? %@",fbid);
              [self homeViewChange:[self validateUser:fbid]];
             
-//            [self homeViewChange:[self validateUser:fbid]];
-            //            [self homeViewChange:@"1"];
             
         }];
         
     }
     else
     {
-        logcheck = @"0";
+
         
         [self homeViewChange:@"0"];
     }
@@ -164,8 +180,34 @@
 - (void)viewDidLoad
 {
     [_activityIndicator startAnimating];
-
+//    [super viewDidLoad];
     
+    
+    [[NSNotificationCenter defaultCenter] addObserver:self
+                                             selector:@selector(reachabilityChanged:)
+                                                 name:kReachabilityChangedNotification
+                                               object:nil];
+    
+    Reachability * reach = [Reachability reachabilityWithHostname:@"www.google.com"];
+//    
+//    reach.reachableBlock = ^(Reachability * reachability)
+//    {
+//        dispatch_async(dispatch_get_main_queue(), ^{
+//            NSLog(@"working");
+//        });
+//    };
+//    
+//    reach.unreachableBlock = ^(Reachability * reachability)
+//    {
+//        dispatch_async(dispatch_get_main_queue(), ^{
+//            interViewController *interViewController = [self.storyboard instantiateViewControllerWithIdentifier:@"interViewController"];
+//            // If you are using navigation controller, you can call
+//            [self.navigationController pushViewController:interViewController animated:YES];
+//
+//        });
+//    };
+
+    [reach startNotifier];
     
      [self utubeView:_uTubeView];
      [self utubeView:_uTubeView2];

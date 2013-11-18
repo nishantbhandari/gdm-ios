@@ -81,18 +81,6 @@
 #pragma mark -
 #pragma mark Keyboard Controls Delegate
 
-- (void)keyboardControls:(BSKeyboardControls *)keyboardControls selectedField:(UIView *)field inDirection:(BSKeyboardControlsDirection)direction
-{
-    UIView *view;
-    
-    if (SYSTEM_VERSION_LESS_THAN(@"7.0")) {
-        view = field.superview.superview;
-    } else {
-        view = field.superview.superview.superview;
-    }
-    
-//    [self.contenview scrollRectToVisible:view.frame animated:YES];
-}
 
 - (void)keyboardControlsDonePressed:(BSKeyboardControls *)keyboardControls
 {

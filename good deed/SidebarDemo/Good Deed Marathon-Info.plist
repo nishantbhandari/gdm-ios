@@ -9,20 +9,7 @@
 	<key>CFBundleExecutable</key>
 	<string>${EXECUTABLE_NAME}</string>
 	<key>CFBundleIcons</key>
-	<dict>
-		<key>CFBundlePrimaryIcon</key>
-		<dict>
-			<key>CFBundleIconFiles</key>
-			<array>
-				<string>GDM_120x120</string>
-				<string>GDM_80x80</string>
-				<string>GDM_58x58</string>
-				<string>GDM_29x29</string>
-				<string>GDM_114x114</string>
-				<string>GDM_57x57</string>
-			</array>
-		</dict>
-	</dict>
+	<dict/>
 	<key>CFBundleIcons~ipad</key>
 	<dict/>
 	<key>CFBundleIdentifier</key>

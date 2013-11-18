@@ -28,6 +28,8 @@
 		1998DBFB18376B3D00C4CF91 /* BSKeyboardControls.strings in Resources */ = {isa = PBXBuildFile; fileRef = 1998DBF318376B3D00C4CF91 /* BSKeyboardControls.strings */; };
 		199E8D8B182B5F910010D1EF /* ftViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 199E8D8A182B5F910010D1EF /* ftViewController.m */; };
 		19A7E9F0182CB57000EBE47B /* AssetsLibrary.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 19A7E9EF182CB57000EBE47B /* AssetsLibrary.framework */; };
+		19ABE80F1838EDE000A3B932 /* Reachability.m in Sources */ = {isa = PBXBuildFile; fileRef = 19ABE80E1838EDE000A3B932 /* Reachability.m */; };
+		19ABE8121838F2B400A3B932 /* interViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 19ABE8111838F2B400A3B932 /* interViewController.m */; };
 		19AE5806181A3CB300499F29 /* regViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 19AE5804181A3CB300499F29 /* regViewController.m */; };
 		19AF6302181A588C005928FB /* uploadViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 19AF6301181A588C005928FB /* uploadViewController.m */; };
 		19BACBEE182BA8EC00EF20B8 /* CoreMedia.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 19BACBED182BA8EC00EF20B8 /* CoreMedia.framework */; };
@@ -40,8 +42,8 @@
 		19CF5FA61819836300C97835 /* Security.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 19CF5FA51819836300C97835 /* Security.framework */; };
 		19CF5FAA1819837B00C97835 /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 19CF5FA91819837B00C97835 /* SystemConfiguration.framework */; };
 		19D3ABAD182A908300522DB4 /* tyViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 19D3ABAC182A908300522DB4 /* tyViewController.m */; };
-		19F638F018324ACB001EFE1D /* Parse.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 19F638EF18324ACB001EFE1D /* Parse.framework */; };
 		19F9BD34182A6D7A006968D4 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 19F9BD33182A6D7A006968D4 /* Images.xcassets */; };
+		19FE8EED1838297C00BD8723 /* Parse.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 19FE8EEC1838297C00BD8723 /* Parse.framework */; };
 		F4EECF12177C99F400778578 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F4EECF11177C99F400778578 /* UIKit.framework */; };
 		F4EECF14177C99F400778578 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F4EECF13177C99F400778578 /* Foundation.framework */; };
 		F4EECF16177C99F400778578 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F4EECF15177C99F400778578 /* CoreGraphics.framework */; };
@@ -95,6 +97,10 @@
 		199E8D89182B5F910010D1EF /* ftViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ftViewController.h; sourceTree = "<group>"; };
 		199E8D8A182B5F910010D1EF /* ftViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ftViewController.m; sourceTree = "<group>"; };
 		19A7E9EF182CB57000EBE47B /* AssetsLibrary.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AssetsLibrary.framework; path = System/Library/Frameworks/AssetsLibrary.framework; sourceTree = SDKROOT; };
+		19ABE80D1838EDE000A3B932 /* Reachability.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Reachability.h; sourceTree = "<group>"; };
+		19ABE80E1838EDE000A3B932 /* Reachability.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Reachability.m; sourceTree = "<group>"; };
+		19ABE8101838F2B400A3B932 /* interViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = interViewController.h; sourceTree = "<group>"; };
+		19ABE8111838F2B400A3B932 /* interViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = interViewController.m; sourceTree = "<group>"; };
 		19AE5803181A3CB300499F29 /* regViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = regViewController.h; sourceTree = "<group>"; };
 		19AE5804181A3CB300499F29 /* regViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = regViewController.m; sourceTree = "<group>"; };
 		19AF6300181A588C005928FB /* uploadViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = uploadViewController.h; sourceTree = "<group>"; };
@@ -111,8 +117,8 @@
 		19CF5FA91819837B00C97835 /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = System/Library/Frameworks/SystemConfiguration.framework; sourceTree = SDKROOT; };
 		19D3ABAB182A908300522DB4 /* tyViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = tyViewController.h; sourceTree = "<group>"; };
 		19D3ABAC182A908300522DB4 /* tyViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = tyViewController.m; sourceTree = "<group>"; };
-		19F638EF18324ACB001EFE1D /* Parse.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Parse.framework; sourceTree = "<group>"; };
 		19F9BD33182A6D7A006968D4 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; name = Images.xcassets; path = "Good Deed Marathon/Images.xcassets"; sourceTree = "<group>"; };
+		19FE8EEC1838297C00BD8723 /* Parse.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Parse.framework; sourceTree = "<group>"; };
 		F4EECF0E177C99F400778578 /* Good Deed Marathon.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Good Deed Marathon.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		F4EECF11177C99F400778578 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		F4EECF13177C99F400778578 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
@@ -147,7 +153,7 @@
 				19CF5FA21819835600C97835 /* MobileCoreServices.framework in Frameworks */,
 				19CF5FAA1819837B00C97835 /* SystemConfiguration.framework in Frameworks */,
 				19CF5FA61819836300C97835 /* Security.framework in Frameworks */,
-				19F638F018324ACB001EFE1D /* Parse.framework in Frameworks */,
+				19FE8EED1838297C00BD8723 /* Parse.framework in Frameworks */,
 				19CF5FA41819835D00C97835 /* QuartzCore.framework in Frameworks */,
 				19CF5FA01819835000C97835 /* libz.1.1.3.dylib in Frameworks */,
 				F4EECF70177FE9B400778578 /* CoreLocation.framework in Frameworks */,
@@ -212,7 +218,7 @@
 		F4EECF10177C99F400778578 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				19F638EF18324ACB001EFE1D /* Parse.framework */,
+				19FE8EEC1838297C00BD8723 /* Parse.framework */,
 				1941E2681830EA7A00B89F01 /* FacebookSDK.framework */,
 				19A7E9EF182CB57000EBE47B /* AssetsLibrary.framework */,
 				19BACBF1182BA93C00EF20B8 /* MediaPlayer.framework */,
@@ -235,6 +241,8 @@
 		F4EECF17177C99F400778578 /* SidebarDemo */ = {
 			isa = PBXGroup;
 			children = (
+				19ABE80D1838EDE000A3B932 /* Reachability.h */,
+				19ABE80E1838EDE000A3B932 /* Reachability.m */,
 				1998DBF018376B3D00C4CF91 /* BSKeyboardControls */,
 				196733771833E99C001ADBAC /* MainStoryboard.storyboard */,
 				197049371832642700084F06 /* ALScrollViewPaging */,
@@ -272,6 +280,8 @@
 				190C937518357AA9005F3648 /* PartnersViewController.m */,
 				190C937718357AB6005F3648 /* justViewController.h */,
 				190C937818357AB6005F3648 /* justViewController.m */,
+				19ABE8101838F2B400A3B932 /* interViewController.h */,
+				19ABE8111838F2B400A3B932 /* interViewController.m */,
 			);
 			path = SidebarDemo;
 			sourceTree = "<group>";
@@ -401,6 +411,7 @@
 				19AF6302181A588C005928FB /* uploadViewController.m in Sources */,
 				197F05A71833B1B0003FF1E4 /* galViewC.m in Sources */,
 				F4EECF22177C99F400778578 /* AppDelegate.m in Sources */,
+				19ABE8121838F2B400A3B932 /* interViewController.m in Sources */,
 				09EAF691183218EF003F4F50 /* goodiesViewController.m in Sources */,
 				190C937918357AB6005F3648 /* justViewController.m in Sources */,
 				1970493A1832642700084F06 /* ALScrollViewPaging.m in Sources */,
@@ -408,6 +419,7 @@
 				19AE5806181A3CB300499F29 /* regViewController.m in Sources */,
 				F4EECF4A177DF87700778578 /* SidebarViewController.m in Sources */,
 				190C937618357AA9005F3648 /* PartnersViewController.m in Sources */,
+				19ABE80F1838EDE000A3B932 /* Reachability.m in Sources */,
 				196733701833BE28001ADBAC /* afRegViewController.m in Sources */,
 				19D3ABAD182A908300522DB4 /* tyViewController.m in Sources */,
 				09AF273C1832A991003EDD7C /* ty2ViewController.m in Sources */,
@@ -512,11 +524,13 @@
 		F4EECF32177C99F400778578 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				CLANG_ENABLE_OBJC_ARC = YES;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
-					"/Users/nimit/iosDevelopment/good\\ deed",
-					"/Users/nishant/Downloads/good\\ deed",
+					"/Users/nishant/Desktop/gdm-ios/good\\ deed",
 				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "SidebarDemo/Good Deed Marathon-Prefix.pch";
@@ -531,11 +545,13 @@
 		F4EECF33177C99F400778578 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				CLANG_ENABLE_OBJC_ARC = YES;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
-					"/Users/nimit/iosDevelopment/good\\ deed",
-					"/Users/nishant/Downloads/good\\ deed",
+					"/Users/nishant/Desktop/gdm-ios/good\\ deed",
 				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "SidebarDemo/Good Deed Marathon-Prefix.pch";

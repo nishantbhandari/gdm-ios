@@ -110,8 +110,8 @@
 
 - (IBAction)upload {
     
-//    if ([checkMedia isEqual:@"image"] && (image)) {
-    if ([checkMedia isEqual:@"image"]) {
+    if ([checkMedia isEqual:@"image"] && (image)) {
+//    if ([checkMedia isEqual:@"image"]) {
         NSData *imageData = UIImageJPEGRepresentation(image, 0.5);
         
         if(imageData){
@@ -164,8 +164,8 @@
 
         
     }
-    else if ([checkMedia isEqual:@"video"]){
-//    else if ([checkMedia isEqual:@"video"] && (moviePath)){
+//    else if ([checkMedia isEqual:@"video"]){
+    else if ([checkMedia isEqual:@"video"] && (moviePath)){
         NSLog(@"asas");
         
         NSData *data = [NSData dataWithContentsOfFile:moviePath];
@@ -206,8 +206,8 @@
         
         }
     
-//    } else if ([checkMedia isEqualToString:@"text"] && (largeText.text.length <= 0)){
-    } else if ([checkMedia isEqualToString:@"text"]){
+    } else if ([checkMedia isEqualToString:@"text"] && (largeText.text.length <= 0)){
+//    } else if ([checkMedia isEqualToString:@"text"]){
 
         NSString * post = [[NSString alloc] initWithFormat:@"msg=%@&prof_id=%@",largeText.text,fbid];
         NSLog(@" msg - %@ fb - %@",largeText.text,fbid);
