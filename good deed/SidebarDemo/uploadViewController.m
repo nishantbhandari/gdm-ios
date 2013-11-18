@@ -26,6 +26,12 @@
     [_activityInd stopAnimating];
 
 }
+-(void)viewWillDisappear:(BOOL)animated{
+    [super viewWillDisappear:animated];
+    imageView.image = nil;
+    largeText.text = nil;
+    smallText.text = nil;
+}
 -(void)viewDidAppear:(BOOL)animated{
 
     [super viewDidAppear:animated];
@@ -49,10 +55,6 @@
     };
     
     [reach startNotifier];
-    
-    smallText.text = nil;
-    imageView.image = nil;
-    largeText.text = nil;
     
     
 }

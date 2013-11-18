@@ -1007,6 +1007,9 @@ the most heartwarming deeds everyday!</string>
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Please connect to the internet !" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="tjh-ce-VKd">
+                                <rect key="frame" x="41" y="175" width="239" height="21"/>
+
                             <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Please check your internet connection!" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="tjh-ce-VKd">
                                 <rect key="frame" x="20" y="267" width="280" height="34"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
@@ -1149,7 +1152,7 @@ the most heartwarming deeds everyday!</string>
                                     <autoresizingMask key="autoresizingMask"/>
                                 </tableViewCellContentView>
                             </tableViewCell>
-                            <tableViewCell contentMode="scaleToFill" selectionStyle="none" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="news" id="tfE-rQ-yjy">
+                            <tableViewCell contentMode="scaleToFill" selectionStyle="none" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="Home" id="tfE-rQ-yjy">
                                 <rect key="frame" x="0.0" y="39" width="320" height="44"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="tfE-rQ-yjy" id="Xo2-cM-3bG">
@@ -1171,7 +1174,7 @@ the most heartwarming deeds everyday!</string>
                                     <segue destination="2" kind="custom" identifier="home" customClass="SWRevealViewControllerSegue" id="w4v-fJ-nlM"/>
                                 </connections>
                             </tableViewCell>
-                            <tableViewCell contentMode="scaleToFill" selectionStyle="none" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="comments" id="u5Z-q5-uMq">
+                            <tableViewCell contentMode="scaleToFill" selectionStyle="none" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="Submit" id="u5Z-q5-uMq">
                                 <rect key="frame" x="0.0" y="83" width="320" height="44"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="u5Z-q5-uMq" id="3wC-HL-fum">
@@ -1399,9 +1402,9 @@ the most heartwarming deeds everyday!</string>
         <simulatedScreenMetrics key="destination" type="retina4"/>
     </simulatedMetricsContainer>
     <inferredMetricsTieBreakers>
-        <segue reference="NTs-uD-z9s"/>
-        <segue reference="wBK-pm-ijv"/>
-        <segue reference="VH3-0t-n5h"/>
-        <segue reference="X9G-vh-Mef"/>
+        <segue reference="huv-5T-afu"/>
+        <segue reference="CdO-Q6-ets"/>
+        <segue reference="eim-7N-VR8"/>
+        <segue reference="w4v-fJ-nlM"/>
     </inferredMetricsTieBreakers>
 </document>

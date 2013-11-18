@@ -30,7 +30,8 @@
 }
 - (void)didReceiveMemoryWarning
 {
-    _contentView = nil;
+    _uTubeView = nil;
+    _uTubeView2 = nil;
     [super didReceiveMemoryWarning];
 }
 -(void)utubeView:(UIView *)utubeMainView{
@@ -104,7 +105,7 @@
         subLabel.hidden = NO;
         galLabel.hidden = NO;
         _uTubeView2.hidden = NO;
-        
+         [self utubeView:_uTubeView2];
          ///
         
         
@@ -140,7 +141,9 @@
         subLabel.hidden = YES;
         galLabel.hidden = YES;
         _uTubeView2.hidden = YES;
-      
+        [self utubeView:_uTubeView];
+       
+
         _activityIndicator.center = self.MainView.center;
         [_activityIndicator stopAnimating];
         
@@ -207,7 +210,6 @@
 {
     [_activityIndicator startAnimating];
     [super viewDidLoad];
-    
 //    [self utubeView:_uTubeView];
 //    [self utubeView:_uTubeView2];
     if (![[NSUserDefaults standardUserDefaults] boolForKey:@"wasLaunchedBefore"]) {
