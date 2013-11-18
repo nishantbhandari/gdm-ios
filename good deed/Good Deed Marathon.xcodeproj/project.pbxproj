@@ -530,7 +530,8 @@
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
-					"/Users/nishant/Desktop/gdm-ios/good\\ deed",
+					"/Users/nimit/iosDevelopment/gdm-ios/good\\ deed",
+					"/Users/nishant/desktop/gdm-ios/good\\ deed",
 				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "SidebarDemo/Good Deed Marathon-Prefix.pch";
@@ -551,7 +552,8 @@
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
-					"/Users/nishant/Desktop/gdm-ios/good\\ deed",
+					"/Users/nimit/iosDevelopment/gdm-ios/good\\ deed",
+					"/Users/nishant/desktop/gdm-ios/good\\ deed",
 				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "SidebarDemo/Good Deed Marathon-Prefix.pch";

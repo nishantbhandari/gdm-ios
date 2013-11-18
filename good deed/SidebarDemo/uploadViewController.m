@@ -262,7 +262,7 @@
     }
     else {
         UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@""
-                                                        message:@"Please select your Good Deed before uploading."
+                                                        message:@"Please upload your good deed before submitting."
                                                        delegate:self
                                               cancelButtonTitle:@"Ok"
                                               otherButtonTitles:nil, nil];

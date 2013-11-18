@@ -109,7 +109,7 @@
     }
     else if ([logcheck1 isEqualToString:@"0"]) {
         NSLog(@"fb %@",fbid);
-        UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Oops" message:@"You need to register before you can submit a good deed." delegate:nil cancelButtonTitle:nil otherButtonTitles:@"Dismiss", nil];
+        UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Oops!" message:@"You need to register before you can submit a good deed." delegate:nil cancelButtonTitle:nil otherButtonTitles:@"Dismiss", nil];
         [alert show];
         alert = nil;
         firstLabel1.hidden = NO;
