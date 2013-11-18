@@ -955,7 +955,7 @@ the most heartwarming deeds everyday!</string>
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="YKZ-tl-K9z">
-                                                <rect key="frame" x="106" y="320" width="108" height="101"/>
+                                                <rect key="frame" x="106" y="370" width="108" height="101"/>
                                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                             </imageView>
                                             <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="sf8-RW-MEj">
@@ -1007,15 +1007,23 @@ the most heartwarming deeds everyday!</string>
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
-                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Please connect to the internet !" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="tjh-ce-VKd">
-                                <rect key="frame" x="41" y="175" width="239" height="92"/>
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Please check your internet connection!" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="tjh-ce-VKd">
+                                <rect key="frame" x="11" y="262" width="298" height="44"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <fontDescription key="fontDescription" name="ArialMT" family="Arial" pointSize="15"/>
                                 <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
                         </subviews>
                         <color key="backgroundColor" cocoaTouchSystemColor="darkTextColor"/>
+                        <constraints>
+                            <constraint firstItem="tjh-ce-VKd" firstAttribute="leading" secondItem="u2f-ki-mgV" secondAttribute="leading" constant="11" id="5Bb-bB-akW"/>
+                            <constraint firstAttribute="bottom" secondItem="tjh-ce-VKd" secondAttribute="bottom" constant="262" id="6J9-9h-2Fb"/>
+                            <constraint firstItem="tjh-ce-VKd" firstAttribute="top" secondItem="u2f-ki-mgV" secondAttribute="top" constant="262" id="7yT-Ij-xct"/>
+                            <constraint firstAttribute="centerX" secondItem="tjh-ce-VKd" secondAttribute="centerX" id="QWJ-E5-NpH"/>
+                            <constraint firstAttribute="trailing" secondItem="tjh-ce-VKd" secondAttribute="trailing" constant="11" id="cQl-4c-bvT"/>
+                            <constraint firstAttribute="centerY" secondItem="tjh-ce-VKd" secondAttribute="centerY" id="yii-GE-W84"/>
+                        </constraints>
                     </view>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="xd2-XX-91l" userLabel="First Responder" sceneMemberID="firstResponder"/>
