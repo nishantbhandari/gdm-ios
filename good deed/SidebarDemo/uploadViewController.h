@@ -7,21 +7,26 @@
 //
 
 #import <UIKit/UIKit.h>
-
+#import <Parse/Parse.h>
 @interface uploadViewController : UIViewController
 <UIImagePickerControllerDelegate,UINavigationControllerDelegate> {
      NSString *moviePath;
+    IBOutlet UIButton *galleryvvd;
+    IBOutlet UIButton *videovvd;
+    IBOutlet UIButton *textvvd;
     UIImagePickerController *picker;
     UIImagePickerController *picker2;
     UIImage *image;
     IBOutlet UIImageView *imageView;
     NSString *checkMedia;
-
+FBRequest *fbrequest;
     NSString *fbid;
     NSString *fbname;
     NSString *msg;
     IBOutlet UITextView *largeText;
     IBOutlet UITextView *smallText;
+    IBOutlet UIButton *imagevvd;
+    UIImage *thumbnail;
 }
 @property (strong, nonatomic) IBOutlet UIActivityIndicatorView *activityInd;
 - (IBAction)upload;

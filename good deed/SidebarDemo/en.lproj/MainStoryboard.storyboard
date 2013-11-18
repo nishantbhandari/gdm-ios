@@ -17,13 +17,13 @@
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
-                            <webView contentMode="scaleToFill" fixedFrame="YES" scalesPageToFit="YES" translatesAutoresizingMaskIntoConstraints="NO" id="DM9-8y-Cae">
-                                <rect key="frame" x="7" y="75" width="307" height="481"/>
+                            <webView contentMode="scaleToFill" scalesPageToFit="YES" translatesAutoresizingMaskIntoConstraints="NO" id="DM9-8y-Cae">
+                                <rect key="frame" x="7" y="90" width="306" height="470"/>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                 <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                             </webView>
-                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="3" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" preferredMaxLayoutWidth="304" translatesAutoresizingMaskIntoConstraints="NO" id="VhR-ho-fSD">
-                                <rect key="frame" x="8" y="-11" width="304" height="78"/>
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="3" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" preferredMaxLayoutWidth="288" translatesAutoresizingMaskIntoConstraints="NO" id="VhR-ho-fSD">
+                                <rect key="frame" x="16" y="30" width="288" height="34"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <string key="text">Mumbai's coming alive with people all over the city joining the
 </string>
@@ -31,8 +31,8 @@
                                 <color key="textColor" red="0.0039215686269999999" green="0.51764705879999995" blue="0.70980392160000005" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="GOOD DEED MARATHON" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="OHs-PV-SNT">
-                                <rect key="frame" x="60" y="46" width="201" height="21"/>
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="GOOD DEED MARATHON" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="OHs-PV-SNT">
+                                <rect key="frame" x="76" y="68" width="169" height="16"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" name="ArialMT" family="Arial" pointSize="14"/>
                                 <color key="textColor" red="0.41176470590000003" green="0.74509803919999995" blue="0.15686274510000001" alpha="1" colorSpace="calibratedRGB"/>
@@ -40,6 +40,16 @@
                             </label>
                         </subviews>
                         <color key="backgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="mAZ-vO-yCz" firstAttribute="top" secondItem="DM9-8y-Cae" secondAttribute="bottom" constant="8" id="Ark-2L-bW3"/>
+                            <constraint firstItem="DM9-8y-Cae" firstAttribute="centerX" secondItem="mPn-OL-Qvg" secondAttribute="centerX" id="Ecd-53-fzU"/>
+                            <constraint firstItem="DM9-8y-Cae" firstAttribute="leading" secondItem="mPn-OL-Qvg" secondAttribute="leading" constant="7" id="Fay-XD-So1"/>
+                            <constraint firstItem="OHs-PV-SNT" firstAttribute="top" secondItem="VhR-ho-fSD" secondAttribute="bottom" constant="4" id="G9N-aO-ml6"/>
+                            <constraint firstItem="DM9-8y-Cae" firstAttribute="centerX" secondItem="VhR-ho-fSD" secondAttribute="centerX" id="Sto-2n-t8S"/>
+                            <constraint firstItem="DM9-8y-Cae" firstAttribute="top" secondItem="OHs-PV-SNT" secondAttribute="bottom" constant="6" id="X7X-03-Tdc"/>
+                            <constraint firstItem="DM9-8y-Cae" firstAttribute="top" secondItem="U0a-KA-7EO" secondAttribute="bottom" constant="70" id="atU-mv-rq8"/>
+                            <constraint firstItem="DM9-8y-Cae" firstAttribute="centerX" secondItem="OHs-PV-SNT" secondAttribute="centerX" id="gK2-3q-7uI"/>
+                        </constraints>
                     </view>
                     <toolbarItems/>
                     <navigationItem key="navigationItem" id="NwG-OS-F83">
@@ -63,11 +73,11 @@
                         <viewControllerLayoutGuide type="bottom" id="fS3-wB-5BK"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="SjG-l2-6zR">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="588"/>
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
                             <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" keyboardDismissMode="interactive" translatesAutoresizingMaskIntoConstraints="NO" id="WOL-y9-cYt">
-                                <rect key="frame" x="0.0" y="20" width="320" height="568"/>
+                                <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="JwQ-tb-xCk">
@@ -80,6 +90,7 @@
                                                 <state key="normal" image="sub-video-white">
                                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                                 </state>
+                                                <state key="selected" image="video-green"/>
                                                 <connections>
                                                     <action selector="videoVD" destination="BTz-gU-3Vq" eventType="touchUpInside" id="fIv-zq-1IL"/>
                                                 </connections>
@@ -113,6 +124,7 @@
                                                 <state key="normal" image="sub-gallery-icon">
                                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                                 </state>
+                                                <state key="selected" image="sub-gallery-icon-green"/>
                                                 <connections>
                                                     <action selector="galleryVD" destination="BTz-gU-3Vq" eventType="touchUpInside" id="QUn-ni-HSN"/>
                                                 </connections>
@@ -177,17 +189,21 @@ Tell us about them in any way you want.</string>
                     <connections>
                         <outlet property="activityInd" destination="1t0-We-its" id="kOr-oC-yMf"/>
                         <outlet property="contentView" destination="JwQ-tb-xCk" id="lXH-2v-iY4"/>
+                        <outlet property="galleryvvd" destination="Ike-Tq-NyA" id="ro5-jp-ixK"/>
                         <outlet property="imageView" destination="vVm-oI-DWv" id="gMf-vR-zwz"/>
+                        <outlet property="imagevvd" destination="otd-JJ-82s" id="cdW-we-FZb"/>
                         <outlet property="largeText" destination="MUA-2Z-6LJ" id="vyt-LY-5PK"/>
                         <outlet property="scrollView" destination="WOL-y9-cYt" id="OSi-UG-HJk"/>
                         <outlet property="sidebarButton" destination="f5B-eN-YWe" id="KAo-2u-HMO"/>
                         <outlet property="smallText" destination="tNA-b7-VYV" id="lY9-Xz-cOI"/>
-                        <outlet property="textVD2" destination="9Pd-qD-qzP" id="rzA-nO-4rs"/>
+                        <outlet property="textvvd" destination="9Pd-qD-qzP" id="lQ1-k1-rhU"/>
+                        <outlet property="videovvd" destination="BSb-Qa-PJb" id="Ajv-mN-ywc"/>
+                        <segue destination="2" kind="custom" identifier="openMain" id="kb1-Gd-Tlk"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="bJK-ph-hBe" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1636" y="-1142"/>
+            <point key="canvasLocation" x="1580" y="-948"/>
         </scene>
         <!--Goodies View Controller-->
         <scene sceneID="o5Y-CT-kLt">
@@ -547,6 +563,7 @@ the rest of Mumbai has done.</string>
                     </view>
                     <navigationItem key="navigationItem" id="iSV-ns-u3y">
                         <barButtonItem key="leftBarButtonItem" image="menu.png" id="WTx-go-BUU"/>
+                        <barButtonItem key="rightBarButtonItem" title="Logout" id="uh1-NA-Wed"/>
                     </navigationItem>
                     <nil key="simulatedStatusBarMetrics"/>
                     <nil key="simulatedTopBarMetrics"/>
@@ -564,6 +581,7 @@ the rest of Mumbai has done.</string>
                         <outlet property="galLabel" destination="lZF-lb-TSM" id="UfR-7D-uml"/>
                         <outlet property="justBut" destination="tYx-35-ERV" id="ENk-YS-Zb0"/>
                         <outlet property="justLab" destination="5lJ-D8-WXg" id="B8P-1o-JsS"/>
+                        <outlet property="rightbarButton" destination="uh1-NA-Wed" id="5XP-s2-30k"/>
                         <outlet property="scrollView" destination="TSt-ZA-aw3" id="11f-z5-9SQ"/>
                         <outlet property="secondLabel1" destination="73a-Vb-Xz9" id="QPc-l2-RTk"/>
                         <outlet property="secondLabel2" destination="x4P-If-WMm" id="YO6-nf-Oqr"/>
@@ -607,7 +625,7 @@ the rest of Mumbai has done.</string>
                                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                 <textInputTraits key="textInputTraits" returnKeyType="next"/>
                                             </textField>
-                                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" enabled="NO" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="line" placeholder="Email ID" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="pXV-6F-fHD">
+                                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="line" placeholder="Email ID" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="pXV-6F-fHD">
                                                 <rect key="frame" x="34" y="151" width="248" height="30"/>
                                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                 <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
@@ -796,42 +814,6 @@ And even if you don’t have a band yet, why wait? Start doing good deeds and sh
             </objects>
             <point key="canvasLocation" x="1998" y="349"/>
         </scene>
-        <!--View Controller-->
-        <scene sceneID="fJs-zN-BvR">
-            <objects>
-                <viewController id="IhX-CV-EYy" sceneMemberID="viewController">
-                    <layoutGuides>
-                        <viewControllerLayoutGuide type="top" id="EOH-dj-F90"/>
-                        <viewControllerLayoutGuide type="bottom" id="SrM-tx-Yzx"/>
-                    </layoutGuides>
-                    <view key="view" contentMode="scaleToFill" id="UQR-KE-vH8">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
-                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
-                    </view>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="GRn-fq-FFf" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="42" y="946"/>
-        </scene>
-        <!--View Controller-->
-        <scene sceneID="JAz-TH-mWv">
-            <objects>
-                <viewController id="Ecx-uF-alB" sceneMemberID="viewController">
-                    <layoutGuides>
-                        <viewControllerLayoutGuide type="top" id="Ahu-wP-BhL"/>
-                        <viewControllerLayoutGuide type="bottom" id="2yZ-HZ-Qgr"/>
-                    </layoutGuides>
-                    <view key="view" contentMode="scaleToFill" id="nwv-ha-Urq">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
-                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
-                    </view>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="Ak6-kG-QmZ" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="450" y="982"/>
-        </scene>
         <!--Ft View Controller-->
         <scene sceneID="lrB-DH-OFD">
             <objects>
@@ -955,24 +937,34 @@ the most heartwarming deeds everyday!</string>
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="YKZ-tl-K9z">
-                                                <rect key="frame" x="106" y="370" width="108" height="101"/>
+                                                <rect key="frame" x="106" y="349" width="108" height="101"/>
                                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                             </imageView>
-                                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="sf8-RW-MEj">
-                                                <rect key="frame" x="17" y="511" width="286" height="128"/>
-                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                                <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
-                                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
-                                            </textView>
                                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="CGi-sY-RdD">
-                                                <rect key="frame" x="53" y="174" width="206" height="55"/>
+                                                <rect key="frame" x="53" y="171" width="206" height="55"/>
                                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="15"/>
                                                 <state key="normal" title="Button" image="spread-the-GD">
                                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                                 </state>
+                                                <connections>
+                                                    <action selector="sharee:" destination="DJt-l9-Ksf" eventType="touchUpInside" id="wUb-nk-fKF"/>
+                                                </connections>
                                             </button>
+                                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="6" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" preferredMaxLayoutWidth="238" translatesAutoresizingMaskIntoConstraints="NO" id="nuZ-Oe-b2a">
+                                                <rect key="frame" x="41" y="465" width="238" height="85"/>
+                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                <fontDescription key="fontDescription" name="ArialMT" family="Arial" pointSize="14"/>
+                                                <color key="textColor" red="0.0078431372550000003" green="0.52156862749999999" blue="0.71372549019999998" alpha="1" colorSpace="calibratedRGB"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="7" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" preferredMaxLayoutWidth="249" translatesAutoresizingMaskIntoConstraints="NO" id="i5V-vh-ocJ">
+                                                <rect key="frame" x="41" y="356" width="249" height="105"/>
+                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                <fontDescription key="fontDescription" name="ArialMT" family="Arial" pointSize="14"/>
+                                                <color key="textColor" red="0.0078431372550000003" green="0.52156862749999999" blue="0.71372549019999998" alpha="1" colorSpace="calibratedRGB"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
                                         </subviews>
                                         <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                     </view>
@@ -984,8 +976,9 @@ the most heartwarming deeds everyday!</string>
                     </view>
                     <connections>
                         <outlet property="imgView" destination="YKZ-tl-K9z" id="2Jd-C8-4yY"/>
+                        <outlet property="inMsg" destination="nuZ-Oe-b2a" id="vz8-Th-Gwn"/>
+                        <outlet property="largText" destination="i5V-vh-ocJ" id="sRe-Y5-svF"/>
                         <outlet property="lblName" destination="zoC-xu-Tw3" id="mkW-Xr-bI4"/>
-                        <outlet property="msgTextView" destination="sf8-RW-MEj" id="d0O-Cw-nBn"/>
                         <outlet property="profImg" destination="0u1-MU-wvz" id="zdg-Zw-9k5"/>
                         <outlet property="ty2ScrollView" destination="g0w-Fy-PRZ" id="WN3-Pm-NvG"/>
                         <outlet property="ty2View" destination="CUV-jX-7Pa" id="k50-eV-mDd"/>
@@ -993,7 +986,7 @@ the most heartwarming deeds everyday!</string>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="kR2-7J-fFK" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1290" y="1077"/>
+            <point key="canvasLocation" x="1300" y="1068"/>
         </scene>
         <!--Inter View Controller-->
         <scene sceneID="kcR-LX-1uG">
@@ -1007,13 +1000,9 @@ the most heartwarming deeds everyday!</string>
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
-                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Please connect to the internet !" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="tjh-ce-VKd">
-                                <rect key="frame" x="41" y="175" width="239" height="21"/>
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Please connect to the internet !" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="tjh-ce-VKd">
+                                <rect key="frame" x="41" y="273" width="239" height="17"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <constraints>
-                                    <constraint firstAttribute="width" constant="280" id="CU1-0c-O42"/>
-                                    <constraint firstAttribute="height" constant="34" id="sRi-vm-Smu"/>
-                                </constraints>
                                 <fontDescription key="fontDescription" name="ArialMT" family="Arial" pointSize="15"/>
                                 <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
@@ -1021,8 +1010,10 @@ the most heartwarming deeds everyday!</string>
                         </subviews>
                         <color key="backgroundColor" cocoaTouchSystemColor="darkTextColor"/>
                         <constraints>
-                            <constraint firstItem="tjh-ce-VKd" firstAttribute="leading" secondItem="u2f-ki-mgV" secondAttribute="leading" constant="20" symbolic="YES" id="N2h-xb-jRU"/>
-                            <constraint firstItem="tjh-ce-VKd" firstAttribute="centerY" secondItem="u2f-ki-mgV" secondAttribute="centerY" id="ViQ-Zk-Q1C"/>
+                            <constraint firstItem="mUb-YG-kYq" firstAttribute="top" secondItem="tjh-ce-VKd" secondAttribute="bottom" constant="278" id="X74-nH-CcC"/>
+                            <constraint firstItem="tjh-ce-VKd" firstAttribute="centerX" secondItem="u2f-ki-mgV" secondAttribute="centerX" id="awQ-nI-coo"/>
+                            <constraint firstItem="tjh-ce-VKd" firstAttribute="leading" secondItem="u2f-ki-mgV" secondAttribute="leading" constant="41" id="nyl-NG-8xd"/>
+                            <constraint firstItem="tjh-ce-VKd" firstAttribute="top" secondItem="wwd-Ql-LnX" secondAttribute="bottom" constant="253" id="yxi-zA-2hS"/>
                         </constraints>
                     </view>
                 </viewController>
@@ -1042,13 +1033,19 @@ the most heartwarming deeds everyday!</string>
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
-                            <webView contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Fen-cL-Nts">
+                            <webView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Fen-cL-Nts">
                                 <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                 <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                             </webView>
                         </subviews>
                         <color key="backgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="IOn-Hr-jkn" firstAttribute="top" secondItem="Fen-cL-Nts" secondAttribute="bottom" id="9n8-xi-SLB"/>
+                            <constraint firstItem="Fen-cL-Nts" firstAttribute="leading" secondItem="lQI-1F-dbq" secondAttribute="leading" id="B0B-8T-fca"/>
+                            <constraint firstItem="Fen-cL-Nts" firstAttribute="top" secondItem="lQI-1F-dbq" secondAttribute="top" id="L0S-lZ-0Vt"/>
+                            <constraint firstAttribute="trailing" secondItem="Fen-cL-Nts" secondAttribute="trailing" id="dyP-wB-t63"/>
+                        </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="46v-di-sdQ">
                         <barButtonItem key="leftBarButtonItem" image="menu.png" id="L0S-Oc-S4e"/>
@@ -1074,13 +1071,19 @@ the most heartwarming deeds everyday!</string>
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
-                            <webView contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="MVx-0C-uT4">
+                            <webView contentMode="scaleToFill" keyboardDisplayRequiresUserAction="NO" translatesAutoresizingMaskIntoConstraints="NO" id="MVx-0C-uT4">
                                 <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                                <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                             </webView>
                         </subviews>
                         <color key="backgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="MVx-0C-uT4" firstAttribute="top" secondItem="79A-KG-P9Z" secondAttribute="top" id="7iq-KF-wRB"/>
+                            <constraint firstItem="XXU-xq-G8n" firstAttribute="top" secondItem="MVx-0C-uT4" secondAttribute="bottom" id="Eyb-Ph-v3M"/>
+                            <constraint firstItem="MVx-0C-uT4" firstAttribute="leading" secondItem="79A-KG-P9Z" secondAttribute="leading" id="UOu-3B-DLY"/>
+                            <constraint firstAttribute="trailing" secondItem="MVx-0C-uT4" secondAttribute="trailing" id="wrJ-z1-Tgw"/>
+                        </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="ovJ-df-xOR">
                         <barButtonItem key="leftBarButtonItem" image="menu.png" id="Y6e-JX-SdV"/>
@@ -1106,13 +1109,19 @@ the most heartwarming deeds everyday!</string>
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
-                            <webView contentMode="scaleAspectFit" fixedFrame="YES" scalesPageToFit="YES" keyboardDisplayRequiresUserAction="NO" translatesAutoresizingMaskIntoConstraints="NO" id="wd1-Fu-nm7">
-                                <rect key="frame" x="0.0" y="45" width="320" height="524"/>
+                            <webView contentMode="scaleAspectFit" scalesPageToFit="YES" keyboardDisplayRequiresUserAction="NO" translatesAutoresizingMaskIntoConstraints="NO" id="wd1-Fu-nm7">
+                                <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                 <color key="backgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
                             </webView>
                         </subviews>
                         <color key="backgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="vmo-x1-g7h" firstAttribute="top" secondItem="wd1-Fu-nm7" secondAttribute="bottom" id="4LW-T3-PkZ"/>
+                            <constraint firstAttribute="trailing" secondItem="wd1-Fu-nm7" secondAttribute="trailing" id="D8A-6I-6OV"/>
+                            <constraint firstItem="wd1-Fu-nm7" firstAttribute="leading" secondItem="Lvx-cQ-mCJ" secondAttribute="leading" id="V3T-Vc-hK4"/>
+                            <constraint firstItem="wd1-Fu-nm7" firstAttribute="top" secondItem="Lvx-cQ-mCJ" secondAttribute="top" id="aTx-yU-LeS"/>
+                        </constraints>
                     </view>
                     <extendedEdge key="edgesForExtendedLayout"/>
                     <navigationItem key="navigationItem" id="9fH-Sp-l42">
@@ -1314,7 +1323,7 @@ the most heartwarming deeds everyday!</string>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Pan-AZ-D0k" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="575" y="-335"/>
+            <point key="canvasLocation" x="611" y="-431"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="5Z6-ag-ZQ1">
@@ -1365,6 +1374,28 @@ the most heartwarming deeds everyday!</string>
             </objects>
             <point key="canvasLocation" x="71" y="-5"/>
         </scene>
+        <!--Par View Controller-->
+        <scene sceneID="xRw-t0-dyE">
+            <objects>
+                <viewController storyboardIdentifier="parViewController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="2Eg-qi-Jsg" customClass="parViewController" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="b4I-UT-Yw0"/>
+                        <viewControllerLayoutGuide type="bottom" id="uc6-nK-hG4"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="6tP-xj-ifk">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <color key="backgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                    <connections>
+                        <segue destination="7vy-P0-oh4" kind="custom" identifier="openReg" id="S9T-K0-3JA"/>
+                        <segue destination="2" kind="custom" identifier="openMain2" id="hWz-S9-jF6"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="E6X-Eb-dyB" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="123" y="959"/>
+        </scene>
     </scenes>
     <resources>
         <image name="GD gallery-01" width="83" height="83"/>
@@ -1384,6 +1415,7 @@ the most heartwarming deeds everyday!</string>
         <image name="rewards-01" width="83" height="83"/>
         <image name="spread-the-GD" width="343" height="80"/>
         <image name="sub-gallery-icon" width="104" height="104"/>
+        <image name="sub-gallery-icon-green" width="104" height="104"/>
         <image name="sub-photo_green" width="104" height="104"/>
         <image name="sub-photo_white" width="104" height="104"/>
         <image name="sub-text_green" width="104" height="104"/>
@@ -1392,6 +1424,7 @@ the most heartwarming deeds everyday!</string>
         <image name="submit ur GD-01" width="83" height="83"/>
         <image name="ty-gallery-icon" width="104" height="104"/>
         <image name="ty-submit-gdm" width="104" height="104"/>
+        <image name="video-green" width="104" height="104"/>
     </resources>
     <simulatedMetricsContainer key="defaultSimulatedMetrics">
         <simulatedStatusBarMetrics key="statusBar"/>
@@ -1399,9 +1432,9 @@ the most heartwarming deeds everyday!</string>
         <simulatedScreenMetrics key="destination" type="retina4"/>
     </simulatedMetricsContainer>
     <inferredMetricsTieBreakers>
-        <segue reference="huv-5T-afu"/>
-        <segue reference="CdO-Q6-ets"/>
-        <segue reference="eim-7N-VR8"/>
-        <segue reference="w4v-fJ-nlM"/>
+        <segue reference="wBK-pm-ijv"/>
+        <segue reference="NTs-uD-z9s"/>
+        <segue reference="VH3-0t-n5h"/>
+        <segue reference="X9G-vh-Mef"/>
     </inferredMetricsTieBreakers>
 </document>

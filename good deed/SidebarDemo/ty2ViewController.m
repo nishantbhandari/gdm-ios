@@ -61,6 +61,19 @@
 {
     [super viewDidLoad];
 
+    if ([_Check isEqualToString:@"image"]) {
+        _largText.hidden = YES;
+        _inMsg.hidden = NO;
+        _imgView.hidden = NO;
+    }
+    else if ([_Check isEqualToString:@"text"]){
+    
+        _largText.hidden = NO;
+        _largText.text = _largeValue;
+        _inMsg.hidden = YES;
+        _imgView.hidden = YES;
+    }
+    
     _msgTextView.layer.borderWidth = 2.0f;
     _msgTextView.layer.borderColor=[[UIColor colorWithRed:105.0/255.0 green:190.0/255.0 blue:40.0/255.0 alpha:1.0] CGColor];
     
@@ -74,7 +87,7 @@
 
 
     _profImg.image = [[UIImage alloc] initWithData:data];
-    _msgTextView.text = _msgTxt;
+    _inMsg.text = _msgTxt;
     _imgView.image = _UplImg;
     _lblName.text = _fb_name;
     _profImg.frame = CGRectMake(_profImg.frame.origin.x, _profImg.frame.origin.y,
@@ -84,6 +97,16 @@
     NSLog(@"%f wid - %f", _profImg.frame.size.height , _profImg.frame.size.width);
 	// Do any additional setup after loading the view.
 }
+- (IBAction)share:(id)sender {
+    NSArray * activityItems = @[[NSString stringWithFormat:@"random test....!"], [NSURL URLWithString:@"http://www.facebook.com/facebook"]];
+    NSArray * applicationActivities = nil;
+    NSArray * excludeActivities = @[UIActivityTypeAssignToContact, UIActivityTypeCopyToPasteboard, UIActivityTypePostToWeibo, UIActivityTypePrint, UIActivityTypeMessage];
+    
+    UIActivityViewController * activityController = [[UIActivityViewController alloc] initWithActivityItems:activityItems applicationActivities:applicationActivities];
+    activityController.excludedActivityTypes = excludeActivities;
+    
+    [self presentViewController:activityController animated:YES completion:nil];
+}
 
 - (void)didReceiveMemoryWarning
 {
@@ -91,4 +114,20 @@
     // Dispose of any resources that can be recreated.
 }
 
+- (IBAction)sharee:(id)sender {
+    
+    NSString *text = [NSString stringWithFormat:@"I'm part of the Good Deed marathon and I just made Mumbai a happier place! Check out what I did."];
+    NSString *urlstring = [NSString stringWithFormat:@"http://gooddeedmarathon.com/share.php?id=%@",_idname];
+
+    
+    NSArray * activityItems = @[text, urlstring];
+    NSArray * applicationActivities = nil;
+    NSArray * excludeActivities = @[UIActivityTypeAssignToContact, UIActivityTypeCopyToPasteboard, UIActivityTypePostToWeibo, UIActivityTypePrint, UIActivityTypeMessage];
+    
+    UIActivityViewController * activityController = [[UIActivityViewController alloc] initWithActivityItems:activityItems applicationActivities:applicationActivities];
+    activityController.excludedActivityTypes = excludeActivities;
+    
+    [self presentViewController:activityController animated:YES completion:nil];
+    
+}
 @end

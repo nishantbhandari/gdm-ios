@@ -32,10 +32,13 @@
     IBOutlet UILabel *galLabel;
     IBOutlet UILabel *justLab;
 }
+
+@property (nonatomic ,retain) NSString *checklog;
 @property (strong, nonatomic) IBOutlet UIView *MainView;
 @property (strong, nonatomic) IBOutlet UIView *uTubeView2;
 @property (strong, nonatomic) IBOutlet UIView *uTubeView;
 @property (nonatomic, retain) UIWebView *myWebView;
+@property (strong, nonatomic) IBOutlet UIBarButtonItem *rightbarButton;
 
 @property (weak, nonatomic) IBOutlet UIBarButtonItem *sidebarButton;
 @property (nonatomic, strong) IBOutlet UIActivityIndicatorView *activityIndicator;

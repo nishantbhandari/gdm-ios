@@ -14,6 +14,7 @@
 #import "tyViewController.h"
 #import "ftViewController.h"
 #import "interViewController.h"
+#import "parViewController.h"
 
 @interface MainViewController ()
 
@@ -107,6 +108,7 @@
         _uTubeView2.hidden = NO;
          [self utubeView:_uTubeView2];
          ///
+   
         
         
         firstLabel1.hidden = YES;
@@ -142,10 +144,15 @@
         galLabel.hidden = YES;
         _uTubeView2.hidden = YES;
         [self utubeView:_uTubeView];
-       
-
+        self.navigationItem.rightBarButtonItem = nil;
         _activityIndicator.center = self.MainView.center;
         [_activityIndicator stopAnimating];
+        CGRect newFrame = self.contentView.frame;
+        
+        newFrame.size.width = _contentView.frame.size.width;
+        newFrame.size.height = 650
+        ;
+        [self.contentView setFrame:newFrame];
         
 
 }
@@ -210,8 +217,9 @@
 {
     [_activityIndicator startAnimating];
     [super viewDidLoad];
-//    [self utubeView:_uTubeView];
-//    [self utubeView:_uTubeView2];
+    
+
+    
     if (![[NSUserDefaults standardUserDefaults] boolForKey:@"wasLaunchedBefore"]) {
         NSLog(@"first time");
         
@@ -231,6 +239,8 @@
     _sidebarButton.tintColor = [UIColor whiteColor];
     _sidebarButton.target = self.revealViewController;
     _sidebarButton.action = @selector(revealToggle:);
+    _rightbarButton.target = self;
+    _rightbarButton.action = @selector(logout);
     [self.view addGestureRecognizer:self.revealViewController.panGestureRecognizer];
 
 }
@@ -275,18 +285,43 @@
             }
         } else if (user.isNew) {
             NSLog(@"User with facebook signed up and logged in!");
-            regViewController *myOtherViewController = [self.storyboard instantiateViewControllerWithIdentifier:@"regViewController"];
-            // If you are using navigation controller, you can call
-            [self.navigationController pushViewController:myOtherViewController animated:YES];
+//            regViewController *regViewController = [self.storyboard instantiateViewControllerWithIdentifier:@"regViewController"];
+//            
+//            // If you are using navigation controller, you can call
+//            [self.navigationController pushViewController:regViewController animated:YES];
             
             
         } else {
             NSLog(@"User with facebook logged in!");
             
             
-            regViewController *regViewController = [self.storyboard instantiateViewControllerWithIdentifier:@"regViewController"];
+            FBRequest *request = [FBRequest requestForMe];
             
-            [self.navigationController pushViewController:regViewController animated:NO];
+            [request startWithCompletionHandler:^(FBRequestConnection *connection, id result, NSError *error) {
+                
+                NSDictionary *userData = (NSDictionary *)result;
+                
+                NSString *id = userData[@"id"];
+                NSLog(@"iddd   %@",id);
+                if ([[self validateUser:id] isEqualToString:@"1"]) {
+                    
+                    NSLog(@"1  sadasda ");
+                    [self viewDidAppear:NO];
+
+                }
+                else if ([[self validateUser:id] isEqualToString:@"0"]){
+                    regViewController *regViewController = [self.storyboard instantiateViewControllerWithIdentifier:@"regViewController"];
+                    
+                    // If you are using navigation controller, you can call
+                    [self.navigationController pushViewController:regViewController animated:YES];
+
+                
+                }
+    
+            }];
+            
+            
+            
             
             
             
@@ -301,4 +336,13 @@
 
 
 }
+-(void)logout{
+    [PFUser logOut];
+
+    NSLog(@"loggedout");
+    [self viewDidAppear:YES];
+}
+
+
+
 @end

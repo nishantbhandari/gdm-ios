@@ -14,6 +14,7 @@
 #import <MediaPlayer/MediaPlayer.h>
 #import <Parse/Parse.h>
 #import "ty2ViewController.h"
+#import "parViewController.h"
 @interface uploadViewController ()
 
 @end
@@ -28,9 +29,26 @@
 }
 -(void)viewWillDisappear:(BOOL)animated{
     [super viewWillDisappear:animated];
-    imageView.image = nil;
-    largeText.text = nil;
-    smallText.text = nil;
+//    imageView.image = nil;
+//    largeText.text = nil;
+//    smallText.text = nil;
+}
+-(NSString *)validateUser:(NSString*)userid {
+    
+    
+    NSString * post = [[NSString alloc] initWithFormat:@"id=%@",userid];
+    NSData * postData = [post dataUsingEncoding:NSASCIIStringEncoding allowLossyConversion:NO];
+    NSString * postLength = [NSString stringWithFormat:@"%d",[postData length]];
+    NSMutableURLRequest * request = [[NSMutableURLRequest alloc] init];
+    [request setURL:[NSURL URLWithString:[NSString stringWithFormat:@"http://www.gooddeedmarathon.com/check-ios.php?id=%@",userid]]];
+    [request setHTTPMethod:@"POST"];
+    [request setValue:postLength forHTTPHeaderField:@"Content-Length"];
+    [request setValue:@"application/x-www-form-urlencoded" forHTTPHeaderField:@"Content-Type"];
+    [request setHTTPBody:postData];
+    NSData *returnData = [NSURLConnection sendSynchronousRequest:request returningResponse:nil error:nil];
+    NSString *returnString = [[NSString alloc] initWithData:returnData encoding:NSUTF8StringEncoding];
+    
+    return returnString;
 }
 -(void)viewDidAppear:(BOOL)animated{
 
@@ -55,6 +73,7 @@
     };
     
     [reach startNotifier];
+
     
     
 }
@@ -178,23 +197,40 @@
         NSData *returnData = [NSURLConnection sendSynchronousRequest:request returningResponse:nil error:nil];
         NSString *returnString = [[NSString alloc] initWithData:returnData encoding:NSUTF8StringEncoding];
         NSLog(@"%@",returnString);
-        if (returnString){
+        if ([returnString isEqualToString:@"0"]){
+            
+            
+            UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@""
+                                                            message:@"Error uploading image, Please try again."
+                                                           delegate:self
+                                                  cancelButtonTitle:@"Ok"
+                                                  otherButtonTitles:nil, nil];
+            [alert show];
+            alert = nil;
+            
+        }
+        else if (returnString){
             // - code after image is uploaded
             ty2ViewController *ty2ViewController = [self.storyboard instantiateViewControllerWithIdentifier:@"ty2ViewController"];
             
+            ty2ViewController.Check = @"image";
             ty2ViewController.UplImg = image;
         ty2ViewController.msgTxt = smallText.text;
         ty2ViewController.fb_id = fbid;
         ty2ViewController.fb_name = fbname;
-        
+            ty2ViewController.idname = returnString;
         [self.navigationController pushViewController:ty2ViewController animated:YES];
-
-            
-       }        else if ([returnString isEqualToString:@"0"]){
-            
-            
-           [NSThread detachNewThreadSelector:@selector(threadStartAnimating:) toTarget:self withObject:nil];
        }
+        else{
+            UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@""
+                                                            message:@"Error uploading image, Please try again."
+                                                           delegate:self
+                                                  cancelButtonTitle:@"Ok"
+                                                  otherButtonTitles:nil, nil];
+            [alert show];
+            alert = nil;
+        
+        }
 
         
     }
@@ -231,16 +267,41 @@
 
         NSString *returnString = [[NSString alloc] initWithData:returnData encoding:NSUTF8StringEncoding];
         NSLog(@"%@",returnString);
-        if ([returnString isEqualToString:@"1"]){
+        if ([returnString isEqualToString:@"0"]){
+            UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@""
+                                                            message:@"Error uploading video, Please try again."
+                                                           delegate:self
+                                                  cancelButtonTitle:@"Ok"
+                                                  otherButtonTitles:nil, nil];
+            [alert show];
+            alert = nil;
+            
+            
+        }
+        else if (returnString){
             // - code after image is uploaded
-            NSLog(@"sucess uploading!!");
+            ty2ViewController *ty2ViewController = [self.storyboard instantiateViewControllerWithIdentifier:@"ty2ViewController"];
+            
+            ty2ViewController.Check = @"image";
+            ty2ViewController.UplImg = thumbnail;
+            ty2ViewController.msgTxt = smallText.text;
+            ty2ViewController.fb_id = fbid;
+            ty2ViewController.fb_name = fbname;
+            ty2ViewController.idname = returnString;
+            [self.navigationController pushViewController:ty2ViewController animated:YES];
         }
-        else if ([returnString isEqualToString:@"0"]){
-            // error handling
+        else{
         
+            UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@""
+                                                            message:@"Error uploading video, Please try again."
+                                                           delegate:self
+                                                  cancelButtonTitle:@"Ok"
+                                                  otherButtonTitles:nil, nil];
+            [alert show];
+            alert = nil;
         }
-    
-    } else if ([checkMedia isEqualToString:@"text"]){
+
+    } else if (largeText.text.length > 0){
 //    } else if ([checkMedia isEqualToString:@"text"]){
 
         NSString * post = [[NSString alloc] initWithFormat:@"msg=%@&prof_id=%@",largeText.text,fbid];
@@ -258,14 +319,38 @@
         
         NSString *returnString = [[NSString alloc] initWithData:returnData encoding:NSUTF8StringEncoding];
         NSLog(@"%@",returnString);
-        if ([returnString isEqualToString:@"1"]){
-
-            NSLog(@"Connection Successful with text");
-        }
-        else if([returnString isEqualToString:@"0"]){
-            NSLog(@"Error");
+        if([returnString isEqualToString:@"0"]){
+            UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@""
+                                                            message:@"Error uploading text, Please try again."
+                                                           delegate:self
+                                                  cancelButtonTitle:@"Ok"
+                                                  otherButtonTitles:nil, nil];
+            [alert show];
+            alert = nil;
             smallText.text = Nil;
         }
+        else if (returnString){
+            ty2ViewController *ty2ViewController = [self.storyboard instantiateViewControllerWithIdentifier:@"ty2ViewController"];
+            ty2ViewController.UplImg = thumbnail;
+            ty2ViewController.largeValue = largeText.text;
+            ty2ViewController.Check = @"text";
+            ty2ViewController.fb_id = fbid;
+            ty2ViewController.fb_name = fbname;
+            ty2ViewController.idname = returnString;
+
+            [self.navigationController pushViewController:ty2ViewController animated:YES];
+        }
+        else{
+            UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@""
+                                                            message:@"Error uploading text, Please try again."
+                                                           delegate:self
+                                                  cancelButtonTitle:@"Ok"
+                                                  otherButtonTitles:nil, nil];
+            [alert show];
+            alert = nil;
+        
+        }
+    
     }
     else {
         UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@""
@@ -281,14 +366,25 @@
 }
 
 - (IBAction)textVD {
+    imagevvd.selected = NO;
+    videovvd.selected = NO;
+    galleryvvd.selected = NO;
+    textvvd.selected = YES;
+    largeText.text = nil;
     imageView.hidden = YES;
     smallText.hidden = YES;
     largeText.hidden = NO;
     checkMedia = @"text";
     
+//     [btn3 setImage:[UIImage imageNamed:@"first.png"] forState:UIControlStateNormal]
+    
 }
 
 - (IBAction)imageVD {
+    imagevvd.selected = YES;
+    videovvd.selected = NO;
+    galleryvvd.selected = NO;
+    textvvd.selected = NO;
     imageView.hidden = NO;
     smallText.hidden = NO;
     smallText.text = nil;
@@ -300,6 +396,7 @@
     [picker setAllowsEditing:YES];
     [self presentViewController:picker animated:YES completion:NULL];
     picker = nil;
+    
 }
 
 -(IBAction)textFieldReturn:(id)sender
@@ -333,7 +430,7 @@
         
         MPMoviePlayerController *player = [[MPMoviePlayerController alloc] initWithContentURL:videoURL];
         
-        UIImage *thumbnail = [player thumbnailImageAtTime:1.0 timeOption:MPMovieTimeOptionNearestKeyFrame];
+        thumbnail = [player thumbnailImageAtTime:1.0 timeOption:MPMovieTimeOptionNearestKeyFrame];
         [imageView setImage:thumbnail];
         NSLog(@"%@",thumbnail);
         
@@ -354,6 +451,10 @@
 }
 
 - (IBAction)videoVD {
+    imagevvd.selected = NO;
+    videovvd.selected = YES;
+    galleryvvd.selected = NO;
+    textvvd.selected = NO;
     imageView.hidden = NO;
     smallText.hidden = NO;
     smallText.text = nil;
@@ -393,6 +494,10 @@
 }
 
 - (IBAction)galleryVD {
+    imagevvd.selected = NO;
+    videovvd.selected = NO;
+    galleryvvd.selected = YES;
+    textvvd.selected = NO;
     smallText.hidden = NO;
     largeText.hidden = YES;
     imageView.hidden = NO;

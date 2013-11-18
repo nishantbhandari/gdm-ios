@@ -9,5 +9,10 @@
 #import <UIKit/UIKit.h>
 
 @interface parViewController : UIViewController
+{
+    NSString *fbid;
 
+
+}
+@property (nonatomic,retain) NSString *incoming;
 @end

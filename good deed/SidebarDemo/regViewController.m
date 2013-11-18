@@ -50,6 +50,28 @@
     changeBorderColorField.layer.borderWidth = 2.0f;
     changeBorderColorField.layer.borderColor=[[UIColor colorWithRed:57.0f/255.0f green:57.0f/255.0f blue:57.0f/255.0f alpha:1.0] CGColor];
 }
+- (void)textFieldDidBeginEditing:(UITextField *)textField
+{
+    [self.keyboardControls setActiveField:textField];
+}
+
+#pragma mark -
+#pragma mark Text View Delegate
+
+- (void)textViewDidBeginEditing:(UITextView *)textView
+{
+    [self.keyboardControls setActiveField:textView];
+}
+
+
+#pragma mark -
+#pragma mark Keyboard Controls Delegate
+
+
+- (void)keyboardControlsDonePressed:(BSKeyboardControls *)keyboardControls
+{
+    [self.view endEditing:YES];
+}
 -(NSString *)validateUser:(NSString*)userid {
     
     
@@ -66,27 +88,6 @@
     NSString *returnString = [[NSString alloc] initWithData:returnData encoding:NSUTF8StringEncoding];
     
     return returnString;
-}
-- (void)textFieldDidBeginEditing:(UITextField *)textField
-{
-    [self.keyboardControls setActiveField:textField];
-}
-
-#pragma mark -
-#pragma mark Text View Delegate
-
-- (void)textViewDidBeginEditing:(UITextView *)textView
-{
-    [self.keyboardControls setActiveField:textView];
-}
-
-#pragma mark -
-#pragma mark Keyboard Controls Delegate
-
-
-- (void)keyboardControlsDonePressed:(BSKeyboardControls *)keyboardControls
-{
-    [self.view endEditing:YES];
 }
 -(void)viewDidAppear:(BOOL)animated{
     
@@ -112,7 +113,10 @@
     };
     
     [reach startNotifier];
+
+    
 }
+
 
 
 - (void)viewDidLoad
@@ -167,21 +171,9 @@
         _fb_id = [[PFUser currentUser] objectForKey:@"profile"][@"id"];
         _fb_gender = [[PFUser currentUser] objectForKey:@"profile"][@"gender"];
         _fb_dob = [[PFUser currentUser] objectForKey:@"profile"][@"birthday"];
+
         
     }];
-
-    
-    if ([[self validateUser:_fb_id] isEqualToString:@"1"]) {
-        MainViewController *MainViewController = [self.storyboard instantiateViewControllerWithIdentifier:@"MainViewController"];
-        // If you are using navigation controller, you can call
-        [self.navigationController pushViewController:MainViewController animated:YES];
-        
-    }
-    else if([[self validateUser:_fb_id]isEqualToString:@"0" ])
-    {
-        NSLog(@"stay");
-    }
-
     
     UIView *backView =[[UIView alloc] initWithFrame:CGRectMake(0, 0, 129, 41)];// Here you can set View width and height as per your requirement for displaying titleImageView position in navigationba
     UIImageView *titleImageView = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"navlogo.png"]];
