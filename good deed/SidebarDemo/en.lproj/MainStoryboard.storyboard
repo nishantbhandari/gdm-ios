@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="4514" systemVersion="13A603" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" initialViewController="FUu-XX-1jG">
     <dependencies>
-        <deployment defaultVersion="1552" identifier="iOS"/>
+        <deployment defaultVersion="1792" identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="3747"/>
     </dependencies>
     <scenes>
@@ -714,7 +714,7 @@ Fill them in?</string>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                             </imageView>
                             <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" usesAttributedText="YES" lineBreakMode="tailTruncation" numberOfLines="14" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" preferredMaxLayoutWidth="280" translatesAutoresizingMaskIntoConstraints="NO" id="qFP-js-H53">
-                                <rect key="frame" x="20" y="85" width="280" height="293"/>
+                                <rect key="frame" x="20" y="130" width="280" height="232"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <attributedString key="attributedText">
                                     <fragment content="This is your ">
@@ -776,7 +776,7 @@ And even if you don’t have a band yet, why wait? Start doing good deeds and sh
                                 <nil key="highlightedColor"/>
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="h1L-E9-QKS">
-                                <rect key="frame" x="130" y="354" width="61" height="30"/>
+                                <rect key="frame" x="130" y="364" width="61" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" red="0.41176470590000003" green="0.74509803919999995" blue="0.15686274510000001" alpha="1" colorSpace="calibratedRGB"/>
                                 <state key="normal" title="Next">
@@ -1008,8 +1008,12 @@ the most heartwarming deeds everyday!</string>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
                             <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Please check your internet connection!" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="tjh-ce-VKd">
-                                <rect key="frame" x="11" y="262" width="298" height="44"/>
+                                <rect key="frame" x="20" y="267" width="280" height="34"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="280" id="CU1-0c-O42"/>
+                                    <constraint firstAttribute="height" constant="34" id="sRi-vm-Smu"/>
+                                </constraints>
                                 <fontDescription key="fontDescription" name="ArialMT" family="Arial" pointSize="15"/>
                                 <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
@@ -1017,12 +1021,8 @@ the most heartwarming deeds everyday!</string>
                         </subviews>
                         <color key="backgroundColor" cocoaTouchSystemColor="darkTextColor"/>
                         <constraints>
-                            <constraint firstItem="tjh-ce-VKd" firstAttribute="leading" secondItem="u2f-ki-mgV" secondAttribute="leading" constant="11" id="5Bb-bB-akW"/>
-                            <constraint firstAttribute="bottom" secondItem="tjh-ce-VKd" secondAttribute="bottom" constant="262" id="6J9-9h-2Fb"/>
-                            <constraint firstItem="tjh-ce-VKd" firstAttribute="top" secondItem="u2f-ki-mgV" secondAttribute="top" constant="262" id="7yT-Ij-xct"/>
-                            <constraint firstAttribute="centerX" secondItem="tjh-ce-VKd" secondAttribute="centerX" id="QWJ-E5-NpH"/>
-                            <constraint firstAttribute="trailing" secondItem="tjh-ce-VKd" secondAttribute="trailing" constant="11" id="cQl-4c-bvT"/>
-                            <constraint firstAttribute="centerY" secondItem="tjh-ce-VKd" secondAttribute="centerY" id="yii-GE-W84"/>
+                            <constraint firstItem="tjh-ce-VKd" firstAttribute="leading" secondItem="u2f-ki-mgV" secondAttribute="leading" constant="20" symbolic="YES" id="N2h-xb-jRU"/>
+                            <constraint firstItem="tjh-ce-VKd" firstAttribute="centerY" secondItem="u2f-ki-mgV" secondAttribute="centerY" id="ViQ-Zk-Q1C"/>
                         </constraints>
                     </view>
                 </viewController>

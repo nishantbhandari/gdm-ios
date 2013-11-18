@@ -208,8 +208,8 @@
     [_activityIndicator startAnimating];
     [super viewDidLoad];
     
-    [self utubeView:_uTubeView];
-    [self utubeView:_uTubeView2];
+//    [self utubeView:_uTubeView];
+//    [self utubeView:_uTubeView2];
     if (![[NSUserDefaults standardUserDefaults] boolForKey:@"wasLaunchedBefore"]) {
         NSLog(@"first time");
         
