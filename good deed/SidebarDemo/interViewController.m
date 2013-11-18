@@ -7,7 +7,8 @@
 //
 
 #import "interViewController.h"
-
+#import "Reachability.h"
+#import "uploadViewController.h"
 @interface interViewController ()
 
 @end
@@ -25,8 +26,35 @@
 
 - (void)viewDidLoad
 {
+    self.navigationItem.hidesBackButton = YES;
     [super viewDidLoad];
+
+  
 	// Do any additional setup after loading the view.
+}
+-(void)viewDidAppear:(BOOL)animated{
+    [super viewDidAppear:animated];
+    
+    Reachability * reach = [Reachability reachabilityWithHostname:@"www.google.com"];
+    
+    reach.reachableBlock = ^(Reachability * reachability)
+    {
+        dispatch_async(dispatch_get_main_queue(), ^{
+[self.navigationController popToRootViewControllerAnimated:YES];
+       
+        });
+    };
+    
+    reach.unreachableBlock = ^(Reachability * reachability)
+    {
+        dispatch_async(dispatch_get_main_queue(), ^{
+            // If you are using navigation controller, you can call
+            
+            
+        });
+    };
+    
+    [reach startNotifier];
 }
 
 - (void)didReceiveMemoryWarning

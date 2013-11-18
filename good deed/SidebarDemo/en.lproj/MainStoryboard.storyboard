@@ -1391,8 +1391,8 @@ the most heartwarming deeds everyday!</string>
         <simulatedScreenMetrics key="destination" type="retina4"/>
     </simulatedMetricsContainer>
     <inferredMetricsTieBreakers>
-        <segue reference="zaF-c6-UNR"/>
         <segue reference="NTs-uD-z9s"/>
+        <segue reference="wBK-pm-ijv"/>
         <segue reference="VH3-0t-n5h"/>
         <segue reference="X9G-vh-Mef"/>
     </inferredMetricsTieBreakers>

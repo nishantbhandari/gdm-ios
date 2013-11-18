@@ -8,6 +8,8 @@
 
 #import "justViewController.h"
 #import "SWRevealViewController.h"
+#import "interViewController.h"
+#import "Reachability.h"
 @interface justViewController ()
 
 @end
@@ -22,10 +24,37 @@
     }
     return self;
 }
+-(void)viewDidAppear:(BOOL)animated{
+    
+    [super viewDidAppear:animated];
+    
+    Reachability * reach = [Reachability reachabilityWithHostname:@"www.google.com"];
+    
+    reach.reachableBlock = ^(Reachability * reachability)
+    {
+        dispatch_async(dispatch_get_main_queue(), ^{
+
+        });
+    };
+    
+    reach.unreachableBlock = ^(Reachability * reachability)
+    {
+        dispatch_async(dispatch_get_main_queue(), ^{
+            interViewController *interViewController = [self.storyboard instantiateViewControllerWithIdentifier:@"interViewController"];
+            // If you are using navigation controller, you can call
+            [self.navigationController pushViewController:interViewController animated:NO];
+            
+        });
+    };
+    
+    [reach startNotifier];
+}
+
 
 - (void)viewDidLoad
 {
     [super viewDidLoad];
+
     UIView *backView =[[UIView alloc] initWithFrame:CGRectMake(0, 0, 129, 41)];// Here you can set View width and height as per your requirement for displaying titleImageView position in navigationba
     UIImageView *titleImageView = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"navlogo.png"]];
     titleImageView.frame = CGRectMake(0, 0,129 , 41); // Here I am passing origin as (45,5) but can pass them as your requirement.

@@ -7,6 +7,8 @@
 //
 
 #import "parViewController.h"
+#import "interViewController.h"
+#import "Reachability.h"
 
 @interface parViewController ()
 
@@ -23,9 +25,36 @@
     return self;
 }
 
+-(void)viewDidAppear:(BOOL)animated{
+    
+    [super viewDidAppear:animated];
+    
+    Reachability * reach = [Reachability reachabilityWithHostname:@"www.google.com"];
+    
+    reach.reachableBlock = ^(Reachability * reachability)
+    {
+        dispatch_async(dispatch_get_main_queue(), ^{
+
+        });
+    };
+    
+    reach.unreachableBlock = ^(Reachability * reachability)
+    {
+        dispatch_async(dispatch_get_main_queue(), ^{
+            interViewController *interViewController = [self.storyboard instantiateViewControllerWithIdentifier:@"interViewController"];
+            // If you are using navigation controller, you can call
+            [self.navigationController pushViewController:interViewController animated:NO];
+            
+        });
+    };
+    
+    [reach startNotifier];
+}
+
 - (void)viewDidLoad
 {
     [super viewDidLoad];
+
 	// Do any additional setup after loading the view.
 }
 

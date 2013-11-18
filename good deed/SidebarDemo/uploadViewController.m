@@ -5,7 +5,8 @@
 //  Created by Nishant on 25/10/13.
 //  Copyright (c) 2013 Appcoda. All rights reserved.
 //
-
+#import "interViewController.h"
+#import "Reachability.h"
 #import "uploadViewController.h"
 #import "MainViewController.h"
 #import "SWRevealViewController.h"
@@ -24,6 +25,31 @@
     [super viewDidDisappear:animated];
     [_activityInd stopAnimating];
 
+}
+-(void)viewDidAppear:(BOOL)animated{
+
+    [super viewDidAppear:animated];
+    Reachability * reach = [Reachability reachabilityWithHostname:@"www.google.com"];
+    
+    reach.reachableBlock = ^(Reachability * reachability)
+    {
+        dispatch_async(dispatch_get_main_queue(), ^{
+
+        });
+    };
+    
+    reach.unreachableBlock = ^(Reachability * reachability)
+    {
+        dispatch_async(dispatch_get_main_queue(), ^{
+            interViewController *interViewController = [self.storyboard instantiateViewControllerWithIdentifier:@"interViewController"];
+            // If you are using navigation controller, you can call
+            [self.navigationController pushViewController:interViewController animated:NO];
+            
+        });
+    };
+    
+    [reach startNotifier];
+    
 }
 -(void)viewDidLayoutSubviews{
     [super viewDidLayoutSubviews];
@@ -46,6 +72,7 @@
 {
     [super viewDidLoad];
 
+    
     UIColor *borderColor = [UIColor colorWithRed:105.0/255.0 green:190.0/255.0 blue:40.0/255.0 alpha:1.0];
     [imageView.layer setBorderColor:borderColor.CGColor];
     [imageView.layer setBorderWidth:3.0];
@@ -206,7 +233,7 @@
         
         }
     
-    } else if ([checkMedia isEqualToString:@"text"] && (largeText.text.length <= 0)){
+    } else if ([checkMedia isEqualToString:@"text"]){
 //    } else if ([checkMedia isEqualToString:@"text"]){
 
         NSString * post = [[NSString alloc] initWithFormat:@"msg=%@&prof_id=%@",largeText.text,fbid];

@@ -8,6 +8,8 @@
 
 #import "ftViewController.h"
 #import "MainViewController.h"
+#import "interViewController.h"
+#import "Reachability.h"
 @interface ftViewController ()
 
 @end
@@ -23,9 +25,11 @@
     return self;
 }
 
+
 - (void)viewDidLoad
 {
     [super viewDidLoad];
+
     self.navigationItem.hidesBackButton = YES;
 	// Do any additional setup after loading the view.
 }

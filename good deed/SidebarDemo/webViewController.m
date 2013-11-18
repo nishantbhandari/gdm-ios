@@ -8,6 +8,8 @@
 
 #import "webViewController.h"
 #import "SWRevealViewController.h"
+#import "interViewController.h"
+#import "Reachability.h"
 @interface webViewController ()
 
 @end
@@ -28,9 +30,36 @@
     //return (interfaceOrientation == UIInterfaceOrientationPortrait);
     return YES;
 }
+-(void)viewDidAppear:(BOOL)animated{
+    
+    [super viewDidAppear:animated];
+    
+    Reachability * reach = [Reachability reachabilityWithHostname:@"www.google.com"];
+    
+    reach.reachableBlock = ^(Reachability * reachability)
+    {
+        dispatch_async(dispatch_get_main_queue(), ^{
+
+        });
+    };
+    
+    reach.unreachableBlock = ^(Reachability * reachability)
+    {
+        dispatch_async(dispatch_get_main_queue(), ^{
+            interViewController *interViewController = [self.storyboard instantiateViewControllerWithIdentifier:@"interViewController"];
+            // If you are using navigation controller, you can call
+            [self.navigationController pushViewController:interViewController animated:NO];
+            
+        });
+    };
+    
+    [reach startNotifier];
+}
+
 - (void)viewDidLoad
 {
     [super viewDidLoad];
+
     NSLog(@"%f",self.view.frame.size.height);
     NSLog(@"%f",_webpage.frame.size.height);
     
@@ -54,6 +83,7 @@
     //    // Set the side bar button action. When it's tapped, it'll show up the sidebar.
     _sidebarButton.target = self.revealViewController;
     _sidebarButton.action = @selector(revealToggle:);
+        _sidebarButton.tintColor = [UIColor whiteColor];
     NSString *fullURL = @"http://flyingcursor.com/gdm/maps.html";
     NSURL *url = [NSURL URLWithString:fullURL];
     NSURLRequest *requestObj = [NSURLRequest requestWithURL:url];

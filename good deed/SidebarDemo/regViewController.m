@@ -13,6 +13,8 @@
 #import <Parse/Parse.h>
 #import "afRegViewController.h"
 #import "BSKeyboardControls.h"
+#import "Reachability.h"
+#import "interViewController.h"
 @interface regViewController ()
 @property (nonatomic, weak) IBOutlet UITextField *name;
 @property (nonatomic, weak) IBOutlet UITextField *email;
@@ -85,6 +87,31 @@
 - (void)keyboardControlsDonePressed:(BSKeyboardControls *)keyboardControls
 {
     [self.view endEditing:YES];
+}
+-(void)viewDidAppear:(BOOL)animated{
+    
+    [super viewDidAppear:animated];
+    
+    Reachability * reach = [Reachability reachabilityWithHostname:@"www.google.com"];
+    
+    reach.reachableBlock = ^(Reachability * reachability)
+    {
+        dispatch_async(dispatch_get_main_queue(), ^{
+
+        });
+    };
+    
+    reach.unreachableBlock = ^(Reachability * reachability)
+    {
+        dispatch_async(dispatch_get_main_queue(), ^{
+            interViewController *interViewController = [self.storyboard instantiateViewControllerWithIdentifier:@"interViewController"];
+            // If you are using navigation controller, you can call
+            [self.navigationController pushViewController:interViewController animated:NO];
+            
+        });
+    };
+    
+    [reach startNotifier];
 }
 
 

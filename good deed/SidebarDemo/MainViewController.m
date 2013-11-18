@@ -16,26 +16,12 @@
 #import "interViewController.h"
 
 @interface MainViewController ()
--(void)reachabilityChanged:(NSNotification*)note;
+
 @end
 
 @implementation MainViewController
 @synthesize scrollView;
--(void)reachabilityChanged:(NSNotification*)note
-{
-    Reachability * reach = [note object];
-    
-    if([reach isReachable])
-    {
-        NSLog(@"Notification Says Reachable");
-    }
-    else
-    {
-        interViewController *interViewController = [self.storyboard instantiateViewControllerWithIdentifier:@"interViewController"];
-        // If you are using navigation controller, you can call
-        [self.navigationController pushViewController:interViewController animated:YES];
-    }
-}
+
 
 -(void)viewDidLayoutSubviews{
     [super viewDidLayoutSubviews];
@@ -44,38 +30,9 @@
 }
 - (void)didReceiveMemoryWarning
 {
+    _contentView = nil;
     [super didReceiveMemoryWarning];
 }
--(void)viewWillAppear:(BOOL) animated {
-    [super viewWillAppear:animated];
-    if ([PFUser currentUser] && // Check if a user is cached
-        [PFFacebookUtils isLinkedWithUser:[PFUser currentUser]]) // Check if user is linked to Facebook
-    {
-        fbrequest = [FBRequest requestForMe];
-        
-        [fbrequest startWithCompletionHandler:^(FBRequestConnection *connection, id result, NSError *error) {
-            //        if (!error) {
-            // result is a dictionary with the user's Facebook data
-            NSDictionary *userData = (NSDictionary *)result;
-            
-            fbid = userData[@"id"];
-            NSLog(@"fb? %@",fbid);
-             [self homeViewChange:[self validateUser:fbid]];
-            
-            
-        }];
-        
-    }
-    else
-    {
-
-        
-        [self homeViewChange:@"0"];
-    }
-    
-}
-
-
 -(void)utubeView:(UIView *)utubeMainView{
 
     ALScrollViewPaging *uTubeScroll = [[ALScrollViewPaging alloc] initWithFrame:CGRectMake(0, 30, self.view.frame.size.width, 180)];
@@ -169,10 +126,56 @@
 
 
 }
+
 -(void)viewDidAppear:(BOOL)animated{
     [super viewDidAppear:animated];
+    Reachability * reach = [Reachability reachabilityWithHostname:@"www.google.com"];
     
+    reach.reachableBlock = ^(Reachability * reachability)
+    {
+        dispatch_async(dispatch_get_main_queue(), ^{
 
+        });
+    };
+    
+    
+    reach.unreachableBlock = ^(Reachability * reachability)
+    {
+        dispatch_async(dispatch_get_main_queue(), ^{
+            interViewController *interViewController = [self.storyboard instantiateViewControllerWithIdentifier:@"interViewController"];
+            // If you are using navigation controller, you can call
+            [self.navigationController pushViewController:interViewController animated:NO];
+            
+        });
+    };
+    
+    [reach startNotifier];
+    if ([PFUser currentUser] && // Check if a user is cached
+        [PFFacebookUtils isLinkedWithUser:[PFUser currentUser]]) // Check if user is linked to Facebook
+    {
+        fbrequest = [FBRequest requestForMe];
+        
+        [fbrequest startWithCompletionHandler:^(FBRequestConnection *connection, id result, NSError *error) {
+            //        if (!error) {
+            // result is a dictionary with the user's Facebook data
+            NSDictionary *userData = (NSDictionary *)result;
+            
+            fbid = userData[@"id"];
+            NSLog(@"fb? %@",fbid);
+            [self homeViewChange:[self validateUser:fbid]];
+            
+            
+        }];
+        
+    }
+    else
+    {
+        
+        
+        [self homeViewChange:@"0"];
+    }
+    
+    
     
 
 }
@@ -180,37 +183,10 @@
 - (void)viewDidLoad
 {
     [_activityIndicator startAnimating];
-//    [super viewDidLoad];
+    [super viewDidLoad];
     
-    
-    [[NSNotificationCenter defaultCenter] addObserver:self
-                                             selector:@selector(reachabilityChanged:)
-                                                 name:kReachabilityChangedNotification
-                                               object:nil];
-    
-    Reachability * reach = [Reachability reachabilityWithHostname:@"www.google.com"];
-//    
-//    reach.reachableBlock = ^(Reachability * reachability)
-//    {
-//        dispatch_async(dispatch_get_main_queue(), ^{
-//            NSLog(@"working");
-//        });
-//    };
-//    
-//    reach.unreachableBlock = ^(Reachability * reachability)
-//    {
-//        dispatch_async(dispatch_get_main_queue(), ^{
-//            interViewController *interViewController = [self.storyboard instantiateViewControllerWithIdentifier:@"interViewController"];
-//            // If you are using navigation controller, you can call
-//            [self.navigationController pushViewController:interViewController animated:YES];
-//
-//        });
-//    };
-
-    [reach startNotifier];
-    
-     [self utubeView:_uTubeView];
-     [self utubeView:_uTubeView2];
+    [self utubeView:_uTubeView];
+    [self utubeView:_uTubeView2];
     if (![[NSUserDefaults standardUserDefaults] boolForKey:@"wasLaunchedBefore"]) {
         NSLog(@"first time");
         

@@ -8,6 +8,8 @@
 
 #import "galViewC.h"
 #import "SWRevealViewController.h"
+#import "Reachability.h"
+#import "interViewController.h"
 @interface galViewC ()
 
 @end
@@ -21,6 +23,32 @@
         // Custom initialization
     }
     return self;
+}
+
+-(void)viewDidAppear:(BOOL)animated{
+    
+    [super viewDidAppear:animated];
+    
+    Reachability * reach = [Reachability reachabilityWithHostname:@"www.google.com"];
+    
+    reach.reachableBlock = ^(Reachability * reachability)
+    {
+        dispatch_async(dispatch_get_main_queue(), ^{
+
+        });
+    };
+    
+    reach.unreachableBlock = ^(Reachability * reachability)
+    {
+        dispatch_async(dispatch_get_main_queue(), ^{
+            interViewController *interViewController = [self.storyboard instantiateViewControllerWithIdentifier:@"interViewController"];
+            // If you are using navigation controller, you can call
+            [self.navigationController pushViewController:interViewController animated:NO];
+            
+        });
+    };
+    
+    [reach startNotifier];
 }
 
 - (void)viewDidLoad
@@ -41,7 +69,7 @@
     //    // Set the side bar button action. When it's tapped, it'll show up the sidebar.
     _sidebarButton.target = self.revealViewController;
     _sidebarButton.action = @selector(revealToggle:);
-
+    _sidebarButton.tintColor = [UIColor whiteColor];
     NSString *fullURL = @"http://gooddeedmarathon.com/getGallery.php";
     NSURL *url = [NSURL URLWithString:fullURL];
     NSURLRequest *requestObj = [NSURLRequest requestWithURL:url];

@@ -9,6 +9,8 @@
 #import "goodiesViewController.h"
 #import "SWRevealViewController.h"
 
+
+
 @interface goodiesViewController ()
 
 @end
@@ -29,11 +31,17 @@
     [self.goodieScrollView layoutIfNeeded];
     self.goodieScrollView.contentSize = self.goodiesView.bounds.size;
 }
+-(void)viewDidAppear:(BOOL)animated{
+    
+    [super viewDidAppear:animated];
+  
+
+}
 
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-    
+
     //Navigation Logo
     UIView *backView =[[UIView alloc] initWithFrame:CGRectMake(0, 0, 129, 41)];// Here you can set View width and height as per your requirement for displaying titleImageView position in navigationba
     UIImageView *titleImageView = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"navlogo.png"]];
@@ -46,7 +54,7 @@
     [self.view addGestureRecognizer:self.revealViewController.panGestureRecognizer];
     _sidebarButton.target = self.revealViewController;
     _sidebarButton.action = @selector(revealToggle:);
-    _sidebarButton.tintColor = [UIColor colorWithWhite:0.96f alpha:0.2f];
+    _sidebarButton.tintColor = [UIColor whiteColor];
     
 	// Do any additional setup after loading the view.
 }
