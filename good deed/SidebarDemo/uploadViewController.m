@@ -50,6 +50,11 @@
     
     [reach startNotifier];
     
+    smallText.text = nil;
+    imageView.image = nil;
+    largeText.text = nil;
+    
+    
 }
 -(void)viewDidLayoutSubviews{
     [super viewDidLayoutSubviews];

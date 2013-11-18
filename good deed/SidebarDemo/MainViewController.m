@@ -90,6 +90,7 @@
 
 
 -(void)homeViewChange:(NSString *)logcheck1{
+
     if ([logcheck1 isEqualToString:@"1"]) {
         NSLog(@"congo");
         _uTubeView2.hidden = NO;
@@ -103,6 +104,15 @@
         subLabel.hidden = NO;
         galLabel.hidden = NO;
         _uTubeView2.hidden = NO;
+        
+         ///
+        
+        
+        firstLabel1.hidden = YES;
+        _uTubeView.hidden = YES;
+        fblogin.hidden = YES;
+        firstLabel3.hidden = YES;
+        _uTubeView.hidden = YES;
         [_activityIndicator stopAnimating];
         
 
@@ -117,6 +127,19 @@
         fblogin.hidden = NO;
         firstLabel3.hidden = NO;
         _uTubeView.hidden = NO;
+        //
+        
+        _uTubeView2.hidden = YES;
+        secondLabel1.hidden = YES;
+        secondLabel2.hidden = YES;
+        firstLabel2.hidden = YES;
+        subBut.hidden = YES;
+        galBut.hidden = YES;
+        justBut.hidden = YES;
+        justLab.hidden = YES;
+        subLabel.hidden = YES;
+        galLabel.hidden = YES;
+        _uTubeView2.hidden = YES;
       
         _activityIndicator.center = self.MainView.center;
         [_activityIndicator stopAnimating];
@@ -201,7 +224,7 @@
     UIView *backView =[[UIView alloc] initWithFrame:CGRectMake(0, 0, 129, 41)];    UIImageView *titleImageView = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"navlogo.png"]];
     titleImageView.frame = CGRectMake(0, 0,129 , 41);
     [backView addSubview:titleImageView];
- 
+    self.navigationController.title = @"Home";
     self.navigationItem.titleView = backView;
     _sidebarButton.tintColor = [UIColor whiteColor];
     _sidebarButton.target = self.revealViewController;
