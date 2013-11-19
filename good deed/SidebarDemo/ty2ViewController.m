@@ -117,7 +117,7 @@
 - (IBAction)sharee:(id)sender {
     
     NSString *text = [NSString stringWithFormat:@"I'm part of the Good Deed marathon and I just made Mumbai a happier place! Check out what I did."];
-    NSString *urlstring = [NSString stringWithFormat:@"http://gooddeedmarathon.com/share.php?id=%@",_idname];
+    NSString *urlstring = [NSString stringWithFormat:@"%@",_idname];
 
     
     NSArray * activityItems = @[text, urlstring];

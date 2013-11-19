@@ -109,7 +109,17 @@
          [self utubeView:_uTubeView2];
          ///
    
+        CGRect newFrame = self.contentView.frame;
+        CGRect newFrame1 = self.scrollView.frame;
         
+        newFrame1.size.height = 750;
+        [self.scrollView setFrame:newFrame1];
+        
+        newFrame.size.width = _contentView.frame.size.width;
+        newFrame.size.height = 750;
+        [self.contentView setFrame:newFrame];
+        
+        NSLog(@"%f",_contentView.frame.size.height);
         
         firstLabel1.hidden = YES;
         _uTubeView.hidden = YES;
@@ -147,14 +157,8 @@
         self.navigationItem.rightBarButtonItem = nil;
         _activityIndicator.center = self.MainView.center;
         [_activityIndicator stopAnimating];
-        CGRect newFrame = self.contentView.frame;
-        
-        newFrame.size.width = _contentView.frame.size.width;
-        newFrame.size.height = 650
-        ;
-        [self.contentView setFrame:newFrame];
-        
 
+        
 }
 
 
@@ -264,6 +268,7 @@
     return returnString;
 }
 -(void)loginbutton{
+    [_activityIndicator startAnimating];
     // The permissions requested from the user
     NSArray *permissionsArray = @[ @"user_about_me", @"user_relationships", @"user_birthday", @"user_location"];
     

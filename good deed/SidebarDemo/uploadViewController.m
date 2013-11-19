@@ -162,6 +162,24 @@
 }
 
 - (IBAction)upload {
+    [NSThread detachNewThreadSelector:@selector(threadStartAnimating:) toTarget:self withObject:nil];
+    
+    if ([PFUser currentUser] && // Check if a user is cached
+        [PFFacebookUtils isLinkedWithUser:[PFUser currentUser]]) // Check if user is linked to Facebook
+    {
+        fbrequest = [FBRequest requestForMe];
+        
+        [fbrequest startWithCompletionHandler:^(FBRequestConnection *connection, id result, NSError *error) {
+            //        if (!error) {
+            // result is a dictionary with the user's Facebook data
+            NSDictionary *userData = (NSDictionary *)result;
+            
+            fbid = userData[@"id"];
+            NSLog(@"fb? %@",fbid);
+            if ([[self validateUser:fbid] isEqualToString:@"1"] ) {
+                
+        
+    
     
     if ([checkMedia isEqual:@"image"] && (image)) {
 //    if ([checkMedia isEqual:@"image"]) {
@@ -173,7 +191,7 @@
         }
 
 
-        [NSThread detachNewThreadSelector:@selector(threadStartAnimating:) toTarget:self withObject:nil];
+        
         NSString *urlString = [NSString stringWithFormat:@"http://www.gooddeedmarathon.com/upload.php?msg=%@&prof_id=%@",smallText.text,fbid];
 //        NSString *urlString = @"http://flyingcursor.com/GoodDeedMarathon/upload.php";
         
@@ -198,7 +216,7 @@
         NSString *returnString = [[NSString alloc] initWithData:returnData encoding:NSUTF8StringEncoding];
         NSLog(@"%@",returnString);
         if ([returnString isEqualToString:@"0"]){
-            
+            [_activityInd stopAnimating];
             
             UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@""
                                                             message:@"Error uploading image, Please try again."
@@ -222,6 +240,7 @@
         [self.navigationController pushViewController:ty2ViewController animated:YES];
        }
         else{
+            [_activityInd stopAnimating];
             UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@""
                                                             message:@"Error uploading image, Please try again."
                                                            delegate:self
@@ -268,6 +287,7 @@
         NSString *returnString = [[NSString alloc] initWithData:returnData encoding:NSUTF8StringEncoding];
         NSLog(@"%@",returnString);
         if ([returnString isEqualToString:@"0"]){
+            [_activityInd stopAnimating];
             UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@""
                                                             message:@"Error uploading video, Please try again."
                                                            delegate:self
@@ -291,7 +311,7 @@
             [self.navigationController pushViewController:ty2ViewController animated:YES];
         }
         else{
-        
+        [_activityInd stopAnimating];
             UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@""
                                                             message:@"Error uploading video, Please try again."
                                                            delegate:self
@@ -320,6 +340,7 @@
         NSString *returnString = [[NSString alloc] initWithData:returnData encoding:NSUTF8StringEncoding];
         NSLog(@"%@",returnString);
         if([returnString isEqualToString:@"0"]){
+            [_activityInd stopAnimating];
             UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@""
                                                             message:@"Error uploading text, Please try again."
                                                            delegate:self
@@ -341,6 +362,7 @@
             [self.navigationController pushViewController:ty2ViewController animated:YES];
         }
         else{
+            [_activityInd stopAnimating];
             UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@""
                                                             message:@"Error uploading text, Please try again."
                                                            delegate:self
@@ -353,6 +375,7 @@
     
     }
     else {
+        [_activityInd stopAnimating];
         UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@""
                                                         message:@"Please upload your good deed before submitting."
                                                        delegate:self
@@ -363,6 +386,27 @@
     
     }
 
+                
+            }
+            
+            
+        }];
+        
+    }
+    else
+    {
+        
+        [_activityInd stopAnimating];
+        UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@""
+                                                        message:@"Please login to continue."
+                                                       delegate:self
+                                              cancelButtonTitle:@"Ok"
+                                              otherButtonTitles:nil, nil];
+        [alert show];
+        alert = nil;
+        
+    }
+    
 }
 
 - (IBAction)textVD {
