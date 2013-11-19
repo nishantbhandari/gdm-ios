@@ -424,7 +424,7 @@ the rest of Mumbai has done.</string>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Dyi-tb-Qi5">
-                                        <rect key="frame" x="0.0" y="47" width="320" height="568"/>
+                                        <rect key="frame" x="0.0" y="47" width="320" height="750"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <subviews>
                                             <button hidden="YES" opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="kjS-Ue-1VG">
@@ -563,7 +563,6 @@ the rest of Mumbai has done.</string>
                     </view>
                     <navigationItem key="navigationItem" id="iSV-ns-u3y">
                         <barButtonItem key="leftBarButtonItem" image="menu.png" id="WTx-go-BUU"/>
-                        <barButtonItem key="rightBarButtonItem" title="Logout" id="uh1-NA-Wed"/>
                     </navigationItem>
                     <nil key="simulatedStatusBarMetrics"/>
                     <nil key="simulatedTopBarMetrics"/>
@@ -581,7 +580,6 @@ the rest of Mumbai has done.</string>
                         <outlet property="galLabel" destination="lZF-lb-TSM" id="UfR-7D-uml"/>
                         <outlet property="justBut" destination="tYx-35-ERV" id="ENk-YS-Zb0"/>
                         <outlet property="justLab" destination="5lJ-D8-WXg" id="B8P-1o-JsS"/>
-                        <outlet property="rightbarButton" destination="uh1-NA-Wed" id="5XP-s2-30k"/>
                         <outlet property="scrollView" destination="TSt-ZA-aw3" id="11f-z5-9SQ"/>
                         <outlet property="secondLabel1" destination="73a-Vb-Xz9" id="QPc-l2-RTk"/>
                         <outlet property="secondLabel2" destination="x4P-If-WMm" id="YO6-nf-Oqr"/>

@@ -108,7 +108,12 @@
         _uTubeView2.hidden = NO;
          [self utubeView:_uTubeView2];
          ///
-   
+        UIBarButtonItem *item = [[UIBarButtonItem alloc] initWithTitle:@"Logout"
+                                                                 style:UIBarButtonItemStylePlain
+                                                                target:self
+                                                                action:@selector(logout)];
+        [self.navigationItem setRightBarButtonItem:item];
+        item.tintColor = [UIColor whiteColor];
         CGRect newFrame = self.contentView.frame;
         CGRect newFrame1 = self.scrollView.frame;
         
@@ -238,13 +243,11 @@
     UIView *backView =[[UIView alloc] initWithFrame:CGRectMake(0, 0, 129, 41)];    UIImageView *titleImageView = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"navlogo.png"]];
     titleImageView.frame = CGRectMake(0, 0,129 , 41);
     [backView addSubview:titleImageView];
-    self.navigationController.title = @"Home";
     self.navigationItem.titleView = backView;
     _sidebarButton.tintColor = [UIColor whiteColor];
     _sidebarButton.target = self.revealViewController;
     _sidebarButton.action = @selector(revealToggle:);
-    _rightbarButton.target = self;
-    _rightbarButton.action = @selector(logout);
+
     [self.view addGestureRecognizer:self.revealViewController.panGestureRecognizer];
 
 }
