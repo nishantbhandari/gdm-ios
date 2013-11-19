@@ -60,7 +60,7 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-
+self.navigationItem.backBarButtonItem.tintColor = [UIColor whiteColor];
     if ([_Check isEqualToString:@"image"]) {
         _largText.hidden = YES;
         _inMsg.hidden = NO;

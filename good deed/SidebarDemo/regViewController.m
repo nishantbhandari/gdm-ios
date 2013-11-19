@@ -123,7 +123,7 @@
 {
     [super viewDidLoad];
     NSArray *fields = @[self.phone,self.address,self.pincode,self.city];
-    
+    self.navigationItem.backBarButtonItem.tintColor = [UIColor whiteColor];
     [self setKeyboardControls:[[BSKeyboardControls alloc] initWithFields:fields]];
     [self.keyboardControls setDelegate:self];
 

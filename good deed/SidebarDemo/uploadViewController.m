@@ -97,7 +97,7 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-
+    textvvd.selected = YES;
 
     UIColor *borderColor = [UIColor colorWithRed:105.0/255.0 green:190.0/255.0 blue:40.0/255.0 alpha:1.0];
     [imageView.layer setBorderColor:borderColor.CGColor];
@@ -123,29 +123,7 @@
     [textVD2 setBackgroundImage:[UIImage imageNamed:@"sub-text_green.png"] forState:UIControlStateSelected];
     
     msg = smallText.text;
-    FBRequest *request = [FBRequest requestForMe];
-    
-    [request startWithCompletionHandler:^(FBRequestConnection *connection, id result, NSError *error) {
-        
-        NSDictionary *userData = (NSDictionary *)result;
-        
-        NSLog(@"%@",userData[@"id"]);
-        
-        
-        fbname = userData[@"name"];
-        
-        NSMutableDictionary *userProfile = [NSMutableDictionary dictionaryWithCapacity:6];
-        
-        if (userData[@"id"]) {
-            userProfile[@"id"] = userData[@"id"];
-        }
-        
-        
-        [[PFUser currentUser] setObject:userProfile forKey:@"profile"];
-        [[PFUser currentUser] saveInBackground];
-        
-        fbid = [[PFUser currentUser] objectForKey:@"profile"][@"id"];
-    }];
+
 
     // Set the gesture
     [self.view addGestureRecognizer:self.revealViewController.panGestureRecognizer];
@@ -183,7 +161,7 @@
     
     if ([checkMedia isEqual:@"image"] && (image)) {
 //    if ([checkMedia isEqual:@"image"]) {
-        NSData *imageData = UIImageJPEGRepresentation(image, 0.5);
+        NSData *imageData = UIImageJPEGRepresentation(image, 0.8);
         
         if(imageData){
             NSLog(@"Image Uploading...");
@@ -393,7 +371,7 @@
         }];
         
     }
-    else
+    else if ([[self validateUser:fbid] isEqualToString:@"0"])
     {
         
         [_activityInd stopAnimating];
@@ -425,6 +403,7 @@
 }
 
 - (IBAction)imageVD {
+    
     imagevvd.selected = YES;
     videovvd.selected = NO;
     galleryvvd.selected = NO;
@@ -486,7 +465,8 @@
     }
     else{
         checkMedia = @"image";
-        image = [info objectForKey:UIImagePickerControllerOriginalImage];
+        
+        image = [info objectForKey:UIImagePickerControllerEditedImage];
         [self dismissViewControllerAnimated:YES completion:NULL];
         [imageView setImage:image];
     }

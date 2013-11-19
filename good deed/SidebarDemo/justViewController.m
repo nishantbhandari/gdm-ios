@@ -70,7 +70,7 @@
     //    // Set the side bar button action. When it's tapped, it'll show up the sidebar.
     _sidebarButton.target = self.revealViewController;
     _sidebarButton.action = @selector(revealToggle:);
-    NSString *fullURL = @"http://flyingcursor.com/gdm/maps.html";
+    NSString *fullURL = @"https://www.gooddeedmarathon.com/just-in.php";
     NSURL *url = [NSURL URLWithString:fullURL];
     NSURLRequest *requestObj = [NSURLRequest requestWithURL:url];
     [_justPage loadRequest:requestObj];

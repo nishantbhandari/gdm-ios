@@ -71,7 +71,7 @@
     _sidebarbutton.target = self.revealViewController;
     _sidebarbutton.action = @selector(revealToggle:);
     _partnersPage.scrollView.bounces = NO;
-    NSString *fullURL = @"http://gooddeedmarathon.com/partners.php";
+    NSString *fullURL = @"https://www.gooddeedmarathon.com/partners.php";
     NSURL *url = [NSURL URLWithString:fullURL];
     NSURLRequest *requestObj = [NSURLRequest requestWithURL:url];
     [_partnersPage loadRequest:requestObj];
