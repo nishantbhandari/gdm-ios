@@ -20,7 +20,6 @@
 
 - (IBAction)regBut:(id)sender;
 
-
 @property (nonatomic,retain) NSString *fb_name;
 @property (nonatomic,retain) NSString *fb_email;
 @property (nonatomic,retain) NSString *fb_id;

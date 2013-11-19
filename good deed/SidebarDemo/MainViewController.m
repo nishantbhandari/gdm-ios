@@ -28,6 +28,7 @@
     [super viewDidLayoutSubviews];
     [self.scrollView layoutIfNeeded];
     self.scrollView.contentSize = self.contentView.bounds.size;
+
 }
 - (void)didReceiveMemoryWarning
 {
@@ -108,21 +109,14 @@
         _uTubeView2.hidden = NO;
          [self utubeView:_uTubeView2];
          ///
+        scrollView.scrollEnabled = YES;
         UIBarButtonItem *item = [[UIBarButtonItem alloc] initWithTitle:@"Logout"
                                                                  style:UIBarButtonItemStylePlain
                                                                 target:self
                                                                 action:@selector(logout)];
         [self.navigationItem setRightBarButtonItem:item];
         item.tintColor = [UIColor whiteColor];
-        CGRect newFrame = self.contentView.frame;
-        CGRect newFrame1 = self.scrollView.frame;
-        
-        newFrame1.size.height = 750;
-        [self.scrollView setFrame:newFrame1];
-        
-        newFrame.size.width = _contentView.frame.size.width;
-        newFrame.size.height = 750;
-        [self.contentView setFrame:newFrame];
+    
         
         NSLog(@"%f",_contentView.frame.size.height);
         
@@ -136,17 +130,15 @@
 
     }
     else if ([logcheck1 isEqualToString:@"0"]) {
-        NSLog(@"fb %@",fbid);
-        UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Oops!" message:@"You need to register before you can submit a good deed." delegate:nil cancelButtonTitle:nil otherButtonTitles:@"Dismiss", nil];
-        [alert show];
-        alert = nil;
+    
+
         firstLabel1.hidden = NO;
         _uTubeView.hidden = NO;
         fblogin.hidden = NO;
         firstLabel3.hidden = NO;
         _uTubeView.hidden = NO;
         //
-        
+           scrollView.scrollEnabled = NO;
         _uTubeView2.hidden = YES;
         secondLabel1.hidden = YES;
         secondLabel2.hidden = YES;
@@ -226,7 +218,6 @@
 {
     [_activityIndicator startAnimating];
     [super viewDidLoad];
-    
 
     
     if (![[NSUserDefaults standardUserDefaults] boolForKey:@"wasLaunchedBefore"]) {

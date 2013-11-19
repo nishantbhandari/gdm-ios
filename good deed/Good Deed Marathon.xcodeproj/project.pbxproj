@@ -75,6 +75,8 @@
 		1941E2701830EE7500B89F01 /* menu.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = menu.png; path = SidebarDemo/menu.png; sourceTree = "<group>"; };
 		1941E2711830EE7500B89F01 /* menu@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "menu@2x.png"; path = "SidebarDemo/menu@2x.png"; sourceTree = "<group>"; };
 		1941E2721830EE7500B89F01 /* nav_bg.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = nav_bg.png; path = SidebarDemo/nav_bg.png; sourceTree = "<group>"; };
+		19539F10183B542500346658 /* GDM_Mobileapp_640x960.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = GDM_Mobileapp_640x960.png; sourceTree = "<group>"; };
+		19539F11183B543C00346658 /* GDM_Mobileapp_640x1136.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = GDM_Mobileapp_640x1136.png; sourceTree = "<group>"; };
 		1967336E1833BE28001ADBAC /* afRegViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = afRegViewController.h; sourceTree = "<group>"; };
 		1967336F1833BE28001ADBAC /* afRegViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = afRegViewController.m; sourceTree = "<group>"; };
 		196733741833E94F001ADBAC /* loggedViewContorller.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = loggedViewContorller.h; sourceTree = "<group>"; };
@@ -194,6 +196,8 @@
 		F4EECF05177C99F400778578 = {
 			isa = PBXGroup;
 			children = (
+				19539F11183B543C00346658 /* GDM_Mobileapp_640x1136.png */,
+				19539F10183B542500346658 /* GDM_Mobileapp_640x960.png */,
 				09A613FB1830FB2000D0CEFA /* Default-568h@2x.png */,
 				1941E2701830EE7500B89F01 /* menu.png */,
 				1941E2711830EE7500B89F01 /* menu@2x.png */,
@@ -525,7 +529,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = "LaunchImage-2";
 				CLANG_ENABLE_OBJC_ARC = YES;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				FRAMEWORK_SEARCH_PATHS = (
@@ -547,7 +551,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = "LaunchImage-2";
 				CLANG_ENABLE_OBJC_ARC = YES;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				FRAMEWORK_SEARCH_PATHS = (

@@ -98,7 +98,7 @@
 {
     [super viewDidLoad];
 
-    
+
     UIColor *borderColor = [UIColor colorWithRed:105.0/255.0 green:190.0/255.0 blue:40.0/255.0 alpha:1.0];
     [imageView.layer setBorderColor:borderColor.CGColor];
     [imageView.layer setBorderWidth:3.0];
