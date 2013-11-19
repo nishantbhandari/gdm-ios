@@ -140,7 +140,7 @@
                                                 <attributedString key="attributedText">
                                                     <fragment>
                                                         <string key="content">Share your good deeds with everyone, so they know how awesome you are!
-Tell us about them in any way you want.</string>
+Tell us about them in the following ways:</string>
                                                         <attributes>
                                                             <color key="NSColor" red="0.0078431372550000003" green="0.52156862749999999" blue="0.71372549019999998" alpha="1" colorSpace="calibratedRGB"/>
                                                             <font key="NSFont" size="14" name="ArialMT"/>
@@ -171,14 +171,14 @@ Tell us about them in any way you want.</string>
                                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                 <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences" returnKeyType="done"/>
                                             </textView>
                                             <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="tNA-b7-VYV">
                                                 <rect key="frame" x="90" y="251" width="210" height="51"/>
                                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                 <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences" returnKeyType="done"/>
                                             </textView>
                                         </subviews>
                                         <color key="backgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
@@ -204,7 +204,6 @@ Tell us about them in any way you want.</string>
                         <outlet property="smallText" destination="tNA-b7-VYV" id="lY9-Xz-cOI"/>
                         <outlet property="textvvd" destination="9Pd-qD-qzP" id="lQ1-k1-rhU"/>
                         <outlet property="videovvd" destination="BSb-Qa-PJb" id="Ajv-mN-ywc"/>
-                        <segue destination="2" kind="custom" identifier="openMain" id="kb1-Gd-Tlk"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="bJK-ph-hBe" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -371,13 +370,11 @@ Tell us about it!</string>
                                 </attributedString>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" usesAttributedText="YES" lineBreakMode="tailTruncation" numberOfLines="3" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" preferredMaxLayoutWidth="209" translatesAutoresizingMaskIntoConstraints="NO" id="eWz-db-HyJ">
-                                <rect key="frame" x="56" y="268" width="209" height="55"/>
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" usesAttributedText="YES" lineBreakMode="tailTruncation" numberOfLines="3" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" preferredMaxLayoutWidth="224" translatesAutoresizingMaskIntoConstraints="NO" id="eWz-db-HyJ">
+                                <rect key="frame" x="48" y="271" width="224" height="55"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <attributedString key="attributedText">
-                                    <fragment>
-                                        <string key="content">Check out what 
-the rest of Mumbai has done.</string>
+                                    <fragment content="Check out the good deed gallery">
                                         <attributes>
                                             <color key="NSColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="calibratedRGB"/>
                                             <font key="NSFont" size="15" name="ArialMT"/>
@@ -439,7 +436,7 @@ the rest of Mumbai has done.</string>
                                                 <color key="textColor" red="0.0" green="0.62352941179999999" blue="0.85490196080000003" alpha="1" colorSpace="calibratedRGB"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
-                                            <label hidden="YES" opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Submit a  good deed" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" preferredMaxLayoutWidth="128" translatesAutoresizingMaskIntoConstraints="NO" id="O2Q-K6-h0B">
+                                            <label hidden="YES" opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Submit a good deed" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" preferredMaxLayoutWidth="128" translatesAutoresizingMaskIntoConstraints="NO" id="O2Q-K6-h0B">
                                                 <rect key="frame" x="115" y="134" width="128" height="41"/>
                                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="13"/>
@@ -464,7 +461,7 @@ the rest of Mumbai has done.</string>
                                                 <rect key="frame" x="30" y="-6" width="270" height="93"/>
                                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                 <attributedString key="attributedText">
-                                                    <fragment content="You're part of the movement that will make Mumbai smile, one good deed at a time!">
+                                                    <fragment content="You're part of a movement that will make Mumbai smile, one good deed at a time!">
                                                         <attributes>
                                                             <color key="NSColor" red="0.41176470590000003" green="0.74509803919999995" blue="0.15686274510000001" alpha="1" colorSpace="calibratedRGB"/>
                                                             <font key="NSFont" size="15" name="ArialMT"/>
@@ -487,7 +484,7 @@ the rest of Mumbai has done.</string>
                                                 <color key="backgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
                                             </view>
                                             <view hidden="YES" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="JOz-bT-gJO">
-                                                <rect key="frame" x="5" y="398" width="300" height="192"/>
+                                                <rect key="frame" x="10" y="395" width="300" height="192"/>
                                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                 <color key="backgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
                                             </view>
@@ -528,8 +525,8 @@ the rest of Mumbai has done.</string>
                                                     <segue destination="Kif-ha-kes" kind="push" identifier="justin" id="VH3-0t-n5h"/>
                                                 </connections>
                                             </button>
-                                            <label hidden="YES" opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="See what Mumbai's upto" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="5" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" preferredMaxLayoutWidth="157" translatesAutoresizingMaskIntoConstraints="NO" id="lZF-lb-TSM">
-                                                <rect key="frame" x="115" y="195" width="157" height="63"/>
+                                            <label hidden="YES" opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="See the good deed gallery" lineBreakMode="tailTruncation" numberOfLines="5" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" preferredMaxLayoutWidth="176" translatesAutoresizingMaskIntoConstraints="NO" id="lZF-lb-TSM">
+                                                <rect key="frame" x="115" y="195" width="176" height="63"/>
                                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                 <fontDescription key="fontDescription" name="ArialMT" family="Arial" pointSize="14"/>
                                                 <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="calibratedRGB"/>
@@ -604,7 +601,7 @@ the rest of Mumbai has done.</string>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="htB-yN-aGL">
-                                        <rect key="frame" x="0.0" y="0.0" width="320" height="680"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="320" height="700"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <subviews>
                                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" enabled="NO" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="line" placeholder="Name" textAlignment="center" minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="0MV-ak-KyD" userLabel="name">
@@ -623,7 +620,7 @@ the rest of Mumbai has done.</string>
                                                 <color key="tintColor" red="0.22352941176470587" green="0.22352941176470587" blue="0.22352941176470587" alpha="1" colorSpace="calibratedRGB"/>
                                                 <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                                <textInputTraits key="textInputTraits" returnKeyType="next"/>
+                                                <textInputTraits key="textInputTraits" returnKeyType="done"/>
                                             </textField>
                                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="line" placeholder="Phone No." textAlignment="center" minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="uUt-TY-NkH">
                                                 <rect key="frame" x="34" y="205" width="248" height="30"/>
@@ -632,7 +629,7 @@ the rest of Mumbai has done.</string>
                                                 <color key="tintColor" red="0.22352941176470587" green="0.22352941176470587" blue="0.22352941176470587" alpha="1" colorSpace="calibratedRGB"/>
                                                 <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                                <textInputTraits key="textInputTraits" keyboardType="phonePad" returnKeyType="next"/>
+                                                <textInputTraits key="textInputTraits" keyboardType="numberPad" returnKeyType="done"/>
                                             </textField>
                                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="line" placeholder="Address" textAlignment="center" minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="cGg-Ev-6Rk">
                                                 <rect key="frame" x="34" y="259" width="248" height="30"/>
@@ -641,7 +638,7 @@ the rest of Mumbai has done.</string>
                                                 <color key="tintColor" red="0.22352941176470587" green="0.22352941176470587" blue="0.22352941176470587" alpha="1" colorSpace="calibratedRGB"/>
                                                 <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                                <textInputTraits key="textInputTraits" returnKeyType="next"/>
+                                                <textInputTraits key="textInputTraits" returnKeyType="done"/>
                                             </textField>
                                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="line" placeholder="City" textAlignment="center" minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="pvT-bP-uPx">
                                                 <rect key="frame" x="34" y="367" width="248" height="30"/>
@@ -650,7 +647,7 @@ the rest of Mumbai has done.</string>
                                                 <color key="tintColor" red="0.22352941176470587" green="0.22352941176470587" blue="0.22352941176470587" alpha="1" colorSpace="calibratedRGB"/>
                                                 <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                                <textInputTraits key="textInputTraits" returnKeyType="next"/>
+                                                <textInputTraits key="textInputTraits" returnKeyType="done"/>
                                             </textField>
                                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="line" placeholder="Pin Code" textAlignment="center" minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="gDO-TM-ICs">
                                                 <rect key="frame" x="34" y="313" width="248" height="30"/>
@@ -659,7 +656,7 @@ the rest of Mumbai has done.</string>
                                                 <color key="tintColor" red="0.22352941176470587" green="0.22352941176470587" blue="0.22352941176470587" alpha="1" colorSpace="calibratedRGB"/>
                                                 <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                                <textInputTraits key="textInputTraits" keyboardType="numberPad" returnKeyType="next"/>
+                                                <textInputTraits key="textInputTraits" keyboardType="numberPad" returnKeyType="done"/>
                                             </textField>
                                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="h07-uV-Xse">
                                                 <rect key="frame" x="120" y="434" width="77" height="30"/>
@@ -726,7 +723,7 @@ Fill them in?</string>
                                 <rect key="frame" x="20" y="130" width="280" height="232"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <attributedString key="attributedText">
-                                    <fragment content="This is your ">
+                                    <fragment content="This is the ">
                                         <attributes>
                                             <color key="NSColor" red="0.0" green="0.62352941176470589" blue="0.85490196078431369" alpha="1" colorSpace="calibratedRGB"/>
                                             <font key="NSFont" size="14" name="ArialMT"/>
@@ -747,7 +744,7 @@ Fill them in?</string>
                                         </attributes>
                                     </fragment>
                                     <fragment>
-                                        <string key="content"> The first 2000 people to register will be getting it soon.
+                                        <string key="content"> The first 2000 people to register will be getting one soon.
 </string>
                                         <attributes>
                                             <color key="NSColor" red="0.0" green="0.62352941176470589" blue="0.85490196078431369" alpha="1" colorSpace="calibratedRGB"/>
@@ -770,7 +767,7 @@ Fill them in?</string>
                                     </fragment>
                                     <fragment>
                                         <string key="content"> Then pass the band on to someone so they can also do good and spread cheer.
-And even if you don’t have a band yet, why wait? Start doing good deeds and share them!
+And even if you don’t have a band, why wait? Start doing good deeds and share them!
 </string>
                                         <attributes>
                                             <color key="NSColor" red="0.0" green="0.62352941176470589" blue="0.85490196078431369" alpha="1" colorSpace="calibratedRGB"/>
@@ -844,7 +841,7 @@ Be a part of the celebration.</string>
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
-                                    <segue destination="2" kind="custom" id="wBK-pm-ijv"/>
+                                    <segue destination="2" kind="push" identifier="afternext" id="wBK-pm-ijv"/>
                                 </connections>
                             </button>
                             <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="GDM_logo" translatesAutoresizingMaskIntoConstraints="NO" id="fs3-uH-Yr1">
@@ -1359,28 +1356,6 @@ the most heartwarming deeds everyday!</string>
             </objects>
             <point key="canvasLocation" x="71" y="-5"/>
         </scene>
-        <!--Par View Controller-->
-        <scene sceneID="xRw-t0-dyE">
-            <objects>
-                <viewController storyboardIdentifier="parViewController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="2Eg-qi-Jsg" customClass="parViewController" sceneMemberID="viewController">
-                    <layoutGuides>
-                        <viewControllerLayoutGuide type="top" id="b4I-UT-Yw0"/>
-                        <viewControllerLayoutGuide type="bottom" id="uc6-nK-hG4"/>
-                    </layoutGuides>
-                    <view key="view" contentMode="scaleToFill" id="6tP-xj-ifk">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
-                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                        <color key="backgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
-                    </view>
-                    <connections>
-                        <segue destination="7vy-P0-oh4" kind="custom" identifier="openReg" id="S9T-K0-3JA"/>
-                        <segue destination="2" kind="custom" identifier="openMain2" id="hWz-S9-jF6"/>
-                    </connections>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="E6X-Eb-dyB" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="123" y="959"/>
-        </scene>
     </scenes>
     <resources>
         <image name="GD gallery-01" width="83" height="83"/>
@@ -1417,9 +1392,9 @@ the most heartwarming deeds everyday!</string>
         <simulatedScreenMetrics key="destination" type="retina4"/>
     </simulatedMetricsContainer>
     <inferredMetricsTieBreakers>
-        <segue reference="NTs-uD-z9s"/>
-        <segue reference="kb1-Gd-Tlk"/>
-        <segue reference="VH3-0t-n5h"/>
+        <segue reference="wBK-pm-ijv"/>
         <segue reference="X9G-vh-Mef"/>
+        <segue reference="NTs-uD-z9s"/>
+        <segue reference="VH3-0t-n5h"/>
     </inferredMetricsTieBreakers>
 </document>

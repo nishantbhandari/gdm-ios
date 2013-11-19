@@ -9,7 +9,7 @@
 #import <UIKit/UIKit.h>
 #import <Parse/Parse.h>
 @interface uploadViewController : UIViewController
-<UIImagePickerControllerDelegate,UINavigationControllerDelegate> {
+<UIImagePickerControllerDelegate,UINavigationControllerDelegate, UITextViewDelegate> {
      NSString *moviePath;
     IBOutlet UIButton *galleryvvd;
     IBOutlet UIButton *videovvd;
@@ -17,6 +17,7 @@
     UIImagePickerController *picker;
     UIImagePickerController *picker2;
     UIImage *image;
+    NSString *check2;
     IBOutlet UIImageView *imageView;
     NSString *checkMedia;
 FBRequest *fbrequest;

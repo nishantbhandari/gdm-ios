@@ -49,7 +49,7 @@
     NSData *data=[NSData dataWithContentsOfURL:url];
     NSError *error=nil;
     NSArray *response = [NSJSONSerialization JSONObjectWithData:data options:kNilOptions error:&error];
-    NSLog(@"value = %@", [response objectAtIndex:1] );
+    NSLog(@"value = %@", [response objectAtIndex:0] );
     
     
     for (int i = 0; i < [response count]; i++) {

@@ -93,10 +93,21 @@
     }
     return self;
 }
+#pragma mark -
+#pragma mark UITextViewDelegate methods
 
+- (BOOL)textView:(UITextView *)textView shouldChangeTextInRange:(NSRange)range replacementText:(NSString *)text {
+    if ([text isEqual:@"\n"]) {
+        [textView resignFirstResponder];
+        return NO;
+    }
+    return YES;
+}
 - (void)viewDidLoad
 {
     [super viewDidLoad];
+    smallText.delegate = self;
+    largeText.delegate = self;
     textvvd.selected = YES;
 
     UIColor *borderColor = [UIColor colorWithRed:105.0/255.0 green:190.0/255.0 blue:40.0/255.0 alpha:1.0];
@@ -403,7 +414,7 @@
 }
 
 - (IBAction)imageVD {
-    
+    check2 = nil;
     imagevvd.selected = YES;
     videovvd.selected = NO;
     galleryvvd.selected = NO;
@@ -421,6 +432,7 @@
     picker = nil;
     
 }
+
 
 -(IBAction)textFieldReturn:(id)sender
 {
@@ -465,10 +477,16 @@
     }
     else{
         checkMedia = @"image";
-        
-        image = [info objectForKey:UIImagePickerControllerEditedImage];
+        if([check2 isEqualToString:@"gallery"]){
+        image = [info objectForKey:UIImagePickerControllerOriginalImage];
         [self dismissViewControllerAnimated:YES completion:NULL];
         [imageView setImage:image];
+        }
+        else{
+            image = [info objectForKey:UIImagePickerControllerEditedImage];
+            [self dismissViewControllerAnimated:YES completion:NULL];
+            [imageView setImage:image];
+        }
     }
     
     
@@ -508,7 +526,7 @@
     
     // Hides the controls for moving & scaling pictures, or for
     // trimming movies. To instead show the controls, use YES.
-    cameraUI.allowsEditing = YES;
+    cameraUI.allowsEditing = NO;
     
     cameraUI.delegate = delegate;
     cameraUI.videoMaximumDuration = 15.0f;
@@ -518,6 +536,7 @@
 }
 
 - (IBAction)galleryVD {
+    check2 = @"gallery";
     imagevvd.selected = NO;
     videovvd.selected = NO;
     galleryvvd.selected = YES;
@@ -529,10 +548,11 @@
     picker2 = [[UIImagePickerController alloc] init];
     picker2.delegate = self;
     [picker2 setSourceType:UIImagePickerControllerSourceTypeSavedPhotosAlbum];
-    picker2.mediaTypes = [[NSArray alloc] initWithObjects:(NSString *)kUTTypeMovie,(NSString *)kUTTypeImage, nil];
-    picker2.videoMaximumDuration = 15.0f;
+    picker2.mediaTypes = [[NSArray alloc] initWithObjects:(NSString *)kUTTypeImage,nil];
+        [picker setAllowsEditing:YES];
     [self presentViewController:picker2 animated:YES completion:NULL];
     picker2 = nil;
+    
     
 }
 

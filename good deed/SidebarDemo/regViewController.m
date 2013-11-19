@@ -12,7 +12,6 @@
 #import "MainViewController.h"
 #import <Parse/Parse.h>
 #import "afRegViewController.h"
-#import "BSKeyboardControls.h"
 #import "Reachability.h"
 #import "interViewController.h"
 @interface regViewController ()
@@ -22,10 +21,9 @@
 @property (nonatomic, weak) IBOutlet UITextField *address;
 @property (nonatomic, weak) IBOutlet UITextField *city;
 @property (nonatomic, weak) IBOutlet UITextField *pincode;
-@property (nonatomic, strong) BSKeyboardControls *keyboardControls;
+
 
 @end
-#define SYSTEM_VERSION_LESS_THAN(v)     ([[[UIDevice currentDevice] systemVersion] compare:v options:NSNumericSearch] == NSOrderedAscending)
 #define numTextFields 6
 
 @implementation regViewController
@@ -50,28 +48,7 @@
     changeBorderColorField.layer.borderWidth = 2.0f;
     changeBorderColorField.layer.borderColor=[[UIColor colorWithRed:57.0f/255.0f green:57.0f/255.0f blue:57.0f/255.0f alpha:1.0] CGColor];
 }
-- (void)textFieldDidBeginEditing:(UITextField *)textField
-{
-    [self.keyboardControls setActiveField:textField];
-}
 
-#pragma mark -
-#pragma mark Text View Delegate
-
-- (void)textViewDidBeginEditing:(UITextView *)textView
-{
-    [self.keyboardControls setActiveField:textView];
-}
-
-
-#pragma mark -
-#pragma mark Keyboard Controls Delegate
-
-
-- (void)keyboardControlsDonePressed:(BSKeyboardControls *)keyboardControls
-{
-    [self.view endEditing:YES];
-}
 -(NSString *)validateUser:(NSString*)userid {
     
     
@@ -117,16 +94,20 @@
     
 }
 
-
+- (BOOL)textFieldShouldReturn:(UITextField *)textField {
+    [textField resignFirstResponder];
+    return YES;
+}
 
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-    NSArray *fields = @[self.phone,self.address,self.pincode,self.city];
     self.navigationItem.backBarButtonItem.tintColor = [UIColor whiteColor];
-    [self setKeyboardControls:[[BSKeyboardControls alloc] initWithFields:fields]];
-    [self.keyboardControls setDelegate:self];
-
+_email.delegate = self;
+    _phone.delegate = self;
+    _address.delegate = self;
+    _pincode.delegate = self;
+    _city.delegate = self;
     FBRequest *request = [FBRequest requestForMe];
     
     [request startWithCompletionHandler:^(FBRequestConnection *connection, id result, NSError *error) {
@@ -189,7 +170,7 @@
 //    [self changeBorderColor:email];
     
     
-    _city.text= @"Mumbai";
+
     
 }
 

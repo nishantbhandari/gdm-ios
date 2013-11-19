@@ -8,9 +8,8 @@
 
 #import <UIKit/UIKit.h>
 #import <Parse/Parse.h>
-#import "BSKeyboardControls.h"
 
-@interface regViewController : UIViewController <BSKeyboardControlsDelegate>{
+@interface regViewController : UIViewController <UITextFieldDelegate>{
 
     NSString *check;
 
