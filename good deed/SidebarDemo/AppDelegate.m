@@ -10,6 +10,7 @@
 #import <Parse/Parse.h>
 #import "IQKeyBoardManager.h"
 #import "ftViewController.h"
+
 #define SYSTEM_VERSION_EQUAL_TO(v)                  ([[[UIDevice currentDevice] systemVersion] compare:v options:NSNumericSearch] == NSOrderedSame)
 #define SYSTEM_VERSION_GREATER_THAN(v)              ([[[UIDevice currentDevice] systemVersion] compare:v options:NSNumericSearch] == NSOrderedDescending)
 #define SYSTEM_VERSION_GREATER_THAN_OR_EQUAL_TO(v)  ([[[UIDevice currentDevice] systemVersion] compare:v options:NSNumericSearch] != NSOrderedAscending)
@@ -17,14 +18,13 @@
 #define SYSTEM_VERSION_LESS_THAN_OR_EQUAL_TO(v)     ([[[UIDevice currentDevice] systemVersion] compare:v options:NSNumericSearch] != NSOrderedDescending)
 @implementation AppDelegate
 
-
-
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
+    // Optional: automatically send uncaught exceptions to Google Analytics.
 
 
-    [Parse setApplicationId:@"tL2jrWO63TcndMOD0rE1I2wGsZ6SfJ3LH5ITaHyh"
-                  clientKey:@"lEVJDKnb5eHc3S86HyqQuiqu7sd5Jse3DCCnQELE"];
+    [Parse setApplicationId:@"kI2LfoysHcrs8k5QDYZXOIlIaKFLJRzW8AXtHn48"
+                  clientKey:@"5OMG9gpzNOyu9a65iqBsceVSa4arilTCsD0opDqA"];
     [PFFacebookUtils initializeFacebook];
     
     [IQKeyBoardManager installKeyboardManager];

@@ -24,8 +24,9 @@
     }
     return self;
 }
+
 -(void)viewDidAppear:(BOOL)animated{
-    
+
     [super viewDidAppear:animated];
     
     Reachability * reach = [Reachability reachabilityWithHostname:@"www.google.com"];
@@ -33,6 +34,10 @@
     reach.reachableBlock = ^(Reachability * reachability)
     {
         dispatch_async(dispatch_get_main_queue(), ^{
+            NSString *fullURL = @"https://www.gooddeedmarathon.com/partners.php";
+            NSURL *url = [NSURL URLWithString:fullURL];
+            NSURLRequest *requestObj = [NSURLRequest requestWithURL:url];
+            [_partnersPage loadRequest:requestObj];
 
         });
     };
@@ -71,10 +76,7 @@
     _sidebarbutton.target = self.revealViewController;
     _sidebarbutton.action = @selector(revealToggle:);
     _partnersPage.scrollView.bounces = NO;
-    NSString *fullURL = @"https://www.gooddeedmarathon.com/partners.php";
-    NSURL *url = [NSURL URLWithString:fullURL];
-    NSURLRequest *requestObj = [NSURLRequest requestWithURL:url];
-    [_partnersPage loadRequest:requestObj];
+
 	// Do any additional setup after loading the view.
 }
 

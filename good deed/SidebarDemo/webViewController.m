@@ -39,6 +39,10 @@
     reach.reachableBlock = ^(Reachability * reachability)
     {
         dispatch_async(dispatch_get_main_queue(), ^{
+            NSString *fullURL = @"https://gooddeedmarathon.com/getMap.php";
+            NSURL *url = [NSURL URLWithString:fullURL];
+            NSURLRequest *requestObj = [NSURLRequest requestWithURL:url];
+            [_webpage loadRequest:requestObj];
 
         });
     };
@@ -84,36 +88,9 @@
     _sidebarButton.target = self.revealViewController;
     _sidebarButton.action = @selector(revealToggle:);
         _sidebarButton.tintColor = [UIColor whiteColor];
-    NSString *fullURL = @"http://flyingcursor.com/gdm/maps.html";
-    NSURL *url = [NSURL URLWithString:fullURL];
-    NSURLRequest *requestObj = [NSURLRequest requestWithURL:url];
-   [_webpage loadRequest:requestObj];
 
-	// Do any additional setup after loading the view.
 
-//    NSString *videoURL = @"http://youtu.be/Wq_CtkKrt1o";
-//    
-//    _videoView = [[UIWebView alloc] initWithFrame:CGRectMake(0, 0, 768, 1024)];
-//    _videoView.backgroundColor = [UIColor clearColor];
-//    _videoView.opaque = NO;
-//    _videoView.delegate = self;
-//    [self.view addSubview:_videoView];
-    
-    
-//    NSString *videoHTML = [NSString stringWithFormat:@"\
-//                           <html>\
-//                           <head>\
-//                           <style type=\"text/css\">\
-//                           iframe {position:absolute; top:50%%; margin-top:-130px;}\
-//                           body {background-color:#000; margin:0;}\
-//                           </style>\
-//                           </head>\
-//                           <body>\
-//                           <iframe width=\"100%%\" height=\"240px\" src=\"%@\" frameborder=\"0\" allowfullscreen></iframe>\
-//                           </body>\
-//                           </html>", videoURL];
-//    
-//    [_videoView loadHTMLString:videoHTML baseURL:nil];
+
 }
 
 - (void)didReceiveMemoryWarning

@@ -49,6 +49,9 @@
     {
         dispatch_async(dispatch_get_main_queue(), ^{
             NSLog(@"checkkkk!!!!!!!!!");
+            interViewController *interViewController = [self.storyboard instantiateViewControllerWithIdentifier:@"interViewController"];
+            // If you are using navigation controller, you can call
+            [self.navigationController pushViewController:interViewController animated:NO];
             
         });
     };
@@ -78,7 +81,7 @@
 }
 
 - (IBAction)share:(id)sender {
-    NSArray * activityItems = @[[NSString stringWithFormat:@"random test....!"], [NSURL URLWithString:@"http://www.facebook.com/facebook"]];
+    NSArray * activityItems = @[[NSString stringWithFormat:@"I’m all set to make Mumbai a shiny happy place. Want to join in? Register for the Good Deed Marathon here! http://bit.ly/1bqAJBL"]];
     NSArray * applicationActivities = nil;
     NSArray * excludeActivities = @[UIActivityTypeAssignToContact, UIActivityTypeCopyToPasteboard, UIActivityTypePostToWeibo, UIActivityTypePrint, UIActivityTypeMessage];
     

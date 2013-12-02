@@ -33,6 +33,11 @@
     reach.reachableBlock = ^(Reachability * reachability)
     {
         dispatch_async(dispatch_get_main_queue(), ^{
+            NSString *fullURL = @"https://www.gooddeedmarathon.com/just-in.php";
+            NSURL *url = [NSURL URLWithString:fullURL];
+            NSURLRequest *requestObj = [NSURLRequest requestWithURL:url];
+            [_justPage loadRequest:requestObj];
+                _justPage.scrollView.bounces = NO;
 
         });
     };
@@ -70,10 +75,6 @@
     //    // Set the side bar button action. When it's tapped, it'll show up the sidebar.
     _sidebarButton.target = self.revealViewController;
     _sidebarButton.action = @selector(revealToggle:);
-    NSString *fullURL = @"https://www.gooddeedmarathon.com/just-in.php";
-    NSURL *url = [NSURL URLWithString:fullURL];
-    NSURLRequest *requestObj = [NSURLRequest requestWithURL:url];
-    [_justPage loadRequest:requestObj];
 	// Do any additional setup after loading the view.
 }
 

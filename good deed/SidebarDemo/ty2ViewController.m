@@ -79,7 +79,7 @@ self.navigationItem.backBarButtonItem.tintColor = [UIColor whiteColor];
     
     _imgView.layer.borderWidth = 2.0f;
     _imgView.layer.borderColor=[[UIColor colorWithRed:105.0/255.0 green:190.0/255.0 blue:40.0/255.0 alpha:1.0] CGColor];
-    NSString *mainurl = [NSString stringWithFormat:@"http://graph.facebook.com/%@/picture",_fb_id];
+    NSString *mainurl = [NSString stringWithFormat:@"https://graph.facebook.com/%@/picture",_fb_id];
     NSURL *url = [NSURL URLWithString:mainurl];
     
     NSData *data = [[NSData alloc] initWithContentsOfURL:url];
@@ -97,16 +97,6 @@ self.navigationItem.backBarButtonItem.tintColor = [UIColor whiteColor];
     NSLog(@"%f wid - %f", _profImg.frame.size.height , _profImg.frame.size.width);
 	// Do any additional setup after loading the view.
 }
-- (IBAction)share:(id)sender {
-    NSArray * activityItems = @[[NSString stringWithFormat:@"random test....!"], [NSURL URLWithString:@"http://www.facebook.com/facebook"]];
-    NSArray * applicationActivities = nil;
-    NSArray * excludeActivities = @[UIActivityTypeAssignToContact, UIActivityTypeCopyToPasteboard, UIActivityTypePostToWeibo, UIActivityTypePrint, UIActivityTypeMessage];
-    
-    UIActivityViewController * activityController = [[UIActivityViewController alloc] initWithActivityItems:activityItems applicationActivities:applicationActivities];
-    activityController.excludedActivityTypes = excludeActivities;
-    
-    [self presentViewController:activityController animated:YES completion:nil];
-}
 
 - (void)didReceiveMemoryWarning
 {
@@ -116,8 +106,8 @@ self.navigationItem.backBarButtonItem.tintColor = [UIColor whiteColor];
 
 - (IBAction)sharee:(id)sender {
     
-    NSString *text = [NSString stringWithFormat:@"I'm part of the Good Deed marathon and I just made Mumbai a happier place! Check out what I did."];
-    NSString *urlstring = [NSString stringWithFormat:@"%@",_idname];
+    NSString *text = [NSString stringWithFormat:@"I'm part of the Good Deed marathon and I just made Mumbai a happier place! Check out what I did. %@",_idname];
+    NSString *urlstring = [NSString stringWithFormat:@""];
 
     
     NSArray * activityItems = @[text, urlstring];

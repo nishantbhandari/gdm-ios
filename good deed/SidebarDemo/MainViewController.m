@@ -30,6 +30,8 @@
     self.scrollView.contentSize = self.contentView.bounds.size;
 
 }
+
+
 - (void)didReceiveMemoryWarning
 {
     _uTubeView = nil;
@@ -44,7 +46,7 @@
     //array for colors of views
     
     //cycle which creates views for the scrollview
-    NSString *str=@"http://gooddeedmarathon.com/getYoutubeVideoIds.php";
+    NSString *str=@"https://gooddeedmarathon.com/getYoutubeVideoIds.php";
     NSURL *url=[NSURL URLWithString:str];
     NSData *data=[NSData dataWithContentsOfURL:url];
     NSError *error=nil;
@@ -67,12 +69,12 @@
                      </style>\
                      </head>\
                      <body>\
-                     <iframe width=\"100%%\" height=\"240px\" src=\"%@\" frameborder=\"0\" allowfullscreen></iframe>\
+                     <iframe width=\"100%%\" height=\"240px\" src=\"%@\" frameborder=\"0\"></iframe>\
                      </body>\
                      </html>", videoURL];
         
         [self.myWebView loadHTMLString:videoHTML baseURL:nil];
-        
+        [self.view addSubview:_myWebView];
         
         
         //
@@ -160,9 +162,15 @@
 
 
 }
-
+- (void)movieIsPlaying:(NSNotification *)notification
+{
+    NSLog(@"yooo23");
+    [[UIApplication sharedApplication] setStatusBarOrientation:UIInterfaceOrientationLandscapeRight | UIInterfaceOrientationLandscapeLeft animated:NO];
+}
 -(void)viewDidAppear:(BOOL)animated{
     [super viewDidAppear:animated];
+     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(uTubef:) name:@"UIMoviePlayerControllerDidEnterFullscreenNotification" object:nil];
+
     Reachability * reach = [Reachability reachabilityWithHostname:@"www.google.com"];
     
     reach.reachableBlock = ^(Reachability * reachability)
@@ -213,12 +221,45 @@
     
 
 }
+- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
+{
+    NSLog(@"asdassssss");
+    if ([segue.identifier isEqualToString:@"up2home"])
+    {
+        NSLog(@"asdasd");
+        UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Log In Error" message:@"Please login to submit a good deed." delegate:nil cancelButtonTitle:nil otherButtonTitles:@"Dismiss", nil];
+        [alert show];
+        
+    }
+}
+-(NSUInteger)uTubef:(NSNotification *) notif{
+    return UIInterfaceOrientationMaskAllButUpsideDown;
+
+    NSLog(@"12333");
+}
+
+-(void) youTubeFinished:(NSNotification*) notif {
+
+}
+//-(BOOL) shouldAutorotate {
+//    return NO;
+//}
+//-(NSUInteger)supportedInterfaceOrientations{
+//    return UIInterfaceOrientationMaskPortrait;
+//}
+//- (UIInterfaceOrientation)preferredInterfaceOrientationForPresentation{
+//    return UIInterfaceOrientationPortrait;
+//}
 
 - (void)viewDidLoad
 {
     [_activityIndicator startAnimating];
     [super viewDidLoad];
-
+    
+    
+    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(uTubef:) name:@"UIMoviePlayerControllerDidEnterFullscreenNotification" object:nil];
+    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(youTubeFinished:) name:@"UIMoviePlayerControllerWillExitFullscreenNotification" object:nil];
+    
     
     if (![[NSUserDefaults standardUserDefaults] boolForKey:@"wasLaunchedBefore"]) {
         NSLog(@"first time");
@@ -251,7 +292,7 @@
     NSData * postData = [post dataUsingEncoding:NSASCIIStringEncoding allowLossyConversion:NO];
     NSString * postLength = [NSString stringWithFormat:@"%d",[postData length]];
     NSMutableURLRequest * request = [[NSMutableURLRequest alloc] init];
-    [request setURL:[NSURL URLWithString:[NSString stringWithFormat:@"http://www.gooddeedmarathon.com/check-ios.php?id=%@",userid]]];
+    [request setURL:[NSURL URLWithString:[NSString stringWithFormat:@"https://www.gooddeedmarathon.com/check-ios.php?id=%@",userid]]];
     [request setHTTPMethod:@"POST"];
     [request setValue:postLength forHTTPHeaderField:@"Content-Length"];
     [request setValue:@"application/x-www-form-urlencoded" forHTTPHeaderField:@"Content-Type"];
@@ -284,10 +325,10 @@
             }
         } else if (user.isNew) {
             NSLog(@"User with facebook signed up and logged in!");
-//            regViewController *regViewController = [self.storyboard instantiateViewControllerWithIdentifier:@"regViewController"];
-//            
-//            // If you are using navigation controller, you can call
-//            [self.navigationController pushViewController:regViewController animated:YES];
+            regViewController *regViewController = [self.storyboard instantiateViewControllerWithIdentifier:@"regViewController"];
+            
+            // If you are using navigation controller, you can call
+            [self.navigationController pushViewController:regViewController animated:YES];
             
             
         } else {
@@ -340,6 +381,7 @@
 
     NSLog(@"loggedout");
     [self viewDidAppear:YES];
+
 }
 
 

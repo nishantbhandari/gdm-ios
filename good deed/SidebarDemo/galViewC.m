@@ -34,6 +34,12 @@
     reach.reachableBlock = ^(Reachability * reachability)
     {
         dispatch_async(dispatch_get_main_queue(), ^{
+            NSString *fullURL = @"https://gooddeedmarathon.com/getGallery.php";
+            NSURL *url = [NSURL URLWithString:fullURL];
+            NSURLRequest *requestObj = [NSURLRequest requestWithURL:url];
+            _gallView.scrollView.scrollEnabled = TRUE;
+            [_gallView loadRequest:requestObj];
+            
 
         });
     };
@@ -70,11 +76,7 @@
     _sidebarButton.target = self.revealViewController;
     _sidebarButton.action = @selector(revealToggle:);
     _sidebarButton.tintColor = [UIColor whiteColor];
-    NSString *fullURL = @"http://gooddeedmarathon.com/getGallery.php";
-    NSURL *url = [NSURL URLWithString:fullURL];
-    NSURLRequest *requestObj = [NSURLRequest requestWithURL:url];
-    _gallView.scrollView.scrollEnabled = TRUE;
-    [_gallView loadRequest:requestObj];
+
 	// Do any additional setup after loading the view.
 }
 

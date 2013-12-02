@@ -27,8 +27,44 @@
     [_activityInd stopAnimating];
 
 }
--(void)viewWillDisappear:(BOOL)animated{
-    [super viewWillDisappear:animated];
+-(void)viewWillAppear:(BOOL)animated{
+    [super viewWillAppear:animated];
+    
+    if ([PFUser currentUser] && // Check if a user is cached
+        [PFFacebookUtils isLinkedWithUser:[PFUser currentUser]]) // Check if user is linked to Facebook
+    {
+        fbrequest = [FBRequest requestForMe];
+        
+        [fbrequest startWithCompletionHandler:^(FBRequestConnection *connection, id result, NSError *error) {
+            //        if (!error) {
+            // result is a dictionary with the user's Facebook data
+            NSDictionary *userData = (NSDictionary *)result;
+            
+            fbid = userData[@"id"];
+            NSLog(@"fb? %@",fbid);
+            NSLog(@"%@", [self validateUser:fbid]);
+            
+            if([[self validateUser:fbid] isEqualToString:@"1"]){
+                
+             
+            }
+            else {
+
+                [self performSegueWithIdentifier:@"up2home" sender:self];
+    
+                
+                
+            }
+            
+        }];
+    }
+    else{
+        [self performSegueWithIdentifier:@"up2home" sender:self];
+        
+        
+        
+    }
+
 //    imageView.image = nil;
 //    largeText.text = nil;
 //    smallText.text = nil;
@@ -40,7 +76,7 @@
     NSData * postData = [post dataUsingEncoding:NSASCIIStringEncoding allowLossyConversion:NO];
     NSString * postLength = [NSString stringWithFormat:@"%d",[postData length]];
     NSMutableURLRequest * request = [[NSMutableURLRequest alloc] init];
-    [request setURL:[NSURL URLWithString:[NSString stringWithFormat:@"http://www.gooddeedmarathon.com/check-ios.php?id=%@",userid]]];
+    [request setURL:[NSURL URLWithString:[NSString stringWithFormat:@"https://www.gooddeedmarathon.com/check-ios.php?id=%@",userid]]];
     [request setHTTPMethod:@"POST"];
     [request setValue:postLength forHTTPHeaderField:@"Content-Length"];
     [request setValue:@"application/x-www-form-urlencoded" forHTTPHeaderField:@"Content-Type"];
@@ -106,6 +142,7 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
+
     smallText.delegate = self;
     largeText.delegate = self;
     textvvd.selected = YES;
@@ -115,9 +152,7 @@
     [imageView.layer setBorderWidth:3.0];
     smallText.hidden = YES;
     imageView.hidden = YES;
-//    NSString *ImageURL = @"http://graph.facebook.com/nishantbhandari/picture";
-//    NSData *imageData = [NSData dataWithContentsOfURL:[NSURL URLWithString:ImageURL]];
-//    imageView.image = [UIImage imageWithData:imageData];
+
     
 
     
@@ -151,6 +186,7 @@
 }
 
 - (IBAction)upload {
+    
     [NSThread detachNewThreadSelector:@selector(threadStartAnimating:) toTarget:self withObject:nil];
     
     if ([PFUser currentUser] && // Check if a user is cached
@@ -165,13 +201,19 @@
             
             fbid = userData[@"id"];
             NSLog(@"fb? %@",fbid);
-            if ([[self validateUser:fbid] isEqualToString:@"1"] ) {
-                
+            NSLog(@"%@", [self validateUser:fbid]);
+            
+            
+    
+    
+        NSLog(@"yoyoyo%@", fbid);
+if ([[self validateUser:fbid] isEqualToString:@"1"] ) {
+    
         
-    
-    
-    if ([checkMedia isEqual:@"image"] && (image)) {
-//    if ([checkMedia isEqual:@"image"]) {
+                NSLog(@"nslgggewwerwer");
+            
+                if ([checkMedia isEqual:@"image"] && (image)) {
+
         NSData *imageData = UIImageJPEGRepresentation(image, 0.8);
         
         if(imageData){
@@ -181,8 +223,8 @@
 
 
         
-        NSString *urlString = [NSString stringWithFormat:@"http://www.gooddeedmarathon.com/upload.php?msg=%@&prof_id=%@",smallText.text,fbid];
-//        NSString *urlString = @"http://flyingcursor.com/GoodDeedMarathon/upload.php";
+        NSString *urlString = [NSString stringWithFormat:@"https://www.gooddeedmarathon.com/upload.php?msg=%@&prof_id=%@",smallText.text,fbid];
+
         
         NSMutableURLRequest *request = [[NSMutableURLRequest alloc] init];
         [request setURL:[NSURL URLWithString:urlString]];
@@ -242,7 +284,7 @@
 
         
     }
-//    else if ([checkMedia isEqual:@"video"]){
+
     else if ([checkMedia isEqual:@"video"] && (moviePath)){
         NSLog(@"asas");
         
@@ -250,7 +292,7 @@
         
         
         NSMutableURLRequest *request = [[NSMutableURLRequest alloc] init];
-        NSString *urlString = [NSString stringWithFormat:@"http://www.gooddeedmarathon.com/upload.php?msg=%@&prof_id=%@",smallText.text,fbid];
+        NSString *urlString = [NSString stringWithFormat:@"https://www.gooddeedmarathon.com/upload.php?msg=%@&prof_id=%@",smallText.text,fbid];
         [request setURL:[NSURL URLWithString:urlString]];
         [request setHTTPMethod:@"POST"];
         NSString *boundary = @"---------------------------14737809831466499882746641449";
@@ -302,7 +344,7 @@
         else{
         [_activityInd stopAnimating];
             UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@""
-                                                            message:@"Error uploading video, Please try again."
+                                                            message:@"Error uploading video. Please try again."
                                                            delegate:self
                                                   cancelButtonTitle:@"Ok"
                                                   otherButtonTitles:nil, nil];
@@ -310,15 +352,16 @@
             alert = nil;
         }
 
-    } else if (largeText.text.length > 0){
-//    } else if ([checkMedia isEqualToString:@"text"]){
+    }
+    
+    else if (largeText.text.length > 0){
 
         NSString * post = [[NSString alloc] initWithFormat:@"msg=%@&prof_id=%@",largeText.text,fbid];
         NSLog(@" msg - %@ fb - %@",largeText.text,fbid);
         NSData * postData = [post dataUsingEncoding:NSASCIIStringEncoding allowLossyConversion:NO];
         NSString * postLength = [NSString stringWithFormat:@"%d",[postData length]];
         NSMutableURLRequest * request = [[NSMutableURLRequest alloc] init];
-        [request setURL:[NSURL URLWithString:[NSString stringWithFormat:@"http://www.gooddeedmarathon.com/upload.php"]]];
+        [request setURL:[NSURL URLWithString:[NSString stringWithFormat:@"https://www.gooddeedmarathon.com/upload.php"]]];
         [request setHTTPMethod:@"POST"];
         [request setValue:postLength forHTTPHeaderField:@"Content-Length"];
         [request setValue:@"application/x-www-form-urlencoded" forHTTPHeaderField:@"Content-Type"];
@@ -331,7 +374,7 @@
         if([returnString isEqualToString:@"0"]){
             [_activityInd stopAnimating];
             UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@""
-                                                            message:@"Error uploading text, Please try again."
+                                                            message:@"Error uploading text. Please try again."
                                                            delegate:self
                                                   cancelButtonTitle:@"Ok"
                                                   otherButtonTitles:nil, nil];
@@ -353,7 +396,7 @@
         else{
             [_activityInd stopAnimating];
             UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@""
-                                                            message:@"Error uploading text, Please try again."
+                                                            message:@"Error uploading text. Please try again."
                                                            delegate:self
                                                   cancelButtonTitle:@"Ok"
                                                   otherButtonTitles:nil, nil];
@@ -374,17 +417,32 @@
         alert = nil;
     
     }
+    
+}
+                else if ([[self validateUser:fbid] isEqualToString:@"0"])
+                {
+                    NSLog(@"elsee ");
+                    [_activityInd stopAnimating];
+                    UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@""
+                                                                    message:@"Please Register to continue."
+                                                                   delegate:self
+                                                         cancelButtonTitle:@"Ok"
+                                                          otherButtonTitles:nil, nil];
+                    [alert show];
+                    alert = nil;
+            
+                }
+            
 
-                
-            }
+            
+            
+            //fb check
             
             
         }];
-        
     }
-    else if ([[self validateUser:fbid] isEqualToString:@"0"])
-    {
-        
+    else{
+    
         [_activityInd stopAnimating];
         UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@""
                                                         message:@"Please login to continue."
@@ -393,10 +451,17 @@
                                               otherButtonTitles:nil, nil];
         [alert show];
         alert = nil;
-        
     }
     
+    
+
+    
 }
+
+
+
+
+
 
 - (IBAction)textVD {
     imagevvd.selected = NO;

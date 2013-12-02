@@ -22,16 +22,16 @@
 		196733761833E94F001ADBAC /* loggedViewContorller.m in Sources */ = {isa = PBXBuildFile; fileRef = 196733751833E94F001ADBAC /* loggedViewContorller.m */; };
 		196733791833E99C001ADBAC /* MainStoryboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 196733771833E99C001ADBAC /* MainStoryboard.storyboard */; };
 		1970493A1832642700084F06 /* ALScrollViewPaging.m in Sources */ = {isa = PBXBuildFile; fileRef = 197049391832642700084F06 /* ALScrollViewPaging.m */; };
+		1977F759183CD54E005EDED6 /* libz.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 1977F758183CD54E005EDED6 /* libz.dylib */; };
+		1977F75A183CDBBE005EDED6 /* MediaPlayer.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 19BACBF1182BA93C00EF20B8 /* MediaPlayer.framework */; };
 		197F05A71833B1B0003FF1E4 /* galViewC.m in Sources */ = {isa = PBXBuildFile; fileRef = 197F05A61833B1B0003FF1E4 /* galViewC.m */; };
 		197F05B01833B5FD003FF1E4 /* parViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 197F05AF1833B5FD003FF1E4 /* parViewController.m */; };
 		199E8D8B182B5F910010D1EF /* ftViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 199E8D8A182B5F910010D1EF /* ftViewController.m */; };
-		19A7E9F0182CB57000EBE47B /* AssetsLibrary.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 19A7E9EF182CB57000EBE47B /* AssetsLibrary.framework */; };
 		19ABE80F1838EDE000A3B932 /* Reachability.m in Sources */ = {isa = PBXBuildFile; fileRef = 19ABE80E1838EDE000A3B932 /* Reachability.m */; };
 		19ABE8121838F2B400A3B932 /* interViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 19ABE8111838F2B400A3B932 /* interViewController.m */; };
 		19AE5806181A3CB300499F29 /* regViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 19AE5804181A3CB300499F29 /* regViewController.m */; };
 		19AF6302181A588C005928FB /* uploadViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 19AF6301181A588C005928FB /* uploadViewController.m */; };
 		19BACBEE182BA8EC00EF20B8 /* CoreMedia.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 19BACBED182BA8EC00EF20B8 /* CoreMedia.framework */; };
-		19BACBF2182BA93C00EF20B8 /* MediaPlayer.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 19BACBF1182BA93C00EF20B8 /* MediaPlayer.framework */; settings = {ATTRIBUTES = (Required, ); }; };
 		19CF5F9C1819832D00C97835 /* AudioToolbox.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 19CF5F9B1819832D00C97835 /* AudioToolbox.framework */; };
 		19CF5F9E1819833500C97835 /* CFNetwork.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 19CF5F9D1819833500C97835 /* CFNetwork.framework */; };
 		19CF5FA01819835000C97835 /* libz.1.1.3.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 19CF5F9F1819835000C97835 /* libz.1.1.3.dylib */; };
@@ -82,6 +82,8 @@
 		196733781833E99C001ADBAC /* en */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = en; path = en.lproj/MainStoryboard.storyboard; sourceTree = "<group>"; };
 		197049381832642700084F06 /* ALScrollViewPaging.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ALScrollViewPaging.h; sourceTree = "<group>"; };
 		197049391832642700084F06 /* ALScrollViewPaging.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ALScrollViewPaging.m; sourceTree = "<group>"; };
+		1977F756183CD53A005EDED6 /* CoreData.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreData.framework; path = System/Library/Frameworks/CoreData.framework; sourceTree = SDKROOT; };
+		1977F758183CD54E005EDED6 /* libz.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libz.dylib; path = usr/lib/libz.dylib; sourceTree = SDKROOT; };
 		197F05A51833B1B0003FF1E4 /* galViewC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = galViewC.h; sourceTree = "<group>"; };
 		197F05A61833B1B0003FF1E4 /* galViewC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = galViewC.m; sourceTree = "<group>"; };
 		197F05AE1833B5FD003FF1E4 /* parViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = parViewController.h; sourceTree = "<group>"; };
@@ -139,8 +141,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				19A7E9F0182CB57000EBE47B /* AssetsLibrary.framework in Frameworks */,
-				19BACBF2182BA93C00EF20B8 /* MediaPlayer.framework in Frameworks */,
+				1977F75A183CDBBE005EDED6 /* MediaPlayer.framework in Frameworks */,
+				1977F759183CD54E005EDED6 /* libz.dylib in Frameworks */,
 				19BACBEE182BA8EC00EF20B8 /* CoreMedia.framework in Frameworks */,
 				19CF5FA21819835600C97835 /* MobileCoreServices.framework in Frameworks */,
 				19CF5FAA1819837B00C97835 /* SystemConfiguration.framework in Frameworks */,
@@ -202,6 +204,8 @@
 		F4EECF10177C99F400778578 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				1977F758183CD54E005EDED6 /* libz.dylib */,
+				1977F756183CD53A005EDED6 /* CoreData.framework */,
 				19FE8EEC1838297C00BD8723 /* Parse.framework */,
 				1941E2681830EA7A00B89F01 /* FacebookSDK.framework */,
 				19A7E9EF182CB57000EBE47B /* AssetsLibrary.framework */,
@@ -504,7 +508,11 @@
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "SidebarDemo/Good Deed Marathon-Prefix.pch";
 				INFOPLIST_FILE = "SidebarDemo/Good Deed Marathon-Info.plist";
-				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 6.1;
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"/Users/nishant/Desktop/gdm-ios/good\\ deed/SidebarDemo",
+				);
 				PRODUCT_NAME = "Good Deed Marathon";
 				PROVISIONING_PROFILE = "";
 				TARGETED_DEVICE_FAMILY = 1;
@@ -527,7 +535,11 @@
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "SidebarDemo/Good Deed Marathon-Prefix.pch";
 				INFOPLIST_FILE = "SidebarDemo/Good Deed Marathon-Info.plist";
-				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 6.1;
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"/Users/nishant/Desktop/gdm-ios/good\\ deed/SidebarDemo",
+				);
 				PRODUCT_NAME = "Good Deed Marathon";
 				PROVISIONING_PROFILE = "";
 				TARGETED_DEVICE_FAMILY = 1;

@@ -49,23 +49,7 @@
     changeBorderColorField.layer.borderColor=[[UIColor colorWithRed:57.0f/255.0f green:57.0f/255.0f blue:57.0f/255.0f alpha:1.0] CGColor];
 }
 
--(NSString *)validateUser:(NSString*)userid {
-    
-    
-    NSString * post = [[NSString alloc] initWithFormat:@"id=%@",userid];
-    NSData * postData = [post dataUsingEncoding:NSASCIIStringEncoding allowLossyConversion:NO];
-    NSString * postLength = [NSString stringWithFormat:@"%d",[postData length]];
-    NSMutableURLRequest * request = [[NSMutableURLRequest alloc] init];
-    [request setURL:[NSURL URLWithString:[NSString stringWithFormat:@"http://www.gooddeedmarathon.com/check-ios.php?id=%@",userid]]];
-    [request setHTTPMethod:@"POST"];
-    [request setValue:postLength forHTTPHeaderField:@"Content-Length"];
-    [request setValue:@"application/x-www-form-urlencoded" forHTTPHeaderField:@"Content-Type"];
-    [request setHTTPBody:postData];
-    NSData *returnData = [NSURLConnection sendSynchronousRequest:request returningResponse:nil error:nil];
-    NSString *returnString = [[NSString alloc] initWithData:returnData encoding:NSUTF8StringEncoding];
-    
-    return returnString;
-}
+
 -(void)viewDidAppear:(BOOL)animated{
     
     [super viewDidAppear:animated];
@@ -166,9 +150,6 @@ _email.delegate = self;
     NSLog(@"%@",_fb_name);
     // validation
 
-//    [self changeBorderColor:name];
-//    [self changeBorderColor:email];
-    
     
 
     
@@ -230,7 +211,7 @@ _email.delegate = self;
         
         NSString * postLength = [NSString stringWithFormat:@"%d",[postData length]];
         NSMutableURLRequest * request = [[NSMutableURLRequest alloc] init];
-        [request setURL:[NSURL URLWithString:[NSString stringWithFormat:@"http://www.gooddeedmarathon.com/submit.php"]]];
+        [request setURL:[NSURL URLWithString:[NSString stringWithFormat:@"https://www.gooddeedmarathon.com/submit.php"]]];
         [request setHTTPMethod:@"POST"];
         [request setValue:postLength forHTTPHeaderField:@"Content-Length"];
         [request setValue:@"application/x-www-form-urlencoded" forHTTPHeaderField:@"Content-Type"];
